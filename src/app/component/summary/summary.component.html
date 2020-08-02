@@ -1,0 +1,403 @@
+<!-- Header Start -->
+<app-product-header></app-product-header>
+<!-- Header End -->
+
+<main>
+    <!-- Summary Page Start-->
+    <section class="summary-wrapper bg-gray">
+        <div class="container">
+
+            <div class="sum-header text-center">
+                <h1 class="sum-heading">Great, you are now ready to secure your life</h1>
+                <h3 class="sum-subheading">Kindly review and pay</h3>
+            </div><!-- summary-header div end-->
+
+            <div class="summary-details-1">
+                <div class="sum-top text-center">
+                    Personal Details
+                </div>
+                <div class="sum-content">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="edit-icon" (click)='editGetQuote()'>
+                                <img src="./assets/icons/edit-pen.svg" alt="" class="">
+                            </div>
+                            <div class="row">
+                                <div class="col-12 col-lg-4 pr-lg-0">
+                                    <ul class="d-flex details">
+                                        <li class="label">Name</li>
+                                        <li class="value text-truncate" matTooltip="Sachiananda Prasad Reddy"
+                                            matTooltipClass="tooltip-blk">Sachiananda Prasad Reddy</li>
+                                    </ul>
+                                </div>
+                                <div class="col-12 col-lg-4">
+                                    <ul class="d-flex details">
+                                        <li class="label">Mobile Number</li>
+                                        <li class="value text-truncate">9988778899</li>
+                                    </ul>
+                                </div>
+                                <div class="col-12 col-lg-4">
+                                    <ul class="d-flex details">
+                                        <li class="label">Annual Salary</li>
+                                        <li class="value text-truncate">₹ 5,00,000</li>
+                                    </ul>
+                                </div>
+                                <div class="col-12 col-lg-4">
+                                    <ul class="d-flex details">
+                                        <li class="label">Date of Birth</li>
+                                        <li class="value text-truncate">14 Aug 1980</li>
+                                    </ul>
+                                </div>
+                                <div class="col-12 col-lg-4">
+                                    <ul class="d-flex details">
+                                        <li class="label">Gender</li>
+                                        <li class="value text-truncate">Male</li>
+                                    </ul>
+                                </div>
+                                <div class="col-12 col-lg-4">
+                                    <ul class="d-flex details">
+                                        <li class="label">Smoker</li>
+                                        <li class="value text-truncate">Yes</li>
+                                    </ul>
+                                </div>
+                                <div class="col-12 col-lg-4">
+                                    <ul class="d-flex details">
+                                        <li class="label">Marital Status</li>
+                                        <li class="value text-truncate">Single</li>
+                                    </ul>
+                                </div>
+                                <div class="col-12 col-lg-4">
+                                    <ul class="d-flex details">
+                                        <li class="label">Email Address</li>
+                                        <li class="value text-truncate" matTooltip="rahulkumar@gmail.com"
+                                            matTooltipClass="tooltip-blk">rahulkumar@gmail.com</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- summary-for-personal-details end-->
+
+            <div class="summary-details-2">
+                <div class="sum-top text-center">
+                    Plan Details
+                </div>
+                <div class="sum-content">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="edit-icon" routerLink="/plan-suggetion">
+                                <img src="./assets/icons/edit-pen.svg" alt="" class="">
+                            </div>
+                            <div class="row">
+                                <div class="col-12 col-lg-4">
+                                    <ul class="d-flex details">
+                                        <li class="label">Plan Name</li>
+                                        <li class="value text-truncate">Zindagi Plus-Popular</li>
+                                    </ul>
+                                </div>
+                                <div class="col-12 col-lg-4">
+                                    <ul class="d-flex details">
+                                        <li class="label">Base Plan</li>
+                                        <li class="value text-truncate">₹ 795</li>
+                                    </ul>
+                                </div>
+                                <div class="col-12 col-lg-4">
+                                    <ul class="d-flex details">
+                                        <li class="label">Policy Duration</li>
+                                        <li class="value text-truncate">20 years</li>
+                                    </ul>
+                                </div>
+                                <div class="col-12 col-lg-4">
+                                    <ul class="d-flex">
+                                        <li class="label">Payment Duration</li>
+                                        <li class="value text-truncate">20 years</li>
+                                    </ul>
+                                </div>
+                                <div class="col-12 col-lg-4">
+                                    <ul class="d-flex align-items-baseline">
+                                        <li class="label">Payout</li>
+                                        <div class="form-filed">
+                                            <mat-form-field>
+                                                <div class="d-flex align-items-center">
+                                                    <mat-select [(value)]="modeSelect" disableOptionCentering
+                                                        panelClass="select-option">
+                                                        <mat-option value="option1">Monthly</mat-option>
+                                                        <mat-option value="option2">Quarterly</mat-option>
+                                                        <mat-option value="option3">Yearly</mat-option>
+                                                    </mat-select>
+                                                    <img src="./assets/icons/down-arrow.svg" alt="" class="arrow-down">
+                                                </div>
+                                            </mat-form-field>
+                                        </div>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- summary-for-plan-details end-->
+
+            <div class="sum-bottom">
+                <div class="row">
+                    <div class="col-12 col-lg-6">
+                        <div class="sum-left">
+                            Life Cover
+                            <span>₹ 40,12,254</span>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6">
+                        <div class="sum-right">
+                            Download Benefit Illustration
+                        </div>
+                        <div class="sum-img">
+                            <img src="./assets/icons/pdf.svg" alt="" class="pdf-icon pointer">
+                        </div>
+                    </div>
+                </div>
+            </div><!-- summary-bottom end-->
+
+            <div class="premium-wrap d-none d-sm-none d-lg-block">
+                <div class="col-12">
+                    <div class="row">
+                        <div class="col-12 col-md-8">
+                            <div class="row align-items-center">
+                                <div class="col-12 col-md-8">
+                                    <div class="premium-left">
+                                        Make your payment and get your life insured
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-4">
+                                    <div class="row premium-middle">
+                                        <div class="text-style-1">Premium Amount</div>
+                                        <div class="text-style-2">₹ 1,044 <span> Inc. of GST </span> </div>
+                                        <div class="text-style-3 pointer"> <span (click)="getSummaryTable()">Break-up
+                                                <span class="p-1"><img src="./assets/icons/white-arrow.svg" alt=""
+                                                        [ngClass]="{'white-arrow': showBenefitsBreakupsWeb == true}">
+                                                </span>
+                                            </span>
+                                            <!-- <div class="sticky-web-top sticky-with-close"
+                                                *ngIf="showBenefitsBreakupsWeb">
+                                                <div class="sticky-benefits">
+                                                    <a class="closebutton" (click)="closeTooltip()">
+                                                        <img src="./assets/icons/close.svg" alt="close"
+                                                            class="close-icon">
+                                                    </a>
+                                                    <div class="benefits-list flex-column">
+                                                        <div class="d-flex justify-space-between w-100">
+                                                            <div class="lable">Premium Amount</div>
+                                                            <div class="info">
+                                                                <div class="amout"><span class="rupee"> &#8377;
+                                                                    </span> 675</div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="benefits-sub-list w-100">
+                                                            <div class="h1">Additional Benefits</div>
+                                                            <div class="benefits-sub"
+                                                                [ngClass]="{'remove-list':toggle1}">
+                                                                <div class="lable">Better Half Benefit</div>
+                                                                <div class="info">
+                                                                    <div class="amout"><span class="rupee"> &#8377;
+                                                                        </span> 75</div>
+                                                                    <div class="remove-click" (click)="remove()">
+                                                                        <img src="./assets/icons/circle-close.svg">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="benefits-sub">
+                                                                <div class="lable">Top-up Benefit</div>
+                                                                <div class="info">
+                                                                    <div class="amout"><span class="rupee"> &#8377;
+                                                                        </span> 47</div>
+                                                                    <div class="remove-click"><img
+                                                                            src="./assets/icons/circle-close.svg">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="benefits-sub">
+                                                                <div class="lable">Accidental Death Benefit</div>
+                                                                <div class="info">
+                                                                    <div class="amout"><span class="rupee"> &#8377;
+                                                                        </span> 12</div>
+                                                                    <div class="remove-click"><img
+                                                                            src="./assets/icons/circle-close.svg">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="benefits-sub">
+                                                                <div class="lable">Decreasing Sum Assured</div>
+                                                                <div class="info">
+                                                                    <div class="amout"><span class="rupee"> &#8377;
+                                                                        </span> 85</div>
+                                                                    <div class="remove-click"><img
+                                                                            src="./assets/icons/circle-close.svg">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="benefits-sub">
+                                                                <div class="lable">Criticare +</div>
+                                                                <div class="info">
+                                                                    <div class="amout"><span class="rupee"> &#8377;
+                                                                        </span> 75</div>
+                                                                    <div class="remove-click"><img
+                                                                            src="./assets/icons/circle-close.svg">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="benefits-list">
+                                                        <div class="lable">GST</div>
+                                                        <div class="info">
+                                                            <div class="amout"><span class="rupee"> &#8377; </span>
+                                                                75</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="benefits-list">
+                                                        <div class="lable">Total Premium</div>
+                                                        <div class="info">
+                                                            <div class="amout h2 ft-bold mb-0"><span class="rupee">
+                                                                    &#8377; </span> 1,266</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>  -->
+                                            <!-- Premim Amount Desktop Brkup Div -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-4 pl-6">
+                            <div class="row premium-right">
+                                <div class="button-wrap">
+                                    <button mat-raised-button color="primary" class="mat-button-xl">PAY NOW</button>
+                                </div>
+                                <div class="button-wrap mt-2">
+                                    <button mat-stroked-button color="primary" class="mat-button-xl ">Pay
+                                        Later</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- Premim Amount Desktop End -->
+
+
+
+            <div class="sticky-mob d-lg-none">
+
+                <!-- <div *ngIf="showBenefitsBreakups">
+                    <div class="sticky-mob-top position-relative sticky-with-close">
+                        <div class="sticky-down-arrow" (click)="showBenefitsLess()">
+                            <img src="./assets/icons/down-arrow.svg" alt="" />
+                        </div>
+                        <div class="sticky-benefits">
+                            <div class="benefits-list flex-column">
+                                <div class="d-flex justify-space-between w-100">
+                                    <div class="lable">Premium Amount</div>
+                                    <div class="info">
+                                        <div class="amout"><span class="rupee"> &#8377; </span> 675</div>
+                                    </div>
+                                </div>
+
+                                <div class="benefits-sub-list w-100">
+                                    <div class="h1">Additional Benefits</div>
+                                    <div class="benefits-sub" [ngClass]="{'remove-list':toggle1}">
+                                        <div class="lable">Better Half Benefit</div>
+                                        <div class="info">
+                                            <div class="amout"><span class="rupee"> &#8377; </span> 75</div>
+                                            <div class="remove-click" (click)="remove()"><img
+                                                    src="./assets/icons/circle-close.svg">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="benefits-sub">
+                                        <div class="lable">Top-up Benefit</div>
+                                        <div class="info">
+                                            <div class="amout"><span class="rupee"> &#8377; </span> 47</div>
+                                            <div class="remove-click"><img src="./assets/icons/circle-close.svg"></div>
+                                        </div>
+                                    </div>
+                                    <div class="benefits-sub">
+                                        <div class="lable">Accidental Death Benefit</div>
+                                        <div class="info">
+                                            <div class="amout"><span class="rupee"> &#8377; </span> 12</div>
+                                            <div class="remove-click"><img src="./assets/icons/circle-close.svg"></div>
+                                        </div>
+                                    </div>
+                                    <div class="benefits-sub">
+                                        <div class="lable">Decreasing Sum Assured</div>
+                                        <div class="info">
+                                            <div class="amout"><span class="rupee"> &#8377; </span> 85</div>
+                                            <div class="remove-click"><img src="./assets/icons/circle-close.svg"></div>
+                                        </div>
+                                    </div>
+                                    <div class="benefits-sub">
+                                        <div class="lable">Criticare +</div>
+                                        <div class="info">
+                                            <div class="amout"><span class="rupee"> &#8377; </span> 75</div>
+                                            <div class="remove-click"><img src="./assets/icons/circle-close.svg"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="benefits-list">
+                                <div class="lable">GST</div>
+                                <div class="info">
+                                    <div class="amout"><span class="rupee"> &#8377; </span> 75</div>
+                                </div>
+                            </div>
+                            <div class="benefits-list">
+                                <div class="lable">Total Premium</div>
+                                <div class="info">
+                                    <div class="amout h2 ft-bold mb-0"><span class="rupee"> &#8377; </span> 1,266</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>  -->
+
+                <!-- Premim Amount Mobile Brkup Div -->
+
+                <div class="premium-wrap-mobile">
+                    <div class="premium-middle ">
+                        <div class="text-style-1">Premium Amount</div>
+                        <div class="d-flex justify-space-between align-items-baseline">
+                            <div class="text-style-2">₹ 1,044 <span> Inc. of GST </span> </div>
+                            <div class="text-style-3" (click)="getSummaryTable()">Break-up
+                                <span class="p-1 pointer"> <img src="./assets/icons/white-arrow.svg" alt=""
+                                        class="down-arrow">
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="row">
+                            <div class="col-6 p-0">
+                                <div class="button-wrap but-full-width">
+                                    <button mat-raised-button color="primary" class="bg-white text-orange">Pay
+                                        Later</button>
+                                </div>
+                            </div>
+                            <div class="col-6 p-0">
+                                <div class="button-wrap but-full-width">
+                                    <button mat-raised-button color="primary">PAY NOW</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- Premim Amount Mobile End -->
+
+            </div>
+
+        </div>
+    </section>
+    <!-- Summary Page End-->
+
+</main>
+
+<!-- Footer Start -->
+<app-footer></app-footer>
+<!-- Footer End -->

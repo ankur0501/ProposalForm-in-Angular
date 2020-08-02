@@ -1,0 +1,46 @@
+<div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
+    <mat-card class="box">
+      <mat-card-header>
+        <mat-card-title>Register</mat-card-title>
+      </mat-card-header>
+  
+      <form class="example-form" [formGroup]="frmName">
+  
+        <mat-card-content>
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Username" formControlName="name">
+          </mat-form-field>
+  <br />
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Email">
+          </mat-form-field>
+          <br />
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Password">
+          </mat-form-field>
+          <br />
+          <!-- <mat-form-field class="example-full-width">
+            <mat-label>Choose a role...</mat-label>
+            <mat-select [(ngModel)]="selected">
+              <mat-option [value]="roles" *ngFor="let roles of Roles">{{roles}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <br /> -->
+
+          <mat-form-field>
+            <input type="text" matInput formControlName="myControl" [matAutocomplete]="auto" (keyup)="changeInput($event.target.value)">
+          </mat-form-field>
+          <mat-autocomplete #auto="matAutocomplete">
+            <mat-option *ngFor="let option of options" [value]="option">
+              {{ option }}
+            </mat-option>
+          </mat-autocomplete>
+
+        </mat-card-content>
+  
+        <button mat-stroked-button color="accent" class="btn-block" (click)="onSubmit()">Register</button>
+  
+      </form>
+    </mat-card>
+  </div>

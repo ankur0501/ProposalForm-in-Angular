@@ -1,0 +1,72 @@
+<div class="container p-3">
+    <div class="row">
+      <div class="col-12">
+        <form [formGroup]="form" (submit)="submit()">
+          <div class="card">
+            
+            <div class="card-header">Contact Information</div>
+            <div class="card-body" formArrayName="places">
+              <div class="row">
+                <div class="col-6" *ngFor="let contact of contactFormGroup.controls; let i = index;">
+                  <div [formGroupName]="i" class="row">
+                    <div class="form-group col-6">
+                      <label>From City</label>
+                      <!-- <input class="form-control" formControlName="fromCity" type="text"> -->
+                      
+                        <input class="form-control"  type="text" matInput formControlName="fromCity">
+                     
+                        <!-- <mat-autocomplete #autoFrom="matAutocomplete" [displayWith]="displayFn">
+                          <mat-option *ngFor="let option of options2 | async" [value]="option">
+                            {{ option.value }}
+                          </mat-option>
+                        </mat-autocomplete> -->
+
+                    </div>
+                    <div class="form-group col-6">
+                      <label>To City</label>
+                      <input class="form-control" matInput formControlName="toCity" type="text" [matAutocomplete]="autoTO">
+                      <span class="text-danger" *ngIf="getContactsFormGroup(i).controls['toCity'].touched && getContactsFormGroup(i).controls['toCity'].hasError('required')">
+                        Label is required! </span>
+                        <mat-autocomplete #autoTO="matAutocomplete" [displayWith]="displayFn">
+                            <mat-option *ngFor="let toCity of options2[i] | async" [value]="toCity">
+                              {{ toCity.name }}
+                            </mat-option>
+                          </mat-autocomplete>
+                        
+                    </div>
+
+                    <div class="form-group col-6">
+                        <label>From Date</label>
+                        <input class="form-control" formControlName="fromDate" type="text" matInput [matDatepicker]="fromdatepicker">
+                        <mat-datepicker-toggle matSuffix [for]="fromdatepicker"></mat-datepicker-toggle>
+                        <mat-datepicker #fromdatepicker></mat-datepicker>
+                        <span class="text-danger" *ngIf="getContactsFormGroup(i).controls['fromDate'].touched && getContactsFormGroup(i).controls['fromDate'].hasError('required')">
+                          Label is required! </span>
+                      </div>
+                      <div class="form-group col-6">
+                        <label>To Date</label>
+                        <input class="form-control" formControlName="toDate" matInput [matDatepicker]="myDatepicker">
+                        <mat-datepicker-toggle matSuffix [for]="myDatepicker"></mat-datepicker-toggle>
+                        <mat-datepicker #myDatepicker></mat-datepicker>
+                        <span class="text-danger" *ngIf="getContactsFormGroup(i).controls['toDate'].touched && getContactsFormGroup(i).controls['toDate'].hasError('required')">
+                          Label is required! </span>
+                      </div>
+                  
+                    <div class="form-group col-12 text-right">
+                      <button class="btn btn-danger" type="button" (click)="removeContact(i)"> Remove </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="col-12">
+                <button class="btn btn-primary m-1" type="button" (click)="addContact()"> Add Contact </button>
+                <button class="btn btn-success m-1" [disabled]="!form.valid" type="submit"> Save User Profile </button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>

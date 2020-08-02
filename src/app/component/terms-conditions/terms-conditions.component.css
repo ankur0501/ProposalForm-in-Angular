@@ -1,0 +1,23 @@
+/* Terms & Condition Wrapper */
+.terms-wrapper { margin-top: 81px; }
+.terms-heading { font-family:'Montserrat-Bold'; font-size: 30px; text-align: center; color: #3c3c3c; padding: 30px 0 0;}
+.terms-content { margin: 22px 0;}
+.terms-content .label { font-family: 'Montserrat-Bold'; font-size: 14px; color: #3c3c3c; margin-right: 0; }
+.terms-content .small-text { line-height: 20px;}
+.terms-content .ft-bold { color: #3c3c3c;}
+.product-list li {  position: relative; padding-left: 20px; margin-bottom: 10px;}
+.product-list li::before {  content: ""; position: absolute; background-color: #818181; width: 8px; height: 7px; left: 0; top: 4px; border-radius: 10px;  }
+
+
+/* Media Query Start */
+@media (max-width:1200px) {
+   .terms-wrapper { background-color: #f9f9f9;}
+}
+
+@media (max-width:767px) {
+   .terms-heading { font-size: 16px ; padding: 15px 0 0;}
+   .terms-content { text-align: center;}
+   .product-list li { text-align: left;}
+   .product-list li::before { width: 6px; height: 6px; top: 6px;}
+
+}

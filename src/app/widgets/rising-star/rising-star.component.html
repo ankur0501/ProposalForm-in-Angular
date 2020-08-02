@@ -1,0 +1,35 @@
+<section class="popup-wrapper">
+    <a class="closebutton rising-button" (click)="closeDialog()">
+        <img src="./assets/icons/close.svg" alt="close" class="close-icon">
+    </a>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 ">
+                <div class="rising-star-header text-center">
+                    <h2 class="popup-heading">Congratulations!</h2>
+                    <h3 class="popup-subheading ">You are eligible for Rising Star Benefit
+                    </h3>
+                    <p class="popup-text">Benefits of Rising Star</p>
+                </div>
+                <div class="rising-star-content">
+                    <ul class="bullet-list">
+                        <li>In the event of your unfortunate demise, your child will recieve a lumpsum amount
+                            immediately and all the succeeding
+                            premiums will get waived off</li>
+                        <li>The remaining premiums will get invested in your funds on the very same day and the
+                            collective growth will start
+                            immediately. It doesn't end here. On top of this, the additional allocation continues
+                            wherever applicable.
+                        </li>
+                    </ul>
+                </div>
+                <div class="text-center mb-3">
+                    <div class="button-wrap mb-3">
+                        <button mat-raised-button color="primary" class="mat-button-lg" (click)="closeDialog()">Add</button>
+                    </div>
+                    <a href="javascript:void(0)" class="link pointer" (click)="closeDialog()">I don’t want this add-on</a>
+                </div>
+            </div> <!-- rising-star div end-->
+        </div>
+    </div>
+</section>

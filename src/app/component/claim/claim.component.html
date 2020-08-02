@@ -1,0 +1,1824 @@
+<!-- Header Start -->
+<app-ang-header></app-ang-header>
+<!-- Header End -->
+
+<!-- Sub Header Start -->
+<app-sub-header></app-sub-header>
+<!-- Sub Header End -->
+
+<section class="claim-wrapper">
+
+    <div class="claims-tabs-wrapper">
+        <mat-tab-group>
+            <mat-tab label="Death Claim">
+                <ng-template matTabContent>
+
+                    <div class="claims-inner-tabs-wrapper">
+                        <div class="container">
+
+                            <div class="report-claim-wrapper">
+                                <div class="report-claim-heading">
+                                    Report a Claim
+                                </div>
+                                <div class="report-claim-mobile d-flex">
+                                    <div class="report-claim-form-wrap">
+                                        <div class="report-claim-form d-flex">
+                                            <div class="form-filed">
+                                                <mat-form-field>
+                                                    <input matInput placeholder="Nominee Name"
+                                                        [formControl]="nomineeName">
+                                                </mat-form-field>
+                                            </div>
+                                            <div class="form-filed">
+                                                <mat-form-field>
+                                                    <input type="number" matInput placeholder="Nominee Number"
+                                                        [formControl]="nomineeNumber" pattern="\d*"
+                                                        (keypress)="numberOnly($event)">
+                                                </mat-form-field>
+                                            </div>
+                                            <div class="form-filed">
+                                                <mat-form-field>
+                                                    <input matInput placeholder="Policy Number"
+                                                        [formControl]="policyNumber">
+                                                </mat-form-field>
+                                            </div>
+                                        </div>
+                                        <div class="button-wrap text-center">
+                                            <button class="mat-button-lg" mat-raised-button color="primary"
+                                                (click)="reportSubmit()">Submit</button>
+                                        </div>
+                                    </div>
+                                    <div class="claim-settlement">
+                                        <h1 class="h1">Claim Settlement Ratio in FY 2018-19 is at <span>95.82%</span>
+                                        </h1>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- report-claim-wrapper End -->
+
+                            <div class="death-claim-wrapper">
+                                <div class="death-claim-heading">
+                                    An easy 3 step death claim process
+                                </div>
+                                <div class="d-flex justify-content-center death-claim-mob">
+                                    <div class="death-claim intimation-claim d-flex">
+                                        <div class="intimation-claim-img">
+                                            <img src="./assets/icons/intimation-claim.svg" alt="">
+                                        </div>
+                                        <div class="death-claim-list">
+                                            <div class="death-claim-title">
+                                                Intimation of Claim
+                                            </div>
+                                            <ul class="bullet-list">
+                                                <li>Report a claim</li>
+                                                <li>Simple and quick process</li>
+                                            </ul>
+                                        </div>
+                                        <div class="circular-batch">
+                                            1
+                                        </div>
+                                    </div>
+
+                                    <div class="death-claim submission-claim d-flex">
+                                        <div class="intimation-claim-img">
+                                            <img src="./assets/icons/submission-claim.svg" alt="">
+                                        </div>
+                                        <div class="death-claim-list">
+                                            <div class="death-claim-title">
+                                                Submission of Documents
+                                            </div>
+                                            <ul class="bullet-list">
+                                                <li>Check the required documents</li>
+                                                <li>We will inform you if further documents are required</li>
+                                            </ul>
+                                        </div>
+                                        <div class="circular-batch">
+                                            2
+                                        </div>
+                                    </div>
+
+                                    <div class="death-claim decision-claim d-flex">
+                                        <div class="intimation-claim-img">
+                                            <img src="./assets/icons/decision-claim.svg" alt="">
+                                        </div>
+                                        <div class="death-claim-list">
+                                            <div class="death-claim-title">
+                                                Decision on Claim
+                                            </div>
+                                            <ul class="bullet-list">
+                                                <li>Guranteed 1 day death settlement</li>
+                                                <li>Guranteed 1 day death settlement</li>
+                                            </ul>
+                                        </div>
+                                        <div class="circular-batch">
+                                            3
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- death-claim-wrapper End -->
+
+                            <div class="documents-claim-wrapper">
+                                <div class="text-center">
+                                    <div class="claim-heading d-none d-lg-block">
+                                        The following documents need to be submitted for death claim
+                                    </div>
+                                    <div class="claim-heading d-lg-none">
+                                        The following documents need to be submitted
+                                    </div>
+                                    <div class="claim-subheading d-none d-lg-block">
+                                        Submit documents in the format of templates provided
+                                    </div>
+                                    <div class="claim-subheading d-lg-none">
+                                        Select a language to download form
+                                    </div>
+                                    <div class="form-filed">
+                                        <mat-form-field>
+                                            <div class="d-flex align-items-center">
+                                                <mat-select disableOptionCentering
+                                                    panelClass="select-option-documents-lang"
+                                                    placeholder="Select Language of the Forms"
+                                                    [formControl]="selectLanguage">
+                                                    <mat-option value="option1">English</mat-option>
+                                                    <mat-option value="option2">Hindi</mat-option>
+                                                    <mat-option value="option3">Gujarati</mat-option>
+                                                    <mat-option value="option4">Odia</mat-option>
+                                                    <mat-option value="option4">Punjabi</mat-option>
+                                                </mat-select>
+                                                <img src="./assets/icons/down-arrow.svg" alt="" class="arrow-down">
+                                            </div>
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="button-wrap text-center d-lg-none">
+                                        <a class="download-text" href="images/logo.jpg" download>
+                                            <button mat-raised-button color="primary">
+                                                Download ALL
+                                            </button>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="download-documents">
+
+                                    <div class="content d-flex align-items-center">
+                                        <div class="title-web title-mob">
+                                            Original policy documents
+                                        </div>
+                                        <div class="content-web content-mob">
+                                            <span class="download-icon pointer">
+                                                <img src="./assets/icons/download.svg" alt="">
+                                            </span>
+                                            <a class="download-text" href="images/logo.jpg" download> Download <span
+                                                    class="template"> Template </span>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="content d-flex align-items-center">
+                                        <div class="title-web title-mob">
+                                            Claimant photo identity & address proof
+                                        </div>
+                                        <div class="content-web content-mob">
+                                            <span class="download-icon pointer">
+                                                <img src="./assets/icons/download.svg" alt="">
+                                            </span>
+                                            <a class="download-text" href="images/logo.jpg" download> Download <span
+                                                    class="template"> Template </span>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="content d-flex align-items-center">
+                                        <div class="title-web title-mob">
+                                            Claimant death statement
+                                        </div>
+                                        <div class="content-web content-mob">
+                                            <span class="download-icon pointer">
+                                                <img src="./assets/icons/download.svg" alt="">
+                                            </span>
+                                            <a class="download-text" href="images/logo.jpg" download> Download <span
+                                                    class="template"> Template </span>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="content d-flex align-items-center">
+                                        <div class="title-web title-mob">
+                                            Copy of death certificate
+                                        </div>
+                                        <div class="content-web content-mob">
+                                            <span class="download-icon pointer">
+                                                <img src="./assets/icons/download.svg" alt="">
+                                            </span>
+                                            <a class="download-text" href="images/logo.jpg" download> Download <span
+                                                    class="template"> Template </span>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="content d-flex align-items-center">
+                                        <div class="title-web title-mob">
+                                            Copy of cause of death certificate
+                                        </div>
+                                        <div class="content-web content-mob">
+                                            <span class="download-icon pointer">
+                                                <img src="./assets/icons/download.svg" alt="">
+                                            </span>
+                                            <a class="download-text" href="images/logo.jpg" download> Download <span
+                                                    class="template"> Template </span>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="content d-flex align-items-center">
+                                        <div class="title-web title-mob">
+                                            Medical records off the life assured being hospitalized (Indoor case papers,
+                                            discharge/death summary, test reports etc.)
+                                        </div>
+                                        <div class="content-web content-mob">
+                                            <span class="download-icon pointer">
+                                                <img src="./assets/icons/download.svg" alt="">
+                                            </span>
+                                            <a class="download-text" href="images/logo.jpg" download> Download <span
+                                                    class="template"> Template </span>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="content d-flex align-items-center">
+                                        <div class="title-web title-mob">
+                                            Hospital certificate if the life assured was hospitalized
+                                        </div>
+                                        <div class="content-web content-mob">
+                                            <span class="download-icon pointer">
+                                                <img src="./assets/icons/download.svg" alt="">
+                                            </span>
+                                            <a class="download-text" href="images/logo.jpg" download> Download <span
+                                                    class="template"> Template </span>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="content d-flex align-items-center">
+                                        <div class="title-web title-mob">
+                                            Employer certificate for salaried policyholder
+                                        </div>
+                                        <div class="content-web content-mob">
+                                            <span class="download-icon pointer">
+                                                <img src="./assets/icons/download.svg" alt="">
+                                            </span>
+                                            <a class="download-text" href="images/logo.jpg" download> Download <span
+                                                    class="template"> Template </span>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="button-wrap text-center d-none d-lg-block">
+                                    <a class="download-text" href="images/logo.jpg" download>
+                                        <button class="mat-button-lg" mat-raised-button color="primary">Download
+                                            ALL
+                                            templates
+                                        </button>
+                                    </a>
+                                </div>
+
+                            </div>
+                            <!--documents-claim-wrapper End -->
+
+                            <div class="faqs section">
+                                <h2 class="heading text-center">FAQs</h2>
+                                <div class="accordion-wrapper">
+                                    <mat-accordion>
+                                        <mat-expansion-panel [expanded]="true">
+                                            <mat-expansion-panel-header [collapsedHeight]="'auto'"
+                                                [expandedHeight]="'auto'">
+                                                <mat-panel-title>
+                                                    Which documents do I require to report a claim?
+                                                </mat-panel-title>
+                                            </mat-expansion-panel-header>
+                                            <ul class="circle-bullet-list">
+                                                <li>To get a list of the documents required while reporting a Death
+                                                    Claim, please
+                                                </li>
+                                                <li>To get a list of the documents required while reporting a
+                                                    Hospitalisation Claim, please
+                                                </li>
+                                            </ul>
+                                        </mat-expansion-panel>
+                                        <mat-expansion-panel>
+                                            <mat-expansion-panel-header [collapsedHeight]="'auto'"
+                                                [expandedHeight]="'auto'">
+                                                <mat-panel-title>
+                                                    How much time does it take to settle a claim?
+                                                </mat-panel-title>
+                                            </mat-expansion-panel-header>
+                                            <ul class="circle-bullet-list">
+                                                <li>To get a list of the documents required while reporting a Death
+                                                    Claim, please
+                                                </li>
+                                                <li>To get a list of the documents required while reporting a
+                                                    Hospitalisation Claim, please
+                                                </li>
+                                            </ul>
+                                        </mat-expansion-panel>
+                                        <mat-expansion-panel>
+                                            <mat-expansion-panel-header [collapsedHeight]="'auto'"
+                                                [expandedHeight]="'auto'">
+                                                <mat-panel-title>
+                                                    Where can I submit claim documents?
+                                                </mat-panel-title>
+                                            </mat-expansion-panel-header>
+                                            <ul class="circle-bullet-list">
+                                                <li>To get a list of the documents required while reporting a Death
+                                                    Claim, please
+                                                </li>
+                                                <li>To get a list of the documents required while reporting a
+                                                    Hospitalisation Claim, please
+                                                </li>
+                                            </ul>
+                                        </mat-expansion-panel>
+                                        <mat-expansion-panel>
+                                            <mat-expansion-panel-header [collapsedHeight]="'auto'"
+                                                [expandedHeight]="'auto'">
+                                                <mat-panel-title>
+                                                    What is the claim process for Life Insurance?
+                                                </mat-panel-title>
+                                            </mat-expansion-panel-header>
+                                            <ul class="circle-bullet-list">
+                                                <li>To get a list of the documents required while reporting a Death
+                                                    Claim, please
+                                                </li>
+                                                <li>To get a list of the documents required while reporting a
+                                                    Hospitalisation Claim, please
+                                                </li>
+                                            </ul>
+                                        </mat-expansion-panel>
+                                    </mat-accordion>
+                                </div>
+                            </div>
+                            <!-- faqs End -->
+
+                            <div class="our-customers-wrapper">
+
+                                <div class="customers-header text-center">
+                                    <h2 class="claim-heading">Our Customers Say</h2>
+                                    <a href="javascript:void(0)" class="claim-review"> <span>600</span> reviews</a>
+                                </div>
+                                <div class="customers-slider">
+                                    <ngx-slick-carousel class="carousel" #slickModal="slick-carousel"
+                                        [config]="slideConfigCustomers">
+                                        <div ngxSlickItem class="slide">
+                                            <div class="slide testimonial-slide">
+                                                <div class="testimonial-slide-quote-1">
+                                                    <img src="./assets/images/testimonial-quote-1.png"
+                                                        class="img-fluid">
+                                                </div>
+                                                <h3>Ravi Mishra</h3>
+                                                <h4>16-Feb-2016 - IST</h4>
+                                                <p>My wife and I had always dreamed of having a big apartment
+                                                    overlooking the sea. Our wealth builder plan allowed us to
+                                                    make the down payment easily. Thank you Edelweiss Tokio for helping
+                                                    us live our dream.
+                                                </p>
+                                                <div class="testimonial-slide-quote-2">
+                                                    <img src="./assets/images/testimonial-quote-2.png"
+                                                        class="img-fluid">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div ngxSlickItem class="slide">
+                                            <div class="slide testimonial-slide">
+                                                <div class="testimonial-slide-quote-1">
+                                                    <img src="./assets/images/testimonial-quote-1.png"
+                                                        class="img-fluid">
+                                                </div>
+                                                <h3>Rakesh Shriram Mishra</h3>
+                                                <h4>32 years, Food & Beverage</h4>
+                                                <p>Edelweiss Tokio has very good plans where insured is not covered for
+                                                    his untimely death
+                                                    but
+                                                    his loved ones are protected with benefits...
+                                                </p>
+                                                <div class="testimonial-slide-quote-2">
+                                                    <img src="./assets/images/testimonial-quote-2.png"
+                                                        class="img-fluid">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div ngxSlickItem class="slide">
+                                            <div class="slide testimonial-slide">
+                                                <div class="testimonial-slide-quote-1">
+                                                    <img src="./assets/images/testimonial-quote-1.png"
+                                                        class="img-fluid">
+                                                </div>
+                                                <h3>Rakesh Shriram Mishra</h3>
+                                                <h4>32 years, Food & Beverage</h4>
+                                                <p>Edelweiss Tokio has very good plans where insured is not covered for
+                                                    his untimely death
+                                                    but
+                                                    his loved ones are protected with benefits...
+                                                </p>
+                                                <div class="testimonial-slide-quote-2">
+                                                    <img src="./assets/images/testimonial-quote-2.png"
+                                                        class="img-fluid">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div ngxSlickItem class="slide">
+                                            <div class="slide testimonial-slide">
+                                                <div class="testimonial-slide-quote-1">
+                                                    <img src="./assets/images/testimonial-quote-1.png"
+                                                        class="img-fluid">
+                                                </div>
+                                                <h3>Rakesh Shriram Mishra</h3>
+                                                <h4>32 years, Food & Beverage</h4>
+                                                <p>Edelweiss Tokio has very good plans where insured is not covered for
+                                                    his untimely death
+                                                    but
+                                                    his loved ones are protected with benefits...
+                                                </p>
+                                                <div class="testimonial-slide-quote-2">
+                                                    <img src="./assets/images/testimonial-quote-2.png"
+                                                        class="img-fluid">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div ngxSlickItem class="slide">
+                                            <div class="slide testimonial-slide">
+                                                <div class="testimonial-slide-quote-1">
+                                                    <img src="./assets/images/testimonial-quote-1.png"
+                                                        class="img-fluid">
+                                                </div>
+                                                <h3>Rakesh Shriram Mishra</h3>
+                                                <h4>32 years, Food & Beverage</h4>
+                                                <p>Edelweiss Tokio has very good plans where insured is not covered for
+                                                    his untimely death
+                                                    but
+                                                    his loved ones are protected with benefits...
+                                                </p>
+                                                <div class="testimonial-slide-quote-2">
+                                                    <img src="./assets/images/testimonial-quote-2.png"
+                                                        class="img-fluid">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </ngx-slick-carousel>
+                                </div>
+
+                            </div>
+                            <!-- Customers-wrapper End -->
+
+                            <div class="philosophy-claim-wrapper">
+                                <div class="claim-heading">
+                                    Our Claim Philosophy
+                                </div>
+                                <div class="premium-wrap">
+                                    <div class="col-12">
+                                        <div class="row">
+                                            <div class="col-12 col-md-9">
+                                                <div class=" align-items-center">
+                                                    <div class="premium-left">
+                                                        “We deliver to our promise of prompt settlement of genuine
+                                                        claims through a hassle-free, fair and transparent process.”
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-md-3">
+                                                <div class="row premium-right">
+                                                    <div class="button-wrap d-flex justify-content-center">
+                                                        <button mat-stroked-button color="primary" class=""
+                                                            (click)="ceoLetter()">
+                                                            Letter from CEO
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> <!-- Premim Amount Desktop End -->
+                            </div>
+                            <!-- philosophy-claim-wrapper End -->
+
+                            <div class="articles-wrapper">
+                                <div class="claim-heading">
+                                    Articles
+                                </div>
+                                <div class="articles-card-wrapper d-flex">
+                                    <div class="card articles-card">
+                                        <div class="card-body">
+                                            <h2 class="h2 mb-2">
+                                                How To File A Life Insurance Claim
+                                            </h2>
+                                            <p class="small-text ft-medium">
+                                                In spite of having left behind a term life insurance policy of 1crore,
+                                                Vivek passed away leaving a financial void, not
+                                                to talk of the emotional one.
+                                            </p>
+                                            <div class="read-more text-right">
+                                                <a href="javascript:void(0)" class="link">Read More</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card articles-card">
+                                        <div class="card-body">
+                                            <h2 class="h2 mb-2">
+                                                Reasons Why You Should Buy Life Insurance
+                                            </h2>
+                                            <p class="small-text ft-medium">
+                                                Life is full of uncertainties; you never know what will happen in the
+                                                next one hour or one day or one year and so on.
+                                                There are two kinds of risk involved, ‘The risk of living too long’ and
+                                                <!-- ‘the risk of living too short’. Also, there are
+                                                two kinds of losses that the family will suffer in case of demise of
+                                                their loved ones. -->
+                                            </p>
+                                            <div class="read-more text-right">
+                                                <a href="javascript:void(0)" class="link">Read More</a>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="card articles-card">
+                                        <div class="card-body">
+                                            <h2 class="h2 mb-2">
+                                                How To File A Life Insurance Claim
+                                            </h2>
+                                            <p class="small-text ft-medium">
+                                                In spite of having left behind a term life insurance policy of 1crore,
+                                                Vivek passed away leaving a financial void, not
+                                                to talk of the emotional one.
+                                            </p>
+                                            <div class="read-more text-right">
+                                                <a href="javascript:void(0)" class="link">Read More</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- articles-wrapper End -->
+
+                            <div class="exper-advice d-flex justify-content-center expert-wrapper">
+                                <div class="d-flex align-items-center">
+                                    <span class="sub-heading-muted ft-medium">Need expert advice?</span>
+                                    <div class="button-wrap">
+                                        <button mat-stroked-button color="primary"><img
+                                                src="./assets/icons/chat-orange.svg" alt="" title=""
+                                                class="img-responsive mr-1 align-bottom" />
+                                            Chat with our experts
+                                        </button>
+                                    </div>
+                                    <span class="or ft-semibold">OR</span>
+                                    <div class="button-wrap">
+                                        <button mat-stroked-button color="primary" (click)="getCallBack()"><img
+                                                src="./assets/icons/call-orange.svg" alt="" title=""
+                                                class="img-responsive mr-1 align-bottom" />
+                                            Schedule a call back
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- expert-wrapper End -->
+
+                            <div class="support-available">
+                                <div class="row content-center">
+                                    <img src="./assets/icons/support-24by7.svg" alt="" title="" />
+                                    <div class="d-flex flex-column justify-content-center">
+                                        <h4 class="for-you">We are always there for you</h4>
+                                        <h2 class="email-support">24*7 email support available</h2>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--support-available End -->
+
+                        </div>
+                    </div>
+
+                </ng-template>
+            </mat-tab>
+
+            <mat-tab label="Critical Illness / Hospital Cash Benefit Claim">
+                <ng-template matTabContent>
+
+                    <div class="claims-inner-tabs-wrapper">
+                        <div class="container">
+
+                            <div class="report-claim-wrapper">
+                                <div class="report-claim-heading">
+                                    Report a Claim
+                                </div>
+                                <div class="report-claim-mobile d-flex">
+                                    <div class="report-claim-form-wrap">
+                                        <div class="report-claim-form d-flex">
+                                            <div class="form-filed">
+                                                <mat-form-field>
+                                                    <input matInput placeholder="Nominee Name"
+                                                        [formControl]="nomineeName">
+                                                </mat-form-field>
+                                            </div>
+                                            <div class="form-filed">
+                                                <mat-form-field>
+                                                    <input matInput placeholder="Nominee Number"
+                                                        [formControl]="nomineeNumber">
+                                                </mat-form-field>
+                                            </div>
+                                            <div class="form-filed">
+                                                <mat-form-field>
+                                                    <input matInput placeholder="Policy Number"
+                                                        [formControl]="policyNumber">
+                                                </mat-form-field>
+                                            </div>
+                                        </div>
+                                        <div class="button-wrap text-center">
+                                            <button class="mat-button-lg" mat-raised-button
+                                                color="primary">Submit</button>
+                                        </div>
+                                    </div>
+                                    <div class="claim-settlement">
+                                        <h1 class="h1">Claim Settlement Ratio in FY 2018-19 is at <span>95.82%</span>
+                                        </h1>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- report-claim-wrapper End -->
+
+                            <div class="death-claim-wrapper">
+                                <div class="death-claim-heading">
+                                    An easy 3 step death claim process
+                                </div>
+                                <div class="d-flex justify-content-center death-claim-mob">
+                                    <div class="death-claim intimation-claim d-flex">
+                                        <div class="intimation-claim-img">
+                                            <img src="./assets/icons/intimation-claim.svg" alt="">
+                                        </div>
+                                        <div class="death-claim-list">
+                                            <div class="death-claim-title">
+                                                Intimation of Claim
+                                            </div>
+                                            <ul class="bullet-list">
+                                                <li>Report a claim</li>
+                                                <li>Simple and quick process</li>
+                                            </ul>
+                                        </div>
+                                        <div class="circular-batch">
+                                            1
+                                        </div>
+                                    </div>
+
+                                    <div class="death-claim submission-claim d-flex">
+                                        <div class="intimation-claim-img">
+                                            <img src="./assets/icons/submission-claim.svg" alt="">
+                                        </div>
+                                        <div class="death-claim-list">
+                                            <div class="death-claim-title">
+                                                Submission of Documents
+                                            </div>
+                                            <ul class="bullet-list">
+                                                <li>Check the required documents</li>
+                                                <li>We will inform you if further documents are required</li>
+                                            </ul>
+                                        </div>
+                                        <div class="circular-batch">
+                                            2
+                                        </div>
+                                    </div>
+
+                                    <div class="death-claim decision-claim d-flex">
+                                        <div class="intimation-claim-img">
+                                            <img src="./assets/icons/decision-claim.svg" alt="">
+                                        </div>
+                                        <div class="death-claim-list">
+                                            <div class="death-claim-title">
+                                                Decision on Claim
+                                            </div>
+                                            <ul class="bullet-list">
+                                                <li>Guranteed 1 day death settlement</li>
+                                                <li>Guranteed 1 day death settlement</li>
+                                            </ul>
+                                        </div>
+                                        <div class="circular-batch">
+                                            3
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- death-claim-wrapper End -->
+
+                            <div class="documents-claim-wrapper">
+                                <div class="text-center">
+                                    <div class="claim-heading d-none d-lg-block">
+                                        The following documents need to be submitted for death claim
+                                    </div>
+                                    <div class="claim-heading d-lg-none">
+                                        The following documents need to be submitted
+                                    </div>
+                                    <div class="claim-subheading d-none d-lg-block">
+                                        Submit documents in the format of templates provided
+                                    </div>
+                                    <div class="claim-subheading d-lg-none">
+                                        Select a language to download form
+                                    </div>
+                                    <div class="form-filed">
+                                        <mat-form-field>
+                                            <div class="d-flex align-items-center">
+                                                <mat-select disableOptionCentering
+                                                    panelClass="select-option-ulip-popup-retire"
+                                                    placeholder="Select Language of the Forms"
+                                                    [formControl]="selectLanguage">
+                                                    <mat-option value="option1">English</mat-option>
+                                                    <mat-option value="option2">Hindi</mat-option>
+                                                    <mat-option value="option3">Gujarati</mat-option>
+                                                    <mat-option value="option4">Odia</mat-option>
+                                                    <mat-option value="option4">Punjabi</mat-option>
+                                                </mat-select>
+                                                <img src="./assets/icons/down-arrow.svg" alt="" class="arrow-down">
+                                            </div>
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="button-wrap text-center d-lg-none">
+                                        <a class="download-text" href="images/logo.jpg" download>
+                                            <button mat-raised-button color="primary">
+                                                Download ALL
+                                            </button>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="download-documents">
+
+                                    <div class="content d-flex align-items-center">
+                                        <div class="title-web title-mob">
+                                            Original policy documents
+                                        </div>
+                                        <div class="content-web content-mob">
+                                            <span class="download-icon pointer">
+                                                <img src="./assets/icons/download.svg" alt="">
+                                            </span>
+                                            <a class="download-text" href="images/logo.jpg" download> Download <span
+                                                    class="template">
+                                                    Template </span>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="content d-flex align-items-center">
+                                        <div class="title-web title-mob">
+                                            Claimant photo identity & address proof
+                                        </div>
+                                        <div class="content-web content-mob">
+                                            <span class="download-icon pointer">
+                                                <img src="./assets/icons/download.svg" alt="">
+                                            </span>
+                                            <a class="download-text" href="images/logo.jpg" download> Download <span
+                                                    class="template">
+                                                    Template </span>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="content d-flex align-items-center">
+                                        <div class="title-web title-mob">
+                                            Claimant death statement
+                                        </div>
+                                        <div class="content-web content-mob">
+                                            <span class="download-icon pointer">
+                                                <img src="./assets/icons/download.svg" alt="">
+                                            </span>
+                                            <a class="download-text" href="images/logo.jpg" download> Download <span
+                                                    class="template">
+                                                    Template </span>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="content d-flex align-items-center">
+                                        <div class="title-web title-mob">
+                                            Copy of death certificate
+                                        </div>
+                                        <div class="content-web content-mob">
+                                            <span class="download-icon pointer">
+                                                <img src="./assets/icons/download.svg" alt="">
+                                            </span>
+                                            <a class="download-text" href="images/logo.jpg" download> Download <span
+                                                    class="template">
+                                                    Template </span>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="content d-flex align-items-center">
+                                        <div class="title-web title-mob">
+                                            Copy of cause of death certificate
+                                        </div>
+                                        <div class="content-web content-mob">
+                                            <span class="download-icon pointer">
+                                                <img src="./assets/icons/download.svg" alt="">
+                                            </span>
+                                            <a class="download-text" href="images/logo.jpg" download> Download <span
+                                                    class="template">
+                                                    Template </span>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="content d-flex align-items-center">
+                                        <div class="title-web title-mob">
+                                            Medical records off the life assured being hospitalized (Indoor case papers,
+                                            discharge/death summary, test reports etc.)
+                                        </div>
+                                        <div class="content-web content-mob">
+                                            <span class="download-icon pointer">
+                                                <img src="./assets/icons/download.svg" alt="">
+                                            </span>
+                                            <a class="download-text" href="images/logo.jpg" download> Download <span
+                                                    class="template">
+                                                    Template </span>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="content d-flex align-items-center">
+                                        <div class="title-web title-mob">
+                                            Hospital certificate if the life assured was hospitalized
+                                        </div>
+                                        <div class="content-web content-mob">
+                                            <span class="download-icon pointer">
+                                                <img src="./assets/icons/download.svg" alt="">
+                                            </span>
+                                            <a class="download-text" href="images/logo.jpg" download> Download <span
+                                                    class="template">
+                                                    Template </span>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="content d-flex align-items-center">
+                                        <div class="title-web title-mob">
+                                            Employer certificate for salaried policyholder
+                                        </div>
+                                        <div class="content-web content-mob">
+                                            <span class="download-icon pointer">
+                                                <img src="./assets/icons/download.svg" alt="">
+                                            </span>
+                                            <a class="download-text" href="images/logo.jpg" download> Download <span
+                                                    class="template">
+                                                    Template </span>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="button-wrap text-center d-none d-lg-block">
+                                    <a class="download-text" href="images/logo.jpg" download>
+                                        <button class="mat-button-lg" mat-raised-button color="primary">Download
+                                            ALL
+                                            templates
+                                        </button>
+                                    </a>
+                                </div>
+
+                            </div>
+                            <!--documents-claim-wrapper End -->
+
+                            <div class="faqs section">
+                                <h2 class="heading text-center">FAQs</h2>
+                                <div class="accordion-wrapper">
+                                    <mat-accordion>
+                                        <mat-expansion-panel>
+                                            <mat-expansion-panel-header [collapsedHeight]="'auto'"
+                                                [expandedHeight]="'auto'">
+                                                <mat-panel-title>
+                                                    Which documents do I require to report a claim?
+                                                </mat-panel-title>
+                                            </mat-expansion-panel-header>
+                                            <ul>
+                                                <li>To get a list of the documents required while reporting a Death
+                                                    Claim, please
+                                                </li>
+                                                <li>To get a list of the documents required while reporting a
+                                                    Hospitalisation Claim, please
+                                                </li>
+                                            </ul>
+                                        </mat-expansion-panel>
+                                        <mat-expansion-panel>
+                                            <mat-expansion-panel-header [collapsedHeight]="'auto'"
+                                                [expandedHeight]="'auto'">
+                                                <mat-panel-title>
+                                                    How much time does it take to settle a claim?
+                                                </mat-panel-title>
+                                            </mat-expansion-panel-header>
+                                            <ul>
+                                                <li>To get a list of the documents required while reporting a Death
+                                                    Claim, please
+                                                </li>
+                                                <li>To get a list of the documents required while reporting a
+                                                    Hospitalisation Claim, please
+                                                </li>
+                                            </ul>
+                                        </mat-expansion-panel>
+                                        <mat-expansion-panel>
+                                            <mat-expansion-panel-header [collapsedHeight]="'auto'"
+                                                [expandedHeight]="'auto'">
+                                                <mat-panel-title>
+                                                    Where can I submit claim documents?
+                                                </mat-panel-title>
+                                            </mat-expansion-panel-header>
+                                            <ul>
+                                                <li>To get a list of the documents required while reporting a Death
+                                                    Claim, please
+                                                </li>
+                                                <li>To get a list of the documents required while reporting a
+                                                    Hospitalisation Claim, please
+                                                </li>
+                                            </ul>
+                                        </mat-expansion-panel>
+                                        <mat-expansion-panel>
+                                            <mat-expansion-panel-header [collapsedHeight]="'auto'"
+                                                [expandedHeight]="'auto'">
+                                                <mat-panel-title>
+                                                    What is the claim process for Life Insurance?
+                                                </mat-panel-title>
+                                            </mat-expansion-panel-header>
+                                            <ul>
+                                                <li>To get a list of the documents required while reporting a Death
+                                                    Claim, please
+                                                </li>
+                                                <li>To get a list of the documents required while reporting a
+                                                    Hospitalisation Claim, please
+                                                </li>
+                                            </ul>
+                                        </mat-expansion-panel>
+                                    </mat-accordion>
+                                </div>
+                            </div>
+                            <!-- faqs End -->
+
+                            <div class="our-customers-wrapper">
+
+                                <div class="customers-header text-center">
+                                    <h2 class="claim-heading">Our Customers Say</h2>
+                                    <a href="javascript:void(0)" class="claim-review"> <span>600</span> reviews</a>
+                                </div>
+                                <div class="customers-slider">
+                                    <ngx-slick-carousel class="carousel" #slickModal="slick-carousel"
+                                        [config]="slideConfigCustomers">
+                                        <div ngxSlickItem class="slide">
+                                            <div class="slide testimonial-slide">
+                                                <div class="testimonial-slide-quote-1">
+                                                    <img src="./assets/images/testimonial-quote-1.png"
+                                                        class="img-fluid">
+                                                </div>
+                                                <h3>Ravi Mishra</h3>
+                                                <h4>16-Feb-2016 - IST</h4>
+                                                <p>My wife and I had always dreamed of having a big apartment
+                                                    overlooking the sea. Our wealth builder plan allowed us to
+                                                    make the down payment easily. Thank you Edelweiss Tokio for helping
+                                                    us live our dream.
+                                                </p>
+                                                <div class="testimonial-slide-quote-2">
+                                                    <img src="./assets/images/testimonial-quote-2.png"
+                                                        class="img-fluid">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div ngxSlickItem class="slide">
+                                            <div class="slide testimonial-slide">
+                                                <div class="testimonial-slide-quote-1">
+                                                    <img src="./assets/images/testimonial-quote-1.png"
+                                                        class="img-fluid">
+                                                </div>
+                                                <h3>Rakesh Shriram Mishra</h3>
+                                                <h4>32 years, Food & Beverage</h4>
+                                                <p>Edelweiss Tokio has very good plans where insured is not covered for
+                                                    his untimely death
+                                                    but
+                                                    his loved ones are protected with benefits...
+                                                </p>
+                                                <div class="testimonial-slide-quote-2">
+                                                    <img src="./assets/images/testimonial-quote-2.png"
+                                                        class="img-fluid">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div ngxSlickItem class="slide">
+                                            <div class="slide testimonial-slide">
+                                                <div class="testimonial-slide-quote-1">
+                                                    <img src="./assets/images/testimonial-quote-1.png"
+                                                        class="img-fluid">
+                                                </div>
+                                                <h3>Rakesh Shriram Mishra</h3>
+                                                <h4>32 years, Food & Beverage</h4>
+                                                <p>Edelweiss Tokio has very good plans where insured is not covered for
+                                                    his untimely death
+                                                    but
+                                                    his loved ones are protected with benefits...
+                                                </p>
+                                                <div class="testimonial-slide-quote-2">
+                                                    <img src="./assets/images/testimonial-quote-2.png"
+                                                        class="img-fluid">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div ngxSlickItem class="slide">
+                                            <div class="slide testimonial-slide">
+                                                <div class="testimonial-slide-quote-1">
+                                                    <img src="./assets/images/testimonial-quote-1.png"
+                                                        class="img-fluid">
+                                                </div>
+                                                <h3>Rakesh Shriram Mishra</h3>
+                                                <h4>32 years, Food & Beverage</h4>
+                                                <p>Edelweiss Tokio has very good plans where insured is not covered for
+                                                    his untimely death
+                                                    but
+                                                    his loved ones are protected with benefits...
+                                                </p>
+                                                <div class="testimonial-slide-quote-2">
+                                                    <img src="./assets/images/testimonial-quote-2.png"
+                                                        class="img-fluid">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div ngxSlickItem class="slide">
+                                            <div class="slide testimonial-slide">
+                                                <div class="testimonial-slide-quote-1">
+                                                    <img src="./assets/images/testimonial-quote-1.png"
+                                                        class="img-fluid">
+                                                </div>
+                                                <h3>Rakesh Shriram Mishra</h3>
+                                                <h4>32 years, Food & Beverage</h4>
+                                                <p>Edelweiss Tokio has very good plans where insured is not covered for
+                                                    his untimely death
+                                                    but
+                                                    his loved ones are protected with benefits...
+                                                </p>
+                                                <div class="testimonial-slide-quote-2">
+                                                    <img src="./assets/images/testimonial-quote-2.png"
+                                                        class="img-fluid">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </ngx-slick-carousel>
+                                </div>
+
+                            </div>
+                            <!-- Customers-wrapper End -->
+
+                            <div class="philosophy-claim-wrapper">
+                                <div class="claim-heading">
+                                    Our Claim Philosophy
+                                </div>
+                                <div class="premium-wrap">
+                                    <div class="col-12">
+                                        <div class="row">
+                                            <div class="col-12 col-md-9">
+                                                <div class=" align-items-center">
+                                                    <div class="premium-left">
+                                                        “We deliver to our promise of prompt settlement of genuine
+                                                        claims through a hassle-free, fair and transparent process.”
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-md-3">
+                                                <div class="row premium-right">
+                                                    <div class="button-wrap d-flex justify-content-center">
+                                                        <button mat-stroked-button color="primary" class="">
+                                                            Letter from CEO
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> <!-- Premim Amount Desktop End -->
+                            </div>
+                            <!-- philosophy-claim-wrapper End -->
+
+                            <div class="articles-wrapper">
+                                <div class="claim-heading">
+                                    Articles
+                                </div>
+                                <div class="articles-card-wrapper d-flex">
+                                    <div class="card articles-card">
+                                        <div class="card-body">
+                                            <h2 class="h2 mb-2">
+                                                How To File A Life Insurance Claim
+                                            </h2>
+                                            <p class="small-text ft-medium">
+                                                In spite of having left behind a term life insurance policy of 1crore,
+                                                Vivek passed away leaving a financial void, not
+                                                to talk of the emotional one.
+                                            </p>
+                                            <div class="read-more text-right">
+                                                <a href="javascript:void(0)" class="link">Read More</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card articles-card">
+                                        <div class="card-body">
+                                            <h2 class="h2 mb-2">
+                                                Reasons Why You Should Buy Life Insurance
+                                            </h2>
+                                            <p class="small-text ft-medium">
+                                                Life is full of uncertainties; you never know what will happen in the
+                                                next one hour or one day or one year and so on.
+                                                There are two kinds of risk involved, ‘The risk of living too long’ and
+                                                <!-- ‘the risk of living too short’. Also, there are
+                                                                    two kinds of losses that the family will suffer in case of demise of
+                                                                    their loved ones. -->
+                                            </p>
+                                            <div class="read-more text-right">
+                                                <a href="javascript:void(0)" class="link">Read More</a>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="card articles-card">
+                                        <div class="card-body">
+                                            <h2 class="h2 mb-2">
+                                                How To File A Life Insurance Claim
+                                            </h2>
+                                            <p class="small-text ft-medium">
+                                                In spite of having left behind a term life insurance policy of 1crore,
+                                                Vivek passed away leaving a financial void, not
+                                                to talk of the emotional one.
+                                            </p>
+                                            <div class="read-more text-right">
+                                                <a href="javascript:void(0)" class="link">Read More</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- articles-wrapper End -->
+
+                            <div class="exper-advice d-flex justify-content-center expert-wrapper">
+                                <div class="d-flex align-items-center">
+                                    <span class="sub-heading-muted ft-medium">Need expert advice?</span>
+                                    <div class="button-wrap">
+                                        <button mat-stroked-button color="primary"><img
+                                                src="./assets/icons/chat-orange.svg" alt="" title=""
+                                                class="img-responsive mr-1 align-bottom" />
+                                            Chat with our experts
+                                        </button>
+                                    </div>
+                                    <span class="or ft-semibold">OR</span>
+                                    <div class="button-wrap">
+                                        <button mat-stroked-button color="primary" (click)="getCallBack()"><img
+                                                src="./assets/icons/call-orange.svg" alt="" title=""
+                                                class="img-responsive mr-1 align-bottom" />
+                                            Schedule a call back
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- expert-wrapper End -->
+
+                            <div class="support-available">
+                                <div class="row content-center">
+                                    <img src="./assets/icons/support-24by7.svg" alt="" title="" />
+                                    <div class="d-flex flex-column justify-content-center">
+                                        <h4 class="for-you">We are always there for you</h4>
+                                        <h2 class="email-support">24*7 email support available</h2>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--support-available End -->
+
+                        </div>
+                    </div>
+
+                </ng-template>
+            </mat-tab>
+
+            <mat-tab label="Disability Claim">
+                <ng-template matTabContent>
+
+                    <div class="claims-inner-tabs-wrapper">
+                        <div class="container">
+
+                            <div class="report-claim-wrapper">
+                                <div class="report-claim-heading">
+                                    Report a Claim
+                                </div>
+                                <div class="report-claim-mobile d-flex">
+                                    <div class="report-claim-form-wrap">
+                                        <div class="report-claim-form d-flex">
+                                            <div class="form-filed">
+                                                <mat-form-field>
+                                                    <input matInput placeholder="Nominee Name"
+                                                        [formControl]="nomineeName">
+                                                </mat-form-field>
+                                            </div>
+                                            <div class="form-filed">
+                                                <mat-form-field>
+                                                    <input matInput placeholder="Nominee Number"
+                                                        [formControl]="nomineeNumber">
+                                                </mat-form-field>
+                                            </div>
+                                            <div class="form-filed">
+                                                <mat-form-field>
+                                                    <input matInput placeholder="Policy Number"
+                                                        [formControl]="policyNumber">
+                                                </mat-form-field>
+                                            </div>
+                                        </div>
+                                        <div class="button-wrap text-center">
+                                            <button class="mat-button-lg" mat-raised-button
+                                                color="primary">Submit</button>
+                                        </div>
+                                    </div>
+                                    <div class="claim-settlement">
+                                        <h1 class="h1">Claim Settlement Ratio in FY 2018-19 is at <span>95.82%</span>
+                                        </h1>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- report-claim-wrapper End -->
+
+                            <div class="death-claim-wrapper">
+                                <div class="death-claim-heading">
+                                    An easy 3 step death claim process
+                                </div>
+                                <div class="d-flex justify-content-center death-claim-mob">
+                                    <div class="death-claim intimation-claim d-flex">
+                                        <div class="intimation-claim-img">
+                                            <img src="./assets/icons/intimation-claim.svg" alt="">
+                                        </div>
+                                        <div class="death-claim-list">
+                                            <div class="death-claim-title">
+                                                Intimation of Claim
+                                            </div>
+                                            <ul class="bullet-list">
+                                                <li>Report a claim</li>
+                                                <li>Simple and quick process</li>
+                                            </ul>
+                                        </div>
+                                        <div class="circular-batch">
+                                            1
+                                        </div>
+                                    </div>
+
+                                    <div class="death-claim submission-claim d-flex">
+                                        <div class="intimation-claim-img">
+                                            <img src="./assets/icons/submission-claim.svg" alt="">
+                                        </div>
+                                        <div class="death-claim-list">
+                                            <div class="death-claim-title">
+                                                Submission of Documents
+                                            </div>
+                                            <ul class="bullet-list">
+                                                <li>Check the required documents</li>
+                                                <li>We will inform you if further documents are required</li>
+                                            </ul>
+                                        </div>
+                                        <div class="circular-batch">
+                                            2
+                                        </div>
+                                    </div>
+
+                                    <div class="death-claim decision-claim d-flex">
+                                        <div class="intimation-claim-img">
+                                            <img src="./assets/icons/decision-claim.svg" alt="">
+                                        </div>
+                                        <div class="death-claim-list">
+                                            <div class="death-claim-title">
+                                                Decision on Claim
+                                            </div>
+                                            <ul class="bullet-list">
+                                                <li>Guranteed 1 day death settlement</li>
+                                                <li>Guranteed 1 day death settlement</li>
+                                            </ul>
+                                        </div>
+                                        <div class="circular-batch">
+                                            3
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- death-claim-wrapper End -->
+
+                            <div class="documents-claim-wrapper">
+                                <div class="text-center">
+                                    <div class="claim-heading d-none d-lg-block">
+                                        The following documents need to be submitted for death claim
+                                    </div>
+                                    <div class="claim-heading d-lg-none">
+                                        The following documents need to be submitted
+                                    </div>
+                                    <div class="claim-subheading d-none d-lg-block">
+                                        Submit documents in the format of templates provided
+                                    </div>
+                                    <div class="claim-subheading d-lg-none">
+                                        Select a language to download form
+                                    </div>
+                                    <div class="form-filed">
+                                        <mat-form-field>
+                                            <div class="d-flex align-items-center">
+                                                <mat-select disableOptionCentering
+                                                    panelClass="select-option-ulip-popup-retire"
+                                                    placeholder="Select Language of the Forms"
+                                                    [formControl]="selectLanguage">
+                                                    <mat-option value="option1">English</mat-option>
+                                                    <mat-option value="option2">Hindi</mat-option>
+                                                    <mat-option value="option3">Gujarati</mat-option>
+                                                    <mat-option value="option4">Odia</mat-option>
+                                                    <mat-option value="option4">Punjabi</mat-option>
+                                                </mat-select>
+                                                <img src="./assets/icons/down-arrow.svg" alt="" class="arrow-down">
+                                            </div>
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="button-wrap text-center d-lg-none">
+                                        <a class="download-text" href="images/logo.jpg" download>
+                                            <button mat-raised-button color="primary">
+                                                Download ALL
+                                            </button>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="download-documents">
+
+                                    <div class="content d-flex align-items-center">
+                                        <div class="title-web title-mob">
+                                            Original policy documents
+                                        </div>
+                                        <div class="content-web content-mob">
+                                            <span class="download-icon pointer">
+                                                <img src="./assets/icons/download.svg" alt="">
+                                            </span>
+                                            <a class="download-text" href="images/logo.jpg" download> Download <span
+                                                    class="template">
+                                                    Template </span>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="content d-flex align-items-center">
+                                        <div class="title-web title-mob">
+                                            Claimant photo identity & address proof
+                                        </div>
+                                        <div class="content-web content-mob">
+                                            <span class="download-icon pointer">
+                                                <img src="./assets/icons/download.svg" alt="">
+                                            </span>
+                                            <a class="download-text" href="images/logo.jpg" download> Download <span
+                                                    class="template">
+                                                    Template </span>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="content d-flex align-items-center">
+                                        <div class="title-web title-mob">
+                                            Claimant death statement
+                                        </div>
+                                        <div class="content-web content-mob">
+                                            <span class="download-icon pointer">
+                                                <img src="./assets/icons/download.svg" alt="">
+                                            </span>
+                                            <a class="download-text" href="images/logo.jpg" download> Download <span
+                                                    class="template">
+                                                    Template </span>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="content d-flex align-items-center">
+                                        <div class="title-web title-mob">
+                                            Copy of death certificate
+                                        </div>
+                                        <div class="content-web content-mob">
+                                            <span class="download-icon pointer">
+                                                <img src="./assets/icons/download.svg" alt="">
+                                            </span>
+                                            <a class="download-text" href="images/logo.jpg" download> Download <span
+                                                    class="template">
+                                                    Template </span>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="content d-flex align-items-center">
+                                        <div class="title-web title-mob">
+                                            Copy of cause of death certificate
+                                        </div>
+                                        <div class="content-web content-mob">
+                                            <span class="download-icon pointer">
+                                                <img src="./assets/icons/download.svg" alt="">
+                                            </span>
+                                            <a class="download-text" href="images/logo.jpg" download> Download <span
+                                                    class="template">
+                                                    Template </span>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="content d-flex align-items-center">
+                                        <div class="title-web title-mob">
+                                            Medical records off the life assured being hospitalized (Indoor case papers,
+                                            discharge/death summary, test reports etc.)
+                                        </div>
+                                        <div class="content-web content-mob">
+                                            <span class="download-icon pointer">
+                                                <img src="./assets/icons/download.svg" alt="">
+                                            </span>
+                                            <a class="download-text" href="images/logo.jpg" download> Download <span
+                                                    class="template">
+                                                    Template </span>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="content d-flex align-items-center">
+                                        <div class="title-web title-mob">
+                                            Hospital certificate if the life assured was hospitalized
+                                        </div>
+                                        <div class="content-web content-mob">
+                                            <span class="download-icon pointer">
+                                                <img src="./assets/icons/download.svg" alt="">
+                                            </span>
+                                            <a class="download-text" href="images/logo.jpg" download> Download <span
+                                                    class="template">
+                                                    Template </span>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="content d-flex align-items-center">
+                                        <div class="title-web title-mob">
+                                            Employer certificate for salaried policyholder
+                                        </div>
+                                        <div class="content-web content-mob">
+                                            <span class="download-icon pointer">
+                                                <img src="./assets/icons/download.svg" alt="">
+                                            </span>
+                                            <a class="download-text" href="images/logo.jpg" download> Download <span
+                                                    class="template">
+                                                    Template </span>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="button-wrap text-center d-none d-lg-block">
+                                    <a class="download-text" href="images/logo.jpg" download>
+                                        <button class="mat-button-lg" mat-raised-button color="primary">Download
+                                            ALL
+                                            templates
+                                        </button>
+                                    </a>
+                                </div>
+
+                            </div>
+                            <!--documents-claim-wrapper End -->
+
+                            <div class="faqs section">
+                                <h2 class="heading text-center">FAQs</h2>
+                                <div class="accordion-wrapper">
+                                    <mat-accordion>
+                                        <mat-expansion-panel>
+                                            <mat-expansion-panel-header [collapsedHeight]="'auto'"
+                                                [expandedHeight]="'auto'">
+                                                <mat-panel-title>
+                                                    Which documents do I require to report a claim?
+                                                </mat-panel-title>
+                                            </mat-expansion-panel-header>
+                                            <ul>
+                                                <li>To get a list of the documents required while reporting a Death
+                                                    Claim, please
+                                                </li>
+                                                <li>To get a list of the documents required while reporting a
+                                                    Hospitalisation Claim, please
+                                                </li>
+                                            </ul>
+                                        </mat-expansion-panel>
+                                        <mat-expansion-panel>
+                                            <mat-expansion-panel-header [collapsedHeight]="'auto'"
+                                                [expandedHeight]="'auto'">
+                                                <mat-panel-title>
+                                                    How much time does it take to settle a claim?
+                                                </mat-panel-title>
+                                            </mat-expansion-panel-header>
+                                            <ul>
+                                                <li>To get a list of the documents required while reporting a Death
+                                                    Claim, please
+                                                </li>
+                                                <li>To get a list of the documents required while reporting a
+                                                    Hospitalisation Claim, please
+                                                </li>
+                                            </ul>
+                                        </mat-expansion-panel>
+                                        <mat-expansion-panel>
+                                            <mat-expansion-panel-header [collapsedHeight]="'auto'"
+                                                [expandedHeight]="'auto'">
+                                                <mat-panel-title>
+                                                    Where can I submit claim documents?
+                                                </mat-panel-title>
+                                            </mat-expansion-panel-header>
+                                            <ul>
+                                                <li>To get a list of the documents required while reporting a Death
+                                                    Claim, please
+                                                </li>
+                                                <li>To get a list of the documents required while reporting a
+                                                    Hospitalisation Claim, please
+                                                </li>
+                                            </ul>
+                                        </mat-expansion-panel>
+                                        <mat-expansion-panel>
+                                            <mat-expansion-panel-header [collapsedHeight]="'auto'"
+                                                [expandedHeight]="'auto'">
+                                                <mat-panel-title>
+                                                    What is the claim process for Life Insurance?
+                                                </mat-panel-title>
+                                            </mat-expansion-panel-header>
+                                            <ul>
+                                                <li>To get a list of the documents required while reporting a Death
+                                                    Claim, please
+                                                </li>
+                                                <li>To get a list of the documents required while reporting a
+                                                    Hospitalisation Claim, please
+                                                </li>
+                                            </ul>
+                                        </mat-expansion-panel>
+                                    </mat-accordion>
+                                </div>
+                            </div>
+                            <!-- faqs End -->
+
+                            <div class="our-customers-wrapper">
+
+                                <div class="customers-header text-center">
+                                    <h2 class="claim-heading">Our Customers Say</h2>
+                                    <a href="javascript:void(0)" class="claim-review"> <span>600</span> reviews</a>
+                                </div>
+                                <div class="customers-slider">
+                                    <ngx-slick-carousel class="carousel" #slickModal="slick-carousel"
+                                        [config]="slideConfigCustomers">
+                                        <div ngxSlickItem class="slide">
+                                            <div class="slide testimonial-slide">
+                                                <div class="testimonial-slide-quote-1">
+                                                    <img src="./assets/images/testimonial-quote-1.png"
+                                                        class="img-fluid">
+                                                </div>
+                                                <h3>Ravi Mishra</h3>
+                                                <h4>16-Feb-2016 - IST</h4>
+                                                <p>My wife and I had always dreamed of having a big apartment
+                                                    overlooking the sea. Our wealth builder plan allowed us to
+                                                    make the down payment easily. Thank you Edelweiss Tokio for helping
+                                                    us live our dream.
+                                                </p>
+                                                <div class="testimonial-slide-quote-2">
+                                                    <img src="./assets/images/testimonial-quote-2.png"
+                                                        class="img-fluid">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div ngxSlickItem class="slide">
+                                            <div class="slide testimonial-slide">
+                                                <div class="testimonial-slide-quote-1">
+                                                    <img src="./assets/images/testimonial-quote-1.png"
+                                                        class="img-fluid">
+                                                </div>
+                                                <h3>Rakesh Shriram Mishra</h3>
+                                                <h4>32 years, Food & Beverage</h4>
+                                                <p>Edelweiss Tokio has very good plans where insured is not covered for
+                                                    his untimely death
+                                                    but
+                                                    his loved ones are protected with benefits...
+                                                </p>
+                                                <div class="testimonial-slide-quote-2">
+                                                    <img src="./assets/images/testimonial-quote-2.png"
+                                                        class="img-fluid">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div ngxSlickItem class="slide">
+                                            <div class="slide testimonial-slide">
+                                                <div class="testimonial-slide-quote-1">
+                                                    <img src="./assets/images/testimonial-quote-1.png"
+                                                        class="img-fluid">
+                                                </div>
+                                                <h3>Rakesh Shriram Mishra</h3>
+                                                <h4>32 years, Food & Beverage</h4>
+                                                <p>Edelweiss Tokio has very good plans where insured is not covered for
+                                                    his untimely death
+                                                    but
+                                                    his loved ones are protected with benefits...
+                                                </p>
+                                                <div class="testimonial-slide-quote-2">
+                                                    <img src="./assets/images/testimonial-quote-2.png"
+                                                        class="img-fluid">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div ngxSlickItem class="slide">
+                                            <div class="slide testimonial-slide">
+                                                <div class="testimonial-slide-quote-1">
+                                                    <img src="./assets/images/testimonial-quote-1.png"
+                                                        class="img-fluid">
+                                                </div>
+                                                <h3>Rakesh Shriram Mishra</h3>
+                                                <h4>32 years, Food & Beverage</h4>
+                                                <p>Edelweiss Tokio has very good plans where insured is not covered for
+                                                    his untimely death
+                                                    but
+                                                    his loved ones are protected with benefits...
+                                                </p>
+                                                <div class="testimonial-slide-quote-2">
+                                                    <img src="./assets/images/testimonial-quote-2.png"
+                                                        class="img-fluid">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div ngxSlickItem class="slide">
+                                            <div class="slide testimonial-slide">
+                                                <div class="testimonial-slide-quote-1">
+                                                    <img src="./assets/images/testimonial-quote-1.png"
+                                                        class="img-fluid">
+                                                </div>
+                                                <h3>Rakesh Shriram Mishra</h3>
+                                                <h4>32 years, Food & Beverage</h4>
+                                                <p>Edelweiss Tokio has very good plans where insured is not covered for
+                                                    his untimely death
+                                                    but
+                                                    his loved ones are protected with benefits...
+                                                </p>
+                                                <div class="testimonial-slide-quote-2">
+                                                    <img src="./assets/images/testimonial-quote-2.png"
+                                                        class="img-fluid">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </ngx-slick-carousel>
+                                </div>
+
+                            </div>
+                            <!-- Customers-wrapper End -->
+
+                            <div class="philosophy-claim-wrapper">
+                                <div class="claim-heading">
+                                    Our Claim Philosophy
+                                </div>
+                                <div class="premium-wrap">
+                                    <div class="col-12">
+                                        <div class="row">
+                                            <div class="col-12 col-md-9">
+                                                <div class=" align-items-center">
+                                                    <div class="premium-left">
+                                                        “We deliver to our promise of prompt settlement of genuine
+                                                        claims through a hassle-free, fair and transparent process.”
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-md-3">
+                                                <div class="row premium-right">
+                                                    <div class="button-wrap d-flex justify-content-center">
+                                                        <button mat-stroked-button color="primary" class="">
+                                                            Letter from CEO
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> <!-- Premim Amount Desktop End -->
+                            </div>
+                            <!-- philosophy-claim-wrapper End -->
+
+                            <div class="articles-wrapper">
+                                <div class="claim-heading">
+                                    Articles
+                                </div>
+                                <div class="articles-card-wrapper d-flex">
+                                    <div class="card articles-card">
+                                        <div class="card-body">
+                                            <h2 class="h2 mb-2">
+                                                How To File A Life Insurance Claim
+                                            </h2>
+                                            <p class="small-text ft-medium">
+                                                In spite of having left behind a term life insurance policy of 1crore,
+                                                Vivek passed away leaving a financial void, not
+                                                to talk of the emotional one.
+                                            </p>
+                                            <div class="read-more text-right">
+                                                <a href="javascript:void(0)" class="link">Read More</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card articles-card">
+                                        <div class="card-body">
+                                            <h2 class="h2 mb-2">
+                                                Reasons Why You Should Buy Life Insurance
+                                            </h2>
+                                            <p class="small-text ft-medium">
+                                                Life is full of uncertainties; you never know what will happen in the
+                                                next one hour or one day or one year and so on.
+                                                There are two kinds of risk involved, ‘The risk of living too long’ and
+                                                <!-- ‘the risk of living too short’. Also, there are
+                                                                    two kinds of losses that the family will suffer in case of demise of
+                                                                    their loved ones. -->
+                                            </p>
+                                            <div class="read-more text-right">
+                                                <a href="javascript:void(0)" class="link">Read More</a>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="card articles-card">
+                                        <div class="card-body">
+                                            <h2 class="h2 mb-2">
+                                                How To File A Life Insurance Claim
+                                            </h2>
+                                            <p class="small-text ft-medium">
+                                                In spite of having left behind a term life insurance policy of 1crore,
+                                                Vivek passed away leaving a financial void, not
+                                                to talk of the emotional one.
+                                            </p>
+                                            <div class="read-more text-right">
+                                                <a href="javascript:void(0)" class="link">Read More</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- articles-wrapper End -->
+
+                            <div class="exper-advice d-flex justify-content-center expert-wrapper">
+                                <div class="d-flex align-items-center">
+                                    <span class="sub-heading-muted ft-medium">Need expert advice?</span>
+                                    <div class="button-wrap">
+                                        <button mat-stroked-button color="primary"><img
+                                                src="./assets/icons/chat-orange.svg" alt="" title=""
+                                                class="img-responsive mr-1 align-bottom" />
+                                            Chat with our experts
+                                        </button>
+                                    </div>
+                                    <span class="or ft-semibold">OR</span>
+                                    <div class="button-wrap">
+                                        <button mat-stroked-button color="primary" (click)="getCallBack()"><img
+                                                src="./assets/icons/call-orange.svg" alt="" title=""
+                                                class="img-responsive mr-1 align-bottom" />
+                                            Schedule a call back
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- expert-wrapper End -->
+
+                            <div class="support-available">
+                                <div class="row content-center">
+                                    <img src="./assets/icons/support-24by7.svg" alt="" title="" />
+                                    <div class="d-flex flex-column justify-content-center">
+                                        <h4 class="for-you">We are always there for you</h4>
+                                        <h2 class="email-support">24*7 email support available</h2>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--support-available End -->
+
+                        </div>
+                    </div>
+
+                </ng-template>
+            </mat-tab>
+        </mat-tab-group>
+    </div>
+
+
+
+
+    <div *ngIf="!isHide" class="track-your-claim ">
+        <h2 class="h2">Track Your Claim</h2>
+        <div class="track-your-claim-form">
+            <div class="form-filed">
+                <mat-form-field>
+                    <input matInput placeholder="Policy Number" [formControl]="yourclaim">
+                </mat-form-field>
+            </div>
+            <div class="button-wrap">
+                <button mat-raised-button color="primary" (click)=toggleDisplay()>Submit</button>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="!isShow" class="claim-status-wrap">
+        <h2 class="h2 d-lg-none">Track Your Claim</h2>
+        <div class="track-your-claim-status d-flex align-items-center">
+            <div class="claim-status-img">
+                <img src="./assets/icons/claim-status.svg" alt="">
+            </div>
+            <div class="claim-status">
+                Claim status: <span>Under Process</span>
+            </div>
+            <div class="close-small pointer">
+                <a (click)=toggleDisplay()><img src="./assets/icons/close-small.svg" alt=""></a>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Footer Start -->
+<app-footer></app-footer>
+<!-- Footer End -->

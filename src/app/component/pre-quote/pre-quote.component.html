@@ -1,0 +1,257 @@
+<!-- Header Start -->
+<app-product-header></app-product-header>
+<!-- Header End -->
+
+<section class="get-quote-wrapper bg-gray">
+    <div class="container">
+        <div class="quote-header">
+            <h2 class="quote-heading">Hi<span class="d-lg-none">,</span> Sachiananda Prasad Reddy!</h2>
+            <p class="quote-subtext">Fill some more details</p>
+        </div> <!-- quote-header div end-->
+        <div class="quote-form">
+            <div class="row">
+                <div class="col-12 col-lg-8">
+                    <div class="card card-boder card-shadow">
+                        <div class="card-body p-lg-3">
+                            <div class="row">
+                                <div class="col-12 col-lg-6">
+                                    <div class="form-filed name-filed">
+                                        <mat-form-field>
+                                            <input matInput placeholder="Full Name" [formControl]="customerName">
+                                            <mat-error *ngIf="customerName.invalid">{{getErrorMessageCustomerName()}}
+                                            </mat-error>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                                <!-- <div class="col-12 col-lg-6">
+                                    <div class="form-filed">
+                                        <mat-form-field floatLabel="never"  >
+                                            <input matInput [matDatepicker]="picker2" (focus)="picker2.open()"
+                                                placeholder="End Date" [formControl]="pageEndDate" readonly>
+                                            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                                            <mat-datepicker #picker2></mat-datepicker>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                                 -->
+                                <div class="col-12 col-lg-6">
+                                    <div class="form-filed">
+                                        <mat-form-field>
+                                            <input matInput placeholder="Date of birth (dd/mm/yyyy)"
+                                                [formControl]="dob">
+                                            <mat-error *ngIf="dob.invalid">{{getErrorMessageDob()}}
+                                            </mat-error>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-lg-6 mb-3 mb-md-0">
+                                    <div class="form-filed">
+                                        <label class="form-label">Gender</label>
+                                        <mat-button-toggle-group name="fontStyle" aria-label="Font Style"
+                                            [formControl]="gender">
+                                            <mat-button-toggle value="male">Male</mat-button-toggle>
+                                            <mat-button-toggle value="female">Female</mat-button-toggle>
+                                            <!-- <mat-button-toggle value="other">Other</mat-button-toggle> -->
+                                        </mat-button-toggle-group>
+                                        <mat-error class="error-custom" *ngIf="gender.invalid">
+                                            {{getErrorMessageGender()}}
+                                        </mat-error>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-lg-6 mt-2">
+                                    <div class="form-filed">
+                                        <mat-form-field>
+                                            <div class="d-flex align-items-center">
+                                                <mat-select disableOptionCentering panelClass="select-option-pre-quote"
+                                                    placeholder="Annual income range" [formControl]="annualIncome">
+                                                    <mat-option value="option">Less than 5 Lacs </mat-option>
+                                                    <mat-option value="option">Less than 5 Lacs</mat-option>
+                                                    <mat-option value="option">Less than 5 Lacs</mat-option>
+                                                </mat-select>
+                                                <img src="./assets/icons/down-arrow.svg" alt="" class="arrow-down">
+                                            </div>
+                                            <mat-error *ngIf="annualIncome.invalid">{{getErrorMessageAnnualIncome()}}
+                                            </mat-error>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-lg-6">
+                                    <div class="form-filed custom-mobile-input">
+                                        <mat-form-field>
+                                            <input matInput placeholder="Mobile Number" [formControl]="MobileNumber"
+                                                minlength="10" maxlength="10" type="number" pattern="\d*" (focusin)="mobilePrefix1 = true"
+                                                (focusout)="mobilePrefix1 = false; getValue1($event.target.value)" #mobileNumber (keypress)="getLimit($event, mobileNumber)">
+                                            <span *ngIf="mobilePrefix1" class="mob-prefixer">+91 </span>
+
+                                            <mat-error *ngIf="MobileNumber.invalid">{{getErrorMessageMobile()}}
+                                            </mat-error>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+
+                                <!-- <div>
+                                <input matInput placeholder="YYYY" class="yearb" value="" type="number" #yearText (keyup)="getMaxLength($event,4,yearText)" />
+                                </div> -->
+
+                                <div class="col-12 col-lg-6">
+                                    <div class="form-filed">
+                                        <mat-form-field>
+                                            <input matInput placeholder="E-mail address" [formControl]="Emailaddress">
+                                            <mat-error *ngIf="Emailaddress.invalid">{{getErrorMessageEmail()}}
+                                            </mat-error>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-lg-6 mb-2">
+                                    <div class="form-filed">
+                                        <div class="d-flex flex-column">
+                                            <label class="form-label">Do you smoke?</label>
+                                            <mat-button-toggle-group name="fontStyle" aria-label="Font Style"
+                                                [formControl]="isSmoker">
+                                                <mat-button-toggle value="yes">Yes</mat-button-toggle>
+                                                <mat-button-toggle value="no">No</mat-button-toggle>
+                                            </mat-button-toggle-group>
+                                            <mat-error class="error-custom" *ngIf="isSmoker.invalid">
+                                                {{getErrorMessageIsSmoker()}}
+                                            </mat-error>
+                                        </div>
+                                    </div>
+                                    <span class="small-text mt-2 d-block">Select 'Yes' if you have smoked in the last 12
+                                        months</span>
+                                </div>
+                                <div class="col-12 col-lg-6">
+                                    <div class="form-filed">
+                                        <div class="d-flex flex-column">
+                                            <label class="form-label">Are you married?</label>
+                                            <mat-button-toggle-group name="fontStyle" aria-label="Font Style"
+                                                [formControl]="isMarried" #isMArriedToggle="matButtonToggleGroup" (change)="isMarriedCheck(isMArriedToggle.value)">
+                                                <mat-button-toggle value="yes">Yes</mat-button-toggle>
+                                                <mat-button-toggle value="no">No</mat-button-toggle>
+                                            </mat-button-toggle-group>
+                                            <mat-error class="error-custom" *ngIf="isMarried.invalid">
+                                                {{getErrorMessageIsMarried()}}
+                                            </mat-error>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-lg-6 mt-4 mt-lg-0" *ngIf="isMarriedStatus">
+                                    <div class="form-filed">
+                                        <mat-form-field>
+                                            <input matInput placeholder="Date of Marriage (dd/mm/yyyy)"
+                                                [formControl]="dom">
+                                            <mat-error *ngIf="dom.invalid">{{getErrorMessageDom()}}
+                                            </mat-error>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-lg-6" *ngIf="isMarriedStatus">
+                                    <div class="form-filed">
+                                        <mat-form-field>
+                                            <input matInput placeholder="Spouse Name" [formControl]="spouseName">
+                                            <mat-error *ngIf="spouseName.invalid">{{getErrorMessageSpouseName()}}
+                                            </mat-error>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-lg-6" *ngIf="isMarriedStatus" >
+                                    <div class="form-filed">
+                                        <mat-form-field>
+                                            <input matInput placeholder="Lorem Ipsum" [formControl]="loremIpsum">
+                                            <mat-error *ngIf="loremIpsum.invalid">{{getErrorMessageLoremIpsum()}}
+                                            </mat-error>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+
+                                <div class="sticky-mob">
+                                    <div class="col-12 mt-0 quote-wrapper">
+                                        <p class="quote-form-subtext">By clicking <span>‘Get Quote’</span> , I authorize
+                                            Edelweiss Tokio Life to contact me overriding about my registry on NDNC.</p>
+                                    </div>
+
+                                    <div class="col-12 p-0 p-md-3">
+                                        <div class="button-wrap but-full-width">
+                                            <button class="mat-button-lg" mat-raised-button color="primary" (click)="getQuate()">Get Quote</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- Get-Quote Form End -->
+                <div class="col-12 col-lg-4">
+                    <div class="quote-slider">
+                        <div class="rectangle">
+                            <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
+                                <div ngxSlickItem class="slide">
+                                    <div class="slider-box">
+                                        <div class="slider-img icon-box">
+                                            <img src="./assets/images/get-quote-slider-benefits.png" alt="">
+                                        </div>
+                                        <div class="slider-text">
+                                            <h4 class="slider-heading">Optional Benefits</h4>
+                                            <ul class="feature-list">
+                                                <li class="d-flex align-items-center slider-subtext"><img
+                                                        src="./assets/icons/verified.png" alt="" class="verified"> Cover for spouse</li>
+                                                <li class="d-flex align-items-center slider-subtext"><img
+                                                        src="./assets/icons/verified.png" alt="" class="verified">Waiver
+                                                    of premium</li>
+                                                <li class="d-flex align-items-center slider-subtext"><img
+                                                        src="./assets/icons/verified.png" alt=""
+                                                        class="verified">Increase your life cover</li>
+                                                <li class="d-flex align-items-center slider-subtext"><img
+                                                        src="./assets/icons/verified.png" alt=""
+                                                        class="verified">Critical illness rider</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div ngxSlickItem class="slide">
+                                    <div class="slider-box">
+                                        <div class="slider-img icon-box">
+                                            <img src="./assets/images/get-quote-slider-spouse.png" alt="">
+                                        </div>
+                                        <div class="slider-text">
+                                            <h4 class="slider-heading">Cover for spouse</h4>
+                                            <p class="slider-subtext">
+                                                50% of the life cover (max up to 1cr.) will start for your spouse without paying extra premium.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div ngxSlickItem class="slide">
+                                    <div class="slider-box">
+                                        <div class="slider-img icon-box">
+                                            <img src="./assets/images/get-quote-slider-benefits.png" alt="">
+                                        </div>
+                                        <div class="slider-text">
+                                            <h4 class="slider-heading">Optional Benefits</h4>
+                                            <ul>
+                                                <li class="d-flex align-items-center slider-subtext"><img
+                                                        src="./assets/icons/verified.png" alt="" class="verified">Cover
+                                                    for spouse</li>
+                                                <li class="d-flex align-items-center slider-subtext"><img
+                                                        src="./assets/icons/verified.png" alt="" class="verified">Waiver
+                                                    of premium</li>
+                                                <li class="d-flex align-items-center slider-subtext"><img
+                                                        src="./assets/icons/verified.png" alt=""
+                                                        class="verified">Increase your life cover</li>
+                                                <li class="d-flex align-items-center slider-subtext"><img
+                                                        src="./assets/icons/verified.png" alt=""
+                                                        class="verified">Critical illness rider</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </ngx-slick-carousel>
+                        </div>
+                    </div>
+                </div> <!-- Get-Quote Slider End -->
+            </div>
+        </div> <!-- quote-form div end-->
+    </div> <!-- container End -->
+</section> <!-- get-quote-wrapper End -->
+
+<!-- Footer Start -->
+<app-footer></app-footer>
+<!-- Footer End -->

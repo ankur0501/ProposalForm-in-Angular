@@ -1,0 +1,94 @@
+/** premium-history **/ 
+.premium-form { padding: 7px 0; }
+.premium-details { padding: 7px 15px; }
+.mob-prefixer { display: inline-block; position: absolute; font-size: 18px; color: #343434; left: 0; top: 5px; font-family:'Montserrat-Bold'; line-height: 25px; }
+.premium-history .title { font-family:'Montserrat-Medium'; font-size: 16px; color: #8e8e8e; }
+.sub-title { font-family: 'Montserrat-Regular'; font-size: 11px; color: #8e8e8e; }
+.amt-words { font-family: 'Montserrat-SemiBold'; font-size: 16px; color: #c7c7c7; }
+::ng-deep .custom-amount-input .mat-input-element { padding-left: 18px; color: #343434; font-family: Montserrat-Medium; font-size: 18px; }
+::ng-deep .custom-mat-select .mat-form-field-appearance-legacy .mat-form-field-label { top: 23px; }
+::ng-deep .custom-mat-select .mat-select-value { font-size: 18px; color: #343434; font-family: 'Montserrat-Medium'; }
+::ng-deep .payfor-wrapper .mat-form-field { width: 60% }
+.premium-history-container .button-wrap .mat-button-lg { padding: 10px 20px; }
+.return-amt { font-family: Montserrat-Bold; font-size: 24px; color: #124093; }
+.returns-wrapper { align-items: center; }
+.returns-wrapper .button-ckeck { text-align: right; }
+.ideal-partner { padding: 40px 0 60px }
+.compare-plan-benefits { padding: 60px 0 10px}
+.compare-plan-benefits .heading { margin-bottom: 20px }
+.compare-plan-benefits::ng-deep .mat-expansion-panel-header-title { justify-content: center }
+.compare-plan-benefits::ng-deep .mat-expansion-panel-body { padding: 0 }
+.offers-you .section-header { margin-bottom: 70px }
+.offers-you .section-pannel { margin-bottom: 70px }
+.compare-plans { margin-bottom: 40px }
+.investment-amount .card-body { padding: 15px }
+.investment-amount .card .h1 { font-size: 22px; }
+.investment-amount .sub-heading { font-size: 16px; font-family: 'Montserrat-Bold'; color: #3c3c3c }
+.investment-amount .subtext { font-size: 14px; margin: 2px 0 }
+.investment-amount .h1 { font-size: 28px; }
+.investment-amount .h1 .year { font-family: 'Montserrat-Medium'; color: #868686; font-size: 22px; }
+.compare-table td { padding: 20px 10px }
+
+.investment-amount{display: none;}
+.sticky {
+    background: #fff;
+    box-shadow: 0 3px 12px 0 rgba(0,0,0,.08);
+    position: fixed;
+    top: 0;
+    /* height: 120px; */
+    width: 100%;
+    z-index: 2000;
+    display: block;
+}
+/**** Media Query Start ****/ 
+
+@media (max-width:992px) {
+    .faqs .container { padding: 0 }
+    .faqs .tab-inner { padding: 10px 15px }
+    .compare-plan-benefits { padding: 30px 0 0 }
+    .compare-plan-benefits::ng-deep .mat-expansion-panel-header-title { justify-content: flex-start }
+    .compare-plans { margin-bottom: 20px }
+    .offers-you .section-pannel { margin-bottom: 30px }
+    .ideal-partner { padding: 30px 0 }
+    .benefits-type { display: flex; align-items: center; }
+    .benefits-type li { font-family: 'Montserrat-SemiBold'; padding: 0 2px; text-align: center; border-right: 1px solid #e2e2e2; border-bottom: none; font-size: 12px; color: #343434; flex: 1 }
+    .benefits-type li:last-child { border-right: none }
+    .benefits-header { display: flex; justify-content: space-between; margin-bottom: 5px; padding: 0 10px }
+    .benefits-header .lable { font-size: 12px; color: #343434; }
+    .benefits-header .info img { width: 12px }
+    .benefits-details { padding: 7px 0; border-radius: 10px; border: solid 1px #dddddd; margin-top: 10px; }
+    .action-box { width: 20px; height: 20px }
+    .action-box.remove { background-size: 50%; }
+    .action-box.add { background-size: 70%; }
+
+    .edit-pensil { display: none; padding: 0; margin-left: 10px;}
+    .edit-pensil img { width: 15px}
+
+    .basic-details li { margin-bottom: 20px}
+    .basic-details li:last-child { margin-bottom: 0}
+    .basic-details .lable {
+        font-size: 14px;
+        font-family: 'Montserrat-Regular';
+        color: #868686; margin-bottom: 5px
+    }
+    .basic-details .value  {font-size: 16px;}
+
+    
+    .compare-plan-benefits::ng-deep .mat-expansion-panel-body { padding: 0 10px 20px}
+    ::ng-deep .custom-amount-input .mat-input-element  { line-height: 25px}
+    .mob-prefixer {  line-height: 25px; }
+
+    .investment-amount.sticky {
+        display: none;
+    }
+    .basic-plan-details .col-lg-2 {
+        padding: 0 10px;
+    }
+
+    
+ }
+
+ @media (max-width:767px) {
+    .basic-details { padding: 0}
+    ::ng-deep .basic-plan-details .accordion-wrapper mat-expansion-panel:last-child .mat-expansion-panel-body { padding: 0 0 20px}
+ }

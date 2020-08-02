@@ -1,0 +1,31 @@
+/* Popup Container */
+::ng-deep .child-dream-container { max-width: 640px !important; min-width: 640px !important; }
+
+/* child-dream expert Popup */
+::ng-deep .mat-dialog-container { border-radius: 10px; padding: 0;}
+
+/* child-dream Header */
+.child-dream-header .popup-heading { margin-bottom: 15px;}
+.child-dream-header {text-align: center; margin: 20px 0;}
+.child-dream-form {margin: 20px 0;}
+
+/* child-dream Material*/
+::ng-deep .child-dream-form .mat-input-element { color: #000000; font-size: 18px; }
+::ng-deep .child-dream-form .mat-form-field { font-family: 'Montserrat-Regular'; margin-bottom: 20px; width: 100%; }
+::ng-deep .child-dream-form .mat-form-field-appearance-legacy .mat-form-field-label { font-size: 14px; color: #868686; }
+::ng-deep .child-dream-form .mat-form-field-appearance-legacy .mat-form-field-underline { background-color: #d1d1d1; }
+::ng-deep .child-dream-form .form-filed  .mat-select-value { color: #000000; font-size: 18px; font-family: 'Montserrat-Regular' }
+::ng-deep .child-dream-form .form-filed  .mat-option { font-family: 'Montserrat-Regular' }
+::ng-deep .child-dream-form .mat-select-arrow { border: none; }
+
+
+/* Media Query Start */
+@media (max-width:992px) {
+::ng-deep .child-dream-container { max-width: 300px !important; min-width: 300px !important; }
+.child-dream-form { padding: 0;margin: 10px 0;}
+.child-dream-header { margin-top: 40px;}
+.child-dream-form .button-wrap{ margin: 20px 0;}
+}
+
+@media (max-width:767px) {
+}

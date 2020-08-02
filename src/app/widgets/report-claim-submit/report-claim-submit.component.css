@@ -1,0 +1,21 @@
+/* Report Claim pop up */
+::ng-deep .report-claim-popup-container { max-width: 640px !important; min-width: 640px !important; }
+::ng-deep .mat-dialog-container { border-radius: 10px; padding: 0px;}
+.report-claim-popup { padding: 60px 60px 50px; position: relative;}
+.report-claim-image { margin-bottom: 15px;}
+.report-claim-image img{ border-radius: 35px; border: solid 2px #7ed321; padding: 20px 16px;}
+.report-claim-content .report-claim-text { font-family: 'Montserrat-Medium'; font-size: 22px; color: #000000; margin-bottom: 25px;}
+.report-claim-content .report-claim-text span {font-family: 'Montserrat-Bold'; font-size: 22px; }
+
+
+/**** Media Query Start ****/
+@media (max-width:992px) {
+::ng-deep .report-claim-popup-container { max-width: 300px !important; min-width: 300px !important; }
+.report-claim-popup { padding: 50px 0px;}
+.close-button img{ width: 15px;}
+}
+
+@media (max-width:767px) {
+.report-claim-content .report-claim-text { font-size: 16px;}
+.report-claim-content .report-claim-text span {font-family: 'Montserrat-Bold'; font-size: 16px; }
+}

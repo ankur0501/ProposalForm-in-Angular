@@ -1,0 +1,595 @@
+<footer #secFooter>
+    <div class="footer-desktop bg-black">
+
+        <div class="footer-desktop-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <ul class="nav nav-pills.nav footer-menu">
+                            <li><a href="javascrpit:void(0)">About Edelweiss Tokio</a></li>
+                            <li><a href="javascrpit:void(0)">All Plans</a></li>
+                            <li><a href="javascrpit:void(0)">Customer Service</a></li>
+                            <li><a href="javascrpit:void(0)">Legal</a></li>
+                            <li><a href="javascrpit:void(0)">Support</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="collapse-icon">
+                    <a (click)="showExpansionFooterWeb()">
+                        <img class="imgLogo" src="./assets/icons/arrow-down.svg" alt="arrow"
+                            [ngClass]="{'rotate-arrow ': showExpansionWeb == true}" />
+                    </a>
+                </div>
+            </div>
+        </div> <!-- footer-desktop-top div End-->
+
+        <div *ngIf="showExpansionWeb">
+            <div class="footer-expansion">
+
+                <div class="footer-expansion-list">
+                    <div class="container">
+                        <div class="row footer-list">
+                            <div class="col-3">
+                                <h2 class="list-header">Edelweiss Tokio</h2>
+                                <ul class="footer-expanded-menu">
+                                    <li><a href="javascrpit:void(0)" class="active">Key Management Persons</a></li>
+                                    <li><a href="javascrpit:void(0)">About Us</a></li>
+                                    <li><a href="javascrpit:void(0)">Board of Directors, Committees and
+                                            Resignations</a>
+                                    </li>
+                                    <li><a href="javascrpit:void(0)">Edelweiss Tokio Life CSR Policy</a></li>
+                                    <li><a href="javascrpit:void(0)">Terms and conditions of appointment of the
+                                            Independent
+                                            Directors
+                                        </a>
+                                    </li>
+                                    <li><a href="javascrpit:void(0)">Testimonials</a></li>
+                                    <li><a href="javascrpit:void(0)">Our Funds</a></li>
+                                    <li><a href="javascrpit:void(0)">Become An Advisor</a></li>
+                                    <li><a href="javascrpit:void(0)">The Buzz</a></li>
+                                    <li><a href="javascrpit:void(0)">Careers</a></li>
+                                    <li><a href="javascrpit:void(0)">Sitemap</a></li>
+                                    <li><a href="javascrpit:void(0)">Whistle Blower Policy</a></li>
+                                    <li><a href="javascrpit:void(0)">Annual Return</a></li>
+                                    <li><a href="javascrpit:void(0)">Blogs</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-3">
+                                <h2 class="list-header">Customer Service</h2>
+                                <ul class="footer-expanded-menu">
+                                    <li><a href="javascrpit:void(0)">Renew Online</a></li>
+                                    <li><a href="javascrpit:void(0)">Service Parameters & TAT</a></li>
+                                    <li><a href="javascrpit:void(0)">Application tracker</a>
+                                    </li>
+                                    <li><a href="javascrpit:void(0)">Riders</a></li>
+                                    <li><a href="javascrpit:void(0)">E-Statements</a></li>
+                                    <li><a href="javascrpit:void(0)">NAVs</a></li>
+                                    <li><a href="javascrpit:void(0)">E-Transactions</a></li>
+                                    <li><a href="javascrpit:void(0)">Grievance Redressal</a></li>
+                                    <li><a href="javascrpit:void(0)">Unclaimed Amount</a></li>
+                                    <li><a href="javascrpit:void(0)">Account Value Declaration</a></li>
+                                    <li><a href="javascrpit:void(0)">Payment options</a></li>
+                                    <li><a href="javascrpit:void(0)">Fund history</a></li>
+                                    <li><a href="javascrpit:void(0)">Standing Instruction</a></li>
+                                </ul>
+                                <h2 class="list-header list-font mt-5">Product</h2>
+                                <ul class="footer-expanded-menu">
+                                    <li><a href="javascrpit:void(0)">Term Insurance Plan</a></li>
+                                    <li><a href="javascrpit:void(0)">Health Insurance Plan</a></li>
+                                    <li><a href="javascrpit:void(0)">Investment Insurance Plan</a>
+                                    </li>
+                                    <li><a href="javascrpit:void(0)">Child Insurance Plan</a></li>
+                                    <li><a href="javascrpit:void(0)">Retirement Insurance Plan</a></li>
+                                    <li><a href="javascrpit:void(0)">Group Insurance Plan</a></li>
+                                    <li><a href="javascrpit:void(0)">Unit Linked Insurance Plan</a></li>
+                                    <li><a href="javascrpit:void(0)">Endowment Plans</a></li>
+                                    <li><a href="javascrpit:void(0)">Micro Insurance Plan</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-3">
+                                <h2 class="list-header">Important Links</h2>
+                                <ul class="footer-expanded-menu">
+                                    <li><a href="javascrpit:void(0)">IRDAI</a></li>
+                                    <li><a href="javascrpit:void(0)">Life Insurance Council</a></li>
+                                    <li><a href="javascrpit:void(0)">Anti Fraud Policy</a>
+                                    </li>
+                                    <li><a href="javascrpit:void(0)">Insurance Ombudsman</a></li>
+                                    <li><a href="javascrpit:void(0)">Public Disclosure</a></li>
+                                    <li><a href="javascrpit:void(0)">Premium Calculator</a></li>
+                                    <li><a href="javascrpit:void(0)">Public Disclosure-Agent List</a></li>
+                                    <li><a href="javascrpit:void(0)">Do Not Call Registry</a></li>
+                                    <li><a href="javascrpit:void(0)">Corporate Agents</a></li>
+                                    <li><a href="javascrpit:void(0)">Bonus Rates</a></li>
+                                    <li><a href="javascrpit:void(0)">Discontinued Products & Riders</a></li>
+                                    <li><a href="javascrpit:void(0)">Goods and Services Tax</a></li>
+                                    <li><a href="javascrpit:void(0)">Pre-Sales Process</a></li>
+                                    <li><a href="javascrpit:void(0)">Consumer Education</a></li>
+                                    <li><a href="javascrpit:void(0)">Downloads</a></li>
+                                    <li><a href="javascrpit:void(0)">IRDAI on Spurious Call</a></li>
+                                    <li><a href="javascrpit:void(0)">Electronic Insurance Account</a></li>
+                                    <li><a href="javascrpit:void(0)">Terminated agents</a></li>
+                                    <li><a href="javascrpit:void(0)">Edelweiss Tokio CSR Policy</a></li>
+                                    <li><a href="javascrpit:void(0)">T&C of Appointment of ID</a></li>
+                                    <li><a href="javascrpit:void(0)">Notice on cash collection</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-3">
+                                <h2 class="list-header">Support</h2>
+                                <ul class="footer-expanded-menu">
+                                    <li><a href="javascrpit:void(0)">File A Complaint</a></li>
+                                    <li><a href="javascrpit:void(0)">Live Chat</a></li>
+                                    <li><a href="javascrpit:void(0)">Call Back</a>
+                                    </li>
+                                    <li><a href="javascrpit:void(0)">FAQ</a></li>
+                                    <li><a href="javascrpit:void(0)">Pre-sales process
+                                        </a>
+                                    </li>
+                                    <li><a href="javascrpit:void(0)">Contact Us</a></li>
+                                </ul>
+                                <h2 class="list-header list-font mt-5">Legal</h2>
+                                <ul class="footer-expanded-menu">
+                                    <li><a href="javascrpit:void(0)">Terms & Conditions</a></li>
+                                    <li><a href="javascrpit:void(0)">Chat Policy</a></li>
+                                    <li><a href="javascrpit:void(0)">Fund Benchmark</a>
+                                    </li>
+                                    <li><a href="javascrpit:void(0)">FAQ</a></li>
+                                    <li><a href="javascrpit:void(0)">Email Disclaimer
+                                        </a>
+                                    </li>
+                                    <li><a href="javascrpit:void(0)">Institutional Disclaimer</a></li>
+                                </ul>
+                                <h2 class="list-header list-font mt-5">Group Companies</h2>
+                                <ul class="footer-expanded-menu">
+                                    <li><a href="javascrpit:void(0)">Edelweiss Financial Services Limited</a></li>
+                                    <li><a href="javascrpit:void(0)">Tokio Marine Holdings Inc.</a></li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-expansion-address">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="footer-address text-center">
+                                    <div class="">
+                                        Corporate Office: 4th Floor, Tower 3, Wing ‘B’, Kohinoor City, Kirol Road,
+                                        Kurla (W), Mumbai – 400070
+                                    </div>
+                                    <div class="">
+                                        <span> T: 1800-212-1212</span>
+                                        <span class="b-right m-2"></span>
+                                        <span> F: (022) 6117 7833</span>
+                                        <span class="b-right m-2"></span>
+                                        <a href="javascrpit:void(0)" class="pointer active-link">care@edelweisstokio.in
+                                        </a>
+                                        <span class="b-right m-2"></span>
+                                        <a href="javascrpit:void(0)"
+                                            class="pointer active-link">https://www.edelweisstokio.in
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="footer-info text-center">
+                                Edelweiss Tokio Life Insurance Company Limited. All Rights Reserved.
+                                Registered with Insurance Regulatory & Development
+                                Authority of India (IRDAI) as Life Insurance Company. Registration No. 147.
+                                CIN: U66010MH2009PLC197336. Tax benefits are
+                                as per the Income Tax Act, 1961, and are subject to amendments made thereto
+                                from time to time. Flower & Edelweiss (as
+                                displayed above) are trademarks of Edelweiss Financial Services Limited;
+                                "Tokio" is Trademark of Tokio Marine Holdings
+                                Inc. and used by Edelweiss Tokio Life Insurance Co. Ltd. under license.
+                                Edelweiss Tokio Life Insurance Company Limited.
+                                Registered Office: 6th Floor, Tower 3, Wing ‘B’, Kohinoor City, Kirol Road,
+                                Kurla (W), Mumbai – 400070. Tel: + 91 22
+                                40886015. Fax No.: +91 22 6117 7833. This is a Private website owned by the
+                                Company. Unauthorized scanning of
+                                vulnerabilities and exploitation of the same is strictly prohibited. If you
+                                have been found to do so, Company may bring
+                                Civil and/or Criminal action and/or legal proceedings against you which
+                                shall be entirely at your costs and
+                                consequences.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="footer-beware text-center">
+                                <div class="beware">
+                                    BEWARE OF SPURIOUS/ FRAUD PHONE CALLS!
+                                </div>
+                                <p class="small-text">
+                                    IRDAI is not involved in activities like selling insurance policies,
+                                    announcing bonus or investment of premiums. Public
+                                    receiving such phone calls are requested to lodge a police complaint.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-expansion-disclaimer">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="footer-disclaimer text-center">
+                                    Copyright © 2019 Edelweiss Tokio Life Insurance Company Limited. All rights
+                                    reserved.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div> <!-- footer-desktop-expansion div End-->
+
+        <div class="footer-desktop-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-6">
+                        <ul class="nav nav-pills.nav footer-option">
+                            <li><a class="language-eng" href="javascrpit:void(0)">Eng</a></li>
+                            <li><a href="javascrpit:void(0)" class="language-hindi">हिंदी</a></li>
+                            <li><a href="javascrpit:void(0)">Term of Service</a></li>
+                            <li><a href="javascrpit:void(0)">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-6">
+                        <ul class="nav nav-pills.nav footer-social">
+                            <li><a href="javascrpit:void(0)"><img src="./assets/icons/facebook.svg" alt="" /></a></li>
+                            <li><a href="javascrpit:void(0)"><img src="./assets/icons/instagram.svg" alt="" /></a> </li>
+                            <li><a href="javascrpit:void(0)"><img src="./assets/icons/twitter.svg" alt="" /></a></li>
+                            <li><a href="javascrpit:void(0)"><img src="./assets/icons/youtube.svg" alt="" /></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- footer-desktop-bottom div End-->
+
+    </div> <!-- Footer-desktop Section End-->
+
+    <div class="footer-mobile">
+        <div class="footer-mobile-top bg-black">
+
+            <div class="container">
+                <div class="footer-mobile-option">
+                    <ul class="nav nav-pills.nav footer-menu">
+                        <li><a href="javascrpit:void(0)">About Edelweiss Tokio</a></li>
+                        <li><a href="javascrpit:void(0)">Legal</a></li>
+                        <li><a href="javascrpit:void(0)">All Plans</a></li>
+                        <li><a href="javascrpit:void(0)">Support</a></li>
+                        <li><a href="javascrpit:void(0)">Customer Service</a></li>
+                    </ul>
+                    <div class="collapse-icon">
+                        <a (click)="showExpansionFooterWeb()">
+                            <img class="imgLogo" src="./assets/icons/arrow-down.svg" alt="arrow"
+                                [ngClass]="{'rotate-arrow ': showExpansionWeb == true}" />
+                        </a>
+                    </div>
+                </div> <!-- footer-mobile-option div End-->
+
+                <div *ngIf="showExpansionWeb">
+
+                    <div class="footer-mobile-expansion">
+                        <mat-accordion>
+                            <div class="row footer-expansion-list">
+                                <mat-expansion-panel class="bg-black mt-4">
+                                    <mat-expansion-panel-header>
+                                        <mat-panel-title>
+                                            <h2 class="list-header">Edelweiss Tokio</h2>
+                                        </mat-panel-title>
+                                        <mat-panel-description>
+                                            <span class="plus" (click)="changeIcon(1)"
+                                                [ngClass]="{'changeIcon': changedIcon1 == true}">+</span>
+                                        </mat-panel-description>
+                                    </mat-expansion-panel-header>
+                                    <ul class="footer-expanded-menu">
+                                        <li><a href="javascrpit:void(0)" class="active">Key Management Persons</a></li>
+                                        <li><a href="javascrpit:void(0)">About Us</a></li>
+                                        <li><a href="javascrpit:void(0)">Board of Directors, Committees and
+                                                Resignations</a>
+                                        </li>
+                                        <li><a href="javascrpit:void(0)">Edelweiss Tokio Life CSR Policy</a></li>
+                                        <li><a href="javascrpit:void(0)">Terms and conditions of appointment of the
+                                                Independent
+                                                Directors
+                                            </a>
+                                        </li>
+                                        <li><a href="javascrpit:void(0)">Testimonials</a></li>
+                                        <li><a href="javascrpit:void(0)">Our Funds</a></li>
+                                        <li><a href="javascrpit:void(0)">Become An Advisor</a></li>
+                                        <li><a href="javascrpit:void(0)">The Buzz</a></li>
+                                        <li><a href="javascrpit:void(0)">Careers</a></li>
+                                        <li><a href="javascrpit:void(0)">Sitemap</a></li>
+                                        <li><a href="javascrpit:void(0)">Whistle Blower Policy</a></li>
+                                        <li><a href="javascrpit:void(0)">Annual Return</a></li>
+                                        <li><a href="javascrpit:void(0)">Blogs</a></li>
+                                    </ul>
+                                </mat-expansion-panel>
+                            </div>
+                        </mat-accordion>
+                        <mat-accordion>
+                            <div class="row footer-expansion-list">
+                                <mat-expansion-panel class="bg-black">
+                                    <mat-expansion-panel-header>
+                                        <mat-panel-title>
+                                            <h2 class="list-header">Customer Service</h2>
+                                        </mat-panel-title>
+                                        <mat-panel-description>
+                                            <span class="plus" (click)="changeIcon(2)"
+                                                [ngClass]="{'changeIcon': changedIcon2 == true}">+</span>
+                                        </mat-panel-description>
+                                    </mat-expansion-panel-header>
+                                    <ul class="footer-expanded-menu">
+                                        <li><a href="javascrpit:void(0)">Renew Online</a></li>
+                                        <li><a href="javascrpit:void(0)">Service Parameters & TAT</a></li>
+                                        <li><a href="javascrpit:void(0)">Application tracker</a>
+                                        </li>
+                                        <li><a href="javascrpit:void(0)">Riders</a></li>
+                                        <li><a href="javascrpit:void(0)">E-Statements</a></li>
+                                        <li><a href="javascrpit:void(0)">NAVs</a></li>
+                                        <li><a href="javascrpit:void(0)">E-Transactions</a></li>
+                                        <li><a href="javascrpit:void(0)">Grievance Redressal</a></li>
+                                        <li><a href="javascrpit:void(0)">Unclaimed Amount</a></li>
+                                        <li><a href="javascrpit:void(0)">Account Value Declaration</a></li>
+                                        <li><a href="javascrpit:void(0)">Payment options</a></li>
+                                        <li><a href="javascrpit:void(0)">Fund history</a></li>
+                                        <li><a href="javascrpit:void(0)">Standing Instruction</a></li>
+                                    </ul>
+                                </mat-expansion-panel>
+                            </div>
+                        </mat-accordion>
+                        <mat-accordion>
+                            <div class="row footer-expansion-list">
+                                <mat-expansion-panel class="bg-black">
+                                    <mat-expansion-panel-header>
+                                        <mat-panel-title>
+                                            <h2 class="list-header">Product</h2>
+                                        </mat-panel-title>
+                                        <mat-panel-description>
+                                            <span class="plus" (click)="changeIcon(3)"
+                                                [ngClass]="{'changeIcon': changedIcon3 == true}">+</span>
+                                        </mat-panel-description>
+                                    </mat-expansion-panel-header>
+                                    <ul class="footer-expanded-menu">
+                                        <li><a href="javascrpit:void(0)">Term Insurance Plan</a></li>
+                                        <li><a href="javascrpit:void(0)">Health Insurance Plan</a></li>
+                                        <li><a href="javascrpit:void(0)">Investment Insurance Plan</a>
+                                        </li>
+                                        <li><a href="javascrpit:void(0)">Child Insurance Plan</a></li>
+                                        <li><a href="javascrpit:void(0)">Retirement Insurance Plan</a></li>
+                                        <li><a href="javascrpit:void(0)">Group Insurance Plan</a></li>
+                                        <li><a href="javascrpit:void(0)">Unit Linked Insurance Plan</a></li>
+                                        <li><a href="javascrpit:void(0)">Endowment Plans</a></li>
+                                        <li><a href="javascrpit:void(0)">Micro Insurance Plan</a></li>
+                                    </ul>
+                                </mat-expansion-panel>
+                            </div>
+                        </mat-accordion>
+                        <mat-accordion>
+                            <div class="row footer-expansion-list">
+                                <mat-expansion-panel class="bg-black">
+                                    <mat-expansion-panel-header>
+                                        <mat-panel-title>
+                                            <h2 class="list-header">Important Links</h2>
+                                        </mat-panel-title>
+                                        <mat-panel-description>
+                                            <span class="plus" (click)="changeIcon(4)"
+                                                [ngClass]="{'changeIcon': changedIcon4 == true}">+</span>
+                                        </mat-panel-description>
+                                    </mat-expansion-panel-header>
+                                    <ul class="footer-expanded-menu">
+                                        <li><a href="javascrpit:void(0)">IRDAI</a></li>
+                                        <li><a href="javascrpit:void(0)">Life Insurance Council</a></li>
+                                        <li><a href="javascrpit:void(0)">Anti Fraud Policy</a>
+                                        </li>
+                                        <li><a href="javascrpit:void(0)">Insurance Ombudsman</a></li>
+                                        <li><a href="javascrpit:void(0)">Public Disclosure</a></li>
+                                        <li><a href="javascrpit:void(0)">Premium Calculator</a></li>
+                                        <li><a href="javascrpit:void(0)">Public Disclosure-Agent List</a></li>
+                                        <li><a href="javascrpit:void(0)">Do Not Call Registry</a></li>
+                                        <li><a href="javascrpit:void(0)">Corporate Agents</a></li>
+                                        <li><a href="javascrpit:void(0)">Bonus Rates</a></li>
+                                        <li><a href="javascrpit:void(0)">Discontinued Products & Riders</a></li>
+                                        <li><a href="javascrpit:void(0)">Goods and Services Tax</a></li>
+                                        <li><a href="javascrpit:void(0)">Pre-Sales Process</a></li>
+                                        <li><a href="javascrpit:void(0)">Consumer Education</a></li>
+                                        <li><a href="javascrpit:void(0)">Downloads</a></li>
+                                        <li><a href="javascrpit:void(0)">IRDAI on Spurious Call</a></li>
+                                        <li><a href="javascrpit:void(0)">Electronic Insurance Account</a></li>
+                                        <li><a href="javascrpit:void(0)">Terminated agents</a></li>
+                                        <li><a href="javascrpit:void(0)">Edelweiss Tokio CSR Policy</a></li>
+                                        <li><a href="javascrpit:void(0)">T&C of Appointment of ID</a></li>
+                                        <li><a href="javascrpit:void(0)">Notice on cash collection</a></li>
+                                    </ul>
+                                </mat-expansion-panel>
+                            </div>
+                        </mat-accordion>
+                        <mat-accordion>
+                            <div class="row footer-expansion-list">
+                                <mat-expansion-panel class="bg-black">
+                                    <mat-expansion-panel-header>
+                                        <mat-panel-title>
+                                            <h2 class="list-header">Support</h2>
+                                        </mat-panel-title>
+                                        <mat-panel-description>
+                                            <span class="plus" (click)="changeIcon(5)"
+                                                [ngClass]="{'changeIcon': changedIcon5 == true}">+</span>
+                                        </mat-panel-description>
+                                    </mat-expansion-panel-header>
+                                    <ul class="footer-expanded-menu">
+                                        <li><a href="javascrpit:void(0)">File A Complaint</a></li>
+                                        <li><a href="javascrpit:void(0)">Live Chat</a></li>
+                                        <li><a href="javascrpit:void(0)">Call Back</a>
+                                        </li>
+                                        <li><a href="javascrpit:void(0)">FAQ</a></li>
+                                        <li><a href="javascrpit:void(0)">Pre-sales process
+                                            </a>
+                                        </li>
+                                        <li><a href="javascrpit:void(0)">Contact Us</a></li>
+                                    </ul>
+                                </mat-expansion-panel>
+                            </div>
+                        </mat-accordion>
+                        <mat-accordion>
+                            <div class="row footer-expansion-list">
+                                <mat-expansion-panel class="bg-black">
+                                    <mat-expansion-panel-header>
+                                        <mat-panel-title>
+                                            <h2 class="list-header">Legal</h2>
+                                        </mat-panel-title>
+                                        <mat-panel-description>
+                                            <span class="plus" (click)="changeIcon(6)"
+                                                [ngClass]="{'changeIcon': changedIcon6 == true}">+</span>
+                                        </mat-panel-description>
+                                    </mat-expansion-panel-header>
+                                    <ul class="footer-expanded-menu">
+                                        <li><a href="javascrpit:void(0)">Terms & Conditions</a></li>
+                                        <li><a href="javascrpit:void(0)">Chat Policy</a></li>
+                                        <li><a href="javascrpit:void(0)">Fund Benchmark</a>
+                                        </li>
+                                        <li><a href="javascrpit:void(0)">FAQ</a></li>
+                                        <li><a href="javascrpit:void(0)">Email Disclaimer
+                                            </a>
+                                        </li>
+                                        <li><a href="javascrpit:void(0)">Institutional Disclaimer</a></li>
+                                    </ul>
+                                </mat-expansion-panel>
+                            </div>
+                        </mat-accordion>
+                        <mat-accordion>
+                            <div class="row footer-expansion-list">
+                                <mat-expansion-panel class="bg-black">
+                                    <mat-expansion-panel-header>
+                                        <mat-panel-title>
+                                            <h2 class="list-header">Group Companies</h2>
+                                        </mat-panel-title>
+                                        <mat-panel-description>
+                                            <span class="plus" (click)="changeIcon(7)"
+                                                [ngClass]="{'changeIcon': changedIcon7 == true}">+</span>
+                                        </mat-panel-description>
+                                    </mat-expansion-panel-header>
+                                    <ul class="footer-expanded-menu">
+                                        <li><a href="javascrpit:void(0)">Edelweiss Financial Services Limited</a></li>
+                                        <li><a href="javascrpit:void(0)">Tokio Marine Holdings Inc.</a></li>
+                                    </ul>
+                                </mat-expansion-panel>
+                            </div>
+                        </mat-accordion>
+                    </div>
+
+                    <div class="row footer-expansion-address">
+                        <div class="col-12">
+                            <div class="footer-address text-center">
+                                <div class="mb-2">
+                                    Corporate Office: 4th Floor, Tower 3, Wing ‘B’, Kohinoor City, Kirol Road,
+                                    Kurla (W), Mumbai – 400070
+                                </div>
+                                <div class="">
+                                    <div class="mb-1"> T: 1800-212-1212</div>
+                                    <div class="mb-1"> F: (022) 6117 7833</div>
+                                    <a href="javascrpit:void(0)" class="pointer active-link mb-1">care@edelweisstokio.in
+                                    </a>
+                                    <a href="javascrpit:void(0)"
+                                        class="pointer active-link">https://www.edelweisstokio.in
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="footer-info text-center">
+                        Edelweiss Tokio Life Insurance Company Limited. All Rights Reserved. Registered with
+                        Insurance Regulatory & Development
+                        Authority of India (IRDAI) as Life Insurance Company. Registration No. 147. CIN:
+                        U66010MH2009PLC197336. Tax benefits are
+                        as per the Income Tax Act, 1961, and are subject to amendments made thereto from time to
+                        time. Flower & Edelweiss (as
+                        displayed above) are trademarks of Edelweiss Financial Services Limited; "Tokio" is
+                        Trademark of Tokio Marine Holdings
+                        Inc. and used by Edelweiss Tokio Life Insurance Co. Ltd. under license. Edelweiss Tokio Life
+                        Insurance Company Limited.
+                        Registered Office: 6th Floor, Tower 3, Wing ‘B’, Kohinoor City, Kirol Road, Kurla (W),
+                        Mumbai – 400070. Tel: + 91 22
+                        40886015. Fax No.: +91 22 6117 7833. This is a Private website owned by the Company.
+                        Unauthorized scanning of
+                        vulnerabilities and exploitation of the same is strictly prohibited. If you have been found
+                        to do so, Company may bring
+                        Civil and/or Criminal action and/or legal proceedings against you which shall be entirely at
+                        your costs and
+                        consequences.
+                    </div>
+
+                    <div class="row">
+                        <div class="footer-beware text-center">
+                            <div class="beware mb-2">
+                                BEWARE OF SPURIOUS/ FRAUD PHONE CALLS!
+                            </div>
+                            <p class="small-text">
+                                IRDAI is not involved in activities like selling insurance policies,
+                                announcing bonus or investment of premiums. Public
+                                receiving such phone calls are requested to lodge a police complaint.
+                            </p>
+                        </div>
+                    </div>
+
+
+                    <div class="row footer-expansion-disclaimer">
+                        <div class="col-12">
+                            <div class="footer-disclaimer text-center">
+                                Copyright © 2019 Edelweiss Tokio Life Insurance Company Limited. All rights
+                                reserved.
+                            </div>
+                        </div>
+                    </div>
+
+                </div> <!-- footer-mobile-expansion div End-->
+
+                <div class="footer-mobile-policy">
+                    <ul class="nav nav-pills.nav footer-policy">
+                        <li><a href="javascrpit:void(0)">Term of Service</a></li>
+                        <li><a href="javascrpit:void(0)">Privacy Policy</a></li>
+                    </ul>
+                </div> <!-- footer-moile-policy div End-->
+            </div>
+
+        </div> <!-- footer-mobile-top div End-->
+
+        <div class="footer-mobile-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-7">
+                        <ul class="nav nav-pills.nav footer-social">
+                            <li><a href="javascrpit:void(0)"><img src="./assets/icons/facebook.svg" alt="" /></a></li>
+                            <li><a href="javascrpit:void(0)"><img src="./assets/icons/instagram.svg" alt="" /></a> </li>
+                            <li><a href="javascrpit:void(0)"><img src="./assets/icons/twitter.svg" alt="" /></a></li>
+                            <li><a href="javascrpit:void(0)"><img src="./assets/icons/youtube.svg" alt="" /></a></li>
+                        </ul>
+                    </div>
+                    <div class="col-5">
+                        <ul class="nav nav-pills.nav footer-option">
+                            <li><a class="language-eng" href="javascrpit:void(0)">Eng</a></li>
+                            <li><a href="javascrpit:void(0)" class="language-hindi">हिंदी</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- footer-mobile-bottom div End-->
+
+    </div> <!-- Footer-mobile Section End-->
+
+</footer>

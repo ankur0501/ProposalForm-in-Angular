@@ -1,0 +1,168 @@
+<section class="popup-wrapper">
+
+    <a class="closebutton" (click)="closeDialog()">
+        <img src="./assets/icons/close.svg" alt="close" class="close-icon">
+    </a>
+
+    <!-- Summary PopUp Start-->
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="edit-summary">
+
+                    <div class="summary-header">
+                        <h2 class="popup-heading">Edit Details</h2>
+                    </div> <!-- summary-header div end-->
+
+                    <div class="edit-summary-form">
+                        <div class="edit-form-header">
+                            <h3 class="heading">Personal Details</h3>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 col-lg-6">
+                                <div class="form-filed mt-2">
+                                    <mat-form-field>
+                                        <input matInput placeholder="Your Name" [formControl]="yourName">
+                                        <mat-error *ngIf="yourName.invalid">{{getErrorMessageYourName()}}
+                                        </mat-error>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-6">
+                                <div class="form-filed">
+                                    <mat-form-field>
+                                        <div class="d-flex align-items-center">
+                                            <mat-select disableOptionCentering
+                                                panelClass="select-option-edit-summery-ulip" placeholder="Annual Salary"
+                                                [formControl]="annualSalary">
+                                                <mat-option value="salary1">₹ 5,00,000</mat-option>
+                                                <mat-option value="salary2">₹ 5,00,000</mat-option>
+                                                <mat-option value="salary3">₹ 5,00,000</mat-option>
+                                            </mat-select>
+                                            <img src="./assets/icons/down-arrow.svg" alt="" class="arrow-down">
+                                        </div>
+                                        <mat-error *ngIf="annualSalary.invalid">{{getErrorMessageYourIncome()}}
+                                        </mat-error>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-6">
+                                <div class="form-filed custom-mobile-input">
+                                    <mat-form-field>
+                                        <input matInput placeholder="Mobile Number" [formControl]="MobileNumber"
+                                            minlength="10" maxlength="10" #mobileNumber type="number" pattern="\d*"
+                                            (focusin)="mobilePrefix1 = true"
+                                            (focusout)="mobilePrefix1 = false; getValue1($event.target.value)" #mobileNumber (keypress)="getLimit($event, mobileNumber)">
+                                        <span *ngIf="mobilePrefix1" class="mob-prefixer">+91 </span>
+                                        <mat-error *ngIf="MobileNumber.invalid">{{getErrorMessageMobile()}}
+                                        </mat-error>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                        </div>
+                    </div> <!-- edit-summary-form div end-->
+
+                    <div class="edit-summary-form">
+                        <div class="edit-form-header">
+                            <h3 class="heading">Investment Details</h3>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 col-lg-6">
+                                <div class="form-filed mt-2">
+                                    <mat-form-field>
+                                        <input matInput [readonly]="!editable" placeholder="Product Name"
+                                            [formControl]="productName">
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-6">
+                                <div class="form-filed mt-2">
+                                    <mat-form-field>
+                                        <input matInput [readonly]="!editable" placeholder="Fund Name"
+                                            [formControl]="fundName">
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-6">
+                                <div class="form-filed mt-2 custom-investment-input">
+                                    <mat-form-field>
+                                        <input matInput placeholder="Investment Amount" type="number"
+                                            [formControl]="investmentAmount" (focusin)="amountPrefix1 = true"
+                                            (focusout)="amountPrefix1 = false; getValue2($event.target.value)">
+                                        <span *ngIf="amountPrefix1" class="mob-prefixer"> ₹ </span>
+                                        <mat-error *ngIf="investmentAmount.invalid">
+                                            {{getErrorMessageInvestmentAmount()}}
+                                        </mat-error>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-6">
+                                <div class="form-filed">
+                                    <mat-form-field>
+                                        <div class="d-flex align-items-center">
+                                            <mat-select disableOptionCentering
+                                                panelClass="select-option-edit-summery-ulip"
+                                                placeholder="Policy Duration" [formControl]="policyDuration">
+                                                <mat-option value="policy1">20 Years</mat-option>
+                                                <mat-option value="policy2">20 Years</mat-option>
+                                                <mat-option value="policy3">20 Years</mat-option>
+                                            </mat-select>
+                                            <img src="./assets/icons/down-arrow.svg" alt="" class="arrow-down">
+                                        </div>
+                                        <mat-error *ngIf="policyDuration.invalid">{{getErrorMessagePolicyDuration()}}
+                                        </mat-error>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-6">
+                                <div class="form-filed">
+                                    <mat-form-field>
+                                        <div class="d-flex align-items-center">
+                                            <mat-select disableOptionCentering
+                                                panelClass="select-option-edit-summery-ulip"
+                                                placeholder="Payment Duration" [formControl]="paymentDuration">
+                                                <mat-option value="payment1">20 Years</mat-option>
+                                                <mat-option value="payment2">20 Years</mat-option>
+                                                <mat-option value="payment3">20 Years</mat-option>
+                                            </mat-select>
+                                            <img src="./assets/icons/down-arrow.svg" alt="" class="arrow-down">
+                                        </div>
+                                        <mat-error *ngIf="paymentDuration.invalid">{{getErrorMessagePaymentDuration()}}
+                                        </mat-error>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-6">
+                                <div class="form-filed">
+                                    <mat-form-field>
+                                        <div class="d-flex align-items-center">
+                                            <mat-select disableOptionCentering
+                                                panelClass="select-option-edit-summery-ulip" placeholder="Payout"
+                                                [formControl]="payout">
+                                                <mat-option value="payout1">Quarterly</mat-option>
+                                                <mat-option value="payout2">Quarterly</mat-option>
+                                                <mat-option value="payout3">Quarterly</mat-option>
+                                            </mat-select>
+                                            <img src="./assets/icons/down-arrow.svg" alt="" class="arrow-down">
+                                        </div>
+                                        <mat-error *ngIf="payout.invalid">{{getErrorMessagePayout()}}
+                                        </mat-error>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div> <!-- edit-summary-form div end-->
+
+                    <div class="text-center mb-3 mt-2">
+                        <div class="button-wrap">
+                            <button mat-raised-button color="primary" class="mat-button-xl"
+                                (click)="save()">Save</button>
+                        </div>
+                    </div> <!-- summary button -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,46 @@
+<header>
+
+    <section class="sub-header-wrapper">
+        <div class="container p-0">
+            <div class="nav-layout">
+                <nav class="navbar navbar-expand-sm justify-content-start p-0">
+                    <ul class="navbar-nav nav-custom">
+                        <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Term Insurance</a>
+                        </li>
+                        <li class="nav-item"><a href="#" class="nav-link">Investment</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Health Insurance</a>
+                        </li>
+                        <li class="nav-item expansion-item" [ngClass]="{'':show == false,'active':show == true}"
+                            (click)="toggle()">
+                            <div class="card more" *ngIf="show">
+                                <div class="card-body p-0">
+                                    <ul class="more-menu" [@slideInOut]>
+                                        <li><a href="#"> Option Four</a></li>
+                                        <li><a href="#">Option Five</a></li>
+                                        <li><a href="#">Option Six</a></li>
+                                        <li><a href="#">Option Seven</a></li>
+                                        <li><a href="#">Option Eight</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+        </div>
+    </section> <!-- Subheader Section End -->
+
+    <section class="breadcrumb-wrapper d-none d-sm-none d-lg-block">
+        <div class="container">
+            <ul class="breadcrumb">
+                <li class="breadcrumb-item active-blue" aria-current=""><a href="javascript:void(0)">Home</a>
+                </li>
+                <li class="breadcrumb-item active"><a href="javascript:void(0)" class="color-gray">Claim Intimation</a>
+                </li>
+            </ul>
+        </div>
+    </section> <!-- Breadcrumb Section End -->
+
+</header>

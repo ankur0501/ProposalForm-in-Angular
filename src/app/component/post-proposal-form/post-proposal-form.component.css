@@ -1,0 +1,284 @@
+.proposal-wrapper{
+    margin-top: 80px;
+}
+.proposal-wrapper .proposal-header {
+    padding: 17px 0 14px;
+}
+.proposal-wrapper .proposal-heading {
+    font-size: 30px;
+    font-family: 'Montserrat-SemiBold';
+    color: #3c3c3c;
+    display: flex;
+    justify-content: space-between;
+}
+.proposal-step-border{
+    border-bottom: solid 1px #dddddd;
+    position: absolute;
+    top: 40px;
+    right: 0;
+    left: 0;
+}
+.appnumber {
+    font-family: 'Montserrat-Medium';
+    font-size: 14px;
+    color: #6d6d6d;
+    align-self: center;
+}
+.Lets-get-your-deets{
+    font-family: 'Montserrat-SemiBold';
+    font-size: 30px;
+    color: #3c3c3c;
+}
+.proposal-progress-wrapper {
+    padding-bottom: 40px;
+    position: relative;
+}
+
+.proposal-progress-wrapper .card-body { 
+    padding: 15px 45px 30px;
+}
+.note {
+    font-family: 'Montserrat-Medium';
+    font-size: 14px;
+    line-height: 1.57;
+    color: #868686;
+    margin-bottom: 55px;
+}
+
+::ng-deep .proposal-progress-wrapper .mat-stepper-horizontal-line {
+    display: none;
+}
+::ng-deep .proposal-progress-wrapper .mat-step-header .mat-step-icon {
+    display: none;
+}
+::ng-deep .proposal-progress-wrapper .mat-step-header .mat-step-label.mat-step-label-active {
+    color: #343434;
+}
+::ng-deep .proposal-progress-wrapper .mat-step-header .mat-step-label.mat-step-label-active.mat-step-label-selected {
+    font-family: 'Montserrat-Bold';
+    color: #124093;
+}
+::ng-deep .proposal-progress-wrapper  .mat-step-header .mat-step-label, .mat-step-header .mat-step-optional {
+    font-family: 'Montserrat-Medium';
+    font-size: 14px;
+    color: #343434;
+    text-transform: uppercase;
+}
+::ng-deep .proposal-progress-wrapper .mat-stepper-horizontal, .mat-stepper-vertical {
+    background-color: transparent;
+}
+::ng-deep .proposal-progress-wrapper .mat-horizontal-stepper-header {
+    padding: 0;
+    margin-right: 22px;
+}
+::ng-deep .proposal-progress-wrapper .mat-horizontal-stepper-header:last-child {
+    margin-right: 0;
+}
+::ng-deep .proposal-progress-wrapper .mat-horizontal-stepper-header {
+    height: 25px;
+}
+::ng-deep .proposal-progress-wrapper  .mat-horizontal-stepper-header-container {
+    margin-bottom: 40px;
+}
+::ng-deep .proposal-progress-wrapper .mat-horizontal-content-container {
+    padding: 0;
+}
+
+.proposal-header-inner .h4 {
+    margin-bottom: 20px;
+    line-height: 1.33;
+    font-size: 18px;
+}
+.proposal-header-inner .h2 {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+.float{
+	position:fixed;
+	bottom:40px;
+}
+.proposal-progress-wrapper .card-boder {
+    min-height: 400px;
+}
+.hint-box { 
+    border-radius: 10px;
+    padding: 20px 12px;
+    width: 357px;
+    position: absolute;
+    right: 0;
+    -webkit-box-align: center;
+    align-items: center;
+    z-index: 1;
+    top: -20px;
+}
+.hint-icon { margin-right: 20px; padding-left: 5px; }
+.hint-text {font-size: 14px; color: #3c3c3c; font-family: 'Montserrat-Medium'; line-height: 1.5; }
+.hint-box .h5 {
+    font-size: 1rem;
+}
+.mb-55{
+    margin-bottom: 55px;
+}
+
+::ng-deep .proposal-progress-wrapper .sticky-strpper {
+    position: fixed;
+    top: 80px;
+    width: 100%;
+    z-index: 205;
+    background: #f9f9f9;
+    left: 0;
+    padding: 0 40px;
+
+}
+::ng-deep .proposal-progress-wrapper .sticky-progress {
+    position: fixed;
+    top: 105px;
+    background: #f9f9f9;
+    z-index: 205;
+}
+::ng-deep .proposal-progress-wrapper .mt-stepper-header-container
+{
+    margin-top: 45px;
+}
+
+.form-filed {
+    margin-right: 25px;
+    width: 25%;
+}
+.hint-row{
+    position: relative;
+}
+.icon-wrapper{
+    position: relative;
+    display: flex;
+}
+.audio-icon{
+    margin-right: 20px;
+    margin-top: 10px;
+}
+.slideBtn{
+    transform: rotate(-180deg);
+    position: absolute;
+    left: 60px;
+    cursor: pointer;
+    line-height: 0;
+    top:10px;
+}
+
+/* shruti */
+.form-card-proposal .h1 { font-size: 18px; margin-bottom: 15px;}
+.form-card-proposal .h2 { font-size: 18px; margin-bottom: 20px;}
+.form-card-proposal .form-label { font-size: 14px; color: #3c3c3c; font-family: 'Montserrat-Medium'; margin-bottom: 5px; }
+.form-card-proposal .mat-button-toggle { white-space: nowrap; position: relative; border-radius: 20px; margin-right: 10px; }
+.form-card-proposal .bullet-list { margin-bottom: 55px;}
+.form-card-proposal .form-filed .form-label span { color: #3c3c3c;}
+.form-card-proposal .label-title { padding: 25px 18px 0 0;}
+::ng-deep .form-card-proposal .mat-input-element { color: #3c3c3c; font-size: 18px; margin: 5px 0 0;}
+::ng-deep .form-card-proposal .mat-form-field { font-family: 'Montserrat-Regular'; width: 100%; }
+::ng-deep .form-card-proposal .mat-form-field-label.mat-empty.mat-form-field-empty {font-size: 14px;}
+::ng-deep .form-card-proposal .mat-form-field-appearance-legacy .mat-form-field-label { font-size: 18px; color: #868686; }
+::ng-deep .form-card-proposal .mat-form-field-appearance-legacy .mat-form-field-underline { background-color: #d1d1d1; }
+::ng-deep .form-card-proposal .mat-select-arrow { border: none; }
+::ng-deep .form-card-proposal .mat-button-toggle-group { border: none; }
+::ng-deep .form-card-proposal .mat-button-toggle-group-appearance-standard .mat-button-toggle+.mat-button-toggle { border-left: none; }
+::ng-deep .form-card-proposal .mat-button-toggle-appearance-standard .mat-button-toggle-label-content { font-size: 14px; color: #999999; font-family: "Montserrat-Medium"; border-radius: 19.7px; border: solid 1px #cbcbcb; line-height: 25px; padding: 3px 35px; }
+::ng-deep .form-card-proposal .mat-button-toggle-checked { background-color: #f0f0f0; }
+::ng-deep .form-card-proposal .mat-button-toggle .mat-button-toggle-ripple { position: sticky; }
+::ng-deep .form-card-proposal .mat-button-toggle-checked .mat-button-toggle-label-content { font-size: 14px; color: #124093; font-family: "Montserrat-Bold"; border: solid 1.2px #124093; }
+::ng-deep .form-card-proposal .form-filed .mat-select-value { color: #343434; font-size: 18px; font-family: 'Montserrat-Regular' }
+::ng-deep .form-card-proposal .form-filed .mat-option { font-family: 'Montserrat-Regular' }
+::ng-deep .form-card-proposal .button-wrap .mat-raised-button { font-family: 'Montserrat-Semibold'; padding: 12px 48px; }
+
+
+
+.togg-btn .row {
+    align-items: center;
+    justify-content: space-between;
+}
+.togg-btn .form-filed{
+    margin-right: 0;
+    width: unset;
+}
+
+::ng-deep .togg-btn .mat-button-toggle-appearance-standard .mat-button-toggle-label-content {
+    border-radius: 0 !important;    border: 0 !important;
+}
+::ng-deep .togg-btn .mat-button-toggle{border-radius: 0 !important;  margin-right: 0 !important;}
+::ng-deep .togg-btn mat-button-toggle:first-child{border: 2px solid #124093;border-right: 0;
+    border-top-left-radius: 20px !important; 
+    border-bottom-left-radius: 20px !important;}
+::ng-deep .togg-btn mat-button-toggle:last-child{border: 2px solid #124093;
+    border-top-right-radius: 20px !important;
+    border-bottom-right-radius: 20px !important;
+    border-left: 0;
+}
+::ng-deep .togg-btn .mat-button-toggle-group-appearance-standard .mat-button-toggle+.mat-button-toggle {
+    border-left: 0;
+}
+::ng-deep .togg-btn .mat-button-toggle-appearance-standard .mat-button-toggle-label-content { 
+    line-height: 24px; font-size: 14px; color: #124093; padding: 5px 20px; font-family: 'Montserrat-SemiBold';}
+::ng-deep .togg-btn .mat-button-toggle-checked { background-image: linear-gradient(to left, #124093, #124093); line-height: 24px; }
+::ng-deep .togg-btn .mat-button-toggle-checked .mat-button-toggle-label-content { color: #fff; }
+
+::ng-deep .togg-btn .mat-button-toggle-group {border-radius: 20px; }
+::ng-deep .togg-btn .mat-button-toggle-checked {background-image: linear-gradient(to left, #124093, #124093);
+line-height: 24px;}
+::ng-deep .togg-btn .mat-button-toggle-checked .mat-button-toggle-label-content {color: #fff;}
+::ng-deep .togg-btn .mat-button-toggle-group-appearance-standard .mat-button-toggle+.mat-button-toggle {border-left: solid 1px #124093;}
+
+.form-card-proposal .togg-btn .form-label{
+    color: #3c3c3c;
+}
+.say-done {
+    font-family: Montserrat-Regular;
+    font-size: 12px;
+    color: #3c3c3c;
+    padding: 22px 0 0 65px;
+}
+
+.active{
+    opacity: 1;
+}
+.deactive{
+    opacity: 0.5;
+}
+.hide-hint{
+    display: none !important;
+}
+::ng-deep .proposal-progress-wrapper  .button-checkbox1 .mat-checkbox-inner-container {
+    width: 15px;
+    height: 15px;
+}
+::ng-deep .proposal-progress-wrapper .button-checkbox1 .mat-checkbox-inner-container::after {
+    left: 1px;
+    top: 0px;
+    border-radius: 10px;
+    background-size: 67%;
+}
+
+::ng-deep .proposal-progress-wrapper  .mat-checkbox-label {
+    font-family: Montserrat-SemiBold;
+    font-size: 14px;
+    color: #3c3c3c;
+}
+.w-85{
+    width: 85%;
+}
+.mb-20{
+    margin-bottom: 20px;
+}
+.alcoholic-div{
+    margin-left: 15px;
+}
+.isAddictionDiv{
+    display: flex;
+    width: 33.33%;
+    margin-left: 22px;
+}
+.isAddictionDiv .form-filed{
+    width: 70%;
+}
+
+::ng-deep .proposal-progress-wrapper .custom-drop .form-filed .mat-select-value {
+    line-height: 1
+}

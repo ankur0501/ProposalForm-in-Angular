@@ -1,0 +1,20 @@
+/* Thank you pop up */
+::ng-deep .thankyou-popup-container { max-width: 640px !important; min-width: 640px !important; }
+::ng-deep .mat-dialog-container { border-radius: 10px; padding: 0px;}
+.thankyou-popup { padding: 80px 20px; position: relative;}
+.thankyou-image { margin-bottom: 28px;}
+.thankyou-image img{ border-radius: 35px; border: solid 2px #7ed321; padding: 20px 16px;}
+.thankyou-content .heading { font-size: 22px; color: #3c3c3c; margin-bottom: 7px;}
+.thankyou-content .subtext {  font-size: 18px; color: #6d6d6d;}
+
+/**** Media Query Start ****/
+@media (max-width:992px) {
+::ng-deep .thankyou-popup-container { max-width: 300px !important; min-width: 300px !important; }
+.thankyou-popup { padding: 50px 0px;}
+.close-button img{ width: 15px;}
+}
+
+@media (max-width:767px) {
+.thankyou-content .heading { font-size: 18px; color: #3c3c3c;}
+.thankyou-content .subtext { font-size: 16px; color: #3c3c3c;}
+}

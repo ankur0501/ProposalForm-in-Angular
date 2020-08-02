@@ -1,0 +1,42 @@
+.subheader {
+    background-color: transparent !important;
+    color: #354b60 !important;
+    border-bottom: 2px solid #f05a22 !important;
+    margin-bottom: 15px !important;
+    padding-left: 5px;
+    min-height: 2rem;
+    line-height: 2rem;
+    font-weight: 700;
+}
+.collapsible-header {
+    /* background-color: #37474F; */
+    background-color: #354b60;
+    /* border-bottom: 1px solid #fdfdfd; */
+    border-bottom: 3px solid #f05a22;
+    color: #fff;
+    /* cursor: default; */
+}
+
+.collapsible-header {
+    display: block;
+    cursor: pointer;
+    min-height: 3rem;
+    line-height: 3rem;
+    padding: 0 1rem;
+    border-bottom: 1px solid #ddd;
+}
+
+input{
+    border: 0;
+    border-bottom: solid 1px;
+    border-radius: 0;    
+    border-color:black;    
+    box-shadow:none;
+}
+.invalid{
+    color: red;
+}
+
+label{
+    font-weight: bold;
+}

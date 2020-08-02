@@ -1,0 +1,84 @@
+<form [formGroup]="employmentForm">
+    <button class="btn btn-primary" (click)="open(mymodal)">Add Employment Details</button>
+
+    <ng-template #mymodal let-modal style="width: max-content;">
+        <div class="modal-header">
+            <h4 class="modal-title" id="modal-basic-title">Employment Details</h4>
+            <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                <span aria-hidden="true">×</span>
+            </button>
+        </div>
+        <div class="modal-body">
+
+            <div class="form-row">
+                <div class="form-group col-md-6" style="margin-left:1%;">
+                    <label class="control-label col-md-12" for="employmentType">Employment Type</label>
+                    <select class="browser-default custom-select" formControlName="employmentType"
+                        (change)="onSelection($event.target.value)">
+                        <option selected value="">Select</option>
+                        <option *ngFor="let emp of EmpType" [value]="emp.id">{{emp.type}}</option>
+                    </select>
+                    <span class="text-danger invalid"
+                                *ngIf="employmentForm.get('employmentType').touched && employmentForm.get('employmentType').hasError('required')">Required
+                                Field</span>
+                </div>
+                <div
+                    *ngIf="employmentForm.get('employmentType').value!='' && employmentForm.get('employmentType').value!='Select'">
+                    <div
+                        *ngIf="employmentForm.get('employmentType').value=='1' || employmentForm.get('employmentType').value=='Salaried'">
+                        <div class="form-group col-md-8">
+                            <label class="control-label col-md-12" for="compName">Company Name</label>
+                            <input type="text" class="form-control" id="compName" formControlName="compName"
+                                name="compName">
+                            <span class="text-danger invalid"
+                                *ngIf="employmentForm.get('compName').touched && employmentForm.get('compName').hasError('required')">Required
+                                Field</span>
+                        </div>
+                        <div class="form-group col-md-8" style="margin-left:1%;">
+                            <label class="control-label col-md-12" for="designation">Designation</label>
+                            <input type="text" class="form-control" id="designation" formControlName="designation"
+                                name="designation">
+                            <span class="text-danger invalid"
+                                *ngIf="employmentForm.get('designation').touched && employmentForm.get('designation').hasError('required')">Required
+                                Field</span>
+                        </div>
+                        <div class="form-group col-md-12" style="margin-left:1%;">
+                            <label class="control-label col-md-12" for="yearExperience">Work Experience</label>
+                            <select class="browser-default custom-select col-md-4" formControlName="yearExperience"
+                                (change)="onSelection($event.target.value)">
+                                <option selected value="">Years</option>
+                                <option *ngFor="let year of years" [value]="year">{{year+" Years"}}</option>
+                            </select>
+                            <select class="browser-default custom-select col-md-4" style="margin-left:1%;" formControlName="monthExperience"
+                                (change)="onSelection($event.target.value)">
+                                <option selected value="">Months</option>
+                                <option *ngFor="let month of months" [value]="month">{{month+" Month"}}</option>
+                            </select>
+                            <span class="text-danger invalid"
+                                *ngIf="employmentForm.get('yearExperience').touched && employmentForm.get('yearExperience').hasError('required')">Required
+                                Field</span>
+                        </div>
+                        
+                    </div>
+                    <div>
+                    <div class="form-group col-md-12" style="margin-left:1%;">
+                        <label class="control-label col-md-12" for="annualIncome">Annual Income</label>
+                        <input type="text" class="form-control" id="annualIncome" formControlName="annualIncome"
+                            name="annualIncome">
+                        <span class="text-danger invalid"
+                            *ngIf="employmentForm.get('annualIncome').touched && employmentForm.get('annualIncome').hasError('required')">Required
+                            Field</span>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <ngx-spinner bdColor="rgba(51, 51, 51, 0.8)" size="default" type="ball-spin-clockwise">  
+                <p style="color: white">Please Wait. </p>  
+                </ngx-spinner> 
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-primary" [disabled]="!employmentForm.valid"
+                (click)="modal.close(SaveEmploymentDetails())">Save</button>
+        </div>
+    </ng-template>
+</form>

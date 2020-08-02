@@ -1,0 +1,84 @@
+.get-quote-wrapper { margin-top: 81px; }
+.form-filed {margin: -5px 0;}
+.small-text {
+    margin-bottom: 10px;
+  }
+/* Get-Quote Header */
+.quote-header { padding: 20px 0 15px; }
+.quote-heading { font-size: 18px; color: #3c3c3c; font-family: 'Montserrat-Bold'; margin-bottom: 6px; }
+.quote-subtext { font-size: 18px; color: #6d6d6d; font-family: 'Montserrat-Medium'; }
+
+/* Get-Quote Form */
+.card-shadow { margin-bottom: 32px; border-radius: 8px; box-shadow: 0 0 6px 0 rgba(151, 151, 151, 0.53); }
+.quote-form .form-label { font-size: 14px; color: #868686; font-family: 'Montserrat-Medium'; margin-bottom: 5px; }
+.quote-form .quote-form-text { font-size: 12px; font-family: 'Montserrat-Medium'; color: #a5a5a5; margin-bottom: 30px; }
+.quote-form .quote-form-subtext { font-size: 12px; font-family: 'Montserrat-Medium'; color: #868686; margin-bottom: 5px; margin-top: 30px; }
+.quote-form .quote-form-subtext span { font-weight: 600; font-family: 'Montserrat-SemiBold'; }
+.quote-form .small-text { color: #a5a5a5; }
+
+/* Get-Quote Slider */
+.quote-slider { padding: 60px 0px; }
+.rectangle { border-top: dashed 1px #c4c4c4; border-bottom: dashed 1px #c4c4c4; padding: 20px 50px; }
+.quote-slider .icon-box { margin-top: 10px; margin: 0 auto;}
+.quote-slider .slider-text { margin-top: 25px; text-align: center; display: flex; flex-direction: column; align-items: center }
+
+@media screen and (min-width:0\0) {
+    .quote-slider .slider-text { margin-top: 25px; text-align: center; display: block; margin: 0 autoy}
+} 
+.slider-heading { font-family: 'Montserrat-SemiBold'; font-size: 18px; font-weight: 600; line-height: 0.89; letter-spacing: 0.77px; color: #3c3c3c; margin-bottom: 20px; }
+.slider-subtext { font-size: 16px; color: #868686; font-family: 'Montserrat-Regular'; line-height: 1.5; margin-bottom: 10px; }
+.verified { width: 15px; height: 15px; object-fit: contain; margin-right: 10px; }
+.mob-prefixer { display: inline-block; position: absolute; font-size: 18px; color: #aaaaaa; left: 0; top: 5px; }
+::ng-deep .custom-mobile-input .mat-input-element { padding-left: 35px; }
+
+/* Get-Quote Form Material*/
+::ng-deep .quote-form .mat-input-element { color: #3c3c3c; font-size: 18px; }
+
+/* ::ng-deep .quote-form .mat-form-field-wrapper {width: 300px;} */
+::ng-deep .quote-form .mat-form-field { font-family: 'Montserrat-Regular'; margin-bottom: 20px; width: 100%; }
+::ng-deep .quote-form .mat-form-field-appearance-legacy .mat-form-field-label { font-size: 14px; color: #868686; }
+::ng-deep .quote-form .mat-form-field-appearance-legacy .mat-form-field-underline { background-color: #d1d1d1; }
+::ng-deep .quote-form .mat-select-arrow { border: none; }
+::ng-deep .quote-form .mat-button-toggle-group { border: none; }
+::ng-deep .quote-form .mat-button-toggle-group-appearance-standard .mat-button-toggle+.mat-button-toggle { border-left: none; }
+::ng-deep .quote-form .mat-button-toggle-appearance-standard .mat-button-toggle-label-content { font-size: 14px; color: #999999; font-family: "Montserrat-Medium"; border-radius: 19.7px; border: solid 1px #cbcbcb; line-height: 25px; padding: 3px 35px; }
+::ng-deep .quote-form .mat-button-toggle-checked { background-color: #f0f0f0; }
+::ng-deep .quote-form .mat-button-toggle .mat-button-toggle-ripple { position: sticky; }
+::ng-deep .quote-form .mat-button-toggle-checked .mat-button-toggle-label-content { font-size: 14px; color: #124093; font-family: "Montserrat-Bold"; border: solid 1.2px #124093; }
+::ng-deep .quote-form .mat-select-value { color: #343434; font-size: 18px; font-family: 'Montserrat-Regular' }
+::ng-deep .quote-form .mat-option { font-family: 'Montserrat-Regular' }
+::ng-deep .quote-slider .slick-dots li button::before { width: 10px; height: 10px; border: solid 1px #979797; background-color: #d8d8d8; border-radius: 10px; }
+::ng-deep .quote-slider .slick-dots li button::before { color: transparent }
+::ng-deep .quote-slider .slick-dots li.slick-active button:before { width: 10px; height: 10px; background-color: #124093; border-radius: 10px; }
+::ng-deep .quote-form .button-wrap .mat-raised-button { font-family: 'Montserrat-Semibold'; padding: 12px 48px; }
+.arrow-down { transform: scale(0.7); }
+.mat-button-toggle { white-space: nowrap; position: relative; border-radius: 20px; margin-right: 10px; }
+
+
+/**** Media Query Start ****/
+@media (max-width:1200px) {
+    ::ng-deep .quote-form .mat-button-toggle-appearance-standard .mat-button-toggle-label-content { font-size: 12px; padding: 3px 35px; }
+}
+@media (max-width:992px) {
+    .get-quote-wrapper { margin-top: 56px; }
+    .get-quote-wrapper { background-color: white }
+    .quote-header { padding: 15px 0px 0px 0px; }
+    .card-shadow { margin: 0 -15px; box-shadow: none; border: none; }
+    .quote-form .quote-form-text { line-height: unset; }
+    .quote-slider { padding: 0; }
+    .rectangle { margin-bottom: 30px; }
+    .rectangle { padding: 20px 10px; }
+}
+@media (max-width:767px) {
+    ::ng-deep .quote-form .mat-button-toggle-appearance-standard .mat-button-toggle-label-content { font-size: 12px; padding: 3px 25px; }
+    .quote-wrapper { border-radius: 20px 20px 0 0; box-shadow: 0 0 5px 0 rgba(151, 151, 151, 0.53); -webkit-border-radius: 20px 20px 0 0; -moz-border-radius: 20px 20px 0 0; -ms-border-radius: 20px 20px 0 0; -o-border-radius: 20px 20px 0 0; background: #fff }
+    .quote-form .quote-form-subtext { padding: 15px 0; text-align: center; line-height: 20px; font-size: 12px; margin-bottom: 0 }
+}
+
+@media (max-width:360px) {
+    ::ng-deep .quote-form .mat-button-toggle-appearance-standard .mat-button-toggle-label-content { padding: 3px 20px; }
+}
+
+@media all and (-ms-high-contrast:none) {
+    .feature-list{margin-left:20%}
+}

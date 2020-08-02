@@ -1,0 +1,80 @@
+<header>
+    <div class="container">
+        <nav class="navbar navbar-expand-lg justify-content-between p-0">
+            <div class="back-nav-wrapper d-lg-none">
+                <a href="javascript:viod(0)" class="back-nav"> <i class="fa fa-chevron-left"></i></a>
+            </div>
+            <a class="navbar-brand logo" href="#">
+                <img src="./assets/images/logo.jpg" alt="" title="" />
+            </a> <!-- Navbar-brand div End-->
+
+            <ul class="breadcrumb header-left">
+                <li class="breadcrumb-item"><a routerLink="">Term Insurance</a></li>
+                <li class="breadcrumb-item"><a routerLink="/zindagi-plus">Zindagi Plus</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Get Quote</li>
+            </ul>
+            <!-- Breadcrumb End -->
+
+            <ul class="nav navbar-nav header-action justify-content-end">
+                <li class="nav-item">
+                    <a href="javascript:viod(0)" (click)="getChatBoat($event)">
+                        <img src="./assets/icons/chat.svg" alt="" title="" />
+                    </a>
+                    <div class="card chatbot-detials" [ngClass]="isChatboat == true ? 'active' : ''">
+                        <div class="chatbot-heading">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="heading-txt">Welcome to Livechat</span>
+                                <span class="close-chat-wrap pointer" (click)="closeBoat()"><img src="./assets/icons/close-small.svg" alt="close" /></span>
+                            </div>
+                        </div>
+                        <div class="chatbot-msg-container">
+                            <div class="message-wrapper">
+                                <div class="msg-container">
+                                    <div class="bot-icon"><img src="./assets/icons/robot-icon.svg" alt="icon" /></div>
+                                    <div class="bot-msgs">How can I assist you?</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chatbot-footer">
+                            <div class="chatbot-inner-footer">
+                            <input type="text" class="form-control post-message" placeholder="Type your message here" id="post-message" autocomplete="off">
+                            </div>
+                            <div class="chatbot-footer-icons">
+                                <span>
+                                    <img src="./assets/icons/voice-icon.svg" alt="close" />
+                                </span>
+                                <span>
+                                    <img src="./assets/icons/send-msg.svg" alt="send" />
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                </li>
+
+                <li class="nav-item">
+                    <a href="tel:1800 212 1212" matTooltip="1800 212 1212">
+                        <img src="./assets/icons/call-24.svg" alt="" title="" />
+                    </a>
+                </li>
+
+                <li class="nav-item d-lg-none d-none">
+                    <a href="javascript:viod(0)" >
+                        <img src="./assets/icons/menu.svg" alt="" title="" />
+                    </a>
+                </li>
+                <!-- <li class="nav-item d-lg-none">
+                        <a href="javascript:viod(0)">
+                            <img src="./assets/icons/menu.svg" alt="" title="" />
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item  d-none d-lg-block">
+                        <a href="javascript:viod(0)">
+                            <img src="./assets/icons/user.svg" alt="" title="" />
+                        </a>
+                    </li> -->
+            </ul> <!-- Header-action div End-->
+        </nav>
+    </div>
+</header>

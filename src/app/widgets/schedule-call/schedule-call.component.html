@@ -1,0 +1,34 @@
+<section class="popup-wrapper">
+    <div class="container p-0">
+        <a class="closebutton" (click)="closeDialog()">
+            <img src="./assets/icons/close.svg" alt="close" class="close-icon">
+        </a>
+
+        <div class="col-12 schedule-call-header p-0">
+            <h2 class="popup-heading">Schedule a call back with our expert</h2>
+        </div> <!-- schedule-call-header div end-->
+        <div class="col-12 col-lg-6 offset-lg-3 schedule-call-form text-center">
+            <div class="form-filed">
+                <mat-form-field>
+                    <input matInput placeholder="Full Name" [formControl]="FullName">
+                    <mat-error *ngIf="FullName.invalid">{{getErrorMessageFullName()}}
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="form-filed custom-mobile-input">
+                <mat-form-field>
+                    <input matInput placeholder=" Mobile Number" [formControl]="MobileNumber" minlength="10"
+                        maxlength="10" type="number" pattern="\d*" (focusin)="mobilePrefix1 = true"
+                        (focusout)="mobilePrefix1 = false; getValue1($event.target.value)" #mobileNumber (keypress)="getLimit($event, mobileNumber)">
+                    <span *ngIf="mobilePrefix1" class="mob-prefixer">+91 </span>
+                    <mat-error *ngIf="MobileNumber.invalid">{{getErrorMessageMobile()}}
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="button-wrap mb-3">
+                <button mat-raised-button color="primary" (click)="getThankyou()"
+                    class="mat-button-lg">schedule</button>
+            </div>
+        </div> <!-- schedule-call-form div end-->
+    </div>
+</section><!-- schedule-call-wrapper section end-->

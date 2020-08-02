@@ -1,0 +1,259 @@
+<section class="addons">
+    
+    <a (click)="closeDialog()" class="close-button"><img src="./assets/icons/close.svg" alt=""></a>
+    <div class="container p-0">
+        <div class="heading text-center">
+            <h2 class="header">Recommended add-ons for you</h2>
+        </div>
+        <perfect-scrollbar [disabled]="!isMobile" [ngClass]="{'h-90': isMobile==true}">
+            <div class="addon-body mt-3 mt-md-4">
+                <div class="col-12 px-0">
+                    <perfect-scrollbar [disabled]="!isWeb" [ngClass]="{'scroll-div-more': showMore==true, 'scroll-div':showMore==false}">
+                        <div class="row addon-card">
+                            <div class="col-12 col-lg-4 mb-4 px-3" [ngClass]="{'mb-lg-0': showMore==false}">
+                                <div class="card h-100">
+                                    <div class="card-body round">
+                                        <div class="button-checkbox">
+                                            <mat-checkbox [checked]=true></mat-checkbox>
+                                        </div>
+                                        <div class="card-heading">
+                                            <h4 class="card-title">Accidental Death Benefit</h4>
+                                        </div>
+                                        <p class="card-text">Secure your loved ones even when you are not around </p>
+                                        <div class="price-group">
+                                            <div class="d-flex just-text mb-1 mb-md-2">
+                                                <div class="form-filed">
+                                                    <mat-form-field>
+                                                        <div class="d-flex align-items-center">
+                                                            <mat-select disableOptionCentering panelClass="select-option-rec-addon"
+                                                                [formControl]="recAddonSelect">
+                                                                <mat-option value="op1">1 Cr.</mat-option>
+                                                                <mat-option value="op2">50 L</mat-option>
+                                                                <mat-option value="op3">25 L</mat-option>
+                                                            </mat-select>
+                                                            <img src="./assets/icons/down-arrow.svg" alt=""
+                                                                class="arrow-down">
+                                                        </div>
+                                                        <mat-error *ngIf="recAddonSelect.invalid">
+                                                        </mat-error>
+                                                    </mat-form-field>
+                                                </div>
+                                               <span> &#64;just</span>
+                                            </div>
+                                            <p class="price-text">&#x20B9; 112.50</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-4 mb-4 px-3" [ngClass]="{'mb-lg-0': showMore==false}">
+                                <div class="card h-100">
+                                    <div class="card-body round">
+                                        <div class="button-checkbox">
+                                            <mat-checkbox [checked]=true></mat-checkbox>
+                                        </div>
+                                        <div class="card-heading">
+                                            <h4 class="card-title">Permanent Disability</h4>
+                                        </div>
+                                        <p class="card-text">We waive off premium on permanent disability</p>
+                                        <div class="price-group">
+                                            <div class="d-flex just-text mb-1 mb-md-2">
+                                                <div class="form-filed">
+                                                    <mat-form-field>
+                                                        <div class="d-flex align-items-center">
+                                                            <mat-select disableOptionCentering panelClass="select-option-rec-addon"
+                                                                [formControl]="recAddonSelect">
+                                                                <mat-option value="op1">1 Cr.</mat-option>
+                                                                <mat-option value="op2">50 L</mat-option>
+                                                                <mat-option value="op3">25 L</mat-option>
+                                                            </mat-select>
+                                                            <img src="./assets/icons/down-arrow.svg" alt=""
+                                                                class="arrow-down">
+                                                        </div>
+                                                        <mat-error *ngIf="recAddonSelect.invalid">
+                                                        </mat-error>
+                                                    </mat-form-field>
+                                                </div>
+                                               <span> &#64;just</span>
+                                            </div>
+                                            <p class="price-text">&#x20B9; 112.50</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-4 mb-4 px-3" [ngClass]="{'mb-lg-0': showMore==false}">
+                                <div class="card h-100">
+                                    <div class="card-body round">
+                                        <div class="button-checkbox">
+                                            <mat-checkbox></mat-checkbox>
+                                        </div>
+                                        <div class="card-heading">
+                                            <h4 class="card-title">Critical Illness Rider</h4>
+                                        </div>
+                                        <p class="card-text">In case of critical illness detection we have you covered
+                                        </p>
+                                        <div class="price-group">
+                                            <div class="d-flex just-text mb-1 mb-md-2">
+                                                <div class="form-filed">
+                                                    <mat-form-field>
+                                                        <div class="d-flex align-items-center">
+                                                            <mat-select disableOptionCentering panelClass="select-option-rec-addon"
+                                                                [formControl]="recAddonSelect">
+                                                                <mat-option value="op1">1 Cr.</mat-option>
+                                                                <mat-option value="op2">50 L</mat-option>
+                                                                <mat-option value="op3">25 L</mat-option>
+                                                            </mat-select>
+                                                            <img src="./assets/icons/down-arrow.svg" alt=""
+                                                                class="arrow-down">
+                                                        </div>
+                                                        <mat-error *ngIf="recAddonSelect.invalid">
+                                                        </mat-error>
+                                                    </mat-form-field>
+                                                </div>
+                                               <span> &#64;just</span>
+                                            </div>
+                                            <p class="price-text">&#x20B9; 112.50</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-12 col-lg-4 mb-4 mb-4 px-3 mb-lg-0" *ngIf="showMore">
+
+                                <div class="card h-100">
+                                    <div class="card-body round">
+                                        <div class="button-checkbox">
+                                            <mat-checkbox [checked]=true></mat-checkbox>
+                                        </div>
+                                        <div class="card-heading">
+                                            <h4 class="card-title">Accidental Death Benefit</h4>
+                                        </div>
+                                        <p class="card-text">Secure your loved ones even when you are not around </p>
+                                        <div class="price-group">
+                                            <div class="d-flex just-text mb-1 mb-md-2">
+                                                <div class="form-filed">
+                                                    <mat-form-field>
+                                                        <div class="d-flex align-items-center">
+                                                            <mat-select disableOptionCentering panelClass="select-option-rec-addon"
+                                                                [formControl]="recAddonSelect">
+                                                                <mat-option value="op1">1 Cr.</mat-option>
+                                                                <mat-option value="op2">50 L</mat-option>
+                                                                <mat-option value="op3">25 L</mat-option>
+                                                            </mat-select>
+                                                            <img src="./assets/icons/down-arrow.svg" alt=""
+                                                                class="arrow-down">
+                                                        </div>
+                                                        <mat-error *ngIf="recAddonSelect.invalid">
+                                                        </mat-error>
+                                                    </mat-form-field>
+                                                </div>
+                                               <span> &#64;just</span>
+                                            </div>
+                                            <p class="price-text">&#x20B9; 112.50</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-4 mb-4 mb-4 px-3 mb-lg-0" *ngIf="showMore">
+                                <div class="card h-100">
+                                    <div class="card-body round">
+                                        <div class="button-checkbox">
+                                            <mat-checkbox [checked]=true></mat-checkbox>
+                                        </div>
+                                        <div class="card-heading">
+                                            <h4 class="card-title">Permanent Disability</h4>
+                                        </div>
+                                        <p class="card-text">We waive off premium on permanent disability </p>
+                                        <div class="price-group">
+                                            <div class="d-flex just-text mb-1 mb-md-2">
+                                                <div class="form-filed">
+                                                    <mat-form-field>
+                                                        <div class="d-flex align-items-center">
+                                                            <mat-select disableOptionCentering panelClass="select-option-rec-addon"
+                                                                [formControl]="recAddonSelect">
+                                                                <mat-option value="op1">1 Cr.</mat-option>
+                                                                <mat-option value="op2">50 L</mat-option>
+                                                                <mat-option value="op3">25 L</mat-option>
+                                                            </mat-select>
+                                                            <img src="./assets/icons/down-arrow.svg" alt=""
+                                                                class="arrow-down">
+                                                        </div>
+                                                        <mat-error *ngIf="recAddonSelect.invalid">
+                                                        </mat-error>
+                                                    </mat-form-field>
+                                                </div>
+                                               <span> &#64;just</span>
+                                            </div>
+                                            <p class="price-text">&#x20B9; 112.50</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-4 mb-4 mb-4 px-3 mb-lg-0" *ngIf="showMore">
+                                <div class="card h-100">
+                                    <div class="card-body round">
+                                        <div class="button-checkbox">
+                                            <mat-checkbox></mat-checkbox>
+                                        </div>
+                                        <div class="card-heading">
+                                            <h4 class="card-title">Critical Illness Rider</h4>
+                                        </div>
+                                        <p class="card-text">In case of critical illness detection we have you covered
+                                        </p>
+                                        <div class="price-group">
+                                            <div class="d-flex just-text mb-1 mb-md-2">
+                                                <div class="form-filed">
+                                                    <mat-form-field>
+                                                        <div class="d-flex align-items-center">
+                                                            <mat-select disableOptionCentering panelClass="select-option-rec-addon"
+                                                                [formControl]="recAddonSelect">
+                                                                <mat-option value="op1">1 Cr.</mat-option>
+                                                                <mat-option value="op2">50 L</mat-option>
+                                                                <mat-option value="op3">25 L</mat-option>
+                                                            </mat-select>
+                                                            <img src="./assets/icons/down-arrow.svg" alt=""
+                                                                class="arrow-down">
+                                                        </div>
+                                                        <mat-error *ngIf="recAddonSelect.invalid">
+                                                        </mat-error>
+                                                    </mat-form-field>
+                                                </div>
+                                               <span> &#64;just</span>
+                                            </div>
+                                            <p class="price-text">&#x20B9; 112.50</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </perfect-scrollbar>
+                </div>
+
+                <div class="col-12 text-center show-more-wrapper">
+                    <a (click)="getMore()" class="link show-more pointer" *ngIf="!showMore"> Show More </a>
+                    <a (click)="getLess()" class="link show-more pointer" *ngIf="showMore"> Show Less </a>
+                </div>
+
+                <div class="col-12  mb-0 mb-md-2 button-wrapper">
+                    <div class="row justify-content-center">
+                        <div class="button-wrap">
+                            <button class="mat-button-lg" mat-raised-button color="primary" (click)="getSummery()">ADD</button>
+                            <button mat-stroked-button color="primary" class="mat-button-lg" (click)="getSummery()">Skip</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 critical-illness-rider">
+                    <div class="row justify-content-center">
+                        <div class="circle">
+                            <img src="./assets/icons/heartbeat.svg" alt="" class="icons">
+                        </div>
+                        <p>2 out of 3 people who buy Zindagi Plus opt for
+                            <span>Critical Illness Rider</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </perfect-scrollbar>
+    </div>
+
+</section>

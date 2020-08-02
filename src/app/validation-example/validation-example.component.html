@@ -1,0 +1,70 @@
+<form [formGroup]="userForm" (submit)="saveUser()">
+
+	<div class="form-group">
+		<label for="name">Name</label>
+		<input formControlName="name" type="text" class="form-control" id="name" ([ngModel])="username" [placeholder]="namePlaceholder">
+		<div *ngIf="userForm.get('name').errors?.required && userForm.get('name').touched">
+			<div>
+				<label class="invalidClass" style="color:red">Name is required</label>
+			</div>
+		</div>
+		
+	</div>
+	<div class="form-group">
+		<label for="email">Email ID</label>
+		<input formControlName="email" type="text" class="form-control" id="email" aria-describedby="emailHelp" [placeholder]="emailIdPlaceholder">
+		<div *ngIf="userForm.get('email').errors?.required && userForm.get('email').touched">
+			<div>
+				<label class="invalidClass" style="color:red">Email is required</label>
+			</div>
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="profile">Profile</label>
+		<input formControlName="profile" type="text" class="form-control" id="profile" [placeholder]="profilePlaceholder">
+		<div *ngIf="profile.touched">
+			<div *ngIf="profile.errors?.required">
+				<label class="invalid">Profile is required</label>
+			</div>
+			<div *ngIf="profile.errors?.minlength">
+				<label class="invalid">Profile min length is 5</label>
+			</div>
+			<div *ngIf="profile.errors?.maxlength">
+				<label class="invalidClass" style="color:red">Profile max length is 5</label>
+			</div>
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="maritalstatus">Marital Status:</label>
+		<select class="form-control" id="maritalstatus"  formControlName="maritalstatus" (change)="maritalChangeHandler($event)">
+        <option *ngFor="let list of maritalList;index as i" value="{{list.id}}">{{list.name}}</option>
+      
+      </select>
+		<div *ngIf="userForm.get('maritalstatus').errors?.required && userForm.get('maritalstatus').touched">
+			<div *ngIf="userForm.get('maritalstatus').errors.required">
+				<label class="invalidClass" style="color:red">Marital Status is required</label>
+			</div>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label for="gender">Gender:</label>
+		<select class="form-control" id="gender"  formControlName="gender"(change)="genderChangeHandler($event)">
+        <option *ngFor="let list of genderList;index as i" ([ngModel])="usergender">{{list}}</option>      
+      </select>
+		<div *ngIf="userForm.get('gender').errors?.required && userForm.get('gender').touched">
+			<div *ngIf="userForm.get('gender').errors.required">
+				<label class="invalidClass" style="color:red">Gender is required</label>
+			</div>
+		</div>
+	</div>
+
+
+	<button class="btn btn-primary"
+        [disabled]="! userForm.valid">
+    submit
+</button>
+<p *ngIf="userForm.get('name').value!='' && userForm.get('gender').value!='' && userForm.get('maritalstatus').value!='' ? true : false">
+	Result: {{userForm.get('name').value | customFilter:userForm.get('gender').value:userForm.get('maritalstatus').value}}
+	</p>
+</form>

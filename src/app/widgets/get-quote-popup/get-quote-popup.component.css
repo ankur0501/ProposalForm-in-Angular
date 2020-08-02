@@ -1,0 +1,109 @@
+/* Popup Container */
+::ng-deep .get-quote-popup-container { max-width: 840px !important; min-width: 840px !important; }
+
+/* Get-Quote Header */
+.get-quote-wrapper { padding: 20px 0; position: relative;}
+.close-button{ position: absolute; top: 20px; right: 20px;}
+.quote-header { padding: 5px 0 15px; }
+.quote-heading { font-size: 22px; color: #3c3c3c; font-family: 'Montserrat-Bold'; margin-bottom: 6px; }
+.quote-subtext { font-size: 18px; color: #6d6d6d; }
+
+/* Get-Quote Form */
+.quote-form .form-label { font-size: 14px; color: #868686; font-family: 'Montserrat-Medium'; margin-bottom: 5px; }
+.quote-form .quote-form-text { font-size: 13px; font-family: 'Montserrat-Medium'; color: #a5a5a5; margin-bottom: 30px; }
+.quote-form .quote-form-subtext { font-size: 13px; font-family: 'Montserrat-Medium'; color: #8e8e8e; margin-bottom: 20px; }
+.quote-form .quote-form-subtext span { font-weight: 600; font-family: 'Montserrat-SemiBold'; }
+
+/* Get-Quote Form Material*/
+::ng-deep .quote-form .mat-input-element { color: #343434; font-size: 18px; }
+::ng-deep .quote-form .mat-form-field { font-family: 'Montserrat-Regular'; margin-bottom: 20px; width: 100%; }
+::ng-deep .quote-form .mat-form-field-appearance-legacy .mat-form-field-label { font-size: 14px; color: #868686; }
+::ng-deep .quote-form .mat-form-field-appearance-legacy .mat-form-field-underline { background-color: #d1d1d1; }
+::ng-deep .quote-form .mat-select-arrow { border: none; }
+::ng-deep .quote-form .mat-button-toggle-group { border: none; }
+::ng-deep .quote-form .mat-button-toggle-group-appearance-standard .mat-button-toggle+.mat-button-toggle { border-left: none; }
+::ng-deep .quote-form .mat-button-toggle-appearance-standard .mat-button-toggle-label-content { font-size: 14px; color: #999999; font-family: "Montserrat-Medium"; border-radius: 19.7px; border: solid 1px #cbcbcb; line-height: 25px; padding: 3px 30px; }
+/* ::ng-deep .quote-form .mat-button-toggle-checked { background: none; } */
+::ng-deep .quote-form .mat-button-toggle .mat-button-toggle-ripple { position: sticky; }
+::ng-deep .quote-form .mat-button-toggle-checked .mat-button-toggle-label-content { font-size: 14px; color: #124093; font-family: "Montserrat-Medium"; border: solid 1.2px #124093; }
+::ng-deep .quote-form .form-filed  .mat-select-value { color: #343434; font-size: 18px; font-family: 'Montserrat-Regular' }
+::ng-deep .quote-form .mat-option { font-family: 'Montserrat-Regular' }
+
+/* ::ng-deep .button-wrap .mat-raised-button.mat-primary {  font-family: Montserrat-SemiBold;  font-size: 14px;  padding: 12px 73px;} */
+
+
+/* Get-Quote Edit Popup */
+::ng-deep .mat-dialog-container { border-radius: 8px; padding: 0;}
+
+.arrow-down { transform: scale(0.7); } 
+.mat-button-toggle { white-space: nowrap; position: relative; border-radius: 20px; margin-right: 10px;} 
+
+
+.mob-prefixer {
+  display: inline-block;
+  position: absolute;
+  font-size: 18px;
+  color: #aaaaaa;
+  left: 0;
+  top: 5px;
+}
+
+::ng-deep .custom-mobile-input .mat-input-element { padding-left: 35px; }
+
+.form-filed {margin: -5px 0;}
+.small-text-margin {
+  margin-bottom: 20px;
+}
+
+::ng-deep .form-div .ps-content {
+  padding-top: 5px;
+}
+.form-div{
+  height: 425px;
+}
+
+/**** Media Query Start ****/
+@media (max-width:1200px) {
+  ::ng-deep .quote-form .mat-button-toggle-appearance-standard .mat-button-toggle-label-content { padding: 3px 20px }
+}
+@media (max-width:992px) {
+
+  ::ng-deep .get-quote-popup-container { max-width: 100vw !important; min-width: 100vw !important; height: 100vh; }
+  .quote-form .quote-form-text { line-height: unset; } 
+  .rectangle { margin-bottom: 30px; }
+  /* Get-Quote Edit Popup */
+  ::ng-deep .mat-dialog-container { border-radius: 0px; padding: 0;}
+  .get-quote-wrapper { padding: 10px 0;}
+  .get-quote-wrapper { padding: 30px 0;}
+  .close-button { top: 10px; right: 10px;}
+  .close-icon { width: 15px;}
+  .button-save { display: flex; justify-content: center; margin-top: 40px;}
+
+  /* .small-text{
+    margin-bottom: 0;
+} */
+
+}
+@media (max-width:767px) {
+  ::ng-deep .quote-form .mat-button-toggle-appearance-standard .mat-button-toggle-label-content {
+    font-size: 12px;
+  }
+  ::ng-deep .mat-button-wrapper {
+    font-size: 14px;
+    font-family: Montserrat-SemiBold;
+  }
+
+  .quote-heading { font-size: 18px;}
+  .quote-form .quote-form-subtext { padding: 15px 0; text-align: center; line-height: 20px; font-size: 12px; margin-bottom: 0 }
+  .button-save .mat-raised-button { width: 150px; padding: 10px 0;}
+  ::ng-deep .quote-form .mat-input-element { font-size: 16px; }
+  .text { line-height: 1.62;}
+}
+
+
+@media all and (-ms-high-contrast:none) {
+  .form-div {
+    height: 450px;
+  }
+}
+

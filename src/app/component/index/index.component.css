@@ -1,0 +1,3 @@
+.bullet-list { padding: 20px 0 }
+.bullet-list li { cursor: pointer; color: #317fff }
+.bullet-list li::after { background: #868686; width: 6px; height: 6px; top: 6px; }

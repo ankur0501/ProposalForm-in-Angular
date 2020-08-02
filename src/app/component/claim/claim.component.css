@@ -1,0 +1,564 @@
+/* Claim Page */
+.claim-wrapper {
+    margin-top: 30px;
+    position: relative;
+}
+.claims-inner-tabs-wrapper {
+    padding: 25px 0;
+}
+
+/* Report Claim */
+.report-claim-heading {
+    font-family: "Montserrat-SemiBold";
+    font-size: 30px;
+    color: #3c3c3c;
+    margin-bottom: 25px;
+}
+.report-claim-form-wrap {
+    border-radius: 10px;
+    box-shadow: 0 0 12px 0 rgba(156, 156, 156, 0.25);
+    border: solid 1px #ebebeb;
+    padding: 33px 20px;
+} 
+.claim-settlement { 
+    border-radius: 10px;
+    border: dashed 2px #909090;
+    background-color: #fff6e1;
+    padding: 44px 30px;
+    text-align: center;
+    margin-left: 30px;
+}
+.claim-settlement .h1 {
+    font-size: 22px;
+}
+.claim-settlement span {
+    color:#ff4c00;
+}
+
+/* Death Claim */
+.death-claim-wrapper {
+    padding: 75px 0;
+}
+.death-claim-heading {
+    font-family: "Montserrat-Bold";
+    font-size: 28px;
+    color: #3c3c3c;
+    margin-bottom: 50px;
+    text-align: center;
+}
+.death-claim {
+    border-radius: 10px;
+    box-shadow: 0 0 6px 0 rgba(156, 156, 156, 0.25);
+    border: solid 1px #ebebeb;
+    padding: 25px 12px;
+    width: 380px;
+    margin-right: 30px;
+    position: relative;
+    background: #fff;
+}
+.death-claim.d-flex::after{
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    margin-left: -0.5em;
+    bottom: 0;
+    top: 63%;
+    right: -27px;
+    box-sizing: border-box;
+    border: 1em solid black;
+    border-color: transparent transparent #ffffff #ffffff;
+    transform-origin: 0 0;
+    transform: rotate(-135deg);
+    box-shadow: -2px 2px 3px 0 rgba(156, 156, 156, 0.25);
+    z-index: 1;
+}
+.death-claim.d-flex:last-child::after{
+    display: none;
+
+}
+.death-claim:last-child {
+    margin-right: 0px;
+}
+.death-claim .bullet-list li {
+    font-family: "Montserrat-Medium";
+    margin-bottom: 5px;
+}
+.death-claim .bullet-list li:last-child {
+    margin-bottom: 0px;
+}
+.death-claim-title {
+    font-family: "Montserrat-SemiBold";
+    font-size: 16px;
+    line-height: 1.19;
+    color: #3c3c3c;
+    margin-bottom: 5px;
+}
+.intimation-claim-img {
+    width: 71.2px;
+    border-radius: 50%;
+    height: 71.2px;
+    box-shadow: 0 0 9px 0 rgba(151, 151, 151, 0.53);
+    margin: 10px 0;
+}
+.intimation-claim-img img {
+   padding: 17px 13px;
+}
+.death-claim-list {
+    margin-left: 12px;
+}
+.circular-batch {
+    right: 28px;
+    box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.25);
+    border: solid 1.9px #ffa35d;
+    background-color: #124093;
+    color: #fff;
+    border-radius: 50%;
+    padding: 8px 16px;
+    font-size: 24px;
+    position: absolute;
+    top: -25px
+}
+
+/* Doucuments Claim */
+.documents-claim-wrapper {
+    padding: 0 0 20px;
+}
+.claim-heading {
+    font-family: "Montserrat-Bold";
+    font-size: 28px;
+    color: #3c3c3c;
+    margin-bottom: 15px;
+    text-align: center;
+}
+.claim-subheading {
+    font-family: "Montserrat-Medium";
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #6d6d6d;
+}
+.documents-claim-wrapper .button-wrap {
+    margin-top: 35px;
+}
+.download-documents { margin: 25px 0; border-radius: 10px; box-shadow: 0 0 12px 0 rgba(156, 156, 156, 0.25); border: solid 1px #ebebeb; background-color: #ffffff; }
+.content { padding: 15px 60px 15px 20px; border-bottom: solid 1px #e3e3e3; }
+.content:nth-child(even) { background-color: #fff6e1; }
+.content:last-child { border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; }
+.content-web { display: flex; align-items: center; }
+.title-web { flex-grow: 1; display: flex; justify-content: space-between; font-size: 14px; color: #343434; font-family: "Montserrat-Medium";}
+.download-icon { margin-right: 10px; }
+.download-text { font-size: 12px; }
+
+/* faq list style */
+.claims-inner-tabs-wrapper .faqs ul li { list-style: none; padding-top: 0; color: #8e8e8e; font-size: 16px;}
+
+/** our customers **/
+.our-customers-wrapper { padding: 80px 0 0;}
+.customers-header { margin-bottom: 15px }
+.customers-header .claim-review { font-size: 18px;}
+.customers-header .claim-review span { color: #007eff;}
+.customers-slider .testimonial-slide { cursor: pointer; border-radius: 11.4px; box-shadow: 0 1px 12px -1px rgba(100, 100, 100, 0.55); background-color: #ffffff; padding: 64px 20px; text-align: center; position: relative; height: 330px;}
+.customers-slider .testimonial-slide-quote-1 { left: 0; top: 0; position: absolute; }
+.customers-slider .testimonial-slide-quote-2 { right: 0; bottom: 0; position: absolute; }
+.customers-slider .testimonial-slide-quote-1 img, .testimonial-slide-quote-2 img { width: 100%; }
+.customers-slider .testimonial-slide h3 { font-size: 24px; color: #262626; margin-bottom: 5px; }
+.customers-slider .testimonial-slide h4 { font-size: 18px; color: #6c6c6c; margin-bottom: 20px; }
+.customers-slider .testimonial-slide p { font-size: 18px; color: #4a4a4a; font-family: 'Montserrat-Regular'; line-height: 1.58;}
+
+
+/* Our Claim Philosophy */
+.philosophy-claim-wrapper {
+    padding: 80px 0;
+}
+.philosophy-claim-wrapper .premium-wrap {  border-radius: 10px; box-shadow: 0 0 5px 0 rgba(151, 151, 151, 0.53); background-color: #134094;color: var(--white);border: 1px solid #124093;}
+.philosophy-claim-wrapper .premium-left { font-family: 'Montserrat-Medium'; font-style: italic; font-size: 22px;color: #ffffff; padding: 46px 38px;}
+.philosophy-claim-wrapper .premium-right { padding-left: 0px; background: #fff; border-radius: 10px; text-align: left; flex-direction: column; justify-content: center; position: relative;z-index: 1; height: 100%;}
+.philosophy-claim-wrapper .premium-right::after {
+    width: 146px;
+    height: 146px;
+    content: "";
+    position: absolute;
+    background: #fff;
+    border-radius: 50%;
+    z-index: -1;
+    left: -72px;
+    top: 0px;
+}
+
+/* Articles */
+.articles-card { border-radius: 10px; box-shadow: 0 0 12px 0 rgba(156, 156, 156, 0.25); border: solid 1px #ebebeb; margin-right: 15px;width: 414px; }
+.articles-card:last-child { margin-right: 0; }
+.articles-card .card-body { padding: 18px 16px; }
+.articles-card .h2 { font-size: 16px;}
+.articles-card .link { font-size: 12px;}
+.articles-card .small-text { line-height: 1.75; margin-bottom: 15px;}
+
+/* Expert Advice */
+.expert-wrapper { padding-top: 75px;}
+.expert-wrapper .or { font-size: 16px; color: #343434;}
+
+/* Support Available */
+.claims-inner-tabs-wrapper .support-available { padding: 62px 0 10px; }
+
+/* Track your claim */
+.track-your-claim {
+    position: absolute;
+    top: -3px;
+    right: 35px;
+    z-index: 1;
+    display: flex;
+}
+.track-your-claim .h2 {
+    font-size: 18px;
+    margin-bottom: 0;
+    margin-right: 10px;
+}
+.track-your-claim-form {
+    display: flex;
+}
+.track-your-claim .button-wrap{
+    margin-left: 15px;
+}
+.track-your-claim-status {
+    position: absolute;
+    top: -8px;
+    right: 40px;
+    z-index: 1;
+}
+.claim-status {
+    font-family: 'Montserrat-Medium';
+    font-size: 18px;
+    color: #343434;
+    margin-right: 18px;
+}
+.claim-status span {
+    font-family: 'Montserrat-Bold';
+}
+.claim-status-img {
+    margin-right: 18px;
+}
+.close-small {
+    height: 15px;
+}
+
+/* Mat-Tab CSS */
+::ng-deep .claim-wrapper .mat-tab-label {
+    padding: 0;
+    min-width: 90px;
+    margin-right: 32px;
+}
+::ng-deep .claim-wrapper .mat-tab-labels {
+    margin: 0 auto;
+    max-width: 1300px;
+    padding: 0 15px;
+}
+::ng-deep .claim-wrapper .mat-tab-label.mat-tab-label-active {
+    font-family: "Montserrat-SemiBold";
+    font-size: 14px;
+    line-height: 1.64;
+    color: #317fff;
+}
+
+::ng-deep .claim-wrapper .mat-tab-group.mat-primary .mat-ink-bar {
+    height: 3px;
+    background-color: #317fff;
+    width: 90px;
+}
+::ng-deep .claim-wrapper .mat-tab-label { 
+    font-family: "Montserrat-Medium";
+    font-size: 14px;
+    color: #8e8e8e;
+}
+::ng-deep.mat-tab-label.mat-tab-label-active:not(.mat-tab-disabled),
+::ng-deep.mat-tab-label.mat-tab-label-active.cdk-keyboard-focused:not(.mat-tab-disabled) {
+    opacity: 1;
+}
+
+/** Slick Slider **/
+::ng-deep .customers-slider .slick-slider { display: flex; justify-content: center; flex-wrap: wrap; align-items: center; }
+::ng-deep .customers-slider .slick-list { order: 1; }
+::ng-deep .customers-slider .slick-slide:not(.slick-center) { z-index: 0; transform: scale(0.75); left: 180px; -webkit-transform: scale(0.75); -moz-transform: scale(0.75); -ms-transform: scale(0.75); -o-transform: scale(0.75); }
+::ng-deep .customers-slider .slick-active.slick-center + .slick-slide + .slick-slide { z-index: 1; }
+::ng-deep .customers-slider .slick-active.slick-center + .slick-slide, ::ng-deep .customers-slider .slick-center + .slick-cloned { z-index: 2; left: auto; right: 180px; }
+::ng-deep .customers-slider .slick-slide { position: relative; transition: transform 80ms; padding-top: 20px; opacity: 0.5; }
+::ng-deep .customers-slider .slick-center { z-index: 3; padding-top: 15px; opacity: 1; padding-bottom: 40px;}
+::ng-deep .customers-slider .slide img { position: relative; transform: translateX(-50%); left: 50%; }
+::ng-deep .customers-slider .slick-prev { order: 2; transform: none; -webkit-transform: none; -moz-transform: none; -ms-transform: none; -o-transform: none; }
+::ng-deep .customers-slider .slick-dots { order: 3; position: relative; width: auto; max-width: 300px; }
+::ng-deep .customers-slider .slick-next { order: 4; transform: rotateY(180deg); }
+::ng-deep .customers-slider .slick-prev, ::ng-deep .customers-slider .slick-next { position: relative; left: 0; right: 0; margin: 0; top: auto; width: auto; height: auto; }
+::ng-deep .customers-slider .slick-prev:before, ::ng-deep .customers-slider .slick-next:before { font-family: inherit; content: none; }
+::ng-deep .customers-slider .testimonial-slide { border-radius: 11.4px; box-shadow: 0 1px 12px -1px rgba(100, 100, 100, 0.55); background-color: #ffffff; padding: 20px 25px; text-align: center; position: relative; }
+::ng-deep .customers-slider .testimonial-slide-quote-1 { left: 0; top: 0; position: absolute; }
+::ng-deep .customers-slider .testimonial-slide-quote-2 { right: 0; bottom: 0; position: absolute; }
+::ng-deep .customers-slider .testimonial-slide-quote-1 img, ::ng-deep .customers-slider .testimonial-slide-quote-2 img { width: 100%; }
+::ng-deep .customers-slider .testimonial-img { width: 150px; height: 150px; border-radius: 100%; -webkit-border-radius: 100%; -moz-border-radius: 100%; -ms-border-radius: 100%; -o-border-radius: 100%; border: solid 1.4px #aebdda; background-color: #e5e5e5; padding: 7px; display: table; margin: -95px auto 15px auto; }
+::ng-deep .customers-slider .slick-slide:not(.slick-center) .testimonial-slide { box-shadow: 0 0px 12px -6px rgba(100, 100, 100, 0.55); }
+::ng-deep .customers-slider .slick-dots { bottom: 0px !important; text-align: left; font-size: 0; }
+::ng-deep .customers-slider .slick-dots li { width: 10px !important; height: 10px !important; margin: 3px 12.5px !important; background: #d8d8d8; border-radius: 100%; vertical-align: middle; -webkit-border-radius: 100%; -moz-border-radius: 100%; -ms-border-radius: 100%; -o-border-radius: 100%; }
+::ng-deep .customers-slider .slick-dots li button { padding: 0 !important; width: 100% !important; height: 100% !important; }
+::ng-deep .customers-slider .slick-dots li button:before { content: none !important; width: auto !important; height: auto !important; }
+::ng-deep .customers-slider .slick-dots li.slick-active { background: #ff4c00; }
+::ng-deep .customers-slider .slick-dotted.slick-slider { margin-bottom: 0 }
+
+/* Mat-Input CSS for Track your claim */
+::ng-deep .track-your-claim .mat-input-element {  color: #000000; font-size: 18px; }
+::ng-deep .track-your-claim .mat-form-field { font-family: 'Montserrat-Regular'; margin-bottom: 0px; width: 100%; }
+::ng-deep .track-your-claim .mat-form-field-appearance-legacy .mat-form-field-label { font-size: 18px; color: #868686; }
+::ng-deep .track-your-claim .mat-form-field-appearance-legacy .mat-form-field-underline { background-color: #d1d1d1; }
+::ng-deep .track-your-claim .mat-form-field-appearance-legacy .mat-form-field-infix { padding-top: 12px; width: unset; border-top: none;}
+
+/* Mat-Input CSS for Report claim Form */
+::ng-deep .report-claim-form .mat-input-element {  color: #000000; font-size: 18px; }
+::ng-deep .report-claim-form .mat-form-field { font-family: 'Montserrat-Regular'; width: 100%; }
+::ng-deep .report-claim-form .mat-form-field-appearance-legacy .mat-form-field-label { font-size: 14px; color: #868686; }
+::ng-deep .report-claim-form .mat-form-field-appearance-legacy .mat-form-field-underline { background-color: #d1d1d1; }
+::ng-deep .report-claim-form .mat-form-field-appearance-legacy .mat-form-field-infix { width: 280px;}
+::ng-deep .report-claim-form .mat-form-field-appearance-legacy .mat-form-field-wrapper { margin-right: 27px; }
+
+/* Mat Select */
+::ng-deep .documents-claim-wrapper .mat-input-element {  color: #000000; font-size: 18px; }
+::ng-deep .documents-claim-wrapper .mat-form-field { font-family: 'Montserrat-Regular'; display: flex; justify-content: center; }
+::ng-deep .documents-claim-wrapper .mat-form-field-appearance-legacy .mat-form-field-label { font-size: 14px; color: #868686; }
+::ng-deep .documents-claim-wrapper .mat-form-field-appearance-legacy .mat-form-field-underline { background-color: #d1d1d1; }
+::ng-deep .documents-claim-wrapper .mat-select-arrow { border: none; }
+::ng-deep .documents-claim-wrapper .form-filed .mat-select-value {  color: #343434; font-size: 18px; font-family: 'Montserrat-Regular' }
+::ng-deep .documents-claim-wrapper .form-filed .mat-option { font-family: 'Montserrat-Regular' }
+::ng-deep .documents-claim-wrapper .mat-form-field-appearance-legacy .mat-form-field-wrapper { width: 300px;}
+::ng-deep .documents-claim-wrapper .mat-form-field-appearance-legacy .mat-form-field-infix { padding-top: 0; }
+
+::ng-deep .mat-select-panel.mat-primary.select-option-documents-lang{margin-left: 8px; margin-top: 35px;}
+
+/* FAQ */
+::ng-deep .claims-inner-tabs-wrapper .mat-expansion-panel.mat-expansion-panel { margin: 20px 0; }
+::ng-deep .claims-inner-tabs-wrapper .mat-expansion-panel-body { padding: 0 10px 16px; }
+::ng-deep .claims-inner-tabs-wrapper .accordion-wrapper .mat-expansion-panel.mat-expansion-panel .mat-expansion-panel-header-title { padding: 16px 0 16px;}
+
+
+
+/* Media Query */
+@media ( max-width:1069px) {
+    .philosophy-claim-wrapper .premium-left { font-size: 18px;}
+    .philosophy-claim-wrapper .premium-right::after 
+    {
+      width: 136px;
+      height: 136px;
+      left: -62px;
+    }
+}
+@media (max-width:992px) {
+    /* Claim Page */
+    .claim-wrapper {
+        margin-top: 200px;
+    }
+
+    /* Track your claim */
+    .track-your-claim .h2 {
+        text-align: center;
+        margin-bottom: 10px;
+        font-size: 16px;
+        font-family: 'Montserrat-SemiBold';
+    }
+    .track-your-claim {
+        flex-direction: column;
+        top: -185px;
+        right: 10px;
+        left: 10px;
+    }
+    .track-your-claim-form {
+        flex-direction: column;
+        border-radius: 10px;
+        box-shadow: 0 0 6px 0 rgba(156, 156, 156, 0.25);
+        border: solid 1px #ebebeb;
+        padding: 25px 12px;
+    }
+    .track-your-claim .button-wrap {
+        margin-left: 0;
+        display: flex;
+        justify-content: center;
+    }
+    .track-your-claim-status {     
+        top: -150px;
+        right: 10px;
+        left: 10px;
+        flex-direction: column;
+        border-radius: 10px;
+        box-shadow: 0 0 6px 0 rgba(156, 156, 156, 0.25);
+        border: solid 1px #ebebeb;
+        padding: 30px 20px;
+    }
+    .claim-status-wrap .h2{
+        position: absolute;
+        top: -185px;
+        right: 0;
+        left: 0;
+        text-align: center;
+        font-size: 16px;
+        font-family: 'Montserrat-SemiBold';
+    }
+    .close-small {
+        position: absolute;
+        right: 20px;
+        top: 20px;
+    }
+    .claim-status-img {
+        margin-right: 0;
+        margin-bottom: 18px;
+    }
+
+    /* Report Claim */
+    .report-claim-heading {
+        font-size: 18px;
+        text-align: center;
+    }
+    .report-claim-form {
+        flex-direction: column;
+    }
+    .report-claim-form-wrap {
+        width: 100%;
+        padding: 20px 10px;
+        margin-bottom: 40px;
+    }
+    .report-claim-form-wrap .button-wrap {
+        margin-top: 15px;
+    }
+    .report-claim-mobile {
+        flex-direction: column;
+    }
+    .claim-settlement {
+        margin-left: 0;
+        padding: 10px 28px;
+    }
+    .claim-settlement .h1 {
+        font-size: 14px;
+    }
+
+    /* Death Claim */
+    .death-claim-heading {
+        font-size: 16px;
+    }
+    .death-claim-wrapper {
+       padding: 40px 0 10px;
+    }  
+    .death-claim-mob {
+        flex-direction: column;
+    } 
+    .death-claim {
+        margin-right: 0;
+        width: unset;
+        margin-bottom: 30px;
+    }
+    .death-claim.d-flex::after{
+       content: "";
+       position: absolute;
+       width: 0;
+       height: 0;
+       margin-left: -0.5em;
+       bottom: -19%;
+       top: unset;
+       right: 50%;
+       box-sizing: border-box;
+       border: 1em solid transparent;
+       border-color: #ff5e5e00 #4de63b00 #ffffff #ffffff;
+       -webkit-transform-origin: 0 0;
+       transform-origin: 0 0;
+       -webkit-transform: rotate(-45deg);
+       transform: rotate(-45deg);
+       box-shadow: -4px 4px 3px rgba(156, 156, 156, 0.09);
+       z-index: 1;
+    }
+
+    /* Doucuments Claim */
+    .claim-heading {
+        font-size: 16px;
+    }
+    .claim-subheading {
+        font-size: 14px;
+    }
+    .download-documents { border-radius: unset; box-shadow: none; border: none; padding: 0; }
+    .content { padding: 12px; border-radius: 10px; border: solid 1px #f1f1f1; margin-bottom: 10px; }
+    .content .template { display: none;}
+    .title-mob { flex-direction: column; padding-right: 55px;}
+    .content-mob { flex-direction: column; align-items: center; }
+    .storage-mob { font-size: 12px; color: #8e8e8e; margin-top: 5px; }
+    .content:nth-child(even) { background: none; }
+    .download-icon { margin-right: 0; }
+    .download-icon img { width: 14px; height: 24px; }
+
+    /* faqs */
+    .claims-inner-tabs-wrapper .faqs { padding: 0; }
+
+    /** our customers **/
+    .our-customers-wrapper { padding: 30px 0 0;}
+    .customers-header .claim-review { font-size: 13px;}
+    .our-customers-wrapper .customers-slider .testimonial-slide h3 { font-size: 16px; }
+    .our-customers-wrapper .customers-slider .testimonial-slide h4, .customers-slider .testimonial-slide p { font-size: 12px; }
+    .our-customers-wrapper .customers-slider .testimonial-slide { padding: 34px 10px; border-radius: 14px; -webkit-border-radius: 14px; -moz-border-radius: 14px; -ms-border-radius: 14px; -o-border-radius: 14px; height: 220px;}
+    .our-customers-wrapper .customers-slider .testimonial-slide-quote-1 { width: 90px; }
+    .our-customers-wrapper .customers-slider .testimonial-slide-quote-2 { width: 130px; }
+
+    /* Our Claim Philosophy */
+    .philosophy-claim-wrapper { padding: 40px 0; }
+    .philosophy-claim-wrapper .premium-left { font-size: 12px; line-height: 1.42; padding: 18px 10px; text-align: center;}
+    .philosophy-claim-wrapper .premium-right {  border-top-left-radius: 0px; border-top-right-radius: 0px; padding: 22px;}
+    .philosophy-claim-wrapper .premium-right::after { display: none; } 
+
+    /* Articles */
+    .articles-card-wrapper { flex-direction: column;}
+    .articles-card { margin-right: 0; width: 100%; margin-bottom: 10px;}
+    .articles-card .h2 { font-size: 14px;}
+    .articles-card .card-body { padding: 18px 10px;}
+    .articles-card .link { font-family: "Montserrat-Medium";}
+
+    /* Expert Advice */
+    .expert-wrapper { padding-top: 30px;}
+
+    /* Support Available */
+    .claims-inner-tabs-wrapper .support-available { padding: 42px 0 10px;}
+    .claims-inner-tabs-wrapper .faqs ul { margin: 0 ; }
+    .claims-inner-tabs-wrapper .faqs ul li { font-size: 12px; }
+
+    /* Material CSS  */
+    ::ng-deep .claim-wrapper .mat-tab-label-container {
+       flex:1; 
+       overflow: visible;
+    }
+    ::ng-deep .claim-wrapper .mat-tab-header {
+       overflow: scroll;
+    }
+    ::ng-deep .claim-wrapper .mat-tab-header::-webkit-scrollbar {
+        width: 0 !important; 
+        display:none;
+    } 
+    ::ng-deep .claim-wrapper .mat-tab-header {
+        overflow: -moz-scrollbars-none; 
+        -ms-overflow-style: none;
+    }
+
+    ::ng-deep .claims-tabs-wrapper .mat-tab-header-pagination-controls-enabled .mat-tab-header-pagination { display: none;}
+    /* Report Claim */
+    ::ng-deep .report-claim-form .mat-form-field-appearance-legacy .mat-form-field-wrapper { margin-right: 0px; }
+    /* Our customers */
+    ::ng-deep .our-customers-wrapper .customers-slider .slick-slide { opacity: 0; padding-top: 0px; }
+    ::ng-deep .our-customers-wrapper .customers-slider .slick-center { opacity: 1; padding-top: 10px; padding-bottom: 20px; }
+    /* FAQ */
+    ::ng-deep .claims-inner-tabs-wrapper .mat-expansion-panel.mat-expansion-panel {  margin: 12px 0; }
+    
+
+}
+
+@media (max-width:767px) { 
+    /* Premium Amount Section */
+    .premium-left { font-size: 12px; line-height: 1.42; padding: 18px 10px; text-align: center;}
+    .premium-right {  border-top-left-radius: 0px; border-top-right-radius: 0px; padding: 22px 60px;}
+    .premium-right::after { display: none; } 
+
+    /* Our customers */
+    ::ng-deep .our-customers-wrapper .customers-slider .slick-slide { opacity: 0; padding-top: 0px; }
+    ::ng-deep .our-customers-wrapper .customers-slider .slick-center { opacity: 1; padding-top: 10px; padding-bottom: 20px; }
+}
+
+
+@media all and (-ms-high-contrast:none) { 
+   .philosophy-claim-wrapper .premium-right::after { width: 147px; height: 147px;}
+}

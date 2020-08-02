@@ -1,0 +1,77 @@
+<div class="collapsible-header active LATitle">Your <span class="spLaPropRelation"></span>Family Details</div>
+<form [formGroup]="familyDetailsForm">
+
+    <div class="collapsible-header subheader active" (click)="isCollapsed = !isCollapsed"
+        [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">Family Details</div>
+    <div id="collapseExample" [ngbCollapse]="isCollapsed" class="form-row">
+
+        <div class="form-group col-md-2" style="margin-left:1%;">
+            <label class="control-label col-md-6" for="relationShip">Relationship</label>
+            <select class="form-control browser-default custom-select" formControlName="relationShip">
+                <option selected value="">Select</option>
+                <option *ngFor="let relat of realtion" [value]="relat.rel">{{relat.rel}}</option>
+            </select>
+
+            <span class="text-danger invalid"
+                *ngIf="familyDetailsForm.get('relationShip').touched && familyDetailsForm.get('relationShip').hasError('required')">Required
+                Field</span>
+        </div>
+        <div class="form-group col-md-2" style="margin-left:1%;">
+            <label class="control-label col-md-12" for="healthSstatus">Health Status</label>
+            <select class="form-control browser-default custom-select" formControlName="healthSstatus"
+                (change)="Validations($event.target.value)">
+                <option selected value="">Select</option>
+                <option *ngFor="let health of Health" [value]="health.status">{{health.status}}</option>
+            </select>
+
+            <span class="text-danger invalid"
+                *ngIf="familyDetailsForm.get('healthSstatus').touched && familyDetailsForm.get('healthSstatus').hasError('required')">Required
+                Field</span>
+        </div>
+        <div *ngIf="familyDetailsForm.get('healthSstatus').value=='Select' || familyDetailsForm.get('healthSstatus').value=='' then nodisplay else displaydetails"></div>
+        <ng-template #displaydetails>
+            <div *ngIf="familyDetailsForm.get('healthSstatus').value!='Select' && familyDetailsForm.get('healthSstatus').value!='Deceased' then thendisplay else elsedisplay"
+                class="form-group col-md-2" style="margin-left:1%;"></div>
+        </ng-template>
+        <ng-template #nodisplay>
+
+        </ng-template>
+        <ng-template #thendisplay>
+            <div class="form-group col-md-2" style="margin-left:1%;">
+                <label class="control-label col-md-12" for="age">Age</label>
+                <input type="text" class="form-control" id="age" name="age" formControlName="age">
+
+                <span class="text-danger invalid"
+                    *ngIf="familyDetailsForm.get('age').touched && familyDetailsForm.get('age').hasError('required')">Required
+                    Field</span>
+            </div>
+        </ng-template>
+        <ng-template #elsedisplay>
+            <div class="form-group col-md-2" style="margin-left:1%;">
+                <label class="control-label col-md-12" for="ageAtDeath">Age at Death</label>
+                <input type="text" class="form-control" id="ageAtDeath" name="ageAtDeath" formControlName="ageAtDeath">
+
+                <span class="text-danger invalid"
+                    *ngIf="familyDetailsForm.get('ageAtDeath').touched && familyDetailsForm.get('ageAtDeath').hasError('required')">Required
+                    Field</span>
+            </div>
+
+            <div class="form-group col-md-2" style="margin-left:1%;">
+                <label class="control-label col-md-12" for="age">Cause Of Death</label>
+                <select class="form-control browser-default custom-select" formControlName="deathCause">
+                    <option selected value="">Select</option>
+                    <option *ngFor="let cause of CauseofDeath" [value]="cause">{{cause.cod}}</option>
+                </select>
+
+                <span class="text-danger invalid"
+                    *ngIf="familyDetailsForm.get('deathCause').touched && familyDetailsForm.get('deathCause').hasError('required')">Required
+                    Field</span>
+            </div>
+        </ng-template>
+        <div class="form-group col-md-2" style="margin-left:1%;">
+            <label class="control-label col-md-12" for="ageAtDeath">Add</label>
+            <button type="submit" class="btn btn-primary " style="margin-left:1%;" [disabled]="!familyDetailsForm.valid"
+                (click)="PassFamilyDetailsToParent()">Add More</button>
+        </div>
+    </div>
+</form>

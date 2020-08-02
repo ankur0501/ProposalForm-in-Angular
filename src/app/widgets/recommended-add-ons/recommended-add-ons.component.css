@@ -1,0 +1,100 @@
+::ng-deep .add-ons-popup-container { max-width: 1166px !important; min-width: 992px !important; }
+::ng-deep .mat-dialog-container { border-radius: 10px; padding: 0px; }
+.close-button { position: absolute; right: 20px; top: 20px; }
+.addons { position: relative; margin: 20px; }
+.close-button { position: absolute; right: 0; top: 0; }
+.heading .header { font-size: 24px; color: #333333; font-family: 'Montserrat-Bold' }
+
+/* .heading.text-center { padding-top: 5px;} */
+.addon-body .card { box-shadow: 0 0 6px 0 rgba(151, 151, 151, 0.53); border-radius: 6px; margin: 1rem 0.5rem; margin: auto; }
+.addon-body .card-body { display: flex; flex-direction: column; text-align: center; padding: 40px 10px 20px; }
+.addon-body .card-title { font-family: 'Montserrat-Bold'; font-size: 18px; color: #343434; }
+.addon-body .card-text { font-family: 'Montserrat-Regular'; font-size: 16px; color: #868686; margin-bottom: 20px; flex: 1; padding: 0 10px; }
+.addon-body .price-text { font-family: 'Montserrat-Bold'; font-size: 28px; color: #3c3c3c; }
+.addon-body .card-heading { position: relative; }
+.addon-body .round { position: relative; }
+.button-checkbox { position: absolute; top: 10px; right: 10px; }
+.addon-body .price-group { background-color: #fff6e1; padding: 10px 0; margin: 0 -10px; }
+.addon-body .addon-card { margin: 5px 0; }
+.just-text { font-family: 'Montserrat-Medium'; font-size: 18px; color: #868686; justify-content: center; }
+
+/** Checkbox button **/
+.addons::ng-deep .button-checkbox .mat-checkbox-checkmark { top: 0; left: 0; position: absolute; width: 85%; transform: translate(2px, 2px); -webkit-transform: translate(2px, 2px); -moz-transform: translate(2px, 2px); -ms-transform: translate(2px, 2px); -o-transform: translate(2px, 2px); }
+.addons::ng-deep .button-checkbox .mat-checkbox-inner-container { width: 30px; height: 30px; }
+.addons::ng-deep .button-checkbox .mat-checkbox-inner-container::after { width: 20px; height: 20px; left: 5px; top: 5px; }
+.show-more-wrapper { margin-bottom: 30px; padding: 20px 0; }
+.critical-illness-rider { margin-bottom: 20px; }
+.critical-illness-rider img { width: 24px; height: 21px; position: absolute; top: 0; left: 0; bottom: 0; right: 0; margin: auto; }
+.critical-illness-rider p { font-family: 'Montserrat-Regular'; font-size: 18px; color: #8e8e8e; align-self: center; }
+.critical-illness-rider p span { font-family: 'Montserrat-Bold'; color: #3c3c3c; }
+.circle { width: 54px; height: 54px; box-shadow: 0 0 8px 0 rgba(151, 151, 151, 0.53); border-radius: 50px; position: relative; margin-right: 15px; }
+.scroll-div{padding-right: 0px !important;}
+
+.addon-body .scroll-div { height: 245px; }
+.addon-body .scroll-div-more { height: 350px; }
+
+::ng-deep .addon-card .form-filed .mat-select-value {
+    font-family: 'Montserrat-Medium';
+    font-size: 18px;
+    line-height: 1.5;
+    color: #343434;
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+}
+::ng-deep .addon-card .mat-form-field-appearance-legacy .mat-form-field-infix {
+    padding: 0px;
+}
+
+.just-text .form-filed {
+    margin: -20px 0;
+    width: 90px;
+    margin-right: 20px;
+}
+::ng-deep .just-text .form-filed .mat-select-arrow { border: none; }
+
+
+
+/**** Media Query Start ****/
+@media (min-width:992px) and (max-width:1900px) {
+    
+}
+@media (max-width:992px) {
+    ::ng-deep .add-ons-popup-container { max-width: 100vw !important; min-width: 100vw !important; height: 100vh; }
+    ::ng-deep .mat-dialog-container { border-radius: 0px; }
+    .addons::ng-deep .button-checkbox .mat-checkbox-inner-container::after { width: 12px; height: 12px; left: 4px; top: 4px; }
+    .close-button img { width: 15px; }
+    .heading .header { font-size: 14px; }
+    .addons { margin: 10px; }
+    .addons h2, .h2 { font-size: 14px; }
+    .addon-body .scroll-div { height: 730px; }
+    .heading.text-center { padding: 10px 0; }
+    .button-wrap button + button { margin: 20px 0 0 0 }
+    .addon-body {
+        margin-top: 0 !important;
+    }
+
+}
+@media (max-width:767px) {
+    .addon-body .scroll-div { height: 640px; }
+    .addon-body .addon-card {margin-right: -15px; margin-left: -15px;}
+    /** Checkbox button **/
+    .addons::ng-deep .button-checkbox .mat-checkbox-checkmark { top: 0; left: 0; position: absolute; width: 75%; transform: translate(2px, 2px); -webkit-transform: translate(2px, 2px); -moz-transform: translate(2px, 2px); -ms-transform: translate(2px, 2px); -o-transform: translate(2px, 2px); }
+    .addons::ng-deep .button-checkbox .mat-checkbox-inner-container { width: 20px; height: 20px; }
+    .addon-body .card-body { padding: 30px 10px 10px; }
+    .addon-body .card-title { font-size: 16px; }
+    .addon-body .card-text { font-size: 12px; }
+    .just-text { font-size: 14px;  }
+    .addon-body .price-text { font-size: 20px; }
+    .show-more-wrapper { margin-bottom: 0; padding: 0px 0 20px; }
+    .addons .button-wrap { margin-right: 0; margin-bottom: 20px; }
+    .button-wrapper .row { flex-direction: column; text-align: center; }
+    .critical-illness-rider img { width: 30px; height: 22px; }
+    .critical-illness-rider p { font-size: 14px; width: 65%; }
+    .critical-illness-rider { margin-bottom: 28px; }
+
+    
+
+}
+@media all and (-ms-high-contrast:none) {
+    .addon-body .card-text { padding-bottom: 30px; min-height:60px; }
+}

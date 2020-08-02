@@ -1,0 +1,423 @@
+/** Dropdown **/
+::ng-deep .premium-history-container .mat-select-arrow { border: none; }
+::ng-deep .premium-history-container .mat-select-value { color: #343434; font-size: 18px; font-family: 'Montserrat-Regular' }
+::ng-deep .premium-history-container .mat-option { font-family: 'Montserrat-Regular' }
+::ng-deep .customize-fund-wrapper .mat-select-arrow { border: none; }
+::ng-deep .customize-fund-wrapper .mat-select-value { color: #343434; font-size: 14px; font-family: 'Montserrat-Regular' }
+::ng-deep .customize-fund-wrapper .mat-option { font-family: 'Montserrat-Regular' }
+::ng-deep .customize-fund-wrapper  .form-filed .mat-select-value { font-size: 14px; }
+::ng-deep .customize-fund-wrapper .mat-form-field-appearance-legacy .mat-form-field-infix { padding: 0; }
+.customize-fund-wrapper::ng-deep  .mat-select-panel.mat-primary.select-option { margin-top: 20px !important; }
+.mat-form-field-infix { border-top: 0 solid transparent; }
+
+/** basic-detail **/
+.basic-detail-row { padding: 10px 0; display: flex; }
+.basic-heading { font-family: 'Montserrat-SemiBold'; font-size: 16px; color: #124093; margin-right: 15px; }
+.basic-detail-list { display: flex; }
+.basic-detail-list li { padding: 0 15px; font-family: 'Montserrat-Medium'; font-size: 14px; color: #3c3c3c; border-right: 1px solid #e2e2e2; }
+.basic-detail-list li:last-child { border-right: 0 }
+.edit-pensil { padding: 10px 6px; cursor: pointer; }
+.basic-detail-mob { width: 100%; }
+
+/** premium-history **/
+.premium-history { box-shadow: 0 1px 4px 0 rgba(163, 163, 163, 0.4); margin-bottom: 2px; }
+
+/* .premium-form { padding: 7px 0; } */
+.premium-details { padding: 7px 15px; }
+.mob-prefixer { display: inline-block; position: absolute; font-size: 18px; color: #343434; left: 0; top: 5px; font-family: 'Montserrat-Bold'; }
+::ng-deep .custom-amount-input .mat-input-element { padding-left: 18px; color: #343434; font-family: 'Montserrat-Medium'; font-size: 18px; }
+.premium-history .title { font-family: 'Montserrat-Medium'; font-size: 16px; color: #8e8e8e; }
+.sub-title { font-family: 'Montserrat-Regular'; font-size: 11px; color: #8e8e8e; }
+.amt-words { font-family: 'Montserrat-SemiBold'; font-size: 16px; color: #c7c7c7; }
+::ng-deep .custom-mat-select .mat-form-field-appearance-legacy .mat-form-field-label { top: 23px; }
+::ng-deep .custom-mat-select .mat-select-value { font-size: 18px; color: #343434; font-family: 'Montserrat-Medium'; }
+::ng-deep .payfor-wrapper .mat-form-field { width: 60% }
+.premium-history-container .button-wrap .mat-button-lg { padding: 10px 20px; }
+.return-amt { font-family: 'Montserrat-Bold'; font-size: 24px; color: #124093; margin-top: 15px; }
+.returns-wrapper { align-items: center; }
+.returns-wrapper .button-ckeck { text-align: right; }
+::ng-deep .mat-primary.select-option1 { margin-top: 22px !important; }
+
+/* customize-fund-wrapper */
+.customize-fund-wrapper { margin-bottom: 40px; }
+.customize-fund-wrapper .fund-name { display: flex; flex-direction: column; position: relative; }
+.color-bar { position: absolute; left: 0; height: 35px; }
+
+/* .customize-fund-wrapper .table-responsive {width: 95%;} */
+.table-allocation-wrapper { position: relative; display: flex; justify-content: space-between; }
+.customize-fund-wrapper .allocation { font-size: 16px; font-family: 'Montserrat-SemiBold'; border: solid 1px #e5e5e5; border-radius: 3px; display: flex; justify-content: space-between; color: #ff4c00; padding: 6px; width: 176px; }
+.customize-fund-wrapper-mob .card { box-shadow: 0 0 6px 0 rgba(151, 151, 151, 0.53); border-radius: 6px; margin: 1rem 0.5rem; width: 92%; margin: auto; }
+.customize-fund-wrapper-mob .card-body { display: block; flex-direction: column; }
+.customize-fund-wrapper-mob .card-title { font-family: 'Montserrat-Medium'; font-size: 12px; color: #343434; }
+.customize-fund-wrapper-mob a { font-family: 'Montserrat-Medium'; font-size: 9px; }
+.customize-fund-wrapper-mob .card-text { font-family: 'Montserrat-Regular'; font-size: 16px; color: #868686; margin-bottom: 20px; flex: 1; }
+.customize-fund-wrapper-mob .price-text { font-family: 'Montserrat-SemiBold'; font-size: 22px; color: #3c3c3c; }
+.customize-fund-wrapper-mob .card-heading { position: relative; }
+.customize-fund-wrapper-mob .round { position: relative; width: 100%; margin-bottom: 15px; }
+.customize-fund-wrapper-mob .button-checkbox { position: absolute; top: 0; right: 0; }
+.customize-fund-wrapper-mob .card-title { margin-bottom: 0; }
+.card-benefit .card-label { font-family: 'Montserrat-Medium'; font-size: 10px; color: #8e8e8e; margin-bottom: 10px; align-self: center; }
+.card-benefit .card-data { font-family: 'Montserrat-Medium'; font-size: 11px; color: #343434; margin-bottom: 10px; }
+.data-wrap { border-bottom: 1px solid #e2e2e2; margin-bottom: 10px; }
+
+/** allocation bar **/
+.allocation-wrapper { margin-left: 15px; display: flex; position: relative; }
+.allocation-tooltip { position: absolute; background: #dde9ff; font-size: 11px; padding: 4px 8px; border-radius: 5px; font-family: 'Montserrat-SemiBold'; color: #868686; top: 37px; left: -12px; display: flex; flex-direction: column; text-align: center }
+.allocation-tooltip::after { content: ''; border-top: 7px solid #dde9ff; border-left: 6px solid transparent; border-right: 6px solid transparent; position: absolute; left: 0; right: 0; margin: 0 auto; width: 5px; bottom: -5px; }
+.allocation-bar { background: #fff; width: 20px; display: -webkit-box; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: reverse; flex-direction: column-reverse; margin-top: 80px; border: solid 1px #c9c9c9; }
+.allocation-bar span { width: 100% }
+
+/** equity-plan **/
+.equity-plan { padding: 30px 0 50px }
+.equity-plan-recomended { padding-bottom: 0; }
+.equity-wrapper { margin-bottom: 15px; }
+.equity-wrapper-shrink { width: 96.5%; }
+.equity { align-items: baseline; }
+.equity h2 { font-family: 'Montserrat-Bold'; font-size: 24px; color: #124093; margin-right: 5px; }
+.equity span { font-family: 'Montserrat-Medium'; font-size: 14px; color: #343434; margin-right: 5px; }
+.equity .strong { font-family: 'Montserrat-SemiBold'; }
+.equity-card { padding: 20px 0; border-radius: 6px; box-shadow: 0 0 3px 0 rgba(151, 151, 151, 0.53); position: relative; }
+.equity-card p { font-family: 'Montserrat-SemiBold'; font-size: 12px; color: #5b5b5b; margin-bottom: 20px; }
+.equity-card li { padding: 15px 15px 15px 30px; border-bottom: 1px solid #ebebeb; font-family: 'Montserrat-Medium'; font-size: 14px; color: #343434; margin-right: 5px; position: relative;  
+    display: flex; align-items: center; justify-content: space-between;}
+.equity-card li:last-child { border-bottom: 0; }
+.equity-card .active { box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.25); border: solid 1px #ebebeb; color: #124093; border-top-right-radius: 9px; border-bottom-right-radius: 9px; }
+.equity-card li:before { background-color: #124093;
+    border-radius: 50%;
+    content: "";
+    display: inline-block;
+    height: 8px;
+    width: 8px;
+    position: absolute;
+    top: 18px;
+    left: 14px;}
+.select-custom-scroll { height: 306px; }
+.togle-table { position: absolute; top: 20px; right: 20px; }
+.table-view { padding: 35px 20px 0; width: 100%; }
+.table-view .scroll-div { height: 250px; }
+.discalimer { font-family: 'Montserrat-Medium'; font-size: 11px; color: #8e8e8e; padding: 10px 0; }
+.equity-list-menu { padding-right: 30px; }
+.tabTwo-wrapper { justify-content: center; display: flex; }
+
+/* table border */
+.table-head { border: 1px solid#f1f1f1; border-collapse: separate; border-left: 0; border-top-right-radius: 10px; border-top-left-radius: 10px; border-spacing: 0px; }
+.table { border: 1px solid#f1f1f1; border-collapse: separate; border-left: 0; border-spacing: 0px; }
+.table-border { border: 1px solid #f1f1f1; }
+.table td, .table th { border-top: 1px solid #f1f1f1; padding: 8px 20px; vertical-align: middle; }
+.table-border thead td, .table-border thead th { border-bottom-width: 1px; background-color: #f1f1f1; color: #989898; font-size: 13px; }
+.table-border td, .table-border th { border-bottom: 1px solid #f1f1f1; font-family: 'Montserrat-Medium'; font-size: 14px; color: #343434; }
+.table-border thead td:first-child, .table-border thead th:first-child { border-top: 1px solid #f1f1f1; border-radius: 10px 0 0 0; }
+.table-border thead  td:last-child, .table-border thead th:last-child { border-top: 1px solid #f1f1f1; border-radius: 0 10px 0 0; }
+.table-foot { border: 1px solid#f1f1f1; border-collapse: separate; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; border-spacing: 0px; border-top-right-radius: 0px; border-top-left-radius: 0px; border-top: 0; }
+.table-border tfoot td:first-child, .table-border tfoot th:first-child { border-bottom: 1px solid #f1f1f1; border-radius: 0 0 0 10px; border-top: 0; }
+.table-border tfoot  td:last-child, .table-border tfoot th:last-child { border-bottom: 1px solid #f1f1f1; border-radius: 0 0 10px 0; border-top: 0; }
+
+/* mat button group css */
+::ng-deep .togle-table .mat-button-toggle-group { border-radius: 20px;  }
+mat-button-toggle:first-child{border: 2px solid #124093;border-right: 0;border-top-left-radius: 20px; border-bottom-left-radius: 20px;}
+mat-button-toggle:last-child{border: 2px solid #124093;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-left: 0;
+}
+.mat-button-toggle-group-appearance-standard .mat-button-toggle+.mat-button-toggle {
+    border-left: 0;
+}
+::ng-deep .togle-table .mat-button-toggle-appearance-standard .mat-button-toggle-label-content { line-height: 24px; font-size: 12px; color: #124093; padding: 0 10px; }
+::ng-deep .togle-table .mat-button-toggle-checked { background-image: linear-gradient(to left, #124093, #124093); line-height: 24px; }
+::ng-deep .togle-table .mat-button-toggle-checked .mat-button-toggle-label-content { color: #fff; }
+/* ::ng-deep .togle-table .mat-button-toggle-group-appearance-standard .mat-button-toggle+.mat-button-toggle { border-left: solid 1px #124093; } */
+
+/** fund-performance **/
+.fund-performance-card { padding: 30px 0; border-radius: 6px; box-shadow: 0 0 3px 0 rgba(151, 151, 151, 0.53); position: relative; }
+.fund-performance-text { font-family: 'Montserrat-Medium'; font-size: 16px; color: #8e8e8e; }
+::ng-deep .fund-performance-card .mat-select-arrow { border: none; }
+::ng-deep .fund-performance-card .mat-select-value { color: #343434; font-size: 18px; font-family: 'Montserrat-Regular' }
+::ng-deep .fund-performance-card .mat-option { font-family: 'Montserrat-Regular' }
+::ng-deep .equityNavDrop .mat-form-field-wrapper {min-width: 100px;width: 140px;}
+.fund-note {font-family: 'Montserrat-Medium'; font-size: 14px; color: #343434;padding-bottom: 20px;}
+.rupee-text, .year {font-family: 'Montserrat-SemiBold'; font-size: 16px; color: #124093;}
+.fund-togle-table { position: absolute; top: 30px; right: 20px;}
+/* mat button group css */
+::ng-deep .fund-togle-table .mat-button-toggle-group {border-radius: 17.5px; }
+::ng-deep .fund-togle-table .mat-button-toggle-appearance-standard .mat-button-toggle-label-content {line-height: 24px;    font-size: 12px; color: #124093; font-family: 'robotoregular'; padding: 0 10px;}
+::ng-deep .fund-togle-table .mat-button-toggle-checked {background-image: linear-gradient(to left, #124093, #124093);
+line-height: 24px;}
+::ng-deep .fund-togle-table .mat-button-toggle-checked .mat-button-toggle-label-content {color: #fff;}
+::ng-deep .fund-togle-table .mat-button-toggle-group-appearance-standard .mat-button-toggle+.mat-button-toggle {border-left: solid 1px #124093;}
+.fund-table .scroll-div {height: 247px; padding-right: 0;}
+.fund-table .table-border {width: 400px;}
+.fund-table  .table-border tfoot td:first-child, .fund-table .table-border tfoot th:first-child { width: 60%;padding-left: 30px;}
+.fund-table .table td, .fund-table .table th {border-top: 1px solid #f1f1f1; width: 60%;padding-left: 30px;}
+.table-foot td{font-family: 'Montserrat-Bold'; font-size: 14px; color: #343434;}
+
+.equity-card .scroll-div{ padding-right: 0;}
+.equity-card .table-border td, .table-border th { width: 20%;}
+.equity-card .collapse {min-height: 20px;}
+:ng-deep .equity-card .highcharts-container, .equity .highcharts-container { width: 675px;}
+:ng-deep .equity-card .highcharts-root, .equity .highcharts-root { width: 675px;}
+
+.mob-prefixer{ margin-top: 2px;}
+::ng-deep .custom-amount-input .mat-form-field-infix {padding: 0.6em 0;}
+.graph-view {    padding: 40px 20px 0;  width: 100%;}
+.graph-container{ min-height: 300px; justify-content: center;  display: flex;}
+.table-container{background-color: #f1f1f1; min-height: 300px;}
+.fund-graph{ width: 100%}
+::ng-deep .graph-container .highcharts-credits,::ng-deep .fund-graph .highcharts-credits {display: none;}
+::ng-deep .fund-graph .highcharts-title {display: none;}
+
+.allocation{position: relative;}
+.allocation .top-up {
+    position: absolute;
+    z-index: 1;
+    padding: 10px 30px;
+    top: unset;
+    bottom: 0;
+    /*  
+    background: #124093;
+    border-radius: 20px;
+    top: -47px;
+    color: #fff;
+    text-align: center;
+    font-size: 14px;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    width: 80%;
+    -webkit-animation: mover 1s infinite alternate;
+    animation: mover 1s infinite alternate; */
+}
+.scroll-div{padding-right: 0 !important;}
+
+.customize-fund-wrapper .form-filed{width: 50%}
+.customize-fund-form-mob .form-label {
+    font-family: Montserrat-Medium;
+    font-size: 12px;
+    color: #8e8e8e;
+}
+::ng-deep .customize-fund-form-mob .mat-form-field-infix {
+    margin-top: -15px;
+}
+
+::ng-deep .mat-select-panel.mat-primary.select-option3 {
+    margin-left: 1px;
+    margin-top: 29px;
+}
+::ng-deep .select-option3 .mat-option {
+    font-family: 'Montserrat-Regular';
+    font-size: 14px;
+    color: #8e8e8e;
+    border-bottom: 1px solid #ececec;
+    line-height: 20px;
+    height: 35px;
+    padding: 0 10px;
+}
+
+::ng-deep .customize-fund-form-mob .form-filed .mat-select-value {
+    font-family: 'Montserrat-SemiBold';
+    font-size: 14px;
+    line-height: 1.5;
+    color: #343434;
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+}
+::ng-deep .equityNavDrop .mat-form-field-wrapper { min-width: 100px; width: 140px; }
+.fund-note { font-family: 'Montserrat-Medium'; font-size: 14px; color: #343434; padding-bottom: 20px; }
+.rupee-text, .year { font-family: 'Montserrat-SemiBold'; font-size: 16px; color: #124093; }
+.fund-togle-table { position: absolute; top: 30px; right: 20px; }
+
+/* mat button group css */
+/* ::ng-deep .fund-togle-table .mat-button-toggle-group { border-radius: 17.5px; border: 2px solid #124093; } */
+::ng-deep .fund-togle-table .mat-button-toggle-appearance-standard .mat-button-toggle-label-content { line-height: 24px; font-size: 12px; color: #124093; font-family: 'robotoregular'; padding: 0 10px; }
+::ng-deep .fund-togle-table .mat-button-toggle-checked { background-image: linear-gradient(to left, #124093, #124093); line-height: 24px; }
+::ng-deep .fund-togle-table .mat-button-toggle-checked .mat-button-toggle-label-content { color: #fff; }
+::ng-deep .fund-togle-table .mat-button-toggle-group-appearance-standard .mat-button-toggle+.mat-button-toggle { border-left: solid 1px #124093; }
+.fund-table .scroll-div { height: 250px; padding-right: 0; }
+.fund-table .table-border { width: 400px; }
+.fund-table  .table-border tfoot td:first-child, .fund-table .table-border tfoot th:first-child { width: 60%; padding-left: 30px; }
+.fund-table .table td, .fund-table .table th { border-top: 1px solid #f1f1f1; width: 60%; padding-left: 30px; }
+.table-foot td { font-family: 'Montserrat-Bold'; font-size: 14px; color: #343434; }
+.equity-card .scroll-div { padding-right: 0; }
+.equity-card .table-border td, .table-border th { width: 20%; }
+.equity-card .collapse { min-height: 20px; }
+:ng-deep .equity-card .highcharts-container, .equity .highcharts-container { width: 675px; }
+:ng-deep .equity-card .highcharts-root, .equity .highcharts-root { width: 675px; }
+.mob-prefixer { margin-top: 2px; }
+::ng-deep .custom-amount-input .mat-form-field-infix { padding: 0.6em 0; }
+.graph-view { padding: 40px 20px 0; width: 100%; }
+.graph-container { min-height: 300px; justify-content: center; display: flex; }
+.table-container { background-color: #f1f1f1; min-height: 300px; }
+.fund-graph { width: 100% }
+::ng-deep .graph-container .highcharts-credits, ::ng-deep .fund-graph .highcharts-credits { display: none; }
+::ng-deep .fund-graph .highcharts-title { display: none; }
+.allocation { position: relative; }
+.allocation .top-up { position: absolute; z-index: 1; padding: 10px 30px; top: unset; bottom: 0 }
+.scroll-div { padding-right: 0 !important; }
+.customize-fund-wrapper .form-filed { width: 50% }
+::ng-deep .select-option1 { margin-top: 20px !important; }
+::ng-deep .select-option1 .mat-option { font-family: 'Montserrat-Regular'; font-size: 16px; color: #8e8e8e; border-bottom: 1px solid #ececec; line-height: 20px; height: 35px; padding: 0 10px; }
+.premiumHistory-slider { width: 70%; padding: 10px 30px; }
+.history-slider { width: 100%; }
+.history-slider .premium-form { padding: 0 15px }
+.history-slider::ng-deep .slick-prev, .history-slider::ng-deep .slick-next { width: 20px; height: 20px; background: url(../../../../assets/icons/previous-arrow.svg) no-repeat 0 0/contain; top: 15px; left: -15px; }
+.history-slider::ng-deep .slick-next { transform: rotate(180deg); top: 5px; right: -15px; left: auto; }
+::ng-deep .slick-prev:before, ::ng-deep .slick-next:before { display: none }
+.navper-wrapper { width: 70px; margin-right: 20px; }
+.premiumHistory-fix { border-left: 1px solid #ddd; box-shadow: -4px 0 4px -2px rgba(163, 163, 163, 0.4); padding: 10px; }
+::ng-deep .form-filed.navper-wrapper .mat-select-value { font-size: 12px }
+
+::ng-deep .mat-select-panel.mat-primary.select-option-our-return {
+    margin-left: 15px;
+    margin-top: 22px;
+}
+::ng-deep .mat-select-panel.mat-primary.select-option-projected-returns {
+    margin-left: 15px;
+    margin-top: 22px;
+}
+/**** Media Query Start ****/
+@media (max-width:1252px) {
+    .return-amt { font-size: 20px; }
+    ::ng-deep .fund-graph highcharts-chart { overflow: scroll !important; }
+    ::ng-deep .graph-container highcharts-chart { overflow: scroll !important; }
+    .fund-graph { overflow-x: scroll; }
+}
+@media (max-width:1200px) {
+    .premium-history .title { font-size: 14px }
+    .premium-history-container .button-wrap .mat-button-lg { padding: 6px 15px; font-size: 12px }
+    .return-amt { font-size: 18px; }
+    .premiumHistory-slider { width: 65% }
+}
+@media (max-width:1082px) {
+    .return-amt {font-size: 14px;}
+    /* .return-amt { font-size: 14px; } */
+    .sub-title { font-size: 10px; }
+    ::ng-deep .premium-history-container .mat-select-value { font-size: 14px; }
+
+    /* .custom-amount-input .mat-input-element { font-size: 14px; } */
+    ::ng-deep .mat-form-field { width: 98%; }
+    ::ng-deep .payfor-wrapper .mat-form-field { width: 50%; }
+}
+@media (max-width:1100px) {
+    .your-plan { width: 300px; }
+}
+@media (max-width:992px) {
+    .basic-details { padding: 10px 15px; }
+    .basic-detail-row-mob { font-family: 'Montserrat-SemiBold'; font-size: 14px; color: #124093; }
+    .basic-detail-row-mob .icons { transform: scale(1.5); vertical-align: middle; opacity: 0.5; }
+    edit-pensil { display: none; padding: 0; margin-left: 10px; }
+    .edit-pensil img { width: 15px }
+    .basic-details li { margin-bottom: 20px }
+    .basic-details li:last-child { margin-bottom: 0 }
+    .basic-details .lable { font-size: 14px; font-family: 'Montserrat-Regular'; color: #868686; margin-bottom: 5px }
+    .basic-details .value { font-size: 16px; }
+    .plan-detail-mob { font-family: 'Montserrat-SemiBold'; font-size: 14px; color: #124093; padding: 10px 0; }
+    .section-header { text-align: left; }
+    .sub-heading-muted { float: left; }
+    .exper-advice { justify-content: center; flex-direction: column; }
+    .mat-button-wrapper { font-size: 12px; font-family: 'Montserrat-SemiBold'; }
+    .basic-detail-list { display: none; }
+    .quote-detail-page { padding: 10px 0; }
+    .basic-heading { font-size: 14px; margin-right: 10px; }
+    .download-brochure { font-family: 'Montserrat-Medium'; font-size: 11px; color: #317fff; }
+    .returns-wrapper .button-ckeck { text-align: center; }
+    ::ng-deep .custom-amount-input .mat-form-field-infix { padding: 0.73em 0; }
+    .table-border thead td, .table-border thead th { font-size: 11px; }
+    .table-border td, .table-border th { font-size: 11px; }
+    .invertIcon { transform: rotate(180deg); align-self: end; }
+
+    /* equity-plan */
+    .equity h4 { margin-right: 5px; }
+    .equity h2 { font-size: 16px; }
+    .customize-link { margin-top: 20px; margin-bottom: 25px; }
+    .equity-card { padding: 20px 0; border-radius: 0; box-shadow: 0 0 8px 0 rgba(151, 151, 151, 0.53); margin-right: -15px; margin-left: -15px; min-height: 60px; margin-bottom: 10px; }
+    .equity-card .expand { min-height: 215px; }
+    .equity-plan-wrapper-mob .graph-image { width: 100%; }
+    .equity-plan-wrapper-mob .graph-view { padding: 40px 0 0; width: 100%; }
+    .equity-plan-wrapper-mob .image-view { padding: 90px 0; width: 100%; }
+    .equity-plan { padding: 20px 0; }
+    .card-heading { width: 90%; font-size: 14px; font-family: 'Montserrat-SemiBold'; color: #124093; }
+    .togle-table { top: 60px; right: 10px; }
+    .card-detail-mob { font-family: 'Montserrat-SemiBold'; font-size: 14px; }
+    .expand .icon { transform: rotate(180deg); align-self: end; }
+    .customize-fund-wrapper-mob { margin-left: -5px; margin-right: -5px; }
+    ::ng-deep .fund-performance-card .mat-select-value { font-size: 14px; }
+    .equity-card .table-border td, .table-border th { width: unset; }
+    .customize-fund-wrapper-mob .allocation { font-size: 14px; font-family: 'Montserrat-SemiBold'; border: solid 1px #e5e5e5; border-radius: 3px; display: -webkit-box; display: flex; -webkit-box-pack: justify; justify-content: space-between; color: #ff4c00; padding: 6px; width: 176px; margin-left: 10px }
+    .fund-togle-table { top: 85px; }
+    .fund-performance-card { padding: 10px 0; margin-right: -15px; margin-left: -15px; min-height: 460px; }
+    .fund-form-mob .form-filed { width: 82px; margin-right: 10px; }
+    .fund-form-mob { margin-bottom: 35px; }
+    .fund-form-mob .form-filed:last-child { margin-right: 0; }
+    .fund-table .table-border { width: 260px; min-width: 260px; }
+    .fund-table .table-border tfoot td:first-child, .fund-table .table-border tfoot th:first-child { font-family: 'Montserrat-Bold'; font-size: 11px; color: #343434; }
+    .fund-table .table td, .fund-table .table th { font-size: 11px; }
+    .fund-table .scroll-div { height: 219px; }
+    .discalimer { padding: 10px 10px 20px; }
+    .fund-form-mob .equity-mob-form { width: 105px; }
+    .overflow-toggle { margin-bottom: 20px; }
+    ::ng-deep .premium-history .mat-form-field-appearance-legacy .mat-form-field-wrapper { width: 100%; }
+    ::ng-deep .mat-form-field { width: 100%; }
+    ::ng-deep .payfor-wrapper .mat-form-field { width: 50%; padding: 0 15px 0 0; }
+    .table-view { padding: 60px 0px 0 10px; width: 100%; }
+    .table-border { border: 1px solid #f1f1f1; min-width: 530px; }
+    .color-bar { position: absolute; left: -10px; height: 35px; top: -3px; }
+    .graph-container { margin-right: -15px; }
+    .edit-pensil { display: none; padding: 0; margin-left: 10px; }
+    .edit-pensil img { width: 15px }
+    .basic-details li { margin-bottom: 20px }
+    .basic-details li:last-child { margin-bottom: 0 }
+    .basic-details .lable { font-size: 14px; font-family: 'Montserrat-Regular'; color: #868686; margin-bottom: 5px }
+    .basic-details .value { font-size: 16px; }
+    .accordion-wrapper::ng-deep .mat-expansion-panel-body { padding: 0 10px 20px; }
+
+
+}
+@media (max-width:767px) {
+    .offers-you { padding: 0 0 20px 0 }
+    .prod-icon { width: 45px; height: 45px; }
+    .prod-icon img { width: 50%; }
+    .pro-details { align-items: flex-start; margin-bottom: 20px; }
+    .prod-info .h3 { font-size: 14px }
+    .prod-info { font-size: 12px; width: calc(100% - 60px); font-family: 'Montserrat-Regular'; line-height: 14px }
+    .pro-action .button-wrap .mat-raised-button { width: auto }
+    .prod-price { font-size: 14px; margin-right: 0; flex-direction: row; flex-wrap: wrap }
+    .prod-price .price { font-size: 16px; margin-left: 10px }
+    .prod-price .text-small { font-family: 'Montserrat-Regular'; font-size: 12px; width: 100%; }
+    .product-offer-right  p { font-size: 12px; line-height: 16px; }
+    .criti-care { padding-bottom: 30px }
+    .mob-prefixer { margin-top: 4px; }
+
+    /** premium-history **/
+    .premium-history-container { padding: 0 }
+    .premium-form { flex-wrap: wrap; }
+    .premium-history .title { font-size: 14px; }
+    .custom-amount-input .mat-input-element { font-size: 14px; }
+    ::ng-deep .premium-history-container .mat-option { font-size: 14px !important; }
+    ::ng-deep .premium-history-container .mat-form-field-appearance-legacy .mat-form-field-label { top: 13px; }
+    ::ng-deep .premium-history-container .mat-select-value { font-size: 14px; color: #343434; font-family: 'Montserrat-Medium'; }
+    .custom-input-field .edit-pen { width: 12px; }
+    span.rupee { font-size: 14px; vertical-align: top; }
+    .life-cover .title { align-self: center; margin-right: 10px }
+    .life-cover { margin-top: -5px; }
+    .return-amt { font-size: 16px; }
+
+    /* equity-plan */
+    .equity span { font-size: 12px; }
+    .fund-performance-text { font-size: 14px; }
+    ::ng-deep .fund-form-mob .form-filed .mat-select-value { font-size: 14px; }
+    .allocation-wrapper { margin-bottom: 20px; margin-left: 0 }
+    .allocation-bar { margin-top: 0; width: calc(100% - 80px); height: 20px; display: flex; flex-direction: row; }
+    .allocation-tooltip { top: 0; left: auto; right: 0; top: 0; left: auto; right: 5px; flex-direction: row; }
+    .allocation-tooltip::after { content: ''; border-right: 7px solid #dde9ff; border-top: 5px solid transparent; border-bottom: 4px solid transparent; position: absolute; left: -12px; right: auto; height: 5px; top: 6px; width: 6px; }
+    .allocation-tooltip span + span { margin-left: 5px }
+    
+    ::ng-deep .basic-plan-details .accordion-wrapper mat-expansion-panel:last-child .mat-expansion-panel-body { padding: 0 0 20px}
+}
+@media all and (-ms-high-contrast:none) {
+    .color-bar {top: 12px;} 
+    .allocation{align-items: center}
+    .equity-card li{
+        display: block;
+    }
+    
+}

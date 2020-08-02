@@ -1,0 +1,1911 @@
+<!-- Header Start -->
+<app-product-header></app-product-header>
+<!-- Header End -->
+
+<main (scroll)="onWindowScroll($event);">
+    <section class="basic-detail-wrapper bg-gray hide-mob">
+        <div class="container">
+            <div class="quote-detail-page">
+                <div class="col-12">
+                    <div class="row hide-mob">
+                        <div class="col-11 p-0">
+                            <div class="basic-detail-row">
+                                <span class="basic-heading">Basic Details</span>
+                                <ul class="basic-detail-list ">
+                                    <li>Sachiananda Prasad Reddy</li>
+                                    <li>9876543210</li>
+                                    <li>Less than 5 lacs</li>
+                                    <li>29 Years</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-1">
+                            <div class="row edit-pensil pull-right pointer">
+                                <img src="./assets/icons/edit-pen.svg" alt="edit" class="edit pen"
+                                    (click)="getGrowMoney()" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- basic-detail-wrapper End -->
+
+    <section class="premium-history-wrapper bg-white hide-mob">
+        <div class="container">
+            <div class="col-12 premium-history-container">
+                <div class="col-12">
+                    <div class="row d-lg-none justify-space-between plan-detail-mob">
+                        <span class="card-heading">Plan Detail</span>
+                        <span class="icon">
+                            <img src="./assets/icons/down-arrow.svg" alt="" class="arrow-down">
+                        </span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6 col-lg-2 p-0">
+                        <div class="premium-form">
+                            <div class="title">Investment Amount</div>
+                            <div class="sub-title d-none d-lg-block">This is the amount you will invest</div>
+                            <div class="custom-input-field custom-amount-input">
+                                <mat-form-field>
+                                    <input matInput id="insuranceCover" (focusin)="rupeesSignPrefix = true"
+                                        (focusout)="rupeesSignPrefix = false; getAmntValue($event.target.value)"
+                                        [formControl]="insuranceCover">
+                                    <span *ngIf="rupeesSignPrefix" class="mob-prefixer amnt-prefixer">
+                                        <span class="rupee"> &#8377; </span>
+                                    </span>
+                                    <mat-error *ngIf="insuranceCover.invalid">{{getErrorMessageCover()}}
+                                    </mat-error>
+                                </mat-form-field>
+                            </div>
+                            <div class="amt-words"><span class="rupee"> &#8377; </span> {{finalval}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-2">
+                        <div class="premium-form">
+                            <div class="title">Investing For</div>
+                            <div class="sub-title d-none d-lg-block">You are investing for</div>
+                            <div class="form-filed">
+                                <mat-form-field>
+                                    <div class="d-flex align-items-center">
+                                        <mat-select disableOptionCentering panelClass="select-option"
+                                            [formControl]="myself" (selectionChange)="selectChild($event.value)">
+                                            <mat-option value="child">Child</mat-option>
+                                            <mat-option value="myself">Myself</mat-option>
+                                        </mat-select>
+                                        <img src="./assets/icons/down-arrow.svg" alt="" class="arrow-down">
+                                    </div>
+                                    <mat-error *ngIf="payFor.invalid">
+                                    </mat-error>
+                                </mat-form-field>
+                            </div>
+                            <div class="link pointer" (click)='getChildDream()' *ngIf="isChild">Child’s Dream</div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-2">
+                        <div class="premium-form">
+                            <div class="title">Term</div>
+                            <div class="sub-title d-none d-lg-block">No. of years for the policy</div>
+                            <div class="form-filed ">
+                                <mat-form-field>
+                                    <div class="d-flex align-items-center">
+                                        <mat-select disableOptionCentering panelClass="select-option"
+                                            [formControl]="term">
+                                            <perfect-scrollbar class="scroll-div">
+                                                <mat-option value="1">1 Year</mat-option>
+                                                <mat-option value="2">2 Years</mat-option>
+                                                <mat-option value="3">3 Years
+                                                </mat-option>
+                                                <mat-option value="4">4 Years</mat-option>
+                                                <mat-option value="5">5 Years</mat-option>
+                                                <mat-option value="35">35 Years</mat-option>
+                                            </perfect-scrollbar>
+                                        </mat-select>
+                                        <img src="./assets/icons/down-arrow.svg" alt="" class="arrow-down">
+                                    </div>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-2">
+                        <div class="premium-form">
+                            <div class="title">Pay For</div>
+                            <div class="sub-title d-none d-lg-block">No. of years you are paying for</div>
+                            <div class="form-filed ">
+                                <mat-form-field>
+                                    <div class="d-flex align-items-center">
+                                        <mat-select disableOptionCentering panelClass="select-option"
+                                            [formControl]="payFor">
+                                            <perfect-scrollbar class="scroll-div">
+                                                <mat-option value="1">1 Year</mat-option>
+                                                <mat-option value="2">2 Years</mat-option>
+                                                <mat-option value="3">3 Years
+                                                </mat-option>
+                                                <mat-option value="4">4 Years</mat-option>
+                                                <mat-option value="5">5 Years</mat-option>
+                                                <mat-option value="35">35 Years</mat-option>
+                                            </perfect-scrollbar>
+                                        </mat-select>
+                                        <img src="./assets/icons/down-arrow.svg" alt="" class="arrow-down">
+                                    </div>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-2">
+                        <div class="premium-form">
+                            <div class="title">Payment</div>
+                            <div class="sub-title d-none d-lg-block">Choose your payment frequency</div>
+                            <div class="form-filed ">
+                                <mat-form-field>
+                                    <div class="d-flex align-items-center">
+                                        <mat-select disableOptionCentering panelClass="select-option"
+                                            [formControl]="payment">
+                                            <mat-option value="m">Monthly</mat-option>
+                                            <mat-option value="q">Quarterly</mat-option>
+                                            <mat-option value="y">Yearly</mat-option>
+                                        </mat-select>
+                                        <img src="./assets/icons/down-arrow.svg" alt="" class="arrow-down">
+                                    </div>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-2">
+                        <div class="premium-form">
+                            <div class="title">Returns</div>
+                            <div class="sub-title d-none d-lg-block">Fund returns at a given rate</div>
+                            <div class="form-filed ">
+                                <mat-form-field>
+                                    <div class="d-flex align-items-center">
+                                        <mat-select disableOptionCentering panelClass="select-option"
+                                            [formControl]="returnper">
+                                            <mat-option value="NAV">Current NAV</mat-option>
+                                            <mat-option value="4">@ 4%</mat-option>
+                                            <mat-option value="8">@ 8%</mat-option>
+                                        </mat-select>
+                                        <img src="./assets/icons/down-arrow.svg" alt="" class="arrow-down">
+                                    </div>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- premium-history End -->
+
+    <section class="basic-plan-details show-mob">
+        <div class="container p-0">
+            <div class="accordion-wrapper accordion-without-space">
+                <mat-accordion>
+                    <mat-expansion-panel>
+                        <mat-expansion-panel-header [collapsedHeight]="'auto'" [expandedHeight]="'auto'">
+                            <mat-panel-title>
+                                Basic Details <span class="edit-pensil pointer"> <img src="./assets/icons/edit-pen.svg"
+                                        alt="edit" class="edit pen" (click)="getGrowMoney()" />
+                                </span>
+                            </mat-panel-title>
+                        </mat-expansion-panel-header>
+                        <div class="accordion-inner">
+                            <ul class="basic-details">
+                                <li>
+                                    <div class="lable">Full Name</div>
+                                    <div class="value">Sachiananda Prasad Reddy</div>
+                                </li>
+                                <li>
+                                    <div class="lable">Your Income</div>
+                                    <div class="value">Less than 5 Lacs</div>
+                                </li>
+                                <li>
+                                    <div class="lable">Mobile Number</div>
+                                    <div class="value">+ 91 9876543210</div>
+                                </li>
+                                <li>
+                                    <div class="lable">Your Age</div>
+                                    <div class="value">29</div>
+                                </li>
+                            </ul>
+                        </div>
+                    </mat-expansion-panel> <!-- Basic Details accordion End -->
+                    <mat-expansion-panel>
+                        <mat-expansion-panel-header [collapsedHeight]="'auto'" [expandedHeight]="'auto'">
+                            <mat-panel-title>
+                                Plan Details
+                            </mat-panel-title>
+                        </mat-expansion-panel-header>
+                        <div class="accordion-inner">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-6 col-lg-2">
+                                        <div class="premium-form">
+                                            <div class="title">Investment Amount</div>
+                                            <div class="sub-title d-none d-lg-block">This is the amount you will invest
+                                            </div>
+                                            <div class="custom-input-field custom-amount-input">
+                                                <mat-form-field>
+                                                    <input matInput id="insuranceCover"
+                                                        (focusin)="rupeesSignPrefix = true"
+                                                        (focusout)="rupeesSignPrefix = false; getAmntValue($event.target.value)"
+                                                        [formControl]="insuranceCover">
+                                                    <span *ngIf="rupeesSignPrefix" class="mob-prefixer amnt-prefixer">
+                                                        <span class="rupee"> &#8377; </span>
+                                                    </span>
+                                                    <mat-error *ngIf="insuranceCover.invalid">{{getErrorMessageCover()}}
+                                                    </mat-error>
+                                                </mat-form-field>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-lg-2">
+                                        <div class="premium-form">
+                                            <div class="title">Investing For</div>
+                                            <div class="sub-title d-none d-lg-block">You are investing for</div>
+                                            <div class="form-filed">
+                                                <mat-form-field>
+                                                    <div class="d-flex align-items-center">
+                                                        <mat-select disableOptionCentering panelClass="select-option"
+                                                            [formControl]="myself"
+                                                            (selectionChange)="selectChild($event.value)">
+                                                            <mat-option value="child">Child</mat-option>
+                                                            <mat-option value="myself">Myself</mat-option>
+                                                        </mat-select>
+                                                        <img src="./assets/icons/down-arrow.svg" alt=""
+                                                            class="arrow-down">
+                                                    </div>
+                                                    <mat-error *ngIf="payFor.invalid">
+                                                    </mat-error>
+                                                </mat-form-field>
+                                            </div>
+                                            <div class="link pointer" (click)='getChildDream()' *ngIf="isChild">Child’s
+                                                Dream</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-lg-2">
+                                        <div class="premium-form">
+                                            <div class="title">Term</div>
+                                            <div class="sub-title d-none d-lg-block">No. of years for the policy</div>
+                                            <div class="form-filed ">
+                                                <mat-form-field>
+                                                    <div class="d-flex align-items-center">
+                                                        <mat-select disableOptionCentering panelClass="select-option"
+                                                            [formControl]="term">
+                                                            <perfect-scrollbar class="scroll-div">
+                                                                <mat-option value="1">1 Year</mat-option>
+                                                                <mat-option value="2">2 Years</mat-option>
+                                                                <mat-option value="3">3 Years
+                                                                </mat-option>
+                                                                <mat-option value="4">4 Years</mat-option>
+                                                                <mat-option value="5">5 Years</mat-option>
+                                                                <mat-option value="35">35 Years</mat-option>
+                                                            </perfect-scrollbar>
+                                                        </mat-select>
+                                                        <img src="./assets/icons/down-arrow.svg" alt=""
+                                                            class="arrow-down">
+                                                    </div>
+                                                </mat-form-field>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-lg-2">
+                                        <div class="premium-form">
+                                            <div class="title">Pay For</div>
+                                            <div class="sub-title d-none d-lg-block">No. of years you are paying for
+                                            </div>
+                                            <div class="form-filed ">
+                                                <mat-form-field>
+                                                    <div class="d-flex align-items-center">
+                                                        <mat-select disableOptionCentering panelClass="select-option"
+                                                            [formControl]="payFor">
+                                                            <perfect-scrollbar class="scroll-div">
+                                                                <mat-option value="1">1 Year</mat-option>
+                                                                <mat-option value="2">2 Years</mat-option>
+                                                                <mat-option value="3">3 Years
+                                                                </mat-option>
+                                                                <mat-option value="4">4 Years</mat-option>
+                                                                <mat-option value="5">5 Years</mat-option>
+                                                                <mat-option value="35">35 Years</mat-option>
+                                                            </perfect-scrollbar>
+                                                        </mat-select>
+                                                        <img src="./assets/icons/down-arrow.svg" alt=""
+                                                            class="arrow-down">
+                                                    </div>
+                                                </mat-form-field>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-lg-2">
+                                        <div class="premium-form">
+                                            <div class="title">Payment</div>
+                                            <div class="sub-title d-none d-lg-block">Choose your payment frequency</div>
+                                            <div class="form-filed ">
+                                                <mat-form-field>
+                                                    <div class="d-flex align-items-center">
+                                                        <mat-select disableOptionCentering panelClass="select-option"
+                                                            [formControl]="payment">
+                                                            <mat-option value="m">Monthly</mat-option>
+                                                            <mat-option value="q">Quarterly</mat-option>
+                                                            <mat-option value="y">Yearly</mat-option>
+                                                        </mat-select>
+                                                        <img src="./assets/icons/down-arrow.svg" alt=""
+                                                            class="arrow-down">
+                                                    </div>
+                                                </mat-form-field>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-lg-2">
+                                        <div class="premium-form">
+                                            <div class="title">Returns</div>
+                                            <div class="sub-title d-none d-lg-block">Fund returns at a given rate</div>
+                                            <div class="form-filed ">
+                                                <mat-form-field>
+                                                    <div class="d-flex align-items-center">
+                                                        <mat-select disableOptionCentering panelClass="select-option"
+                                                            [formControl]="returnper">
+                                                            <mat-option value="NAV">Current NAV</mat-option>
+                                                            <mat-option value="4">@ 4%</mat-option>
+                                                            <mat-option value="8">@ 8%</mat-option>
+                                                        </mat-select>
+                                                        <img src="./assets/icons/down-arrow.svg" alt=""
+                                                            class="arrow-down">
+                                                    </div>
+                                                </mat-form-field>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </mat-expansion-panel> <!-- Plan Details accordion End -->
+                </mat-accordion>
+            </div>
+        </div>
+    </section>
+    <!-- basic-plan-details Section for mobile -->
+
+    <section class="section offers-you bg-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 section-header text-center">
+                    <h1 class="h1 mb-lg-0">Here are some customized recommendations for you</h1>
+                </div> <!-- section-header end-->
+                <div class="col-12 section-pannel">
+                    <div class="card-layout hide-mob">
+                        <div class="card">
+                            <div class="card-body p-0">
+                                <div class="offer-top text-center">
+                                    <div class="logo-box">
+                                        <img src="./assets/images/wealth-gain.jpg" alt="" />
+                                    </div>
+                                    <div class="offer-heading">
+                                        <h2>Basic Investment</h2>
+                                        <p>This plan offers simple investment returns</p>
+                                    </div>
+                                </div>
+                                <div class="offer-amt bg-yellow text-center">
+                                    <h3 class="subtext">Returns</h3>
+                                    <h2 class="h1"> <span class="rupee"> &#8377; </span>30,50,000</h2>
+                                    <p class="small-text">as per current NAV</p>
+                                </div>
+                                <div class="offer-details">
+                                    <ul class="bullet-list">
+                                        <perfect-scrollbar class="scroll-div">
+                                            <li>Booster additions</li>
+                                            <li>Loyalty additions</li>
+                                            <li>Death benefits</li>
+                                            <li>Booster additions</li>
+                                            <li>Loyalty additions</li>
+                                            <li>Death benefits</li>
+                                        </perfect-scrollbar>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="card-footer button-wrap d-flex justify-content-center">
+                                <button mat-raised-button color="primary" [routerLink]="['/fund']">Buy Now</button>
+                            </div>
+                        </div>
+                        <div class="card eligibled">
+                            <div class="top-up">
+                                Ideal for your future financial needs
+                            </div>
+
+                            <div class="card-body p-0">
+                                <div class="offer-top text-center">
+                                    <div class="logo-box">
+                                        <img src="./assets/images/wealth-plus.jpg" alt="" />
+                                    </div>
+                                    <div class="offer-heading">
+                                        <h2>Best Features</h2>
+                                        <p>This plan offers a combination of best offers of ours</p>
+                                    </div>
+                                </div>
+                                <div class="offer-amt bg-yellow text-center">
+                                    <h3 class="subtext">Returns</h3>
+                                    <h2 class="h1"> <span class="rupee"> &#8377; </span>40,50,000</h2>
+                                    <p class="small-text">as per current NAV</p>
+                                </div>
+                                <div class="offer-details">
+                                    <ul class="bullet-list">
+                                        <perfect-scrollbar class="scroll-div">
+                                            <li>Additional allocations </li>
+                                            <li>Rising star benefit</li>
+                                            <li>Easy liquidity after 5 years</li>
+                                            <li>Additional allocations </li>
+                                            <li>Rising star benefit</li>
+                                            <li>Easy liquidity after 5 years</li>
+                                        </perfect-scrollbar>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="card-footer button-wrap d-flex justify-content-center">
+                                <button mat-raised-button color="primary" [routerLink]="['/fund']">Buy Now</button>
+                            </div>
+                            <div class="addition bg-yellow d-flex justify-space-between">
+                                <div class="button-checkbox">
+                                    <mat-checkbox> Eligible for Rising Star </mat-checkbox>
+                                </div>
+                                <div class="pointer" (click)='getRisingStar()'>
+                                    <img src="./assets/icons/info.svg" alt="" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body p-0">
+                                <div class="offer-top text-center">
+                                    <div class="logo-box">
+                                        <img src="./assets/images/gcap-logo.jpg" alt="" />
+                                    </div>
+                                    <div class="offer-heading">
+                                        <h2>Top-up Benefit</h2>
+                                        <p>This plan offers choices for an advanced investor</p>
+                                    </div>
+                                </div>
+                                <div class="offer-amt bg-yellow text-center">
+                                    <h3 class="subtext">Returns</h3>
+                                    <h2 class="h1"> <span class="rupee"> &#8377; </span>25,50,000</h2>
+                                    <p class="small-text">as per current NAV</p>
+                                </div>
+                                <div class="offer-details">
+                                    <ul class="bullet-list">
+                                        <perfect-scrollbar class="scroll-div">
+                                            <li>Maturity benefit</li>
+                                            <li>Flexible premium paying term</li>
+                                            <li>Tax benefits</li>
+                                            <li>Maturity benefit</li>
+                                            <li>Flexible premium paying term</li>
+                                            <li>Tax benefits</li>
+                                        </perfect-scrollbar>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="card-footer button-wrap d-flex justify-content-center">
+                                <button mat-raised-button color="primary" [routerLink]="['/fund']">Buy Now</button>
+                            </div>
+                        </div>
+                    </div> <!-- card-layout for desktop end-->
+                    <div class="card-layout-mob show-mob">
+                        <div class="card eligibled">
+                            <div class="top-up">
+                                Ideal for your future financial needs
+                            </div>
+                            <div class="card-body p-0">
+                                <div class="offer-top text-center">
+                                    <div class="logo-box">
+                                        <img src="./assets/images/wealth-plus.jpg" alt="" />
+                                    </div>
+                                    <div class="offer-heading">
+                                        <h2>Best Features</h2>
+                                        <p>This plan offers a combination of best offers of ours</p>
+                                    </div>
+                                    <div class="button-radio">
+                                        <mat-radio-button></mat-radio-button>
+                                    </div>
+                                </div>
+                                <div class="offer-amt bg-yellow text-center">
+                                    <h3 class="subtext">Returns</h3>
+                                    <h2 class="h1"> <span class="rupee"> &#8377; </span>40,50,000</h2>
+                                    <p class="small-text">as per current NAV</p>
+                                </div>
+                                <div class="offer-details">
+                                    <ul class="bullet-list">
+                                        <li>Additional allocations </li>
+                                        <li *ngIf="show">Rising star benefit</li>
+                                        <li *ngIf="show">Easy liquidity after 5 years</li>
+                                        <li *ngIf="show">Additional allocations </li>
+                                        <li *ngIf="show">Rising star benefit</li>
+                                        <li *ngIf="show">Easy liquidity after 5 years</li>
+                                    </ul>
+                                    <div class="showmore d-flex justify-content-center mt-20" (click)="showMore()"
+                                        [ngClass]="{'rotate':toggle}">
+                                        <img src="./assets/icons/orange-down-arrow.svg" alt="" title="" />
+                                    </div>
+                                </div>
+
+                                <div class="addition bg-yellow d-flex justify-space-between">
+                                    <div class="button-checkbox">
+                                        <mat-checkbox> Eligible for Rising Star </mat-checkbox>
+                                    </div>
+                                    <div class="pointer" (click)='getRisingStar()'>
+                                        <img src="./assets/icons/info.svg" alt="" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body p-0">
+                                <div class="offer-top">
+                                    <div class="logo-box">
+                                        <img src="./assets/images/wealth-gain.jpg" alt="" />
+                                    </div>
+                                    <div class="offer-heading">
+                                        <h2>Basic Investment</h2>
+                                        <p>This plan offers simple investment returns</p>
+                                    </div>
+                                    <div class="button-radio">
+                                        <mat-radio-button checked></mat-radio-button>
+                                    </div>
+                                </div>
+                                <div class="offer-amt bg-yellow text-center">
+                                    <h3 class="subtext">Returns</h3>
+                                    <h2 class="h1"> <span class="rupee"> &#8377; </span>30,50,000</h2>
+                                    <p class="small-text">as per current NAV</p>
+                                </div>
+                                <div class="offer-details">
+                                    <ul class="bullet-list">
+                                        <li>Booster additions</li>
+                                        <li *ngIf="show">Loyalty additions</li>
+                                        <li *ngIf="show">Death benefits</li>
+                                        <li *ngIf="show">Booster additions</li>
+                                        <li *ngIf="show">Loyalty additions</li>
+                                        <li *ngIf="show">Death benefits</li>
+                                    </ul>
+                                    <div class="showmore d-flex justify-content-center mt-20" (click)="showMore()"
+                                        [ngClass]="{'rotate':toggle}">
+                                        <img src="./assets/icons/orange-down-arrow.svg" alt="" title="" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body p-0">
+                                <div class="offer-top text-center">
+                                    <div class="logo-box">
+                                        <img src="./assets/images/gcap-logo.jpg" alt="" />
+                                    </div>
+                                    <div class="offer-heading">
+                                        <h2>Top-up Benefit</h2>
+                                        <p>This plan offers choices for an advanced investor</p>
+                                    </div>
+                                    <div class="button-radio">
+                                        <mat-radio-button></mat-radio-button>
+                                    </div>
+                                </div>
+                                <div class="offer-amt bg-yellow text-center">
+                                    <h3 class="subtext">Returns</h3>
+                                    <h2 class="h1"> <span class="rupee"> &#8377; </span>25,50,000</h2>
+                                    <p class="small-text">as per current NAV</p>
+                                </div>
+                                <div class="offer-details">
+                                    <ul class="bullet-list">
+                                        <li>Maturity benefit</li>
+                                        <li *ngIf="show">Flexible premium paying term</li>
+                                        <li *ngIf="show">Tax benefits</li>
+                                        <li *ngIf="show">Maturity benefit</li>
+                                        <li *ngIf="show">Flexible premium paying term</li>
+                                        <li *ngIf="show">Tax benefits</li>
+                                    </ul>
+                                    <div class="showmore d-flex justify-content-center mt-20" (click)="showMore()"
+                                        [ngClass]="{'rotate':toggle}">
+                                        <img src="./assets/icons/orange-down-arrow.svg" alt="" title="" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> <!-- card-layout for mobile end-->
+
+                </div> <!-- section-pannel end -->
+                <div class="col-12 text-center compare-plans">
+                    <a (click)="scrolltoView()" class="d-flex flex-column">
+                        <span class="link ft-semibold pointer"> Compare plans </span>
+                        <span><img src="./assets/icons/drop-arrow-blue.svg" alt="" title=""> </span>
+                    </a>
+                </div> <!-- link div end -->
+                <div class="col-12 exper-advice">
+                    <div class="d-flex align-items-center">
+                        <span class="sub-heading-muted">Need expert advice?</span>
+                        <div class="button-wrap">
+                            <button mat-stroked-button color="primary"><img src="./assets/icons/chat-orange.svg" alt=""
+                                    title="" class="img-responsive mr-1 align-bottom" />Chat with our experts</button>
+                        </div>
+                        <span class="or">OR</span>
+                        <div class="button-wrap">
+                            <button mat-stroked-button color="primary" (click)="getCallBack()"><img
+                                    src="./assets/icons/call-orange.svg" alt="" title=""
+                                    class="img-responsive mr-1 align-bottom" />Schedule a call back</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- offers-you section End-->
+
+    <section class="ideal-partner bg-gray">
+        <div class="container">
+            <h2 class="heading text-center">Benefits of ULIP Wealth Plus </h2>
+            <div class="card-layout justify-content-center">
+                <div class="card card-boder">
+                    <div class="card-body">
+                        <div class="card-icon">
+                            <img src="./assets/icons/rising-star-benefit.svg" alt="" class="icon" />
+                        </div>
+                        <div class="card-text-box">
+                            <h4 class="card-title">Rising Star Benefit</h4>
+                            <p class="card-text">Secure wealth not only to cater to your needs but also your child’s
+                                future financial needs even in your absence.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card card-boder">
+                    <div class="card-body">
+                        <div class="card-icon">
+                            <img src="./assets/icons/investment-stat.png" alt="" class="icon">
+                        </div>
+                        <div class="card-text-box">
+                            <h4 class="card-title">Investment Strategies</h4>
+                            <p class="card-text">We offer you two strategies to cater to your various investment needs.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card card-boder">
+                    <div class="card-body">
+                        <div class="card-icon">
+                            <img src="./assets/icons/additional-allocation.svg" alt="" class="icon">
+                        </div>
+                        <div class="card-text-box">
+                            <h4 class="card-title">Additional Allocation</h4>
+                            <p class="card-text">In addition to allocating 100% of your premium paid, we provide
+                                additional allocation up-to 7% every year.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card card-boder">
+                    <div class="card-body">
+                        <div class="card-icon">
+                            <img src="./assets/icons/tax-benefits.svg" alt="" class="icon">
+                        </div>
+                        <div class="card-text-box">
+                            <h4 class="card-title">Tax Benefits</h4>
+                            <p class="card-text">Get tax exemptions on your premiums and maturity amount.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div #comparePlans></div>
+        </div>
+    </section>
+    <!-- Ideal-partner Section End -->
+
+    <section class="compare-plan-benefits section bg-gray">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="heading text-center">Compare your plan benefits</h2>
+            </div>
+            <div class="accordion-wrapper">
+                <mat-accordion>
+                    <mat-expansion-panel [expanded]="true">
+                        <mat-expansion-panel-header [collapsedHeight]="'auto'" [expandedHeight]="'auto'">
+                            <mat-panel-title>
+                                Return Benefits
+                            </mat-panel-title>
+                        </mat-expansion-panel-header>
+                        <div class="accordion-inner">
+                            <div class="hide-mob">
+                                <table class="table compare-table">
+                                    <tr>
+                                        <td>
+                                            <h3 class="sub-heading">Return of Mortality Charge </h3>
+                                            <p>On the maturity date, 100% of the total amount of mortality charges
+                                                deducted
+                                                during the
+                                                policy term will
+                                                be added back to the fund value.</p>
+                                        </td>
+                                        <td>
+                                            <div class="action-box add"></div>
+                                        </td>
+                                        <td>
+                                            <div class="action-box remove"></div>
+                                        </td>
+                                        <td>
+                                            <div class="action-box remove"></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <h3 class="sub-heading">Maturity Benefit</h3>
+                                            <p>At the end of the Policy Term, on survival you will receive the Fund
+                                                Value as
+                                                your Maturity
+                                                Benefit.</p>
+                                        </td>
+                                        <td>
+                                            <div class="action-box add"></div>
+                                        </td>
+                                        <td>
+                                            <div class="action-box remove"></div>
+                                        </td>
+                                        <td>
+                                            <div class="action-box remove"></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <h3 class="sub-heading">Death Benefit</h3>
+                                            <p>In case of unfortunate demise of Life Insured while the Policy is
+                                                In-Force,
+                                                your nominee will
+                                                get the Death Benefit</p>
+                                        </td>
+                                        <td>
+                                            <div class="action-box add"></div>
+                                        </td>
+                                        <td>
+                                            <div class="action-box remove"></div>
+                                        </td>
+                                        <td>
+                                            <div class="action-box remove"></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <h3 class="sub-heading">Rising Star Benefit </h3>
+                                            <p>To cater to your children's future financial needs even in your absence
+                                            </p>
+                                        </td>
+                                        <td>
+                                            <div class="action-box add"></div>
+                                        </td>
+                                        <td>
+                                            <div class="action-box remove"></div>
+                                        </td>
+                                        <td>
+                                            <div class="action-box remove"></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <h3 class="sub-heading">Easy Liquidity</h3>
+                                            <p>We provide an option to partially withdraw money in case of emergencies
+                                                from
+                                                the 6th policy
+                                                year</p>
+                                        </td>
+                                        <td>
+                                            <div class="action-box add"></div>
+                                        </td>
+                                        <td>
+                                            <div class="action-box remove"></div>
+                                        </td>
+                                        <td>
+                                            <div class="action-box remove"></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <h3 class="sub-heading">Tax Benefits </h3>
+                                            <p>Get tax exemptions on your premiums and maturity amount</p>
+                                        </td>
+                                        <td>
+                                            <div class="action-box remove"></div>
+                                        </td>
+                                        <td>
+                                            <div class="action-box add"></div>
+                                        </td>
+                                        <td>
+                                            <div class="action-box remove"></div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div> <!-- benefits table for Desktop  -->
+
+                            <div class="show-mob">
+                                <ul class="benefits-type">
+                                    <li>Wealth Gain+</li>
+                                    <li>Wealth Plus</li>
+                                    <li>GCAP</li>
+                                </ul>
+                                <div class="benefits-details-wrapper">
+                                    <div class="benefits-details">
+                                        <div class="benefits-header">
+                                            <div class="lable">
+                                                Mortality Charge
+                                            </div>
+                                            <div class="info">
+                                                <div matTooltip="On the maturity date, 100% of the total amount of mortality charges deducted during the policy term will be added back to the fund value."
+                                                    matTooltipClass="tooltip-blk">
+                                                    <img alt="" src="./assets/icons/info.svg">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <ul class="benefits-type">
+                                            <li>
+                                                <div class="action-box add"></div>
+                                            </li>
+                                            <li>
+                                                <div class="action-box remove"></div>
+                                            </li>
+                                            <li>
+                                                <div class="action-box remove"></div>
+                                            </li>
+                                        </ul>
+                                    </div> <!-- benefits-details card end-->
+                                    <div class="benefits-details">
+                                        <div class="benefits-header">
+                                            <div class="lable">
+                                                Maturity Benefit
+                                            </div>
+                                            <div class="info">
+                                                <div matTooltip="On the maturity date, 100% of the total amount of mortality charges deducted during the policy term will be added back to the fund value."
+                                                    matTooltipClass="tooltip-blk">
+                                                    <img alt="" src="./assets/icons/info.svg">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <ul class="benefits-type">
+                                            <li>
+                                                <div class="action-box add"></div>
+                                            </li>
+                                            <li>
+                                                <div class="action-box remove"></div>
+                                            </li>
+                                            <li>
+                                                <div class="action-box remove"></div>
+                                            </li>
+                                        </ul>
+                                    </div> <!-- benefits-details card end-->
+                                    <div class="benefits-details">
+                                        <div class="benefits-header">
+                                            <div class="lable">
+                                                Death Benefit
+                                            </div>
+                                            <div class="info">
+                                                <div matTooltip="On the maturity date, 100% of the total amount of mortality charges deducted during the policy term will be added back to the fund value."
+                                                    matTooltipClass="tooltip-blk">
+                                                    <img alt="" src="./assets/icons/info.svg">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <ul class="benefits-type">
+                                            <li>
+                                                <div class="action-box add"></div>
+                                            </li>
+                                            <li>
+                                                <div class="action-box remove"></div>
+                                            </li>
+                                            <li>
+                                                <div class="action-box remove"></div>
+                                            </li>
+                                        </ul>
+                                    </div> <!-- benefits-details card end-->
+                                    <div class="benefits-details">
+                                        <div class="benefits-header">
+                                            <div class="lable">
+                                                Rising Star Benefit
+                                            </div>
+                                            <div class="info">
+                                                <div matTooltip="On the maturity date, 100% of the total amount of mortality charges deducted during the policy term will be added back to the fund value."
+                                                    matTooltipClass="tooltip-blk">
+                                                    <img alt="" src="./assets/icons/info.svg">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <ul class="benefits-type">
+                                            <li>
+                                                <div class="action-box remove"></div>
+                                            </li>
+                                            <li>
+                                                <div class="action-box add"></div>
+                                            </li>
+                                            <li>
+                                                <div class="action-box remove"></div>
+                                            </li>
+                                        </ul>
+                                    </div> <!-- benefits-details card end-->
+                                    <div class="benefits-details">
+                                        <div class="benefits-header">
+                                            <div class="lable">
+                                                Easy Liquidity
+                                            </div>
+                                            <div class="info">
+                                                <div matTooltip="On the maturity date, 100% of the total amount of mortality charges deducted during the policy term will be added back to the fund value."
+                                                    matTooltipClass="tooltip-blk">
+                                                    <img alt="" src="./assets/icons/info.svg">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <ul class="benefits-type">
+                                            <li>
+                                                <div class="action-box remove"></div>
+                                            </li>
+                                            <li>
+                                                <div class="action-box add"></div>
+                                            </li>
+                                            <li>
+                                                <div class="action-box remove"></div>
+                                            </li>
+                                        </ul>
+                                    </div> <!-- benefits-details card end-->
+                                    <div class="benefits-details">
+                                        <div class="benefits-header">
+                                            <div class="lable">
+                                                Tax Benefits
+                                            </div>
+                                            <div class="info">
+                                                <div matTooltip="On the maturity date, 100% of the total amount of mortality charges deducted during the policy term will be added back to the fund value."
+                                                    matTooltipClass="tooltip-blk">
+                                                    <img alt="" src="./assets/icons/info.svg">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <ul class="benefits-type">
+                                            <li>
+                                                <div class="action-box remove"></div>
+                                            </li>
+                                            <li>
+                                                <div class="action-box add"></div>
+                                            </li>
+                                            <li>
+                                                <div class="action-box remove"></div>
+                                            </li>
+                                        </ul>
+                                    </div> <!-- benefits-details card end-->
+                                </div>
+                            </div> <!-- benefits div for Desktop  -->
+                        </div>
+                    </mat-expansion-panel>
+
+                    <mat-expansion-panel>
+                        <mat-expansion-panel-header [collapsedHeight]="'auto'" [expandedHeight]="'auto'">
+                            <mat-panel-title>
+                                Investment Benefits
+                            </mat-panel-title>
+                        </mat-expansion-panel-header>
+                        <div class="accordion-inner">
+                            <div class="hide-mob">
+                                <table class="table compare-table">
+                                    <tr>
+                                        <td>
+                                            <h3 class="sub-heading">Return of Mortality Charge </h3>
+                                            <p>On the maturity date, 100% of the total amount of mortality charges
+                                                deducted
+                                                during the
+                                                policy term will
+                                                be added back to the fund value.</p>
+                                        </td>
+                                        <td>
+                                            <div class="action-box add"></div>
+                                        </td>
+                                        <td>
+                                            <div class="action-box remove"></div>
+                                        </td>
+                                        <td>
+                                            <div class="action-box remove"></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <h3 class="sub-heading">Maturity Benefit</h3>
+                                            <p>At the end of the Policy Term, on survival you will receive the Fund
+                                                Value as
+                                                your Maturity
+                                                Benefit.</p>
+                                        </td>
+                                        <td>
+                                            <div class="action-box add"></div>
+                                        </td>
+                                        <td>
+                                            <div class="action-box remove"></div>
+                                        </td>
+                                        <td>
+                                            <div class="action-box remove"></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <h3 class="sub-heading">Death Benefit</h3>
+                                            <p>In case of unfortunate demise of Life Insured while the Policy is
+                                                In-Force,
+                                                your nominee will
+                                                get the Death Benefit</p>
+                                        </td>
+                                        <td>
+                                            <div class="action-box add"></div>
+                                        </td>
+                                        <td>
+                                            <div class="action-box remove"></div>
+                                        </td>
+                                        <td>
+                                            <div class="action-box remove"></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <h3 class="sub-heading">Rising Star Benefit </h3>
+                                            <p>To cater to your children's future financial needs even in your absence
+                                            </p>
+                                        </td>
+                                        <td>
+                                            <div class="action-box add"></div>
+                                        </td>
+                                        <td>
+                                            <div class="action-box remove"></div>
+                                        </td>
+                                        <td>
+                                            <div class="action-box remove"></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <h3 class="sub-heading">Easy Liquidity</h3>
+                                            <p>We provide an option to partially withdraw money in case of emergencies
+                                                from
+                                                the 6th policy
+                                                year</p>
+                                        </td>
+                                        <td>
+                                            <div class="action-box add"></div>
+                                        </td>
+                                        <td>
+                                            <div class="action-box remove"></div>
+                                        </td>
+                                        <td>
+                                            <div class="action-box remove"></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <h3 class="sub-heading">Tax Benefits </h3>
+                                            <p>Get tax exemptions on your premiums and maturity amount</p>
+                                        </td>
+                                        <td>
+                                            <div class="action-box remove"></div>
+                                        </td>
+                                        <td>
+                                            <div class="action-box add"></div>
+                                        </td>
+                                        <td>
+                                            <div class="action-box remove"></div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div> <!-- benefits table for Desktop  -->
+
+                            <div class="show-mob">
+                                <ul class="benefits-type">
+                                    <li>Wealth Gain+</li>
+                                    <li>Wealth Plus</li>
+                                    <li>GCAP</li>
+                                </ul>
+                                <div class="benefits-details-wrapper">
+                                    <div class="benefits-details">
+                                        <div class="benefits-header">
+                                            <div class="lable">
+                                                Mortality Charge
+                                            </div>
+                                            <div class="info">
+                                                <div matTooltip="On the maturity date, 100% of the total amount of mortality charges deducted during the policy term will be added back to the fund value."
+                                                    matTooltipClass="tooltip-blk">
+                                                    <img alt="" src="./assets/icons/info.svg">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <ul class="benefits-type">
+                                            <li>
+                                                <div class="action-box add"></div>
+                                            </li>
+                                            <li>
+                                                <div class="action-box remove"></div>
+                                            </li>
+                                            <li>
+                                                <div class="action-box remove"></div>
+                                            </li>
+                                        </ul>
+                                    </div> <!-- benefits-details card end-->
+                                    <div class="benefits-details">
+                                        <div class="benefits-header">
+                                            <div class="lable">
+                                                Maturity Benefit
+                                            </div>
+                                            <div class="info">
+                                                <div matTooltip="On the maturity date, 100% of the total amount of mortality charges deducted during the policy term will be added back to the fund value."
+                                                    matTooltipClass="tooltip-blk">
+                                                    <img alt="" src="./assets/icons/info.svg">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <ul class="benefits-type">
+                                            <li>
+                                                <div class="action-box add"></div>
+                                            </li>
+                                            <li>
+                                                <div class="action-box remove"></div>
+                                            </li>
+                                            <li>
+                                                <div class="action-box remove"></div>
+                                            </li>
+                                        </ul>
+                                    </div> <!-- benefits-details card end-->
+                                    <div class="benefits-details">
+                                        <div class="benefits-header">
+                                            <div class="lable">
+                                                Death Benefit
+                                            </div>
+                                            <div class="info">
+                                                <div matTooltip="On the maturity date, 100% of the total amount of mortality charges deducted during the policy term will be added back to the fund value."
+                                                    matTooltipClass="tooltip-blk">
+                                                    <img alt="" src="./assets/icons/info.svg">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <ul class="benefits-type">
+                                            <li>
+                                                <div class="action-box add"></div>
+                                            </li>
+                                            <li>
+                                                <div class="action-box remove"></div>
+                                            </li>
+                                            <li>
+                                                <div class="action-box remove"></div>
+                                            </li>
+                                        </ul>
+                                    </div> <!-- benefits-details card end-->
+                                    <div class="benefits-details">
+                                        <div class="benefits-header">
+                                            <div class="lable">
+                                                Rising Star Benefit
+                                            </div>
+                                            <div class="info">
+                                                <div matTooltip="On the maturity date, 100% of the total amount of mortality charges deducted during the policy term will be added back to the fund value."
+                                                    matTooltipClass="tooltip-blk">
+                                                    <img alt="" src="./assets/icons/info.svg">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <ul class="benefits-type">
+                                            <li>
+                                                <div class="action-box remove"></div>
+                                            </li>
+                                            <li>
+                                                <div class="action-box add"></div>
+                                            </li>
+                                            <li>
+                                                <div class="action-box remove"></div>
+                                            </li>
+                                        </ul>
+                                    </div> <!-- benefits-details card end-->
+                                    <div class="benefits-details">
+                                        <div class="benefits-header">
+                                            <div class="lable">
+                                                Easy Liquidity
+                                            </div>
+                                            <div class="info">
+                                                <div matTooltip="On the maturity date, 100% of the total amount of mortality charges deducted during the policy term will be added back to the fund value."
+                                                    matTooltipClass="tooltip-blk">
+                                                    <img alt="" src="./assets/icons/info.svg">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <ul class="benefits-type">
+                                            <li>
+                                                <div class="action-box remove"></div>
+                                            </li>
+                                            <li>
+                                                <div class="action-box add"></div>
+                                            </li>
+                                            <li>
+                                                <div class="action-box remove"></div>
+                                            </li>
+                                        </ul>
+                                    </div> <!-- benefits-details card end-->
+                                    <div class="benefits-details">
+                                        <div class="benefits-header">
+                                            <div class="lable">
+                                                Tax Benefits
+                                            </div>
+                                            <div class="info">
+                                                <div matTooltip="On the maturity date, 100% of the total amount of mortality charges deducted during the policy term will be added back to the fund value."
+                                                    matTooltipClass="tooltip-blk">
+                                                    <img alt="" src="./assets/icons/info.svg">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <ul class="benefits-type">
+                                            <li>
+                                                <div class="action-box remove"></div>
+                                            </li>
+                                            <li>
+                                                <div class="action-box add"></div>
+                                            </li>
+                                            <li>
+                                                <div class="action-box remove"></div>
+                                            </li>
+                                        </ul>
+                                    </div> <!-- benefits-details card end-->
+                                </div>
+                            </div> <!-- benefits div for Desktop  -->
+                        </div>
+                    </mat-expansion-panel>
+
+                    <mat-expansion-panel>
+                        <mat-expansion-panel-header [collapsedHeight]="'auto'" [expandedHeight]="'auto'">
+                            <mat-panel-title>
+                                Allocation Benefits
+                            </mat-panel-title>
+                        </mat-expansion-panel-header>
+                        <div class="accordion-inner">
+                            <div class="hide-mob">
+                                <table class="table compare-table">
+                                    <tr>
+                                        <td>
+                                            <h3 class="sub-heading">Return of Mortality Charge </h3>
+                                            <p>On the maturity date, 100% of the total amount of mortality charges
+                                                deducted
+                                                during the
+                                                policy term will
+                                                be added back to the fund value.</p>
+                                        </td>
+                                        <td>
+                                            <div class="action-box add"></div>
+                                        </td>
+                                        <td>
+                                            <div class="action-box remove"></div>
+                                        </td>
+                                        <td>
+                                            <div class="action-box remove"></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <h3 class="sub-heading">Maturity Benefit</h3>
+                                            <p>At the end of the Policy Term, on survival you will receive the Fund
+                                                Value as
+                                                your Maturity
+                                                Benefit.</p>
+                                        </td>
+                                        <td>
+                                            <div class="action-box add"></div>
+                                        </td>
+                                        <td>
+                                            <div class="action-box remove"></div>
+                                        </td>
+                                        <td>
+                                            <div class="action-box remove"></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <h3 class="sub-heading">Death Benefit</h3>
+                                            <p>In case of unfortunate demise of Life Insured while the Policy is
+                                                In-Force,
+                                                your nominee will
+                                                get the Death Benefit</p>
+                                        </td>
+                                        <td>
+                                            <div class="action-box add"></div>
+                                        </td>
+                                        <td>
+                                            <div class="action-box remove"></div>
+                                        </td>
+                                        <td>
+                                            <div class="action-box remove"></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <h3 class="sub-heading">Rising Star Benefit </h3>
+                                            <p>To cater to your children's future financial needs even in your absence
+                                            </p>
+                                        </td>
+                                        <td>
+                                            <div class="action-box add"></div>
+                                        </td>
+                                        <td>
+                                            <div class="action-box remove"></div>
+                                        </td>
+                                        <td>
+                                            <div class="action-box remove"></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <h3 class="sub-heading">Easy Liquidity</h3>
+                                            <p>We provide an option to partially withdraw money in case of emergencies
+                                                from
+                                                the 6th policy
+                                                year</p>
+                                        </td>
+                                        <td>
+                                            <div class="action-box add"></div>
+                                        </td>
+                                        <td>
+                                            <div class="action-box remove"></div>
+                                        </td>
+                                        <td>
+                                            <div class="action-box remove"></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <h3 class="sub-heading">Tax Benefits </h3>
+                                            <p>Get tax exemptions on your premiums and maturity amount</p>
+                                        </td>
+                                        <td>
+                                            <div class="action-box remove"></div>
+                                        </td>
+                                        <td>
+                                            <div class="action-box add"></div>
+                                        </td>
+                                        <td>
+                                            <div class="action-box remove"></div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div> <!-- benefits table for Desktop  -->
+
+                            <div class="show-mob">
+                                <ul class="benefits-type">
+                                    <li>Wealth Gain+</li>
+                                    <li>Wealth Plus</li>
+                                    <li>GCAP</li>
+                                </ul>
+                                <div class="benefits-details-wrapper">
+                                    <div class="benefits-details">
+                                        <div class="benefits-header">
+                                            <div class="lable">
+                                                Mortality Charge
+                                            </div>
+                                            <div class="info">
+                                                <div matTooltip="On the maturity date, 100% of the total amount of mortality charges deducted during the policy term will be added back to the fund value."
+                                                    matTooltipClass="tooltip-blk">
+                                                    <img alt="" src="./assets/icons/info.svg">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <ul class="benefits-type">
+                                            <li>
+                                                <div class="action-box add"></div>
+                                            </li>
+                                            <li>
+                                                <div class="action-box remove"></div>
+                                            </li>
+                                            <li>
+                                                <div class="action-box remove"></div>
+                                            </li>
+                                        </ul>
+                                    </div> <!-- benefits-details card end-->
+                                    <div class="benefits-details">
+                                        <div class="benefits-header">
+                                            <div class="lable">
+                                                Maturity Benefit
+                                            </div>
+                                            <div class="info">
+                                                <div matTooltip="On the maturity date, 100% of the total amount of mortality charges deducted during the policy term will be added back to the fund value."
+                                                    matTooltipClass="tooltip-blk">
+                                                    <img alt="" src="./assets/icons/info.svg">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <ul class="benefits-type">
+                                            <li>
+                                                <div class="action-box add"></div>
+                                            </li>
+                                            <li>
+                                                <div class="action-box remove"></div>
+                                            </li>
+                                            <li>
+                                                <div class="action-box remove"></div>
+                                            </li>
+                                        </ul>
+                                    </div> <!-- benefits-details card end-->
+                                    <div class="benefits-details">
+                                        <div class="benefits-header">
+                                            <div class="lable">
+                                                Death Benefit
+                                            </div>
+                                            <div class="info">
+                                                <div matTooltip="On the maturity date, 100% of the total amount of mortality charges deducted during the policy term will be added back to the fund value."
+                                                    matTooltipClass="tooltip-blk">
+                                                    <img alt="" src="./assets/icons/info.svg">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <ul class="benefits-type">
+                                            <li>
+                                                <div class="action-box add"></div>
+                                            </li>
+                                            <li>
+                                                <div class="action-box remove"></div>
+                                            </li>
+                                            <li>
+                                                <div class="action-box remove"></div>
+                                            </li>
+                                        </ul>
+                                    </div> <!-- benefits-details card end-->
+                                    <div class="benefits-details">
+                                        <div class="benefits-header">
+                                            <div class="lable">
+                                                Rising Star Benefit
+                                            </div>
+                                            <div class="info">
+                                                <div matTooltip="On the maturity date, 100% of the total amount of mortality charges deducted during the policy term will be added back to the fund value."
+                                                    matTooltipClass="tooltip-blk">
+                                                    <img alt="" src="./assets/icons/info.svg">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <ul class="benefits-type">
+                                            <li>
+                                                <div class="action-box remove"></div>
+                                            </li>
+                                            <li>
+                                                <div class="action-box add"></div>
+                                            </li>
+                                            <li>
+                                                <div class="action-box remove"></div>
+                                            </li>
+                                        </ul>
+                                    </div> <!-- benefits-details card end-->
+                                    <div class="benefits-details">
+                                        <div class="benefits-header">
+                                            <div class="lable">
+                                                Easy Liquidity
+                                            </div>
+                                            <div class="info">
+                                                <div matTooltip="On the maturity date, 100% of the total amount of mortality charges deducted during the policy term will be added back to the fund value."
+                                                    matTooltipClass="tooltip-blk">
+                                                    <img alt="" src="./assets/icons/info.svg">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <ul class="benefits-type">
+                                            <li>
+                                                <div class="action-box remove"></div>
+                                            </li>
+                                            <li>
+                                                <div class="action-box add"></div>
+                                            </li>
+                                            <li>
+                                                <div class="action-box remove"></div>
+                                            </li>
+                                        </ul>
+                                    </div> <!-- benefits-details card end-->
+                                    <div class="benefits-details">
+                                        <div class="benefits-header">
+                                            <div class="lable">
+                                                Tax Benefits
+                                            </div>
+                                            <div class="info">
+                                                <div matTooltip="On the maturity date, 100% of the total amount of mortality charges deducted during the policy term will be added back to the fund value."
+                                                    matTooltipClass="tooltip-blk">
+                                                    <img alt="" src="./assets/icons/info.svg">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <ul class="benefits-type">
+                                            <li>
+                                                <div class="action-box remove"></div>
+                                            </li>
+                                            <li>
+                                                <div class="action-box add"></div>
+                                            </li>
+                                            <li>
+                                                <div class="action-box remove"></div>
+                                            </li>
+                                        </ul>
+                                    </div> <!-- benefits-details card end-->
+                                </div>
+                            </div> <!-- benefits div for Desktop  -->
+                        </div>
+                    </mat-expansion-panel>
+                </mat-accordion>
+            </div>
+        </div>
+    </section>
+    <!-- compare-plan-benefits Section End-->
+
+    <section class="faqs section bg-gray">
+        <div class="container">
+            <h2 class="heading text-center">FAQs</h2>
+            <div class="col-12 tab-wrapper">
+                <div class="row">
+                    <mat-tab-group>
+                        <mat-tab label="Wealth Plus">
+                            <div class="tab-inner">
+                                <div class="accordion-wrapper">
+                                    <mat-accordion>
+                                        <mat-expansion-panel [expanded]="true">
+                                            <mat-expansion-panel-header [collapsedHeight]="'auto'"
+                                                [expandedHeight]="'auto'">
+                                                <mat-panel-title>
+                                                    What is the minimum and maximum policy maturity age?
+                                                </mat-panel-title>
+                                            </mat-expansion-panel-header>
+                                            <ul>
+                                                <li>For Life cover with level sum assured and regular pay-28 yrs.</li>
+                                                <li>For Life cover with level sum assured and 'Pay Till 60' payment
+                                                    option-65 yrs.</li>
+                                                <li>For Life cover with Decreasing Sum Assured and regular pay-65 yrs.
+                                                </li>
+                                            </ul>
+                                        </mat-expansion-panel>
+                                        <mat-expansion-panel>
+                                            <mat-expansion-panel-header [collapsedHeight]="'auto'"
+                                                [expandedHeight]="'auto'">
+                                                <mat-panel-title>
+                                                    What is the premium paying term and frequency?
+                                                </mat-panel-title>
+                                            </mat-expansion-panel-header>
+                                            <ul>
+                                                <li>For Life cover with level sum assured and regular pay-28 yrs.</li>
+                                                <li>For Life cover with level sum assured and 'Pay Till 60' payment
+                                                    option-65 yrs.</li>
+                                                <li>For Life cover with Decreasing Sum Assured and regular pay-65 yrs.
+                                                </li>
+                                            </ul>
+                                        </mat-expansion-panel>
+                                        <mat-expansion-panel>
+                                            <mat-expansion-panel-header [collapsedHeight]="'auto'"
+                                                [expandedHeight]="'auto'">
+                                                <mat-panel-title>
+                                                    What is the premium paying term and frequency?
+                                                </mat-panel-title>
+                                            </mat-expansion-panel-header>
+                                            <ul>
+                                                <li>For Life cover with level sum assured and regular pay-28 yrs.</li>
+                                                <li>For Life cover with level sum assured and 'Pay Till 60' payment
+                                                    option-65 yrs.</li>
+                                                <li>For Life cover with Decreasing Sum Assured and regular pay-65 yrs.
+                                                </li>
+                                            </ul>
+                                        </mat-expansion-panel>
+                                        <mat-expansion-panel>
+                                            <mat-expansion-panel-header [collapsedHeight]="'auto'"
+                                                [expandedHeight]="'auto'">
+                                                <mat-panel-title>
+                                                    What is the minimum and maximum entry age for spouse?
+                                                </mat-panel-title>
+                                            </mat-expansion-panel-header>
+                                            <ul>
+                                                <li>For Life cover with level sum assured and regular pay-28 yrs.</li>
+                                                <li>For Life cover with level sum assured and 'Pay Till 60' payment
+                                                    option-65 yrs.</li>
+                                                <li>For Life cover with Decreasing Sum Assured and regular pay-65 yrs.
+                                                </li>
+                                            </ul>
+                                        </mat-expansion-panel>
+                                        <mat-expansion-panel>
+                                            <mat-expansion-panel-header [collapsedHeight]="'auto'"
+                                                [expandedHeight]="'auto'">
+                                                <mat-panel-title>
+                                                    What is the minimum and maximum sum assured (Life Cover Amount)?
+                                                </mat-panel-title>
+                                            </mat-expansion-panel-header>
+                                            <ul>
+                                                <li>For Life cover with level sum assured and regular pay-28 yrs.</li>
+                                                <li>For Life cover with level sum assured and 'Pay Till 60' payment
+                                                    option-65 yrs.</li>
+                                                <li>For Life cover with Decreasing Sum Assured and regular pay-65 yrs.
+                                                </li>
+                                            </ul>
+                                        </mat-expansion-panel>
+                                    </mat-accordion>
+                                </div>
+                            </div>
+                        </mat-tab>
+                        <mat-tab label="Wealth Gain+">
+                            <div class="tab-inner">
+                                <div class="accordion-wrapper">
+                                    <mat-accordion>
+                                        <mat-expansion-panel>
+                                            <mat-expansion-panel-header [collapsedHeight]="'auto'"
+                                                [expandedHeight]="'auto'">
+                                                <mat-panel-title>
+                                                    What is the minimum and maximum policy maturity age?
+                                                </mat-panel-title>
+                                            </mat-expansion-panel-header>
+                                            <ul>
+                                                <li>For Life cover with level sum assured and regular pay-28 yrs.</li>
+                                                <li>For Life cover with level sum assured and 'Pay Till 60' payment
+                                                    option-65 yrs.</li>
+                                                <li>For Life cover with Decreasing Sum Assured and regular pay-65 yrs.
+                                                </li>
+                                            </ul>
+                                        </mat-expansion-panel>
+                                        <mat-expansion-panel>
+                                            <mat-expansion-panel-header [collapsedHeight]="'auto'"
+                                                [expandedHeight]="'auto'">
+                                                <mat-panel-title>
+                                                    What is the premium paying term and frequency?
+                                                </mat-panel-title>
+                                            </mat-expansion-panel-header>
+                                            <ul>
+                                                <li>For Life cover with level sum assured and regular pay-28 yrs.</li>
+                                                <li>For Life cover with level sum assured and 'Pay Till 60' payment
+                                                    option-65 yrs.</li>
+                                                <li>For Life cover with Decreasing Sum Assured and regular pay-65 yrs.
+                                                </li>
+                                            </ul>
+                                        </mat-expansion-panel>
+                                        <mat-expansion-panel>
+                                            <mat-expansion-panel-header [collapsedHeight]="'auto'"
+                                                [expandedHeight]="'auto'">
+                                                <mat-panel-title>
+                                                    What is the premium paying term and frequency?
+                                                </mat-panel-title>
+                                            </mat-expansion-panel-header>
+                                            <ul>
+                                                <li>For Life cover with level sum assured and regular pay-28 yrs.</li>
+                                                <li>For Life cover with level sum assured and 'Pay Till 60' payment
+                                                    option-65 yrs.</li>
+                                                <li>For Life cover with Decreasing Sum Assured and regular pay-65 yrs.
+                                                </li>
+                                            </ul>
+                                        </mat-expansion-panel>
+                                        <mat-expansion-panel>
+                                            <mat-expansion-panel-header [collapsedHeight]="'auto'"
+                                                [expandedHeight]="'auto'">
+                                                <mat-panel-title>
+                                                    What is the minimum and maximum entry age for spouse?
+                                                </mat-panel-title>
+                                            </mat-expansion-panel-header>
+                                            <ul>
+                                                <li>For Life cover with level sum assured and regular pay-28 yrs.</li>
+                                                <li>For Life cover with level sum assured and 'Pay Till 60' payment
+                                                    option-65 yrs.</li>
+                                                <li>For Life cover with Decreasing Sum Assured and regular pay-65 yrs.
+                                                </li>
+                                            </ul>
+                                        </mat-expansion-panel>
+                                        <mat-expansion-panel>
+                                            <mat-expansion-panel-header [collapsedHeight]="'auto'"
+                                                [expandedHeight]="'auto'">
+                                                <mat-panel-title>
+                                                    What is the minimum and maximum sum assured (Life Cover Amount)?
+                                                </mat-panel-title>
+                                            </mat-expansion-panel-header>
+                                            <ul>
+                                                <li>For Life cover with level sum assured and regular pay-28 yrs.</li>
+                                                <li>For Life cover with level sum assured and 'Pay Till 60' payment
+                                                    option-65 yrs.</li>
+                                                <li>For Life cover with Decreasing Sum Assured and regular pay-65 yrs.
+                                                </li>
+                                            </ul>
+                                        </mat-expansion-panel>
+                                    </mat-accordion>
+                                </div>
+                            </div>
+                        </mat-tab>
+                        <mat-tab label="GCAP">
+                            <div class="tab-inner">
+                                <div class="accordion-wrapper">
+                                    <mat-accordion>
+                                        <mat-expansion-panel>
+                                            <mat-expansion-panel-header [collapsedHeight]="'auto'"
+                                                [expandedHeight]="'auto'">
+                                                <mat-panel-title>
+                                                    What is the minimum and maximum policy maturity age?
+                                                </mat-panel-title>
+                                            </mat-expansion-panel-header>
+                                            <ul>
+                                                <li>For Life cover with level sum assured and regular pay-28 yrs.</li>
+                                                <li>For Life cover with level sum assured and 'Pay Till 60' payment
+                                                    option-65 yrs.</li>
+                                                <li>For Life cover with Decreasing Sum Assured and regular pay-65 yrs.
+                                                </li>
+                                            </ul>
+                                        </mat-expansion-panel>
+                                        <mat-expansion-panel>
+                                            <mat-expansion-panel-header [collapsedHeight]="'auto'"
+                                                [expandedHeight]="'auto'">
+                                                <mat-panel-title>
+                                                    What is the premium paying term and frequency?
+                                                </mat-panel-title>
+                                            </mat-expansion-panel-header>
+                                            <ul>
+                                                <li>For Life cover with level sum assured and regular pay-28 yrs.</li>
+                                                <li>For Life cover with level sum assured and 'Pay Till 60' payment
+                                                    option-65 yrs.</li>
+                                                <li>For Life cover with Decreasing Sum Assured and regular pay-65 yrs.
+                                                </li>
+                                            </ul>
+                                        </mat-expansion-panel>
+                                        <mat-expansion-panel>
+                                            <mat-expansion-panel-header [collapsedHeight]="'auto'"
+                                                [expandedHeight]="'auto'">
+                                                <mat-panel-title>
+                                                    What is the premium paying term and frequency?
+                                                </mat-panel-title>
+                                            </mat-expansion-panel-header>
+                                            <ul>
+                                                <li>For Life cover with level sum assured and regular pay-28 yrs.</li>
+                                                <li>For Life cover with level sum assured and 'Pay Till 60' payment
+                                                    option-65 yrs.</li>
+                                                <li>For Life cover with Decreasing Sum Assured and regular pay-65 yrs.
+                                                </li>
+                                            </ul>
+                                        </mat-expansion-panel>
+                                        <mat-expansion-panel>
+                                            <mat-expansion-panel-header [collapsedHeight]="'auto'"
+                                                [expandedHeight]="'auto'">
+                                                <mat-panel-title>
+                                                    What is the minimum and maximum entry age for spouse?
+                                                </mat-panel-title>
+                                            </mat-expansion-panel-header>
+                                            <ul>
+                                                <li>For Life cover with level sum assured and regular pay-28 yrs.</li>
+                                                <li>For Life cover with level sum assured and 'Pay Till 60' payment
+                                                    option-65 yrs.</li>
+                                                <li>For Life cover with Decreasing Sum Assured and regular pay-65 yrs.
+                                                </li>
+                                            </ul>
+                                        </mat-expansion-panel>
+                                        <mat-expansion-panel>
+                                            <mat-expansion-panel-header [collapsedHeight]="'auto'"
+                                                [expandedHeight]="'auto'">
+                                                <mat-panel-title>
+                                                    What is the minimum and maximum sum assured (Life Cover Amount)?
+                                                </mat-panel-title>
+                                            </mat-expansion-panel-header>
+                                            <ul>
+                                                <li>For Life cover with level sum assured and regular pay-28 yrs.</li>
+                                                <li>For Life cover with level sum assured and 'Pay Till 60' payment
+                                                    option-65 yrs.</li>
+                                                <li>For Life cover with Decreasing Sum Assured and regular pay-65 yrs.
+                                                </li>
+                                            </ul>
+                                        </mat-expansion-panel>
+                                    </mat-accordion>
+                                </div>
+                            </div>
+                        </mat-tab>
+                    </mat-tab-group>
+                </div>
+            </div>
+            <div class="col-12 support-available">
+                <div class="row content-center">
+                    <img src="./assets/icons/support-24by7.svg" alt="" title="" />
+                    <div class="d-flex flex-column">
+                        <h4 class="for-you">We are always there for you</h4>
+                        <h2 class="email-support">24*7 email support available</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Ideal-partner Section End -->
+
+    <div class="sticky-mob d-lg-none">
+
+        <div *ngIf="!showBenefitsBreakups">
+            <div class="sticky-mob-top">
+                <div class="text-center">
+                    <a class="link" (click)="showBenefits()">Premium Break-Up</a>
+                </div>
+            </div>
+            <div class="button-wrap but-full-width more-details">
+                <button mat-raised-button color="primary" class="d-flex justify-content-center" (click)="get()">
+                    <span class="d-flex justify-content-center align-items-center w-100">
+                        <span class="lable mr-4">PAY PREMIUM</span>
+                        <span class="amout d-flex flex-column align-items-start">
+                            <span class="price mb-1"><span class="rupee"> &#8377; </span> 1,00,000</span>
+                            <span class="small">Inc. of GST</span>
+                        </span>
+                    </span>
+                </button>
+            </div>
+        </div>
+
+        <div *ngIf="showBenefitsBreakups">
+            <div class="sticky-mob-top">
+                <div class="sticky-down-arrow" (click)="showBenefitsLess()">
+                    <img src="./assets/icons/down-arrow.svg" alt="" />
+                </div>
+                <div class="sticky-benefits">
+                    <div class="benefits-list">
+                        <div class="lable">Premium Amount</div>
+                        <div class="info">
+                            <div class="amout"><span class="rupee"> &#8377; </span> 675</div>
+                        </div>
+                    </div>
+                    <div class="benefits-list">
+                        <div class="lable">GST</div>
+                        <div class="info">
+                            <div class="amout"><span class="rupee"> &#8377; </span> 75</div>
+                        </div>
+                    </div>
+                    <div class="benefits-list">
+                        <div class="lable">Total Premium</div>
+                        <div class="info">
+                            <div class="amout h2 ft-bold mb-0"><span class="rupee"> &#8377; </span> 750</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="button-wrap but-full-width more-details">
+                <button mat-raised-button color="primary" class="d-flex justify-content-center">
+                    <span class="d-flex justify-content-center align-items-center w-100">
+                        <span class="lable mr-4">PAY PREMIUM</span>
+                        <span class="amout d-flex flex-column align-items-start">
+                            <span class="price mb-1"><span class="rupee"> &#8377; </span> 1,00,000</span>
+                            <span class="small">Inc. of GST</span>
+                        </span>
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- sticky-mob div-->
+
+    <section class="investment-amount hide-mob" id="sticky-div">
+        <div class="container">
+            <table class="table compare-table">
+                <tr>
+                    <td>
+                        <h3 class="sub-heading">Your Investment Amount </h3>
+                        <h2 class="h1"> <span class="rupee"> &#8377; </span>1,00,000 <span class="year">yearly</span>
+                        </h2>
+                    </td>
+                    <td>
+                        <div class="card">
+                            <div class="card-body text-center">
+                                <h3 class="sub-heading">Wealth Gain+</h3>
+                                <h3 class="subtext">Returns</h3>
+                                <h2 class="h1"> <span class="rupee"> &#8377; </span> 30,50,000 </h2>
+                                <div class="button-wrap">
+                                    <button mat-stroked-button color="primary" (click)="get()">Buy Now</button>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="card">
+                            <div class="card-body text-center">
+                                <h3 class="sub-heading">Wealth Plus</h3>
+                                <h3 class="subtext">Returns</h3>
+                                <h2 class="h1"> <span class="rupee"> &#8377; </span> 40,50,000 </h2>
+                                <div class="button-wrap">
+                                    <button mat-raised-button color="primary" [routerLink]="['/fund']">Buy Now</button>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="card">
+                            <div class="card-body text-center">
+                                <h3 class="sub-heading">GCAP</h3>
+                                <h3 class="subtext">Returns</h3>
+                                <h2 class="h1"> <span class="rupee"> &#8377; </span> 25,50,000 </h2>
+                                <div class="button-wrap">
+                                    <button mat-stroked-button color="primary" [routerLink]="['/fund']">Buy Now</button>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </section>
+    <!-- investment-amount Sticky div for desktop End -->
+
+</main>
+
+<!-- Footer Start -->
+<app-footer></app-footer>
+<!-- Footer End -->

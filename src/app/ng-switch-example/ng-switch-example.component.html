@@ -1,0 +1,39 @@
+<h1>{{title}}</h1>
+<table border="1" style="width:100%;border-collapse: collapse;">
+    <thead>
+        <tr>
+            <td>Student Id</td>
+            <td>Student Name</td>
+            <td>Course</td>
+            <td>Grade</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let student of studentList;" [ngSwitch]="student.Grade">
+            <td>
+                <span *ngSwitchCase="'A'" [ngStyle]="{'color':'green'}">{{student.StudentId}}</span>
+                <span *ngSwitchCase="'B'" [ngStyle]="{'color':'blue'}">{{student.StudentId}}</span>
+                <span *ngSwitchCase="'C'" [ngStyle]="{'color':'orange'}">{{student.StudentId}}</span>
+                <span *ngSwitchDefault [ngStyle]="{'color':'red'}">{{student.StudentId}}</span>
+            </td>
+            <td>
+                <span *ngSwitchCase="'A'" [ngStyle]="{'color':'green'}">{{student.Name}}</span>
+                <span *ngSwitchCase="'B'" [ngStyle]="{'color':'blue'}">{{student.Name}}</span>
+                <span *ngSwitchCase="'C'" [ngStyle]="{'color':'orange'}">{{student.Name}}</span>
+                <span *ngSwitchDefault [ngStyle]="{'color':'red'}">{{student.Name}}</span>
+            </td>
+            <td>
+                <span *ngSwitchCase="'A'" [ngStyle]="{'color':'green'}">{{student.Course}}</span>
+                <span *ngSwitchCase="'B'" [ngStyle]="{'color':'blue'}">{{student.Course}}</span>
+                <span *ngSwitchCase="'C'" [ngStyle]="{'color':'orange'}">{{student.Course}}</span>
+                <span *ngSwitchDefault [ngStyle]="{'color':'red'}">{{student.Course}}</span>
+            </td>
+            <td>
+                <span *ngSwitchCase="'A'" [ngStyle]="{'color':'green'}">{{student.Grade}}</span>
+                <span *ngSwitchCase="'B'" [ngStyle]="{'color':'blue'}">{{student.Grade}}</span>
+                <span *ngSwitchCase="'C'" [ngStyle]="{'color':'orange'}">{{student.Grade}}</span>
+                <span *ngSwitchDefault [ngStyle]="{'color':'red'}">{{student.Grade}}</span>
+            </td>
+        </tr>
+    </tbody>
+</table>

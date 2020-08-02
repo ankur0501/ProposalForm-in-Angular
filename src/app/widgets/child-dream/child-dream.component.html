@@ -1,0 +1,37 @@
+<section class="popup-wrapper">
+    <a class="closebutton" (click)="closeDialog()">
+        <img src="./assets/icons/close.svg" alt="close" class="close-icon">
+    </a>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="child-dream-header">
+                    <h2 class="popup-heading">Child’s Dream</h2>
+                    <h3 class="popup-subheading ">Select a dream of your child you wish to invest for</h3>
+                </div>
+            </div> <!-- child-dream-header div end-->
+            <div class="col-12 col-lg-6 offset-lg-3">
+                <div class=" child-dream-form text-center">
+                    <div class="form-filed">
+                        <mat-form-field>
+                            <div class="d-flex align-items-center">
+                                <mat-select disableOptionCentering panelClass="select-option-child-dream"
+                                    placeholder="Child’s Dream" [formControl]="ChildDream">
+                                    <mat-option value="option1">Study Abroad</mat-option>
+                                    <mat-option value="option2">Study Abroad</mat-option>
+                                    <mat-option value="option3">Study Abroad</mat-option>
+                                </mat-select>
+                                <img src="./assets/icons/down-arrow.svg" alt="" class="arrow-down">
+                            </div>
+                            <mat-error *ngIf="ChildDream.invalid">{{getErrorMessageChildDream()}}
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="button-wrap mt-3">
+                        <button mat-raised-button color="primary" class="mat-button-lg">Select Dream</button>
+                    </div>
+                </div>
+            </div> <!-- child-dream-form div end-->
+        </div>
+    </div>
+</section><!-- child-dream-wrapper section end-->

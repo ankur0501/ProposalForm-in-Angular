@@ -1,0 +1,2019 @@
+<!-- Header Start -->
+<app-product-header></app-product-header>
+<!-- Header End -->
+
+<main>
+    <section class="basic-detail-wrapper bg-gray hide-mob">
+        <div class="container">
+            <div class="quote-detail-page">
+                <div class="col-12">
+                    <div class="row hide-mob">
+                        <div class="col-11 p-0">
+                            <div class="basic-detail-row">
+                                <span class="basic-heading">Basic Details</span>
+                                <ul class="basic-detail-list ">
+                                    <li>Sachiananda Prasad Reddy</li>
+                                    <li>9876543210</li>
+                                    <li>Less than 5 lacs </li>
+                                    <li>29 Years</li>
+                                </ul>
+
+                            </div>
+                        </div>
+                        <div class="col-1">
+                            <div class="row edit-pensil pull-right pointer">
+                                <img src="./assets/icons/edit-pen.svg" alt="edit" class="edit pen"
+                                    (click)="editGetQuote()" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row d-lg-none justify-space-between basic-detail-row-mob">
+                        <span class="basic-heading">Basic Details
+                            <span class="edit-pensil pointer" *ngIf="basicDetails"> <img
+                                    src="./assets/icons/edit-pen.svg" alt="edit" class="edit pen"
+                                    (click)="getGrowMoney()" />
+                            </span>
+                        </span> 
+                        <span class="icon" (click)="hideBasicDetails()"
+                            [ngClass]="{'invertIcon': basicDetails == true}">
+                            <img src="./assets/icons/down-arrow.svg" alt="" class="arrow-down">
+                        </span>
+                        <div class="basic-detail-mob" *ngIf="basicDetails">
+                            <ul class="basic-details">
+                                <li>
+                                    <div class="lable">Full Name</div>
+                                    <div class="value">Sachiananda Prasad Reddy</div>
+                                </li>
+                                <li>
+                                    <div class="lable">Your Income</div>
+                                    <div class="value">Less than 5 Lacs</div>
+                                </li>
+                                <li>
+                                    <div class="lable">Mobile Number</div>
+                                    <div class="value">+ 91 9876543210</div>
+                                </li>
+                                <li>
+                                    <div class="lable">Your Age</div>
+                                    <div class="value">29</div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- basic-detail-wrapper End -->
+
+    <section class="premium-history bg-white hide-mob">
+        <div class="container">
+            <div class="premium-history-container d-flex justify-space-between">
+                <div class="premiumHistory-slider">
+                    <div class="row">
+                        <ngx-slick-carousel [config]="slideConfig" class="history-slider">
+                            <div ngxSlickItem class="slide">
+                                <div class="premium-form">
+                                    <div class="title">Investment Amount</div>
+                                    <div class="sub-title d-none d-lg-block">This is the amount you will invest
+                                    </div>
+                                    <div class="custom-input-field custom-amount-input">
+                                        <mat-form-field>
+                                            <input matInput id="insuranceCover" (focusin)="rupeesSignPrefix = true"
+                                                (focusout)="rupeesSignPrefix = false; getAmntValue($event.target.value)"
+                                                [formControl]="insuranceCover">
+                                            <span *ngIf="rupeesSignPrefix" class="mob-prefixer amnt-prefixer">
+                                                <span class="rupee"> &#8377; </span>
+                                            </span>
+                                            <mat-error *ngIf="insuranceCover.invalid">{{getErrorMessageCover()}}
+                                            </mat-error>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                            </div>
+                            <div ngxSlickItem class="slide">
+                                <div class="premium-form">
+                                    <div class="title">Investing For</div>
+                                    <div class="sub-title d-none d-lg-block">You are investing for</div>
+                                    <div class="form-filed">
+                                        <mat-form-field>
+                                            <div class="d-flex align-items-center">
+                                                <mat-select disableOptionCentering panelClass="select-option-3"
+                                                    [formControl]="myself"
+                                                    (selectionChange)="selectChild($event.value)">
+                                                    <mat-option value="child">Child</mat-option>
+                                                    <mat-option value="myself">Myself</mat-option>
+                                                </mat-select>
+                                                <img src="./assets/icons/down-arrow.svg" alt="" class="arrow-down">
+                                            </div>
+                                            <mat-error *ngIf="payFor.invalid">
+                                            </mat-error>
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="link pointer" (click)='getChildDream()' *ngIf="isChild">Child’s
+                                        Dream</div>
+                                </div>
+                            </div>
+                            <div ngxSlickItem class="slide">
+                                <div class="premium-form">
+                                    <div class="title">Term</div>
+                                    <div class="sub-title d-none d-lg-block">No. of years for the policy</div>
+                                    <div class="form-filed ">
+                                        <mat-form-field>
+                                            <div class="d-flex align-items-center">
+                                                <mat-select disableOptionCentering panelClass="select-option-3"
+                                                    [formControl]="term">
+                                                    <perfect-scrollbar class="scroll-div">
+                                                        <mat-option value="1">1 Year</mat-option>
+                                                        <mat-option value="2">2 Years</mat-option>
+                                                        <mat-option value="3">3 Years </mat-option>
+                                                        <mat-option value="4">4 Years</mat-option>
+                                                        <mat-option value="5">5 Years</mat-option>
+                                                        <mat-option value="35">35 Years</mat-option>
+                                                    </perfect-scrollbar>
+                                                </mat-select>
+                                                <img src="./assets/icons/down-arrow.svg" alt="" class="arrow-down">
+                                            </div>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                            </div>
+                            <div ngxSlickItem class="slide">
+                                <div class="premium-form">
+                                    <div class="title">Pay For</div>
+                                    <div class="sub-title d-none d-lg-block">No. of years you are paying for</div>
+                                    <div class="form-filed ">
+                                        <mat-form-field>
+                                            <div class="d-flex align-items-center">
+                                                <mat-select disableOptionCentering panelClass="select-option-3"
+                                                    [formControl]="payFor">
+                                                    <perfect-scrollbar class="scroll-div">
+                                                        <mat-option value="1">1 Year</mat-option>
+                                                        <mat-option value="2">2 Years</mat-option>
+                                                        <mat-option value="3">3 Years
+                                                        </mat-option>
+                                                        <mat-option value="4">4 Years</mat-option>
+                                                        <mat-option value="5">5 Years</mat-option>
+                                                        <mat-option value="35">35 Years</mat-option>
+                                                    </perfect-scrollbar>
+                                                </mat-select>
+                                                <img src="./assets/icons/down-arrow.svg" alt="" class="arrow-down">
+                                            </div>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                            </div>
+                            <div ngxSlickItem class="slide">
+                                <div class="premium-form">
+                                    <div class="title">Payment</div>
+                                    <div class="sub-title d-none d-lg-block">Choose your payment frequency</div>
+                                    <div class="form-filed ">
+                                        <mat-form-field>
+                                            <div class="d-flex align-items-center">
+                                                <mat-select disableOptionCentering panelClass="select-option-3"
+                                                    [formControl]="payment">
+                                                    <mat-option value="m">Monthly</mat-option>
+                                                    <mat-option value="q">Quarterly</mat-option>
+                                                    <mat-option value="y">Yearly</mat-option>
+                                                </mat-select>
+                                                <img src="./assets/icons/down-arrow.svg" alt="" class="arrow-down">
+                                            </div>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                            </div>
+                            <div ngxSlickItem class="slide">
+                                <div class="premium-form">
+                                    <div class="title">Lorem Ipsum </div>
+                                    <div class="sub-title d-none d-lg-block">Lorem Ipsum </div>
+                                    <div class="form-filed ">
+                                        <mat-form-field>
+                                            <div class="d-flex align-items-center">
+                                                <mat-select disableOptionCentering panelClass="select-option-3"
+                                                    [formControl]="payment">
+                                                    <mat-option value="m">Lorem Ipsum </mat-option>
+                                                    <mat-option value="q">Lorem Ipsum </mat-option>
+                                                    <mat-option value="y">Lorem Ipsum </mat-option>
+                                                </mat-select>
+                                                <img src="./assets/icons/down-arrow.svg" alt="" class="arrow-down">
+                                            </div>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                            </div>
+                        </ngx-slick-carousel>
+                    </div>
+                </div>
+                <div class="premiumHistory-fix bg-yellow">
+                    <div class="premium-form">
+                        <div class="premium-form-header">
+                            <div class="title">Total Returns</div>
+                            <div class="sub-title d-none d-lg-block">at the end of 20 years</div>
+                        </div>
+                        <div class="d-flex align-items-end returns-wrapper">
+                            <div>
+
+                                <div class="return-amt"><span class="rupee"> &#8377; </span>
+                                    40,00,000</div>
+                                <div class="form-filed navper-wrapper">
+                                    <mat-form-field>
+                                        <div class="d-flex align-items-center">
+                                            <mat-select disableOptionCentering panelClass="select-option-total-return"
+                                                [formControl]="returnper">
+                                                <mat-option value="NAV">@NAV</mat-option>
+                                                <mat-option value="4">@ 4%</mat-option>
+                                                <mat-option value="8">@ 8%</mat-option>
+                                            </mat-select>
+                                            <img src="./assets/icons/down-arrow.svg" alt="" class="arrow-down">
+                                        </div>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="button-wrap button-ckeck ">
+                                <button class="mat-button-lg" mat-raised-button color="primary"
+                                    (click)="getSummery()">Check
+                                    summary</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- premium-history End -->
+
+    <section class="basic-plan-details show-mob">
+        <div class="container p-0">
+            <div class="accordion-wrapper accordion-without-space">
+                <mat-accordion>
+                    <mat-expansion-panel>
+                        <mat-expansion-panel-header [collapsedHeight]="'auto'" [expandedHeight]="'auto'">
+                            <mat-panel-title>
+                                Basic Details <span class="edit-pensil pointer"> <img src="./assets/icons/edit-pen.svg"
+                                        alt="edit" class="edit pen" (click)="getGrowMoney()" />
+                                </span>
+                            </mat-panel-title>
+                        </mat-expansion-panel-header>
+                        <div class="accordion-inner">
+                            <ul class="basic-details">
+                                <li>
+                                    <div class="lable">Full Name</div>
+                                    <div class="value">Sachiananda Prasad Reddy</div>
+                                </li>
+                                <li>
+                                    <div class="lable">Your Income</div>
+                                    <div class="value">Less than 5 Lacs</div>
+                                </li>
+                                <li>
+                                    <div class="lable">Mobile Number</div>
+                                    <div class="value">+ 91 9876543210</div>
+                                </li>
+                                <li>
+                                    <div class="lable">Your Age</div>
+                                    <div class="value">29</div>
+                                </li>
+                            </ul>
+                        </div>
+                    </mat-expansion-panel> <!-- Basic Details accordion End -->
+                    <mat-expansion-panel>
+                        <mat-expansion-panel-header [collapsedHeight]="'auto'" [expandedHeight]="'auto'">
+                            <mat-panel-title>
+                                Plan Details
+                            </mat-panel-title>
+                        </mat-expansion-panel-header>
+                        <div class="accordion-inner plan-details">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-6 col-lg-2">
+                                        <div class="premium-form">
+                                            <div class="title">Investment Amount</div>
+                                            <div class="sub-title d-none d-lg-block">This is the amount you will invest
+                                            </div>
+                                            <div class="custom-input-field custom-amount-input">
+                                                <mat-form-field>
+                                                    <input matInput id="insuranceCover"
+                                                        (focusin)="rupeesSignPrefix = true"
+                                                        (focusout)="rupeesSignPrefix = false; getAmntValue($event.target.value)"
+                                                        [formControl]="insuranceCover">
+                                                    <span *ngIf="rupeesSignPrefix" class="mob-prefixer amnt-prefixer">
+                                                        <span class="rupee"> &#8377; </span>
+                                                    </span>
+                                                    <mat-error *ngIf="insuranceCover.invalid">{{getErrorMessageCover()}}
+                                                    </mat-error>
+                                                </mat-form-field>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-lg-2">
+                                        <div class="premium-form">
+                                            <div class="title">Investing For</div>
+                                            <div class="sub-title d-none d-lg-block">You are investing for</div>
+                                            <div class="form-filed">
+                                                <mat-form-field>
+                                                    <div class="d-flex align-items-center">
+                                                        <mat-select disableOptionCentering panelClass="select-option-3"
+                                                            [formControl]="myself"
+                                                            (selectionChange)="selectChild($event.value)">
+                                                            <mat-option value="child">Child</mat-option>
+                                                            <mat-option value="myself">Myself</mat-option>
+                                                        </mat-select>
+                                                        <img src="./assets/icons/down-arrow.svg" alt=""
+                                                            class="arrow-down">
+                                                    </div>
+                                                    <mat-error *ngIf="payFor.invalid">
+                                                    </mat-error>
+                                                </mat-form-field>
+                                            </div>
+                                            <div class="link pointer" (click)='getChildDream()' *ngIf="isChild">Child’s
+                                                Dream</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-lg-2">
+                                        <div class="premium-form">
+                                            <div class="title">Term</div>
+                                            <div class="sub-title d-none d-lg-block">No. of years for the policy</div>
+                                            <div class="form-filed ">
+                                                <mat-form-field>
+                                                    <div class="d-flex align-items-center">
+                                                        <mat-select disableOptionCentering panelClass="select-option-3"
+                                                            [formControl]="term">
+                                                            <perfect-scrollbar class="scroll-div">
+                                                                <mat-option value="1">1 Year</mat-option>
+                                                                <mat-option value="2">2 Years</mat-option>
+                                                                <mat-option value="3">3 Years
+                                                                </mat-option>
+                                                                <mat-option value="4">4 Years</mat-option>
+                                                                <mat-option value="5">5 Years</mat-option>
+                                                                <mat-option value="35">35 Years</mat-option>
+                                                            </perfect-scrollbar>
+                                                        </mat-select>
+                                                        <img src="./assets/icons/down-arrow.svg" alt=""
+                                                            class="arrow-down">
+                                                    </div>
+                                                </mat-form-field>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-lg-2">
+                                        <div class="premium-form">
+                                            <div class="title">Pay For</div>
+                                            <div class="sub-title d-none d-lg-block">No. of years you are paying for
+                                            </div>
+                                            <div class="form-filed ">
+                                                <mat-form-field>
+                                                    <div class="d-flex align-items-center">
+                                                        <mat-select disableOptionCentering panelClass="select-option-3"
+                                                            [formControl]="payFor">
+                                                            <perfect-scrollbar class="scroll-div">
+                                                                <mat-option value="1">1 Year</mat-option>
+                                                                <mat-option value="2">2 Years</mat-option>
+                                                                <mat-option value="3">3 Years
+                                                                </mat-option>
+                                                                <mat-option value="4">4 Years</mat-option>
+                                                                <mat-option value="5">5 Years</mat-option>
+                                                                <mat-option value="35">35 Years</mat-option>
+                                                            </perfect-scrollbar>
+                                                        </mat-select>
+                                                        <img src="./assets/icons/down-arrow.svg" alt=""
+                                                            class="arrow-down">
+                                                    </div>
+                                                </mat-form-field>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-lg-2">
+                                        <div class="premium-form">
+                                            <div class="title">Payment</div>
+                                            <div class="sub-title d-none d-lg-block">Choose your payment frequency</div>
+                                            <div class="form-filed ">
+                                                <mat-form-field>
+                                                    <div class="d-flex align-items-center">
+                                                        <mat-select disableOptionCentering panelClass="select-option-3"
+                                                            [formControl]="payment">
+                                                            <mat-option value="m">Monthly</mat-option>
+                                                            <mat-option value="q">Quarterly</mat-option>
+                                                            <mat-option value="y">Yearly</mat-option>
+                                                        </mat-select>
+                                                        <img src="./assets/icons/down-arrow.svg" alt=""
+                                                            class="arrow-down">
+                                                    </div>
+                                                </mat-form-field>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-lg-2">
+                                        <div class="premium-form">
+                                            <div class="title">Returns</div>
+                                            <div class="sub-title d-none d-lg-block">Fund returns at a given rate</div>
+                                            <div class="form-filed ">
+                                                <mat-form-field>
+                                                    <div class="d-flex align-items-center">
+                                                        <mat-select disableOptionCentering panelClass="select-option-3"
+                                                            [formControl]="returnper">
+                                                            <mat-option value="NAV">Current NAV</mat-option>
+                                                            <mat-option value="4">@ 4%</mat-option>
+                                                            <mat-option value="8">@ 8%</mat-option>
+                                                        </mat-select>
+                                                        <img src="./assets/icons/down-arrow.svg" alt=""
+                                                            class="arrow-down">
+                                                    </div>
+                                                </mat-form-field>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-lg-2">
+                                        <div class="premium-form">
+                                            <div class="title">Lorem Ipsum</div>
+                                            <div class="sub-title d-none d-lg-block">Lorem Ipsum</div>
+                                            <div class="form-filed ">
+                                                <mat-form-field>
+                                                    <div class="d-flex align-items-center">
+                                                        <mat-select disableOptionCentering panelClass="select-option-3"
+                                                            [formControl]="returnper">
+                                                            <mat-option value="NAV">Lorem Ipsum</mat-option>
+                                                            <mat-option value="4">Lorem Ipsum</mat-option>
+                                                            <mat-option value="8">Lorem Ipsum</mat-option>
+                                                        </mat-select>
+                                                        <img src="./assets/icons/down-arrow.svg" alt=""
+                                                            class="arrow-down">
+                                                    </div>
+                                                </mat-form-field>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </mat-expansion-panel> <!-- Plan Details accordion End -->
+                </mat-accordion>
+            </div>
+        </div>
+    </section>
+    <!-- basic-plan-details Section for mobile -->
+
+    <section class="equity-plan bg-gray" [ngClass]="{'equity-plan-recomended': customize == true}">
+        <div class="container">
+            <!-- equity-card web Start -->
+            <div class="d-none d-md-block equity-plan-wrapper">
+                <h4>Wealth Plus</h4>
+                <div class="equity-wrapper d-flex justify-content-between align-items-baseline"
+                    [ngClass]="{'equity-wrapper-shrink': customize == true}">
+                    <div class="d-flex equity ">
+                        <h2>Equity 250</h2>
+                        <span class="suitable">Is the most suitable fund for your</span>
+                        <span class="strong">Retirement</span>
+                    </div>
+                    <a class="pointer" (click)="customizeFund()" *ngIf="!customize">Customize Funds</a>
+                    <a class="pointer" (click)="recommendedFund()" *ngIf="customize">Recommended Fund</a>
+                </div>
+
+                <!-- customize-fund-wrapper Start -->
+                <div class="customize-fund-wrapper bg-gray" *ngIf="customize">
+                    <div class="table-allocation-wrapper">
+                        <div class="table-responsive">
+                            <table class="table table-head table-border mb-0">
+                                <thead>
+                                    <tr>
+                                        <th width="25%">Fund Name</th>
+                                        <th>
+                                            Our Returns (%)
+                                            <div class="form-filed">
+                                                <mat-form-field>
+                                                    <div class="d-flex align-items-center">
+                                                        <mat-select disableOptionCentering panelClass="select-option-our-return"
+                                                            [formControl]="ourReturn">
+
+                                                            <perfect-scrollbar class="scroll-div">
+                                                                <mat-option value="1">1 Year</mat-option>
+                                                                <mat-option value="2">2 Years</mat-option>
+                                                                <mat-option value="3">3 Years
+                                                                </mat-option>
+                                                                <mat-option value="4">4 Years</mat-option>
+                                                                <mat-option value="5">5 Years</mat-option>
+                                                                <mat-option value="35">35 Years</mat-option>
+                                                            </perfect-scrollbar>
+
+                                                        </mat-select>
+                                                        <img src="./assets/icons/down-arrow.svg" alt=""
+                                                            class="arrow-down">
+                                                    </div>
+                                                    <mat-error *ngIf="payFor.invalid">
+                                                    </mat-error>
+                                                </mat-form-field>
+                                            </div>
+                                        </th>
+                                        <th class="text-center">Allocation (%)</th>
+                                        <th>
+                                            Projected Returns
+                                            <div class="form-filed">
+                                                <mat-form-field>
+                                                    <div class="d-flex align-items-center">
+                                                        <mat-select disableOptionCentering panelClass="select-option-projected-returns"
+                                                            [formControl]="equityNAV">
+
+                                                            <mat-option value="NAV"> @NAV</mat-option>
+                                                            <mat-option value="4">@ 4%</mat-option>
+                                                            <mat-option value="8">@ 8%</mat-option>
+
+                                                        </mat-select>
+                                                        <img src="./assets/icons/down-arrow.svg" alt=""
+                                                            class="arrow-down">
+                                                    </div>
+                                                    <mat-error *ngIf="payFor.invalid">
+                                                    </mat-error>
+                                                </mat-form-field>
+                                            </div>
+                                        </th>
+                                        <th class="text-center">Fund Performance</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="fund-name">Equity 250
+                                            <a class="pointer" width="25%" (click)='fundPerformance()'>View past
+                                                performance</a>
+                                            <span class="color-bar border-blue"></span>
+                                        </td>
+                                        <td>14.46</td>
+                                        <td class="text-center">
+                                            <div class="allocation">
+                                                <a class="pointer d-flex">
+                                                    <img src="./assets/icons/minus.svg" alt=""></a>
+                                                30%
+                                                <a class="pointer d-flex"><img src="./assets/icons/plus.svg" alt=""></a>
+                                            </div>
+                                        </td>
+                                        <td><span class="rupee"> &#8377; </span> 1,14,53,435</td>
+                                        <td class="text-center">
+                                            <a class="pointer" (click)='fundPerformance()'>
+                                                <img src="./assets/icons/fund-growth.svg" alt=""
+                                                    class="fund-growth"></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fund-name">Equity Large Cap
+                                            <a class="pointer" (click)='fundPerformance()'>View past performance</a>
+                                            <span class="color-bar border-green"></span>
+                                        </td>
+                                        <td>12.30</td>
+                                        <td class="text-center">
+                                            <div class="allocation">
+                                                <a class="pointer d-flex"><img src="./assets/icons/minus.svg"
+                                                        alt=""></a>
+                                                40%
+                                                <a class="pointer d-flex"><img src="./assets/icons/plus.svg" alt=""></a>
+                                            </div>
+                                        </td>
+                                        <td><span class="rupee"> &#8377; </span> 1,14,53,435</td>
+                                        <td class="text-center">
+                                            <a class="pointer" (click)='fundPerformance()'>
+                                                <img src="./assets/icons/fund-growth.svg" alt="" class="fund-growth">
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fund-name">Bond Fund
+                                            <a class="pointer (click)='fundPerformance()'">View past performance</a>
+                                            <span class="color-bar border-orange"></span>
+                                        </td>
+                                        <td>11.70</td>
+                                        <td class="text-center">
+                                            <div class="allocation">
+                                                <a class="pointer d-flex"><img src="./assets/icons/minus.svg"
+                                                        alt=""></a>
+                                                30%
+                                                <a class="pointer d-flex"><img src="./assets/icons/plus.svg" alt=""></a>
+                                            </div>
+                                        </td>
+                                        <td><span class="rupee"> &#8377; </span> 1,14,53,435</td>
+                                        <td class="text-center">
+                                            <a class="pointer" (click)='fundPerformance()'><img
+                                                    src="./assets/icons/fund-growth.svg" alt="" class="fund-growth"></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fund-name">Equity Mid Cap
+                                            <a class="pointer (click)='fundPerformance()'">View past performance</a>
+                                            <span class="color-bar border-purple"></span>
+                                        </td>
+                                        <td>11.11</td>
+                                        <td class="text-center">
+                                            <div class="allocation">
+                                                <a class="pointer d-flex"><img src="./assets/icons/minus.svg"
+                                                        alt=""></a>
+                                                55%
+                                                <a class="pointer d-flex"><img src="./assets/icons/plus.svg" alt=""></a>
+                                                <!-- <div class="top-up tooltip-error-popup">
+                                                   Exceeds by 55%; you cannot exceed more than 100% of total fund allocation.
+                                                </div> -->
+                                            </div>
+                                        </td>
+                                        <td><span class="rupee"> &#8377; </span> 0</td>
+                                        <td class="text-center">
+                                            <a class="pointer" (click)='fundPerformance()'><img
+                                                    src="./assets/icons/fund-growth.svg" alt="" class="fund-growth"></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fund-name">Managed Fund
+                                            <a class="pointer (click)='fundPerformance()'">View past performance</a>
+                                            <span class="color-bar border-pink"></span>
+                                        </td>
+                                        <td>10.9</td>
+                                        <td class="text-center">
+                                            <div class="allocation">
+                                                <a class="pointer d-flex"><img src="./assets/icons/minus.svg"
+                                                        alt=""></a>
+                                                0
+                                                <a class="pointer d-flex"><img src="./assets/icons/plus.svg" alt=""></a>
+                                            </div>
+                                        </td>
+                                        <td><span class="rupee"> &#8377; </span> 0</td>
+                                        <td class="text-center">
+                                            <a class="pointer" (click)='fundPerformance()'><img
+                                                    src="./assets/icons/fund-growth.svg" alt="" class="fund-growth"></a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="allocation-wrapper">
+                            <div class="allocation-tooltip">
+                                <span>100%</span>
+                                <span>left</span>
+                            </div>
+                            <div class="allocation-bar">
+                                <span class="allocation-blue bg-dark-blue" style="height: 30%"></span>
+                                <span class="allocation-green bg-green" style="height: 40%"></span>
+                                <span class="allocation-orange bg-orange" style="height: 30%"></span>
+                                <span class="allocation-purple bg-purple" style="height: 0%"></span>
+                                <span class="allocation-pink bg-pink" style="height: 0%"></span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <p class="discalimer">Discalimer: @14.65% as per current market performance. Current Performance is
+                        not an indicative of future results</p>
+                </div>
+                <!-- customize-fund-wrapper End -->
+
+                <!-- equity-card Start -->
+                <div class="bg-white equity-card">
+                    <div class="col-12">
+                        <div class="row">
+                            <div class="col-5 equity-list-menu">
+                                <p>How are you making the right decision by investing in Wealth Plus</p>
+                                <div class="row">
+                                    <perfect-scrollbar class="select-custom-scroll">
+                                        <ul>
+                                            <li class="pointer" [ngClass]="{'active': selectedItem == 1}"
+                                                (click)="listClick(1)">
+                                                <span>
+                                                    Additional allocation added to your fund every year
+                                                </span>
+                                                <span>
+                                                    <img src="./assets/icons/arrow-rounded.svg" alt="" class="arrow-rounded pull-right" *ngIf="selectedItem == 1">
+                                                </span>
+                                            </li>
+                                            <li class="pointer" [ngClass]="{'active': selectedItem == 2}"
+                                                (click)="listClick(2)">
+                                                <span>Zero allocation and administration charges</span>
+                                                <span><img src="./assets/icons/arrow-rounded.svg" alt="" class="arrow-rounded pull-right" *ngIf="selectedItem == 2"></span>
+                                            </li>
+                                            <li class="pointer" [ngClass]="{'active': selectedItem == 3}"
+                                                (click)="listClick(3)">
+                                                <span>Return on mortality charges</span>
+                                                <span><img src="./assets/icons/arrow-rounded.svg" alt="" class="arrow-rounded pull-right" *ngIf="selectedItem == 3"></span>
+                                            </li>
+                                            <li class="pointer" [ngClass]="{'active': selectedItem == 4}"
+                                                (click)="listClick(4)">
+                                                <span>Withdraw your money after 10 years at zero cost</span>
+                                                <span><img src="./assets/icons/arrow-rounded.svg" alt="" class="arrow-rounded pull-right" *ngIf="selectedItem == 4"></span>
+                                            </li>
+
+                                        </ul>
+                                    </perfect-scrollbar>
+                                </div>
+                            </div>
+                            <div class="col-7 equity-list-details">
+                                <div class="row">
+                                    <div class="graph-view d-none" [ngClass]="{'d-block': equityTabSelect == 'graph'}">
+                                        <div class="graph-container" *ngIf="selectedItem == 1">
+                                            <highcharts-chart [Highcharts]="highcharts" [options]="chartOptions">
+                                            </highcharts-chart>
+                                        </div>
+                                        <div *ngIf="selectedItem == 2">
+                                            <div class="tabTwo-wrapper">
+                                                <img src="./assets/images/graph-2-tab.png" alt=""
+                                                    class="graph-image image-responsive">
+                                            </div>
+                                        </div>
+                                        <div class="graph-container" *ngIf="selectedItem == 3"> Graph 3 Selected </div>
+                                        <div class="graph-container" *ngIf="selectedItem == 4"> Graph 4 Selected </div>
+                                    </div>
+                                    <div class="table-view d-none" [ngClass]="{'d-block': equityTabSelect == 'table'}">
+                                        <div *ngIf="selectedItem == 1">
+                                            <div class="table-responsive">
+                                                <table class="table table-head table-border mb-0">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Policy Year</th>
+                                                            <th>Annual Premium</th>
+                                                            <th>Additional Allocation</th>
+                                                            <th>Applicable Taxes</th>
+                                                            <th>Fund Value</th>
+                                                        </tr>
+                                                    </thead>
+                                                </table>
+                                            </div>
+                                            <perfect-scrollbar class="scroll-div">
+                                                <div class="table-responsive">
+                                                    <table class="table table-border mb-0">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>1</td>
+                                                                <td><span class="rupee"> &#8377; </span> 1,00,000</td>
+                                                                <td><span class="rupee"> &#8377; </span> 1,000</td>
+                                                                <td><span class="rupee"> &#8377; </span> 463</td>
+                                                                <td><span class="rupee"> &#8377; </span> 1,05,926</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>2</td>
+                                                                <td><span class="rupee"> &#8377; </span> 1,00,000</td>
+                                                                <td><span class="rupee"> &#8377; </span> 1,000</td>
+                                                                <td><span class="rupee"> &#8377; </span> 709</td>
+                                                                <td><span class="rupee"> &#8377; </span> 2,18,660</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>3</td>
+                                                                <td><span class="rupee"> &#8377; </span> 1,00,000</td>
+                                                                <td><span class="rupee"> &#8377; </span> 1,000</td>
+                                                                <td><span class="rupee"> &#8377; </span> 969</td>
+                                                                <td><span class="rupee"> &#8377; </span> 3,38,664</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>4</td>
+                                                                <td><span class="rupee"> &#8377; </span> 1,00,000</td>
+                                                                <td><span class="rupee"> &#8377; </span> 1,000</td>
+                                                                <td><span class="rupee"> &#8377; </span> 1,246</td>
+                                                                <td><span class="rupee"> &#8377; </span> 4,66,352</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>5</td>
+                                                                <td><span class="rupee"> &#8377; </span> 1,00,000</td>
+                                                                <td><span class="rupee"> &#8377; </span> 1,000</td>
+                                                                <td><span class="rupee"> &#8377; </span> 1,538</td>
+                                                                <td><span class="rupee"> &#8377; </span> 6,02,293</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>6</td>
+                                                                <td><span class="rupee"> &#8377; </span> 1,00,000</td>
+                                                                <td><span class="rupee"> &#8377; </span> 1,000</td>
+                                                                <td><span class="rupee"> &#8377; </span> 1,844</td>
+                                                                <td><span class="rupee"> &#8377; </span> 7,48,951</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>7</td>
+                                                                <td><span class="rupee"> &#8377; </span> 1,00,000</td>
+                                                                <td><span class="rupee"> &#8377; </span> 1,000</td>
+                                                                <td><span class="rupee"> &#8377; </span> 2,173</td>
+                                                                <td><span class="rupee"> &#8377; </span> 9,05,111</td>
+                                                            </tr>
+
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </perfect-scrollbar>
+                                        </div>
+                                        <div class="table-container" *ngIf="selectedItem == 2">
+                                            Table 2 selected
+                                        </div>
+                                        <div class="table-container" *ngIf="selectedItem == 3">
+                                            Table 3 selected
+                                        </div>
+                                        <div class="table-container" *ngIf="selectedItem == 4">
+                                            Table 4 selected
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="togle-table">
+                        <div class="form-filed">
+                            <mat-button-toggle-group name="fontStyle" value="graph" aria-label="Font Style"
+                                #equetyToggle="matButtonToggleGroup" (change)="getEquityTabSelect(equetyToggle.value)">
+                                <mat-button-toggle value="graph">
+                                    <img src="./assets/icons/graph-button.svg" alt="" class="graph-icon"
+                                        *ngIf="equityTabSelect=='graph'">
+                                    <img src="./assets/icons/graph-button1.svg" alt="" class="graph-icon"
+                                        *ngIf="equityTabSelect=='table'">
+                                </mat-button-toggle>
+                                <mat-button-toggle value="table">
+                                    <img src="./assets/icons/table-button2.svg" alt="" class="table-icon"
+                                        *ngIf="equityTabSelect=='table'">
+                                    <img src="./assets/icons/table-button.svg" alt="" class="table-icon"
+                                        *ngIf="equityTabSelect=='graph'">
+                                </mat-button-toggle>
+                            </mat-button-toggle-group>
+                        </div>
+                    </div>
+                </div>
+                <!-- equity-card End -->
+            </div>
+            <!-- equity-card web End -->
+
+            <!-- equity-card Mobile Start -->
+            <div class="d-md-none equity-plan-wrapper-mob">
+                <!-- equity mobile Header Start -->
+                <div class="col-12 equity">
+                    <div class="row align-items-baseline">
+                        <h4>Wealth Plus</h4>
+                        <h2>Equity 250</h2>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="row equity">
+                        <span class="suitable">
+                            Is the most suitable fund for your
+                        </span>
+                        <span class="strong">Retirement</span>
+                    </div>
+                </div>
+                <div class="col-12 p-0 customize-link">
+                    <a class="pointer pull-right" (click)="customizeFund()" *ngIf="!customize">Customize Funds</a>
+                    <a class="pointer pull-right" (click)="recommendedFund()" *ngIf="customize">Recommended Fund</a>
+                </div>
+                <!-- equity mobile Header End -->
+
+                <!-- customize-fund-wrapper mobile Start -->
+                <div class="customize-fund-wrapper-mob bg-gray" *ngIf="customize">
+                    <div class="col-12 customize-fund-form-mob">
+                        <div class="row">
+                            <div class="col-6 pl-0">
+                                <div class="form-filed">
+                                    <label class="form-label">Our Returns (%)</label>
+                                    <mat-form-field>
+                                        <div class="d-flex align-items-center">
+                                            <mat-select disableOptionCentering panelClass="select-option3"
+                                                [formControl]="ourReturn">
+
+                                                <perfect-scrollbar class="scroll-div">
+                                                    <mat-option value="1">1 Year</mat-option>
+                                                    <mat-option value="2">2 Years</mat-option>
+                                                    <mat-option value="3">3 Years
+                                                    </mat-option>
+                                                    <mat-option value="4">4 Years</mat-option>
+                                                    <mat-option value="5">5 Years</mat-option>
+                                                    <mat-option value="35">35 Years</mat-option>
+                                                </perfect-scrollbar>
+
+                                            </mat-select>
+                                            <img src="./assets/icons/down-arrow.svg" alt="" class="arrow-down">
+                                        </div>
+                                        <mat-error *ngIf="payFor.invalid">
+                                        </mat-error>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="col-6 pr-0">
+                                <div class="form-filed">
+                                    <label class="form-label">Projected Returns</label>
+                                    <mat-form-field>
+                                        <div class="d-flex align-items-center">
+                                            <mat-select disableOptionCentering panelClass="select-option-custom-mob-fund"
+                                                [formControl]="equityNAV">
+
+                                                <mat-option value="NAV"> @NAV</mat-option>
+                                                <mat-option value="4">@ 4%</mat-option>
+                                                <mat-option value="8">@ 8%</mat-option>
+
+                                            </mat-select>
+                                            <img src="./assets/icons/down-arrow.svg" alt="" class="arrow-down">
+                                        </div>
+                                        <mat-error *ngIf="payFor.invalid">
+                                        </mat-error>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="allocation-wrapper">
+                            <div class="allocation-tooltip">
+                                <span>100%</span>
+                                <span>left</span>
+                            </div>
+                            <div class="allocation-bar">
+                                <span class="allocation-blue bg-dark-blue" style="width: 30%"></span>
+                                <span class="allocation-green bg-green" style="width: 40%"></span>
+                                <span class="allocation-orange bg-orange" style="width: 30%"></span>
+                                <span class="allocation-purple bg-purple" style="width: 0%"></span>
+                                <span class="allocation-pink bg-pink" style="width: 0%"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 mb-3 p-0">
+                        <div class="row">
+                            <div class="card h-100">
+                                <div class="card-benefit">
+                                    <div class="card-body">
+                                        <div class="card-heading round">
+                                            <h4 class="card-title">Equity 250</h4>
+                                            <a class="pointer" (click)='fundPerformance()'>View past performance</a>
+                                            <div class="button-checkbox">
+                                                <mat-checkbox [checked]=true></mat-checkbox>
+                                            </div>
+                                            <span class="color-bar border-blue"></span>
+                                        </div>
+                                        <div class="col-12 data-wrap">
+                                            <div class="row">
+                                                <div class="col-3 p-0">
+                                                    <div class="card-label">Returns(%)</div>
+                                                    <div class="card-data">14.46</div>
+                                                </div>
+                                                <div class="col-4 p-0 ">
+                                                    <div class="card-label">Projected Returns</div>
+                                                    <div class="card-data">
+                                                        <span class="rupee"> &#8377; </span>
+                                                        1,14,53,435
+                                                    </div>
+                                                </div>
+                                                <div class="col-5 pr-0">
+                                                    <div class="card-label">Fund Performance</div>
+                                                    <div class="card-data text-center">
+                                                        <a class="pointer"><img src="./assets/icons/fund-growth-18.svg"
+                                                                alt="" class="fund-growth"
+                                                                (click)='fundPerformance()'></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 allocation-wrap">
+                                            <div class="row">
+                                                <div class="card-label">
+                                                    Allocation (%)
+                                                </div>
+                                                <div class="card-data">
+                                                    <div class="allocation">
+                                                        <a class="pointer d-flex"><img src="./assets/icons/minus.svg"
+                                                                alt=""></a>
+                                                        100%
+                                                        <a class="pointer d-flex"><img src="./assets/icons/plus.svg"
+                                                                alt=""></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 mb-3 p-0">
+                        <div class="row">
+                            <div class="card h-100">
+                                <div class="card-benefit">
+                                    <div class="card-body">
+                                        <div class="card-heading round">
+                                            <h4 class="card-title">Equity Large Cap</h4>
+                                            <a class="pointer" (click)='fundPerformance()'>View past performance</a>
+                                            <div class="button-checkbox">
+                                                <mat-checkbox></mat-checkbox>
+                                            </div>
+                                            <span class="color-bar border-green"></span>
+                                        </div>
+                                        <div class="col-12 data-wrap">
+                                            <div class="row">
+                                                <div class="col-3 p-0">
+                                                    <div class="card-label">Returns(%)</div>
+                                                    <div class="card-data">11.70</div>
+                                                </div>
+                                                <div class="col-4 p-0 ">
+                                                    <div class="card-label">Projected Returns</div>
+                                                    <div class="card-data">
+                                                        <span class="rupee"> &#8377; </span>
+                                                        0
+                                                    </div>
+                                                </div>
+                                                <div class="col-5 pr-0">
+                                                    <div class="card-label">Fund Performance</div>
+                                                    <div class="card-data text-center">
+                                                        <a class="pointer"><img src="./assets/icons/fund-growth-18.svg"
+                                                                alt="" class="fund-growth"
+                                                                (click)='fundPerformance()'></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 allocation-wrap">
+                                            <div class="row">
+                                                <div class="card-label">
+                                                    Allocation (%)
+                                                </div>
+                                                <div class="card-data">
+                                                    <div class="allocation">
+                                                        <a class="pointer d-flex"><img src="./assets/icons/minus.svg"
+                                                                alt=""></a>
+                                                        100%
+                                                        <a class="pointer d-flex"><img src="./assets/icons/plus.svg"
+                                                                alt=""></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 mb-3 p-0">
+                        <div class="row">
+                            <div class="card h-100">
+                                <div class="card-benefit">
+                                    <div class="card-body">
+                                        <div class="card-heading round">
+                                            <h4 class="card-title">Bond Fund</h4>
+                                            <a class="pointer" (click)='fundPerformance()'>View past performance</a>
+                                            <div class="button-checkbox">
+                                                <mat-checkbox></mat-checkbox>
+                                            </div>
+                                            <span class="color-bar border-orange"></span>
+                                        </div>
+                                        <div class="col-12 data-wrap">
+                                            <div class="row">
+                                                <div class="col-3 p-0">
+                                                    <div class="card-label">Returns(%)</div>
+                                                    <div class="card-data">12.30</div>
+                                                </div>
+                                                <div class="col-4 p-0 ">
+                                                    <div class="card-label">Projected Returns</div>
+                                                    <div class="card-data">
+                                                        <span class="rupee"> &#8377; </span>
+                                                        1,14,53,435
+                                                    </div>
+                                                </div>
+                                                <div class="col-5 pr-0">
+                                                    <div class="card-label">Fund Performance</div>
+                                                    <div class="card-data text-center">
+                                                        <a class="pointer"><img src="./assets/icons/fund-growth-18.svg"
+                                                                alt="" class="fund-growth"
+                                                                (click)='fundPerformance()'></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 allocation-wrap">
+                                            <div class="row">
+                                                <div class="card-label">
+                                                    Allocation (%)
+                                                </div>
+                                                <div class="card-data">
+                                                    <div class="allocation">
+                                                        <a class="pointer d-flex"><img src="./assets/icons/minus.svg"
+                                                                alt=""></a>
+                                                        100%
+                                                        <a class="pointer d-flex"><img src="./assets/icons/plus.svg"
+                                                                alt=""></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 mb-3 p-0">
+                        <div class="row">
+                            <div class="card h-100">
+                                <div class="card-benefit">
+                                    <div class="card-body">
+                                        <div class="card-heading round">
+                                            <h4 class="card-title">Equity Mid Cap</h4>
+                                            <a class="pointer" (click)='fundPerformance()'>View past performance</a>
+                                            <div class="button-checkbox">
+                                                <mat-checkbox></mat-checkbox>
+                                            </div>
+                                            <span class="color-bar border-purple"></span>
+                                        </div>
+                                        <div class="col-12 data-wrap">
+                                            <div class="row">
+                                                <div class="col-3 p-0">
+                                                    <div class="card-label">Returns(%)</div>
+                                                    <div class="card-data">11.11</div>
+                                                </div>
+                                                <div class="col-4 p-0 ">
+                                                    <div class="card-label">Projected Returns</div>
+                                                    <div class="card-data">
+                                                        <span class="rupee"> &#8377; </span>
+                                                        1,14,53,435
+                                                    </div>
+                                                </div>
+                                                <div class="col-5 pr-0">
+                                                    <div class="card-label">Fund Performance</div>
+                                                    <div class="card-data text-center">
+                                                        <a class="pointer"><img src="./assets/icons/fund-growth-18.svg"
+                                                                alt="" class="fund-growth"
+                                                                (click)='fundPerformance()'></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 allocation-wrap">
+                                            <div class="row">
+                                                <div class="card-label">
+                                                    Allocation (%)
+                                                </div>
+                                                <div class="card-data">
+                                                    <div class="allocation">
+                                                        <a class="pointer d-flex"><img src="./assets/icons/minus.svg"
+                                                                alt=""></a>
+                                                        100%
+                                                        <a class="pointer d-flex"><img src="./assets/icons/plus.svg"
+                                                                alt=""></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 mb-3 p-0">
+                        <div class="row">
+                            <div class="card h-100">
+                                <div class="card-benefit">
+                                    <div class="card-body">
+                                        <div class="card-heading round">
+                                            <h4 class="card-title">Managed Fund</h4>
+                                            <a class="pointer" (click)='fundPerformance()'>View past performance</a>
+                                            <div class="button-checkbox">
+                                                <mat-checkbox></mat-checkbox>
+                                            </div>
+                                            <span class="color-bar border-pink"></span>
+                                        </div>
+                                        <div class="col-12 data-wrap">
+                                            <div class="row">
+                                                <div class="col-3 p-0">
+                                                    <div class="card-label">Returns(%)</div>
+                                                    <div class="card-data">10.9</div>
+                                                </div>
+                                                <div class="col-4 p-0 ">
+                                                    <div class="card-label">Projected Returns</div>
+                                                    <div class="card-data">
+                                                        <span class="rupee"> &#8377; </span>
+                                                        0
+                                                    </div>
+                                                </div>
+                                                <div class="col-5 pr-0">
+                                                    <div class="card-label">Fund Performance</div>
+                                                    <div class="card-data text-center">
+                                                        <a class="pointer"><img src="./assets/icons/fund-growth-18.svg"
+                                                                alt="" class="fund-growth"
+                                                                (click)='fundPerformance()'></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 allocation-wrap">
+                                            <div class="row">
+                                                <div class="card-label">
+                                                    Allocation (%)
+                                                </div>
+                                                <div class="card-data">
+                                                    <div class="allocation">
+                                                        <a class="pointer d-flex"><img src="./assets/icons/minus.svg"
+                                                                alt=""></a>
+                                                        100%
+                                                        <a class="pointer d-flex"><img src="./assets/icons/plus.svg"
+                                                                alt=""></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- customize-fund-wrapper mobile End -->
+
+                <!-- equity-card mobile Start -->
+                <div class="bg-white equity-card">
+                    <div class="container">
+                        <div class="col-12" [ngClass]="{'expand': equityCard == true}">
+                            <div class="row d-lg-none justify-space-between card-detail-mob">
+                                <div class="col-12">
+                                    <div class="row justify-space-between">
+                                        <span class="card-heading">Additional allocation added to your fund
+                                            every year</span>
+                                        <span class="icon" (click)="hideEquityCard()">
+                                            <img src="./assets/icons/down-arrow.svg" alt="" class="arrow-down">
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="col-12" *ngIf="equityCard">
+                                    <div class="row">
+                                        <div class="graph-view" *ngIf="equityTabSelect == 'graph'">
+                                            <div class="graph-container">
+                                                <highcharts-chart [Highcharts]="highcharts" [options]="chartOptions">
+                                                </highcharts-chart>
+                                            </div>
+                                        </div>
+                                        <div class="table-view" *ngIf="equityTabSelect == 'table'">
+                                            <div class="table-responsive">
+                                                <table class="table table-head table-border mb-0">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Policy Year</th>
+                                                            <th>Annual Premium</th>
+                                                            <th>Additional Allocation</th>
+                                                            <th>Applicable Taxes</th>
+                                                            <th>Fund Value</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>1</td>
+                                                            <td><span class="rupee"> &#8377; </span> 1,00,000</td>
+                                                            <td><span class="rupee"> &#8377; </span> 1,000</td>
+                                                            <td><span class="rupee"> &#8377; </span> 463</td>
+                                                            <td><span class="rupee"> &#8377; </span> 1,05,926</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>2</td>
+                                                            <td><span class="rupee"> &#8377; </span> 1,00,000</td>
+                                                            <td><span class="rupee"> &#8377; </span> 1,000</td>
+                                                            <td><span class="rupee"> &#8377; </span> 709</td>
+                                                            <td><span class="rupee"> &#8377; </span> 2,18,660</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>3</td>
+                                                            <td><span class="rupee"> &#8377; </span> 1,00,000</td>
+                                                            <td><span class="rupee"> &#8377; </span> 1,000</td>
+                                                            <td><span class="rupee"> &#8377; </span> 969</td>
+                                                            <td><span class="rupee"> &#8377; </span> 3,38,664</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>4</td>
+                                                            <td><span class="rupee"> &#8377; </span> 1,00,000</td>
+                                                            <td><span class="rupee"> &#8377; </span> 1,000</td>
+                                                            <td><span class="rupee"> &#8377; </span> 1,246</td>
+                                                            <td><span class="rupee"> &#8377; </span> 4,66,352</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>5</td>
+                                                            <td><span class="rupee"> &#8377; </span> 1,00,000</td>
+                                                            <td><span class="rupee"> &#8377; </span> 1,000</td>
+                                                            <td><span class="rupee"> &#8377; </span> 1,538</td>
+                                                            <td><span class="rupee"> &#8377; </span> 6,02,293</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>6</td>
+                                                            <td><span class="rupee"> &#8377; </span> 1,00,000</td>
+                                                            <td><span class="rupee"> &#8377; </span> 1,000</td>
+                                                            <td><span class="rupee"> &#8377; </span> 1,844</td>
+                                                            <td><span class="rupee"> &#8377; </span> 7,48,951</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>7</td>
+                                                            <td><span class="rupee"> &#8377; </span> 1,00,000</td>
+                                                            <td><span class="rupee"> &#8377; </span> 1,000</td>
+                                                            <td><span class="rupee"> &#8377; </span> 2,173</td>
+                                                            <td><span class="rupee"> &#8377; </span> 9,05,111</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="togle-table" *ngIf="equityCard">
+                            <div class="form-filed">
+                                <mat-button-toggle-group name="fontStyle" value="graph" aria-label="Font Style"
+                                    #equetyToggle1="matButtonToggleGroup"
+                                    (change)="getEquityTabSelect(equetyToggle1.value)">
+                                    <mat-button-toggle value="graph">
+                                        <img src="./assets/icons/graph-button.svg" alt="" class="graph-icon"
+                                            *ngIf="equityTabSelect=='graph'">
+                                        <img src="./assets/icons/graph-button1.svg" alt="" class="graph-icon"
+                                            *ngIf="equityTabSelect=='table'">
+                                    </mat-button-toggle>
+                                    <mat-button-toggle value="table">
+                                        <img src="./assets/icons/table-button2.svg" alt="" class="table-icon"
+                                            *ngIf="equityTabSelect=='table'">
+                                        <img src="./assets/icons/table-button.svg" alt="" class="table-icon"
+                                            *ngIf="equityTabSelect=='graph'">
+                                    </mat-button-toggle>
+                                </mat-button-toggle-group>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white equity-card">
+                    <div class="container">
+                        <div class="col-12" [ngClass]="{'expand': equityCard1 == true}">
+                            <div class="row d-lg-none justify-space-between card-detail-mob">
+                                <div class="col-12">
+                                    <div class="row justify-space-between">
+                                        <span class="card-heading">Zero allocation and administration charges</span>
+                                        <span class="icon" (click)="hideEquityCard1()">
+                                            <img src="./assets/icons/down-arrow.svg" alt="" class="arrow-down">
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="col-12" *ngIf="equityCard1">
+                                    <div class="row">
+                                        <div class="graph-view image-view" *ngIf="equityTabSelect == 'graph'">
+                                            <img src="./assets/images/graph-2-tab.png" alt=""
+                                                class="graph-image image-responsive">
+                                        </div>
+                                        <div class="table-view" *ngIf="equityTabSelect == 'table'">
+                                            Table
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="togle-table" *ngIf="equityCard1">
+                            <div class="form-filed">
+                                <mat-button-toggle-group name="fontStyle" value="graph" aria-label="Font Style"
+                                    #equetyToggle11="matButtonToggleGroup"
+                                    (change)="getEquityTabSelect(equetyToggle11.value)">
+                                    <mat-button-toggle value="graph">Yes</mat-button-toggle>
+                                    <mat-button-toggle value="table"><i class="fa fa-list"></i></mat-button-toggle>
+                                </mat-button-toggle-group>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white equity-card">
+                    <div class="container">
+                        <div class="col-12" [ngClass]="{'expand2': isExpand == true}">
+                            <div class="row d-lg-none justify-space-between card-detail-mob">
+                                <div class="col-12">
+                                    <div class="row justify-space-between">
+                                        <span class="card-heading">Return on mortality charges</span>
+                                        <span class="icon">
+                                            <img src="./assets/icons/down-arrow.svg" alt="" class="arrow-down">
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="row">
+                                        <div class="graph-view d-none">
+
+                                        </div>
+                                        <div class="table-view d-none">
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <!-- <div class="togle-table d-none" [ngClass]="{'d-block': isExpand3 == true}">
+                                <div class="form-filed">
+                                    <mat-button-toggle-group name="fontStyle" value="graph" aria-label="Font Style"
+                                    #equetyToggle="matButtonToggleGroup"
+                                    (change)="getEquityTabSelect(equetyToggle.value)">
+                                    <mat-button-toggle value="graph">Yes</mat-button-toggle>
+                                    <mat-button-toggle value="table"><i class="fa fa-list"></i></mat-button-toggle>
+                                    </mat-button-toggle-group>
+                                </div>
+                            </div> -->
+                    </div>
+                </div>
+
+                <div class="bg-white equity-card">
+                    <div class="container">
+                        <div class="col-12" [ngClass]="{'expand2': isExpand == true}">
+                            <div class="row d-lg-none justify-space-between card-detail-mob">
+                                <div class="col-12">
+                                    <div class="row justify-space-between">
+                                        <span class="card-heading">Withdraw your money after 10 years at zero
+                                            cost</span>
+                                        <span class="icon">
+                                            <img src="./assets/icons/down-arrow.svg" alt="" class="arrow-down">
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="row">
+                                        <div class="graph-view d-none">
+
+                                        </div>
+                                        <div class="table-view d-none">
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <!-- <div class="togle-table d-none" [ngClass]="{'d-block': isExpand3 == true}">
+                                <div class="form-filed">
+                                    <mat-button-toggle-group name="fontStyle" value="graph" aria-label="Font Style"
+                                    #equetyToggle="matButtonToggleGroup"
+                                    (change)="getEquityTabSelect(equetyToggle.value)">
+                                    <mat-button-toggle value="graph">Yes</mat-button-toggle>
+                                    <mat-button-toggle value="table"><i class="fa fa-list"></i></mat-button-toggle>
+                                    </mat-button-toggle-group>
+                                </div>
+                            </div> -->
+                    </div>
+                </div>
+            </div>
+            <!-- equity-card Mobile End -->
+
+            <!--Equity discalimer Start -->
+            <p class="discalimer">Discalimer: @14.65% as per current market performance. Current Performance is not an
+                indicative of future results</p>
+            <!--Equity discalimer End -->
+
+        </div>
+    </section>
+    <!-- equity-plan End -->
+
+    <section class="fund-performance bg-gray" *ngIf="!customize">
+        <div class="container">
+            <div class="fund-performance-card bg-white">
+                <div class="col-12">
+                    <div class="fund-performance">
+                        <p class="fund-performance-text">Fund Performance</p>
+                        <div class="col-12 d-none d-lg-block">
+                            <div class="row">
+                                <div class="col-2 p-0">
+                                    <div class="form-filed">
+                                        <mat-form-field>
+                                            <div class="d-flex align-items-center">
+                                                <mat-select disableOptionCentering panelClass="select-option-3"
+                                                    [formControl]="equityDropdown">
+
+                                                    <mat-option value="Equity250"> Equity 250</mat-option>
+                                                    <mat-option value="op2">Equity Large Cap</mat-option>
+                                                    <mat-option value="op3">Bond Fund</mat-option>
+                                                    <mat-option value="op3">Equity Mid Cap</mat-option>
+                                                    <mat-option value="op3">Managed Fund</mat-option>
+
+                                                </mat-select>
+                                                <img src="./assets/icons/down-arrow.svg" alt="" class="arrow-down">
+                                            </div>
+                                            <mat-error *ngIf="payFor.invalid">
+                                            </mat-error>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+
+                                <div class="col-2 lock-duration">
+                                    <div class="form-filed">
+                                        <mat-form-field>
+                                            <div class="d-flex align-items-center">
+                                                <mat-select disableOptionCentering panelClass="select-option-3"
+                                                    [formControl]="lockingPeriod">
+                                                    <perfect-scrollbar class="scroll-div">
+                                                        <mat-option value="1">1 Year</mat-option>
+                                                        <mat-option value="2">2 Years</mat-option>
+                                                        <mat-option value="3">3 Years
+                                                        </mat-option>
+                                                        <mat-option value="4">4 Years</mat-option>
+                                                        <mat-option value="5">5 Years</mat-option>
+                                                        <mat-option value="6">6 Years</mat-option>
+                                                        <mat-option value="7">7 Years</mat-option>
+                                                        <mat-option value="35">35 Years</mat-option>
+                                                    </perfect-scrollbar>
+                                                </mat-select>
+                                                <img src="./assets/icons/down-arrow.svg" alt="" class="arrow-down">
+                                            </div>
+                                            <mat-error *ngIf="payFor.invalid">
+                                            </mat-error>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+
+                                <div class="col-1 p-0 equityNavDrop">
+                                    <div class="form-filed">
+                                        <mat-form-field>
+                                            <div class="d-flex align-items-center">
+                                                <mat-select disableOptionCentering panelClass="select-option-3"
+                                                    [formControl]="equityNAV">
+
+                                                    <mat-option value="NAV"> @NAV</mat-option>
+                                                    <mat-option value="4">@ 4%</mat-option>
+                                                    <mat-option value="8">@ 8%</mat-option>
+
+                                                </mat-select>
+                                                <img src="./assets/icons/down-arrow.svg" alt="" class="arrow-down">
+                                            </div>
+                                            <mat-error *ngIf="payFor.invalid">
+                                            </mat-error>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 d-lg-none fund-form-mob">
+                            <div class="row">
+
+                                <div class="form-filed equity-mob-form">
+                                    <mat-form-field>
+                                        <div class="d-flex align-items-center">
+                                            <mat-select disableOptionCentering panelClass="select-option-3"
+                                                [formControl]="equityDropdown">
+                                                <mat-option value="Equity250"> Equity 250</mat-option>
+                                                <mat-option value="op2">Equity Large Cap</mat-option>
+                                                <mat-option value="op3">Bond Fund</mat-option>
+                                                <mat-option value="op3">Equity Mid Cap</mat-option>
+                                                <mat-option value="op3">Managed Fund</mat-option>
+                                            </mat-select>
+                                            <img src="./assets/icons/down-arrow.svg" alt="" class="arrow-down">
+                                        </div>
+                                        <mat-error *ngIf="equityDropdown.invalid">
+                                        </mat-error>
+                                    </mat-form-field>
+                                </div>
+
+                                <div class="form-filed">
+                                    <mat-form-field>
+                                        <div class="d-flex align-items-center">
+                                            <mat-select disableOptionCentering panelClass="select-option-3"
+                                                [formControl]="lockingPeriod">
+                                                <perfect-scrollbar class="scroll-div">
+                                                    <mat-option value="1">1 Year</mat-option>
+                                                    <mat-option value="2">2 Years</mat-option>
+                                                    <mat-option value="3">3 Years
+                                                    </mat-option>
+                                                    <mat-option value="4">4 Years</mat-option>
+                                                    <mat-option value="5">5 Years</mat-option>
+                                                    <mat-option value="6">6 Years</mat-option>
+                                                    <mat-option value="7">7 Years</mat-option>
+                                                    <mat-option value="35">35 Years</mat-option>
+                                                </perfect-scrollbar>
+                                            </mat-select>
+                                            <img src="./assets/icons/down-arrow.svg" alt="" class="arrow-down">
+                                        </div>
+                                        <mat-error *ngIf="payFor.invalid">
+                                        </mat-error>
+                                    </mat-form-field>
+                                </div>
+
+                                <div class="form-filed">
+                                    <mat-form-field>
+                                        <div class="d-flex align-items-center">
+                                            <mat-select disableOptionCentering panelClass="select-option-3"
+                                                [formControl]="equityNAV">
+                                                <mat-option value="NAV"> @NAV</mat-option>
+                                                <mat-option value="4">@ 4%</mat-option>
+                                                <mat-option value="8">@ 8%</mat-option>
+                                            </mat-select>
+                                            <img src="./assets/icons/down-arrow.svg" alt="" class="arrow-down">
+                                        </div>
+                                        <mat-error *ngIf="payFor.invalid">
+                                        </mat-error>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="fund-note d-none d-lg-block">Mr. Alok Nair invested
+                        <span class="rupee-text">
+                            <span class="rupee"> &#8377; </span> 5,00,000
+                        </span> in <span class="year">2012</span>.Today the value of his investment is
+                        <span class="rupee-text">
+                            <span class="rupee"> &#8377; </span> 5,70,000
+                        </span>.
+                    </p>
+                    <div class="col-12">
+                        <div class="row">
+                            <div class="fund-graph " *ngIf="fundTabSelect == 'graph'">
+                                <highcharts-chart [Highcharts]="highcharts" [options]="chartOptions1">
+                                </highcharts-chart>
+                            </div>
+                            <div class="fund-table" *ngIf="fundTabSelect == 'table'">
+                                <div class="table-responsive">
+                                    <table class="table table-head table-border mb-0">
+                                        <thead>
+                                            <tr>
+                                                <th>Duration</th>
+                                                <th>Returns (%)</th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                                <perfect-scrollbar class="scroll-div">
+                                    <div class="table-responsive">
+                                        <table class="table table-border mb-0">
+                                            <tbody>
+                                                <tr>
+                                                    <td>1 Month</td>
+                                                    <td>-</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>3 Month</td>
+                                                    <td>-</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>6 Month</td>
+                                                    <td>-</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>1 Year</td>
+                                                    <td>3.79</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>3 Year</td>
+                                                    <td>12.88</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>5 Year</td>
+                                                    <td>11.26</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>7 Year</td>
+                                                    <td>14.01</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </perfect-scrollbar>
+                                <div class="table-responsive">
+                                    <table class="table table-foot table-border mb-0">
+                                        <tfoot>
+                                            <tr>
+                                                <td>Since Inception</td>
+                                                <td>15.04</td>
+                                            </tr>
+                                        </tfoot>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="fund-togle-table">
+                    <div class="form-filed">
+                        <mat-button-toggle-group name="fontStyle" value="graph" aria-label="Font Style"
+                            #fundToggle="matButtonToggleGroup" (change)="getFundTabSelect(fundToggle.value)">
+                            <mat-button-toggle value="graph">
+                                <img src="./assets/icons/graph-button.svg" alt="" class="graph-icon"
+                                    *ngIf="fundTabSelect=='graph'">
+                                <img src="./assets/icons/graph-button1.svg" alt="" class="tgraphable-icon"
+                                    *ngIf="fundTabSelect=='table'">
+                            </mat-button-toggle>
+                            <mat-button-toggle value="table">
+                                <img src="./assets/icons/table-button2.svg" alt="" class="table-icon"
+                                    *ngIf="fundTabSelect=='table'">
+                                <img src="./assets/icons/table-button.svg" alt="" class="table-icon"
+                                    *ngIf="fundTabSelect=='graph'">
+                            </mat-button-toggle>
+                        </mat-button-toggle-group>
+                    </div>
+                </div>
+            </div>
+
+            <p class="discalimer">
+                Discalimer: @14.65% as per current market performance. Current Performance is not an indicative of
+                future results
+            </p>
+        </div>
+    </section>
+    <!-- fund-performance End -->
+
+    <section class="faqs section bg-gray">
+        <div class="container">
+            <h2 class="heading text-center">FAQs</h2>
+            <div class="col-12 tab-wrapper">
+                <div class="row">
+                    <mat-tab-group>
+                        <mat-tab label="Wealth Plus">
+                            <div class="tab-inner">
+                                <div class="accordion-wrapper">
+                                    <mat-accordion>
+                                        <mat-expansion-panel>
+                                            <mat-expansion-panel-header [collapsedHeight]="'auto'"
+                                                [expandedHeight]="'auto'">
+                                                <mat-panel-title>
+                                                    What is the minimum and maximum policy maturity age?
+                                                </mat-panel-title>
+                                            </mat-expansion-panel-header>
+                                            <ul>
+                                                <li>For Life cover with level sum assured and regular pay-28 yrs.</li>
+                                                <li>For Life cover with level sum assured and 'Pay Till 60' payment
+                                                    option-65 yrs.</li>
+                                                <li>For Life cover with Decreasing Sum Assured and regular pay-65 yrs.
+                                                </li>
+                                            </ul>
+                                        </mat-expansion-panel>
+                                        <mat-expansion-panel>
+                                            <mat-expansion-panel-header [collapsedHeight]="'auto'"
+                                                [expandedHeight]="'auto'">
+                                                <mat-panel-title>
+                                                    What is the premium paying term and frequency?
+                                                </mat-panel-title>
+                                            </mat-expansion-panel-header>
+                                            <ul>
+                                                <li>For Life cover with level sum assured and regular pay-28 yrs.</li>
+                                                <li>For Life cover with level sum assured and 'Pay Till 60' payment
+                                                    option-65 yrs.</li>
+                                                <li>For Life cover with Decreasing Sum Assured and regular pay-65 yrs.
+                                                </li>
+                                            </ul>
+                                        </mat-expansion-panel>
+                                        <mat-expansion-panel>
+                                            <mat-expansion-panel-header [collapsedHeight]="'auto'"
+                                                [expandedHeight]="'auto'">
+                                                <mat-panel-title>
+                                                    What is the premium paying term and frequency?
+                                                </mat-panel-title>
+                                            </mat-expansion-panel-header>
+                                            <ul>
+                                                <li>For Life cover with level sum assured and regular pay-28 yrs.</li>
+                                                <li>For Life cover with level sum assured and 'Pay Till 60' payment
+                                                    option-65 yrs.</li>
+                                                <li>For Life cover with Decreasing Sum Assured and regular pay-65 yrs.
+                                                </li>
+                                            </ul>
+                                        </mat-expansion-panel>
+                                        <mat-expansion-panel>
+                                            <mat-expansion-panel-header [collapsedHeight]="'auto'"
+                                                [expandedHeight]="'auto'">
+                                                <mat-panel-title>
+                                                    What is the minimum and maximum entry age for spouse?
+                                                </mat-panel-title>
+                                            </mat-expansion-panel-header>
+                                            <ul>
+                                                <li>For Life cover with level sum assured and regular pay-28 yrs.</li>
+                                                <li>For Life cover with level sum assured and 'Pay Till 60' payment
+                                                    option-65 yrs.</li>
+                                                <li>For Life cover with Decreasing Sum Assured and regular pay-65 yrs.
+                                                </li>
+                                            </ul>
+                                        </mat-expansion-panel>
+                                        <mat-expansion-panel>
+                                            <mat-expansion-panel-header [collapsedHeight]="'auto'"
+                                                [expandedHeight]="'auto'">
+                                                <mat-panel-title>
+                                                    What is the minimum and maximum sum assured (Life Cover Amount)?
+                                                </mat-panel-title>
+                                            </mat-expansion-panel-header>
+                                            <ul>
+                                                <li>For Life cover with level sum assured and regular pay-28 yrs.</li>
+                                                <li>For Life cover with level sum assured and 'Pay Till 60' payment
+                                                    option-65 yrs.</li>
+                                                <li>For Life cover with Decreasing Sum Assured and regular pay-65 yrs.
+                                                </li>
+                                            </ul>
+                                        </mat-expansion-panel>
+                                    </mat-accordion>
+                                </div>
+                            </div>
+                        </mat-tab>
+                        <mat-tab label="Wealth Gain+">
+                            <div class="tab-inner">
+                                <div class="accordion-wrapper">
+                                    <mat-accordion>
+                                        <mat-expansion-panel>
+                                            <mat-expansion-panel-header [collapsedHeight]="'auto'"
+                                                [expandedHeight]="'auto'">
+                                                <mat-panel-title>
+                                                    What is the minimum and maximum policy maturity age?
+                                                </mat-panel-title>
+                                            </mat-expansion-panel-header>
+                                            <ul>
+                                                <li>For Life cover with level sum assured and regular pay-28 yrs.</li>
+                                                <li>For Life cover with level sum assured and 'Pay Till 60' payment
+                                                    option-65 yrs.</li>
+                                                <li>For Life cover with Decreasing Sum Assured and regular pay-65 yrs.
+                                                </li>
+                                            </ul>
+                                        </mat-expansion-panel>
+                                        <mat-expansion-panel>
+                                            <mat-expansion-panel-header [collapsedHeight]="'auto'"
+                                                [expandedHeight]="'auto'">
+                                                <mat-panel-title>
+                                                    What is the premium paying term and frequency?
+                                                </mat-panel-title>
+                                            </mat-expansion-panel-header>
+                                            <ul>
+                                                <li>For Life cover with level sum assured and regular pay-28 yrs.</li>
+                                                <li>For Life cover with level sum assured and 'Pay Till 60' payment
+                                                    option-65 yrs.</li>
+                                                <li>For Life cover with Decreasing Sum Assured and regular pay-65 yrs.
+                                                </li>
+                                            </ul>
+                                        </mat-expansion-panel>
+                                        <mat-expansion-panel>
+                                            <mat-expansion-panel-header [collapsedHeight]="'auto'"
+                                                [expandedHeight]="'auto'">
+                                                <mat-panel-title>
+                                                    What is the premium paying term and frequency?
+                                                </mat-panel-title>
+                                            </mat-expansion-panel-header>
+                                            <ul>
+                                                <li>For Life cover with level sum assured and regular pay-28 yrs.</li>
+                                                <li>For Life cover with level sum assured and 'Pay Till 60' payment
+                                                    option-65 yrs.</li>
+                                                <li>For Life cover with Decreasing Sum Assured and regular pay-65 yrs.
+                                                </li>
+                                            </ul>
+                                        </mat-expansion-panel>
+                                        <mat-expansion-panel>
+                                            <mat-expansion-panel-header [collapsedHeight]="'auto'"
+                                                [expandedHeight]="'auto'">
+                                                <mat-panel-title>
+                                                    What is the minimum and maximum entry age for spouse?
+                                                </mat-panel-title>
+                                            </mat-expansion-panel-header>
+                                            <ul>
+                                                <li>For Life cover with level sum assured and regular pay-28 yrs.</li>
+                                                <li>For Life cover with level sum assured and 'Pay Till 60' payment
+                                                    option-65 yrs.</li>
+                                                <li>For Life cover with Decreasing Sum Assured and regular pay-65 yrs.
+                                                </li>
+                                            </ul>
+                                        </mat-expansion-panel>
+                                        <mat-expansion-panel>
+                                            <mat-expansion-panel-header [collapsedHeight]="'auto'"
+                                                [expandedHeight]="'auto'">
+                                                <mat-panel-title>
+                                                    What is the minimum and maximum sum assured (Life Cover Amount)?
+                                                </mat-panel-title>
+                                            </mat-expansion-panel-header>
+                                            <ul>
+                                                <li>For Life cover with level sum assured and regular pay-28 yrs.</li>
+                                                <li>For Life cover with level sum assured and 'Pay Till 60' payment
+                                                    option-65 yrs.</li>
+                                                <li>For Life cover with Decreasing Sum Assured and regular pay-65 yrs.
+                                                </li>
+                                            </ul>
+                                        </mat-expansion-panel>
+                                    </mat-accordion>
+                                </div>
+                            </div>
+                        </mat-tab>
+                        <mat-tab label="GCAP">
+                            <div class="tab-inner">
+                                <div class="accordion-wrapper">
+                                    <mat-accordion>
+                                        <mat-expansion-panel>
+                                            <mat-expansion-panel-header [collapsedHeight]="'auto'"
+                                                [expandedHeight]="'auto'">
+                                                <mat-panel-title>
+                                                    What is the minimum and maximum policy maturity age?
+                                                </mat-panel-title>
+                                            </mat-expansion-panel-header>
+                                            <ul>
+                                                <li>For Life cover with level sum assured and regular pay-28 yrs.</li>
+                                                <li>For Life cover with level sum assured and 'Pay Till 60' payment
+                                                    option-65 yrs.</li>
+                                                <li>For Life cover with Decreasing Sum Assured and regular pay-65 yrs.
+                                                </li>
+                                            </ul>
+                                        </mat-expansion-panel>
+                                        <mat-expansion-panel>
+                                            <mat-expansion-panel-header [collapsedHeight]="'auto'"
+                                                [expandedHeight]="'auto'">
+                                                <mat-panel-title>
+                                                    What is the premium paying term and frequency?
+                                                </mat-panel-title>
+                                            </mat-expansion-panel-header>
+                                            <ul>
+                                                <li>For Life cover with level sum assured and regular pay-28 yrs.</li>
+                                                <li>For Life cover with level sum assured and 'Pay Till 60' payment
+                                                    option-65 yrs.</li>
+                                                <li>For Life cover with Decreasing Sum Assured and regular pay-65 yrs.
+                                                </li>
+                                            </ul>
+                                        </mat-expansion-panel>
+                                        <mat-expansion-panel>
+                                            <mat-expansion-panel-header [collapsedHeight]="'auto'"
+                                                [expandedHeight]="'auto'">
+                                                <mat-panel-title>
+                                                    What is the premium paying term and frequency?
+                                                </mat-panel-title>
+                                            </mat-expansion-panel-header>
+                                            <ul>
+                                                <li>For Life cover with level sum assured and regular pay-28 yrs.</li>
+                                                <li>For Life cover with level sum assured and 'Pay Till 60' payment
+                                                    option-65 yrs.</li>
+                                                <li>For Life cover with Decreasing Sum Assured and regular pay-65 yrs.
+                                                </li>
+                                            </ul>
+                                        </mat-expansion-panel>
+                                        <mat-expansion-panel>
+                                            <mat-expansion-panel-header [collapsedHeight]="'auto'"
+                                                [expandedHeight]="'auto'">
+                                                <mat-panel-title>
+                                                    What is the minimum and maximum entry age for spouse?
+                                                </mat-panel-title>
+                                            </mat-expansion-panel-header>
+                                            <ul>
+                                                <li>For Life cover with level sum assured and regular pay-28 yrs.</li>
+                                                <li>For Life cover with level sum assured and 'Pay Till 60' payment
+                                                    option-65 yrs.</li>
+                                                <li>For Life cover with Decreasing Sum Assured and regular pay-65 yrs.
+                                                </li>
+                                            </ul>
+                                        </mat-expansion-panel>
+                                        <mat-expansion-panel>
+                                            <mat-expansion-panel-header [collapsedHeight]="'auto'"
+                                                [expandedHeight]="'auto'">
+                                                <mat-panel-title>
+                                                    What is the minimum and maximum sum assured (Life Cover Amount)?
+                                                </mat-panel-title>
+                                            </mat-expansion-panel-header>
+                                            <ul>
+                                                <li>For Life cover with level sum assured and regular pay-28 yrs.</li>
+                                                <li>For Life cover with level sum assured and 'Pay Till 60' payment
+                                                    option-65 yrs.</li>
+                                                <li>For Life cover with Decreasing Sum Assured and regular pay-65 yrs.
+                                                </li>
+                                            </ul>
+                                        </mat-expansion-panel>
+                                    </mat-accordion>
+                                </div>
+                            </div>
+                        </mat-tab>
+                    </mat-tab-group>
+                </div>
+            </div>
+            <div class="col-12 support-available">
+                <div class="row content-center">
+                    <img src="./assets/icons/support-24by7.svg" alt="" title="" />
+                    <div class="d-flex flex-column">
+                        <h4 class="for-you">We are always there for you</h4>
+                        <h2 class="email-support">24*7 email support available</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Ideal-partner Section End -->
+
+    <div class="sticky-mob d-lg-none">
+        <div *ngIf="!showBenefitsBreakups">
+            <div class="sticky-mob-top">
+                <div class="text-center">
+                    <a class="link" (click)="showBenefits()">Premium Break-Up</a>
+                </div>
+            </div>
+            <div class="button-wrap but-full-width more-details">
+                <button mat-raised-button color="primary" class="d-flex justify-content-center">
+                    <span class="d-flex justify-content-center align-items-center w-100">
+                        <span class="lable" (click)="getSummery()">CHECK SUMMARY</span>
+                    </span>
+                </button>
+            </div>
+        </div>
+
+        <div *ngIf="showBenefitsBreakups">
+            <div class="sticky-mob-top">
+                <div class="sticky-down-arrow" (click)="showBenefitsLess()">
+                    <img src="./assets/icons/down-arrow.svg" alt="" />
+                </div>
+                <div class="sticky-benefits">
+                    <div class="benefits-list">
+                        <div class="lable">Premium Amount</div>
+                        <div class="info">
+                            <div class="amout"><span class="rupee"> &#8377; </span> 675</div>
+                        </div>
+                    </div>
+                    <div class="benefits-list">
+                        <div class="lable">GST</div>
+                        <div class="info">
+                            <div class="amout"><span class="rupee"> &#8377; </span> 75</div>
+                        </div>
+                    </div>
+                    <div class="benefits-list">
+                        <div class="lable">Total Premium</div>
+                        <div class="info">
+                            <div class="amout h2 ft-bold mb-0"><span class="rupee"> &#8377; </span> 750</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="button-wrap but-full-width more-details">
+                <button mat-raised-button color="primary" class="d-flex justify-content-center">
+                    <span class="d-flex justify-content-center align-items-center w-100">
+                        <span class="lable mr-4" (click)="getSummery()">CHECK SUMMARY</span>
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- sticky-mob div-->
+</main>
+
+<!-- Footer Start -->
+<app-footer></app-footer>
+<!-- Footer End -->

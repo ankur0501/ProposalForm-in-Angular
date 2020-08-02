@@ -1,0 +1,87 @@
+<section class="popup-wrapper">
+    <a class="closebutton" (click)="closeDialog()">
+        <img src="./assets/icons/close.svg" alt="close" class="close-icon">
+    </a>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 ">
+                <div class="child-future-header">
+                    <h2 class="popup-heading">Edit Basic Details</h2>
+                </div>
+                <div class="child-future-form">
+                    <div class="row">
+                        <div class="col-12 col-lg-6">
+                            <div class="form-filed mt-2">
+                                <mat-form-field>
+                                    <input matInput placeholder="Your Name" [formControl]="yourName">
+                                    <mat-error *ngIf="yourName.invalid">{{getErrorMessageYourName()}}
+                                    </mat-error>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6">
+                            <div class="form-filed">
+                                <mat-form-field>
+                                    <div class="d-flex align-items-center">
+                                        <mat-select disableOptionCentering panelClass="select-option-ulip-popup"
+                                            placeholder="Your Income" [formControl]="yourIncome">
+                                            <mat-option value="option1">Less than 5 Lacs</mat-option>
+                                            <mat-option value="option2">Less than 5 Lacs</mat-option>
+                                            <mat-option value="option3">Less than 5 Lacs</mat-option>
+                                        </mat-select>
+                                        <img src="./assets/icons/down-arrow.svg" alt="" class="arrow-down">
+                                    </div>
+                                    <mat-error *ngIf="yourIncome.invalid">{{getErrorMessageYourIncome()}}
+                                    </mat-error>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6">
+                            <div class="form-filed custom-mobile-input">
+                                <mat-form-field>
+                                    <input matInput placeholder="Mobile Number" [formControl]="MobileNumber"
+                                        minlength="10" maxlength="10" type="number" pattern="\d*"
+                                        (focusin)="mobilePrefix1 = true"
+                                        (focusout)="mobilePrefix1 = false; getValue1($event.target.value)" #mobileNumber (keypress)="getLimit($event, mobileNumber)">
+                                    <span *ngIf="mobilePrefix1" class="mob-prefixer">+91 </span>
+                                    <mat-error *ngIf="MobileNumber.invalid">{{getErrorMessageMobile()}}
+                                    </mat-error>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6">
+                            <div class="form-filed">
+                                <mat-form-field>
+                                    <input matInput placeholder="Child's Age" [formControl]="childAge"  type="number" pattern="\d*">
+                                    <mat-error *ngIf="childAge.invalid">{{getErrorMessageChildAge()}}
+                                    </mat-error>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-filed">
+                                <div class="employee-toggle">
+                                    <label class="form-label">Are you an employee of Edelweiss group or Tokio marine
+                                        group?</label>
+                                    <mat-button-toggle-group name="fontStyle" aria-label="Font Style"
+                                        [formControl]="isEmployee">
+                                        <mat-button-toggle value="yes">Yes</mat-button-toggle>
+                                        <mat-button-toggle value="no">No</mat-button-toggle>
+                                    </mat-button-toggle-group>
+                                    <!-- <mat-error class="error-custom" *ngIf="isEmployee.invalid">
+                                        {{getErrorMessageIsEmployee()}}
+                                    </mat-error> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mb-3 mt-4">
+                    <div class="button-wrap">
+                        <button class="mat-button-xl" mat-raised-button color="primary">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

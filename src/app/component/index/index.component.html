@@ -1,0 +1,57 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-lg-4">
+            <h2 class="h2 mt-5">Zindagi Plus</h2>
+            <ul class="bullet-list">
+                <li routerLink="/get-quote">Pre Quote</li>
+                <li routerLink="/plan-suggetion">Plan Suggestion</li>
+                <li routerLink="/summary">Summary Page</li>
+                <li routerLink="/terms-conditions">Terms & Conditions</li>
+                
+               
+                <li (click)='thankYouPopup()'>Thank You (Popup)</li>
+                <li (click)='editGetQuote()'>Edit Quote (Popup)</li>
+                <li (click)='getAddOns()'>Recommended add-ons (Popup)</li>
+                <li (click)='getScheduleCall()'>Schedule Call (Popup)</li>
+                <li (click)='getSummaryTable()'>Summary Table (Popup)</li>
+            </ul>
+        </div>
+        <div class="col-12 col-lg-4">
+            <h2 class="h2 mt-5">Ulip</h2>
+            <ul class="bullet-list">
+                <li routerLink="/ulip-quote">Quote Page</li>
+                <li routerLink="/fund">Fund Page</li>
+                <li routerLink="/ulip-summary"> Summary Page</li>
+                <li (click)='getChildDream()'>Child's Dream (Popup)</li>
+                <li (click)='getFundAllocated()'>Incomplete Fund Allocated (Popup)</li>
+                <li (click)='getRisingStar()'>Rising Star (Popup)</li>
+                <li (click)='getGrowMoney()'>Edit Details (Grow Money) (Popup)</li>
+                <li (click)='getChildFuture()'>Edit Details (Child Future) (Popup)</li>
+                <li (click)='getRetirement()'>Edit Details (Retirement) (Popup)</li>
+                <li (click)='editSummaryDetails()'>Edit Summary Details (Popup)</li>
+                <li (click)='fundPerformance()'>Fund Performance (Popup)</li>
+                <li (click)='thankYouPopup()'>Thank You (Popup)</li>
+                <li (click)='getScheduleCall()'>Schedule Call (Popup)</li>
+            </ul>
+        </div>
+        <div class="col-12 col-lg-4">
+            <div class="col-12">
+                <h2 class="h2 mt-5">Forms</h2>
+                <ul class="bullet-list">
+                    <!-- <li routerLink="/proposal">Proposal old Form</li> -->
+                    <li routerLink="/proposal-new">Proposal Form</li>
+                    <!-- <li (click)='getProposal()'>Proposal (Popup)</li>
+                    <li routerLink="/post-proposal">Post Proposal Form</li> -->
+                </ul>
+            </div>
+            <div class="col-12">
+                <h2 class="h2 mt-5">Static Pages</h2>
+                <ul class="bullet-list">
+                    <li routerLink="/claim">Claim</li>
+                    <li (click)="reportSubmit()">Report Claim (Popup)</li>
+                    <li (click)="ceoLetter()">Letter from CEO (Popup)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

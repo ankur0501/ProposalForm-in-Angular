@@ -1,0 +1,2197 @@
+<!-- Header Start -->
+<app-product-header></app-product-header>
+<!-- Header End -->
+
+<section class="proposal-wrapper bg-gray">
+    <div class="container">
+        <div class="proposal-header">
+            <h1 class="proposal-heading">Let's get your deets and complete your process <span
+                    class="appnumber">Application Number: <a>123456ABSD</a></span></h1>
+            <!-- <p class="proposal-subtext">You can return any time and fill the remaining details</p> -->
+        </div> <!-- quote-header div end-->
+
+        <div class="proposal-progress-wrapper">
+
+            <div class="form-progress-wrapper">
+                <mat-progress-bar class="form-progress" [color]="color" [mode]="mode" [value]="valueProgress"
+                    [bufferValue]="bufferValueProgress">
+                </mat-progress-bar>
+            </div>
+
+            <mat-horizontal-stepper [linear]="false" #stepper>
+                <mat-step [stepControl]="firstFormGroup">
+                    <ng-template matStepLabel>Personal
+                        <img src="./assets/icons/form-valid.svg" alt="valid-form" *ngIf="isComplete1=='complited'">
+                        <img src="./assets/icons/form-invalid.svg" alt="valid-form" *ngIf="isComplete1=='incomplete'">
+                    </ng-template>
+                    <div class="card card-boder card-shadow form-card-proposal">
+                        <div class="card-body">
+                            <div class="proposal-header-inner">
+                                <h2 class="h4 ft-medium">Lets get started with your <span class="ft-bold">Personal
+                                        Details</span>.<br />
+                                    You can return any time and fill the remaining details.</h2>
+                            </div>
+                            <form [formGroup]="firstFormGroup">
+                                <ng-template matStepLabel id="scrollId-0">
+                                    Personal Details
+
+                                </ng-template>
+                                <div class="col-12 mb-55" [ngClass]="{'active': tabIndex==0, 'deactive':tabIndex!=0 }">
+                                    <div class="row hint-row">
+                                        <div class="form-filed">
+                                            <label class="form-label">Are you buying the policy for yourself?</label>
+                                            <mat-button-toggle-group name="fontStyle" aria-label="Font Style"
+                                                formControlName="policy" (change)="onValChange($event)" tabindex="0">
+                                                <mat-button-toggle value="yes">Yes</mat-button-toggle>
+                                                <mat-button-toggle value="no">No</mat-button-toggle>
+                                            </mat-button-toggle-group>
+                                            <mat-error *ngIf="!firstFormGroup.value.policy.valid">
+                                                <div *ngIf="firstFormGroup.value.policy==''">
+                                                    Please Select any one.
+                                                </div>
+                                            </mat-error>
+                                        </div>
+                                        <div class="form-filed" id="policyFor-wrapper"
+                                            *ngIf="firstFormGroup.value.policy=='no'">
+                                            <mat-form-field>
+                                                <div class="d-flex align-items-center">
+                                                    <mat-select disableOptionCentering
+                                                        panelClass="select-option-pre-quote"
+                                                        placeholder="Relationship with proposer"
+                                                        formControlName="policyFor"
+                                                        (selectionChange)="onSelectionPolicyFor($event)" tabindex="1">
+                                                        <!-- <mat-option value="self">Self</mat-option> -->
+                                                        <mat-option value="child">Child</mat-option>
+                                                        <mat-option value="father">Father</mat-option>
+                                                        <mat-option value="mother">Mother</mat-option>
+                                                        <mat-option value="spouse">Spouse</mat-option>
+                                                    </mat-select>
+                                                    <img src="./assets/icons/down-arrow.svg" alt="" class="arrow-down">
+                                                </div>
+                                                <mat-error *ngIf="!firstFormGroup.value.policyFor.valid">
+                                                    <div *ngIf="firstFormGroup.value.policyFor==''">
+                                                        Please Select any one.
+                                                    </div>
+                                                </mat-error>
+                                            </mat-form-field>
+                                        </div>
+                                        <div class="hint-box d-flex bg-yellow"
+                                            *ngIf="firstFormGroup.value.policy=='no' && tabIndex==0">
+                                            <div class="hint-icon text-center">
+                                                <img src="./assets/icons/idea.svg" alt="" title="" />
+                                                <div class="h5 ft-semibold">Tip</div>
+                                            </div>
+                                            <div class="hint-text">
+                                                Your choice will help us understand you better and we can guide you
+                                                choose the best offer.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- {{firstFormGroup.value.policy}} -->
+                                <h2 class="h2" id="scrollId-1">Your Details </h2>
+                                <!-- Full Name -->
+                                <div class="col-12 mb-55" [ngClass]="{'active': tabIndex==2, 'deactive':tabIndex!=2 }">
+                                    <div class="row hint-row">
+                                        <div class="form-filed name-filed">
+                                            <mat-form-field>
+                                                <input tabindex="2" matInput placeholder="Full Name"
+                                                    formControlName="fullName">
+                                                <mat-error></mat-error>
+                                            </mat-form-field>
+                                        </div>
+                                        <div class="icon-wrapper">
+                                            <div class="audio-icon">
+                                                <img src="./assets/icons/audio-icon.svg" alt="" class="audioIcon">
+                                            </div>
+                                            <div class="arrow form-arrow slideBtn" (click)="getNext(2)">
+                                                <img src="./assets/icons/previous-arrow.svg" alt="" class="nextButton">
+                                            </div>
+                                            <div class="say-done">
+                                                <span>Say ok once you’re done</span>
+                                            </div>
+                                        </div>
+                                        <div class="hint-box d-flex bg-yellow" [ngClass]="{'hide-hint': tabIndex!=2}">
+                                            <div class="hint-icon text-center">
+                                                <img src="./assets/icons/idea.svg" alt="" title="" />
+                                                <div class="h5 ft-semibold">Tip</div>
+                                            </div>
+                                            <div class="hint-text">
+                                                <!-- Help us with your Full Name. This will help us to link the policy to your name and
+                                                    avoid any discrepancies later on. -->
+                                                Your choice will help us understand you better and we can guide you
+                                                choose the best offer.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Gender -->
+                                <div class="form-filed mb-55 w-100" id="scrollId-2"
+                                    [ngClass]="{'active': tabIndex==3, 'deactive':tabIndex!=3 }">
+                                    <label class="form-label">Gender</label>
+                                    <mat-button-toggle-group name="fontStyle" aria-label="Font Style"
+                                        formControlName="gender" tabindex="3" (change)="onIndexChange(3)">
+                                        <mat-button-toggle value="male">Male</mat-button-toggle>
+                                        <mat-button-toggle value="female">Female</mat-button-toggle>
+                                        <mat-button-toggle value="other">Other</mat-button-toggle>
+                                    </mat-button-toggle-group>
+                                    <mat-error></mat-error>
+                                </div>
+                                <!-- DOB -->
+                                <div class="col-12 mb-55" id="scrollId-3"
+                                    [ngClass]="{'active': tabIndex==4, 'deactive':tabIndex!=4 }">
+                                    <div class="row hint-row">
+                                        <div class="form-filed">
+                                            <mat-form-field>
+                                                <input matInput tabindex="4" placeholder="Date of birth"
+                                                    formControlName="dob">
+                                                <mat-error></mat-error>
+                                            </mat-form-field>
+                                        </div>
+                                        <div class="icon-wrapper">
+                                            <div class="audio-icon">
+                                                <img src="./assets/icons/audio-icon.svg" alt="" class="audioIcon">
+                                            </div>
+                                            <div class="arrow form-arrow slideBtn" (click)="getNext(4)">
+                                                <img src="./assets/icons/previous-arrow.svg" alt="" class="nextButton">
+                                            </div>
+                                            <div class="say-done">
+                                                <span>Say ok once you’re done</span>
+                                            </div>
+                                        </div>
+                                        <div class="hint-box d-flex bg-yellow" [ngClass]="{'hide-hint': tabIndex!=4}">
+                                            <div class="hint-icon text-center">
+                                                <img src="./assets/icons/idea.svg" alt="" title="" />
+                                                <div class="h5 ft-semibold">Tip</div>
+                                            </div>
+                                            <div class="hint-text">
+                                                <!-- Help us with your Full Name. This will help us to link the policy to your name and
+                                                    avoid any discrepancies later on. -->
+                                                Your choice will help us understand you better and we can guide you
+                                                choose the best offer.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Marital Status -->
+                                <div class="form-filed mb-55 w-100" id="scrollId-4"
+                                    [ngClass]="{'active': tabIndex==5, 'deactive':tabIndex!=5 }">
+                                    <label class="form-label">Marital Status</label>
+                                    <mat-button-toggle-group name="fontStyle" aria-label="Font Style"
+                                        formControlName="maritalStatus" tabindex="5" (change)="onIndexChange(5)">
+                                        <mat-button-toggle value="single">Single</mat-button-toggle>
+                                        <mat-button-toggle value="married">Married</mat-button-toggle>
+                                        <mat-button-toggle value="widow">Widow (er)</mat-button-toggle>
+                                        <mat-button-toggle value="divorcee">Divorcee</mat-button-toggle>
+                                    </mat-button-toggle-group>
+                                    <mat-error></mat-error>
+                                </div>
+                                <!-- Nationality -->
+                                <div class="form-filed mb-55 w-100" id="scrollId-5"
+                                    [ngClass]="{'active': tabIndex==6, 'deactive':tabIndex!=6 }">
+                                    <label class="form-label">Nationality</label>
+                                    <mat-button-toggle-group name="fontStyle" aria-label="Font Style"
+                                        formControlName="nationality" tabindex="6" (change)="onIndexChange(6)">
+                                        <mat-button-toggle value="Indian">Indian</mat-button-toggle>
+                                        <mat-button-toggle value="NRI">NRI</mat-button-toggle>
+                                        <mat-button-toggle value="FNIO/PIO">FNIO/PIO</mat-button-toggle>
+                                        <mat-button-toggle value="others">Others</mat-button-toggle>
+                                    </mat-button-toggle-group>
+                                </div>
+                                <!-- father name -->
+                                <div class="col-12 mb-55" id="scrollId-6"
+                                    [ngClass]="{'active': tabIndex==7, 'deactive':tabIndex!=7 }">
+                                    <div class="row hint-row">
+                                        <div class="form-filed name-filed">
+                                            <mat-form-field>
+                                                <input matInput tabindex="7" placeholder="Father’s Name"
+                                                    formControlName="fName">
+                                                <mat-error></mat-error>
+                                            </mat-form-field>
+                                        </div>
+                                        <div class="icon-wrapper">
+                                            <div class="audio-icon">
+                                                <img src="./assets/icons/audio-icon.svg" alt="" class="audioIcon">
+                                            </div>
+                                            <div class="arrow form-arrow slideBtn" (click)="getNext(7)">
+                                                <img src="./assets/icons/previous-arrow.svg" alt="" class="nextButton">
+                                            </div>
+                                            <div class="say-done">
+                                                <span>Say ok once you’re done</span>
+                                            </div>
+                                        </div>
+                                        <div class="hint-box d-flex bg-yellow" [ngClass]="{'hide-hint': tabIndex!=7}">
+                                            <div class="hint-icon text-center">
+                                                <img src="./assets/icons/idea.svg" alt="" title="" />
+                                                <div class="h5 ft-semibold">Tip</div>
+                                            </div>
+                                            <div class="hint-text">
+                                                <!-- Help us with your Full Name. This will help us to link the policy to your name and
+                                                    avoid any discrepancies later on. -->
+                                                Your choice will help us understand you better and we can guide you
+                                                choose the best offer.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Spouse name -->
+                                <div class="col-12 mb-55" id="scrollId-7"
+                                    [ngClass]="{'active': tabIndex==8, 'deactive':tabIndex!=8 }">
+                                    <div class="row hint-row">
+                                        <div class="form-filed name-filed">
+                                            <mat-form-field>
+                                                <input matInput tabindex="8" placeholder="Spouse’s Name"
+                                                    formControlName="sName">
+                                                <mat-error></mat-error>
+                                            </mat-form-field>
+                                        </div>
+                                        <div class="icon-wrapper">
+                                            <div class="audio-icon">
+                                                <img src="./assets/icons/audio-icon.svg" alt="" class="audioIcon">
+                                            </div>
+                                            <div class="arrow form-arrow slideBtn" (click)="getNext(8)">
+                                                <img src="./assets/icons/previous-arrow.svg" alt="" class="nextButton">
+                                            </div>
+                                            <div class="say-done">
+                                                <span>Say ok once you’re done</span>
+                                            </div>
+                                        </div>
+                                        <div class="hint-box d-flex bg-yellow" [ngClass]="{'hide-hint': tabIndex!=8}">
+                                            <div class="hint-icon text-center">
+                                                <img src="./assets/icons/idea.svg" alt="" title="" />
+                                                <div class="h5 ft-semibold">Tip</div>
+                                            </div>
+                                            <div class="hint-text">
+                                                <!-- Help us with your Full Name. This will help us to link the policy to your name and
+                                                    avoid any discrepancies later on. -->
+                                                Your choice will help us understand you better and we can guide you
+                                                choose the best offer.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Mother name -->
+                                <div class="col-12 mb-55" id="scrollId-8"
+                                    [ngClass]="{'active': tabIndex==9, 'deactive':tabIndex!=9 }">
+                                    <div class="row hint-row">
+                                        <div class="form-filed name-filed">
+                                            <mat-form-field>
+                                                <input matInput tabindex="9" placeholder="Mother’s Name"
+                                                    formControlName="mName">
+                                                <mat-error></mat-error>
+                                            </mat-form-field>
+                                        </div>
+                                        <div class="icon-wrapper">
+                                            <div class="audio-icon">
+                                                <img src="./assets/icons/audio-icon.svg" alt="" class="audioIcon">
+                                            </div>
+                                            <div class="arrow form-arrow slideBtn" (click)="getNext(9)">
+                                                <img src="./assets/icons/previous-arrow.svg" alt="" class="nextButton">
+                                            </div>
+                                            <div class="say-done">
+                                                <span>Say ok once you’re done</span>
+                                            </div>
+                                        </div>
+                                        <div class="hint-box d-flex bg-yellow" [ngClass]="{'hide-hint': tabIndex!=9}">
+                                            <div class="hint-icon text-center">
+                                                <img src="./assets/icons/idea.svg" alt="" title="" />
+                                                <div class="h5 ft-semibold">Tip</div>
+                                            </div>
+                                            <div class="hint-text">
+                                                <!-- Help us with your Full Name. This will help us to link the policy to your name and
+                                                    avoid any discrepancies later on. -->
+                                                Your choice will help us understand you better and we can guide you
+                                                choose the best offer.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Is Life to be insured a student -->
+                                <div class="col-12 mb-55 togg-btn" id="scrollId-9"
+                                    [ngClass]="{'active': tabIndex==10, 'deactive':tabIndex!=10 }">
+                                    <div class="row">
+                                        <label class="form-label ft-medium">Is Life to be insured a student</label>
+                                        <div class="form-filed pull-left">
+                                            <mat-button-toggle-group formControlName="isStudent" name="fontStyle"
+                                                value="" aria-label="Font Style" #equetyToggle="matButtonToggleGroup"
+                                                tabindex="10" (change)="onIndexChange(10)">
+                                                <mat-button-toggle value="yes">Yes</mat-button-toggle>
+                                                <mat-button-toggle value="no">No</mat-button-toggle>
+                                            </mat-button-toggle-group>
+                                            <mat-error></mat-error>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <h2 class="h2" id="scrollId-10">Contact Details</h2>
+                                <!-- Mobile No -->
+                                <div class="col-12 mb-55"
+                                    [ngClass]="{'active': tabIndex==11, 'deactive':tabIndex!=11 }">
+                                    <div class="row hint-row">
+                                        <div class="form-filed name-filed">
+                                            <mat-form-field>
+                                                <input matInput tabindex="11" placeholder="Mobile No"
+                                                    formControlName="contact">
+                                                <mat-error></mat-error>
+                                            </mat-form-field>
+                                        </div>
+                                        <div class="icon-wrapper">
+                                            <div class="audio-icon">
+                                                <img src="./assets/icons/audio-icon.svg" alt="" class="audioIcon">
+                                            </div>
+                                            <div class="arrow form-arrow slideBtn" (click)="getNext(11)">
+                                                <img src="./assets/icons/previous-arrow.svg" alt="" class="nextButton">
+                                            </div>
+                                            <div class="say-done">
+                                                <span>Say ok once you’re done</span>
+                                            </div>
+                                        </div>
+                                        <div class="hint-box d-flex bg-yellow" [ngClass]="{'hide-hint': tabIndex!=11}">
+                                            <div class="hint-icon text-center">
+                                                <img src="./assets/icons/idea.svg" alt="" title="" />
+                                                <div class="h5 ft-semibold">Tip</div>
+                                            </div>
+                                            <div class="hint-text">
+                                                <!-- Help us with your Full Name. This will help us to link the policy to your name and
+                                                    avoid any discrepancies later on. -->
+                                                Your choice will help us understand you better and we can guide you
+                                                choose the best offer.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Email ID -->
+                                <div class="col-12 mb-55" id="scrollId-11"
+                                    [ngClass]="{'active': tabIndex==12, 'deactive':tabIndex!=12 }">
+                                    <div class="row hint-row">
+                                        <div class="form-filed name-filed">
+                                            <mat-form-field>
+                                                <input matInput tabindex="12" placeholder="Email ID"
+                                                    formControlName="emailId">
+                                                <mat-error></mat-error>
+                                            </mat-form-field>
+                                        </div>
+                                        <div class="icon-wrapper">
+                                            <div class="audio-icon">
+                                                <img src="./assets/icons/audio-icon.svg" alt="" class="audioIcon">
+                                            </div>
+                                            <div class="arrow form-arrow slideBtn" (click)="getNext(12)">
+                                                <img src="./assets/icons/previous-arrow.svg" alt="" class="nextButton">
+                                            </div>
+                                            <div class="say-done">
+                                                <span>Say ok once you’re done</span>
+                                            </div>
+                                        </div>
+                                        <div class="hint-box d-flex bg-yellow" [ngClass]="{'hide-hint': tabIndex!=12}">
+                                            <div class="hint-icon text-center">
+                                                <img src="./assets/icons/idea.svg" alt="" title="" />
+                                                <div class="h5 ft-semibold">Tip</div>
+                                            </div>
+                                            <div class="hint-text">
+                                                <!-- Help us with your Full Name. This will help us to link the policy to your name and
+                                                    avoid any discrepancies later on. -->
+                                                Your choice will help us understand you better and we can guide you
+                                                choose the best offer.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <h2 class="h2" id="scrollId-12">Communication Details</h2>
+                                <!-- Address -->
+                                <div class="col-12 mb-55"
+                                    [ngClass]="{'active': tabIndex==13, 'deactive':tabIndex!=13 }">
+                                    <div class="row hint-row">
+                                        <div class="form-filed name-filed">
+                                            <mat-form-field>
+                                                <input matInput tabindex="13" placeholder="Address"
+                                                    formControlName="address">
+                                                <mat-error></mat-error>
+                                            </mat-form-field>
+                                        </div>
+                                        <div class="icon-wrapper">
+                                            <div class="audio-icon">
+                                                <img src="./assets/icons/audio-icon.svg" alt="" class="audioIcon">
+                                            </div>
+                                            <div class="arrow form-arrow slideBtn" (click)="getNext(13)">
+                                                <img src="./assets/icons/previous-arrow.svg" alt="" class="nextButton">
+                                            </div>
+                                            <div class="say-done">
+                                                <span>Say ok once you’re done</span>
+                                            </div>
+                                        </div>
+                                        <div class="hint-box d-flex bg-yellow" [ngClass]="{'hide-hint': tabIndex!=13}">
+                                            <div class="hint-icon text-center">
+                                                <img src="./assets/icons/idea.svg" alt="" title="" />
+                                                <div class="h5 ft-semibold">Tip</div>
+                                            </div>
+                                            <div class="hint-text">
+                                                <!-- Help us with your Full Name. This will help us to link the policy to your name and
+                                                    avoid any discrepancies later on. -->
+                                                Your choice will help us understand you better and we can guide you
+                                                choose the best offer.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- City -->
+                                <div class="col-12 mb-55" id="scrollId-13"
+                                    [ngClass]="{'active': tabIndex==14, 'deactive':tabIndex!=14 }">
+                                    <div class="row hint-row">
+                                        <div class="form-filed name-filed">
+                                            <mat-form-field>
+                                                <div class="d-flex align-items-center">
+                                                    <mat-select disableOptionCentering panelClass="select-option-city"
+                                                        placeholder="City" formControlName="city" tabindex="14">
+                                                        <mat-option value="mumbai">Mumbai</mat-option>
+                                                        <mat-option value="pune">Pune</mat-option>
+                                                        <mat-option value="nashik">Nashik</mat-option>
+                                                    </mat-select>
+                                                    <img src="./assets/icons/down-arrow.svg" alt="" class="arrow-down">
+                                                </div>
+                                                <mat-error></mat-error>
+                                            </mat-form-field>
+                                        </div>
+                                        <div class="icon-wrapper">
+                                            <div class="audio-icon">
+                                                <img src="./assets/icons/audio-icon.svg" alt="" class="audioIcon">
+                                            </div>
+                                            <div class="arrow form-arrow slideBtn" (click)="getNext(14)">
+                                                <img src="./assets/icons/previous-arrow.svg" alt="" class="nextButton">
+                                            </div>
+                                            <div class="say-done">
+                                                <span>Say ok once you’re done</span>
+                                            </div>
+                                        </div>
+                                        <div class="hint-box d-flex bg-yellow" [ngClass]="{'hide-hint': tabIndex!=14}">
+                                            <div class="hint-icon text-center">
+                                                <img src="./assets/icons/idea.svg" alt="" title="" />
+                                                <div class="h5 ft-semibold">Tip</div>
+                                            </div>
+                                            <div class="hint-text">
+                                                <!-- Help us with your Full Name. This will help us to link the policy to your name and
+                                                    avoid any discrepancies later on. -->
+                                                Your choice will help us understand you better and we can guide you
+                                                choose the best offer.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- State -->
+                                <div class="col-12 mb-55" id="scrollId-14"
+                                    [ngClass]="{'active': tabIndex==15, 'deactive':tabIndex!=15 }">
+                                    <div class="row hint-row">
+                                        <div class="form-filed name-filed">
+                                            <mat-form-field>
+                                                <div class="d-flex align-items-center">
+                                                    <mat-select disableOptionCentering panelClass="select-option-state"
+                                                        placeholder="State" formControlName="state" tabindex="15">
+                                                        <mat-option value="maharashtra">Maharashtra</mat-option>
+                                                        <mat-option value="gujrat">Gujrat</mat-option>
+                                                        <mat-option value="kerala">Kerala</mat-option>
+                                                    </mat-select>
+                                                    <img src="./assets/icons/down-arrow.svg" alt="" class="arrow-down">
+                                                </div>
+                                                <mat-error></mat-error>
+                                            </mat-form-field>
+                                        </div>
+                                        <div class="icon-wrapper">
+                                            <div class="audio-icon">
+                                                <img src="./assets/icons/audio-icon.svg" alt="" class="audioIcon">
+                                            </div>
+                                            <div class="arrow form-arrow slideBtn" (click)="getNext(15)">
+                                                <img src="./assets/icons/previous-arrow.svg" alt="" class="nextButton">
+                                            </div>
+                                            <div class="say-done">
+                                                <span>Say ok once you’re done</span>
+                                            </div>
+                                        </div>
+                                        <div class="hint-box d-flex bg-yellow" [ngClass]="{'hide-hint': tabIndex!=15}">
+                                            <div class="hint-icon text-center">
+                                                <img src="./assets/icons/idea.svg" alt="" title="" />
+                                                <div class="h5 ft-semibold">Tip</div>
+                                            </div>
+                                            <div class="hint-text">
+                                                <!-- Help us with your Full Name. This will help us to link the policy to your name and
+                                                    avoid any discrepancies later on. -->
+                                                Your choice will help us understand you better and we can guide you
+                                                choose the best offer.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Pin Code -->
+                                <div class="col-12 mb-55" id="scrollId-15"
+                                    [ngClass]="{'active': tabIndex==16, 'deactive':tabIndex!=16 }">
+                                    <div class="row hint-row">
+                                        <div class="form-filed name-filed">
+                                            <mat-form-field>
+                                                <input matInput tabindex="16" placeholder="Pincode"
+                                                    formControlName="pincode">
+                                                <mat-error></mat-error>
+                                            </mat-form-field>
+                                        </div>
+                                        <div class="icon-wrapper">
+                                            <div class="audio-icon">
+                                                <img src="./assets/icons/audio-icon.svg" alt="" class="audioIcon">
+                                            </div>
+                                            <div class="arrow form-arrow slideBtn" (click)="getNext(16)">
+                                                <img src="./assets/icons/previous-arrow.svg" alt="" class="nextButton">
+                                            </div>
+                                            <div class="say-done">
+                                                <span>Say ok once you’re done</span>
+                                            </div>
+                                        </div>
+                                        <div class="hint-box d-flex bg-yellow" [ngClass]="{'hide-hint': tabIndex!=16}">
+                                            <div class="hint-icon text-center">
+                                                <img src="./assets/icons/idea.svg" alt="" title="" />
+                                                <div class="h5 ft-semibold">Tip</div>
+                                            </div>
+                                            <div class="hint-text">
+                                                <!-- Help us with your Full Name. This will help us to link the policy to your name and
+                                                    avoid any discrepancies later on. -->
+                                                Your choice will help us understand you better and we can guide you
+                                                choose the best offer.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="button-wrap but-full-width " [ngClass]="{ 'float' : isFloat}">
+                                    <button matStepperNext class="mat-button-lg" mat-raised-button color="primary"
+                                        (click)="getSaveAndContinue(1)">Save and
+                                        Continue</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </mat-step>
+                <mat-step [stepControl]="secondFormGroup">
+                    <ng-template matStepLabel>Employment
+                        <img src="./assets/icons/form-valid.svg" alt="valid-form" *ngIf="isComplete2=='complited'">
+                        <img src="./assets/icons/form-invalid.svg" alt="valid-form" *ngIf="isComplete2=='incomplete'">
+                    </ng-template>
+                    <div class="card card-boder card-shadow">
+                        <div class="card-body">
+                            <form [formGroup]="secondFormGroup">
+
+
+                                <div class="button-wrap but-full-width " [ngClass]="{ 'float' : isFloat}">
+                                    <button matStepperNext class="mat-button-lg" mat-raised-button color="primary"
+                                        (click)="getSaveAndContinue(2)">Save and
+                                        Continue</button>
+                                </div>
+
+                                <!-- <div>
+                                    <button mat-button matStepperPrevious>Back</button>
+                                    <button mat-button matStepperNext (click)="getSaveAndContinue(1)">Next</button>
+                                </div> -->
+                            </form>
+                        </div>
+                    </div>
+                </mat-step>
+                <mat-step [stepControl]="thirdFormGroup">
+                    <ng-template matStepLabel>Family and Insurance History
+                        <img src="./assets/icons/form-valid.svg" alt="valid-form" *ngIf="isComplete3=='complited'">
+                        <img src="./assets/icons/form-invalid.svg" alt="valid-form" *ngIf="isComplete3=='incomplete'">
+                    </ng-template>
+                    <div class="card card-boder card-shadow">
+                        <div class="card-body">
+                            <form [formGroup]="thirdFormGroup">
+                                <mat-form-field>
+                                    <input matInput tabindex="1" placeholder="Address" formControlName="thirdCtrl"
+                                        required>
+                                    <mat-error></mat-error>
+                                </mat-form-field>
+                                <!-- <div>
+                                    <button mat-button matStepperPrevious>Back</button>
+                                    <button mat-button matStepperNext>Next</button>
+                                </div> -->
+                                <div class="button-wrap but-full-width " [ngClass]="{ 'float' : isFloat}">
+                                    <button matStepperNext class="mat-button-lg" mat-raised-button color="primary"
+                                        (click)="getSaveAndContinue(3)">Save and
+                                        Continue</button>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                </mat-step>
+                <mat-step [stepControl]="fourthFormGroup">
+                    <ng-template matStepLabel>Medical and LifeStyle
+                        <img src="./assets/icons/form-valid.svg" alt="valid-form" *ngIf="isComplete4=='complited'">
+                        <img src="./assets/icons/form-invalid.svg" alt="valid-form" *ngIf="isComplete4=='incomplete'">
+                    </ng-template>
+                    <div class="card card-boder card-shadow">
+                        <div class="card-body">
+                            <form [formGroup]="fourthFormGroup">
+                                <h2 class="h2">Medical Details</h2>
+                                <!-- consumed alcohol, tobacco -->
+                                <div class="col-12  w-100 mb-55 togg-btn"
+                                    [ngClass]="{'active': tabIndex==17, 'deactive':tabIndex!=17, 'mb-20':fourthFormGroup.value.isAlcoholic=='yes'}">
+                                    <div class="row">
+                                        <label class="form-label ft-medium">1) Do you consume or have consumed alcohol,
+                                            tobacco or any other narcotic substance? If Yes, give
+                                            details</label>
+                                        <div class="form-filed pull-left">
+                                            <mat-button-toggle-group formControlName="isAlcoholic" name="fontStyle"
+                                                value="" aria-label="Font Style" #equetyToggle="matButtonToggleGroup"
+                                                tabindex="17" (change)="onIndexChangeMedical1($event,17)">
+                                                <mat-button-toggle value="yes">Yes</mat-button-toggle>
+                                                <mat-button-toggle value="no">No</mat-button-toggle>
+                                            </mat-button-toggle-group>
+                                            <mat-error></mat-error>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="alcoholic-div  mb-55" *ngIf="fourthFormGroup.value.isAlcoholic=='yes'">
+                                    <div class="button-checkbox button-checkbox1">
+                                        <mat-checkbox [checked]=true formControlName="isTobbaco">Tobacco</mat-checkbox>
+                                    </div>
+                                    <div class="isAddictionDiv" *ngIf="fourthFormGroup.value.isTobbaco">
+                                        <!-- Tobacco Quantity/per day -->
+                                        <div class="col-12"
+                                            [ngClass]="{'active': tabIndex==18, 'deactive':tabIndex!=18 }">
+                                            <div class="row hint-row">
+                                                <div class="form-filed name-filed">
+                                                    <mat-form-field>
+                                                        <input matInput tabindex="18" placeholder="Quantity/per day"
+                                                            formControlName="tobaccoQuantity"
+                                                            (selectionChange)="onSelection($event)">
+                                                        <mat-error></mat-error>
+                                                    </mat-form-field>
+                                                </div>
+                                                <!-- <div class="icon-wrapper">
+                                                    <div class="audio-icon">
+                                                        <img src="./assets/icons/audio-icon.svg" alt="" class="audioIcon">
+                                                    </div>
+                                                    <div class="arrow form-arrow slideBtn" (click)="getNext(18)">
+                                                        <img src="./assets/icons/previous-arrow.svg" alt="" class="nextButton">
+                                                    </div>
+                                                </div> -->
+                                                <!-- <div class="hint-box d-flex bg-yellow" [ngClass]="{'hide-hint': tabIndex!=18}">
+                                                    <div class="hint-icon text-center">
+                                                        <img src="./assets/icons/idea.svg" alt="" title="" />
+                                                        <div class="h5 ft-semibold">Tip</div>
+                                                    </div>
+                                                    <div class="hint-text">
+                                                        
+                                                        Your choice will help us understand you better and we can guide you choose the best offer.
+                                                    </div>
+                                                </div> -->
+                                            </div>
+                                        </div>
+                                        <!-- Tobacco Since No of years -->
+                                        <div class="col-12 custom-drop"
+                                            [ngClass]="{'active': tabIndex==19, 'deactive':tabIndex!=19 }">
+                                            <div class="row hint-row">
+                                                <div class="form-filed name-filed">
+                                                    <mat-form-field>
+                                                        <div class="d-flex align-items-center">
+                                                            <mat-select disableOptionCentering
+                                                                panelClass="select-option-addiction"
+                                                                placeholder="Since No of years"
+                                                                formControlName="tobaccoSinceYears" tabindex="19"
+                                                                (selectionChange)="onSelection($event)">
+                                                                <mat-option value="5">5 Year</mat-option>
+                                                                <mat-option value="6">6 Year</mat-option>
+                                                                <mat-option value="7">7 Year</mat-option>
+                                                            </mat-select>
+                                                            <img src="./assets/icons/down-arrow.svg" alt=""
+                                                                class="arrow-down">
+                                                        </div>
+                                                        <mat-error></mat-error>
+                                                    </mat-form-field>
+                                                </div>
+
+                                                <!-- <div class="icon-wrapper">
+                                                    <div class="audio-icon">
+                                                        <img src="./assets/icons/audio-icon.svg" alt="" class="audioIcon">
+                                                    </div>
+                                                    <div class="arrow form-arrow slideBtn" (click)="getNext(19)">
+                                                        <img src="./assets/icons/previous-arrow.svg" alt="" class="nextButton">
+                                                    </div>
+                                                </div> -->
+                                                <!-- <div class="hint-box d-flex bg-yellow" [ngClass]="{'hide-hint': tabIndex!=19}">
+                                                    <div class="hint-icon text-center">
+                                                        <img src="./assets/icons/idea.svg" alt="" title="" />
+                                                        <div class="h5 ft-semibold">Tip</div>
+                                                    </div>
+                                                    <div class="hint-text">
+                                                        Your choice will help us understand you better and we can guide you choose the best offer.
+                                                    </div>
+                                                </div> -->
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="button-checkbox button-checkbox1">
+                                        <mat-checkbox [checked]=false formControlName="isAlcohol">Alcohol</mat-checkbox>
+                                    </div>
+                                    <div class="isAddictionDiv" *ngIf="fourthFormGroup.value.isAlcohol">
+                                        <!-- Alcohol Quantity/per day -->
+                                        <div class="col-12"
+                                            [ngClass]="{'active': tabIndex==20, 'deactive':tabIndex!=20 }">
+                                            <div class="row hint-row">
+                                                <div class="form-filed name-filed">
+                                                    <mat-form-field>
+                                                        <input matInput tabindex="20" placeholder="Quantity/per day"
+                                                            formControlName="alcoholeQuantityPerDay"
+                                                            (selectionChange)="onSelection($event)">
+                                                        <mat-error></mat-error>
+                                                    </mat-form-field>
+                                                </div>
+                                                <!-- <div class="icon-wrapper">
+                                                    <div class="audio-icon">
+                                                        <img src="./assets/icons/audio-icon.svg" alt="" class="audioIcon">
+                                                    </div>
+                                                    <div class="arrow form-arrow slideBtn" (click)="getNext(20)">
+                                                        <img src="./assets/icons/previous-arrow.svg" alt="" class="nextButton">
+                                                    </div>
+                                                </div> -->
+                                                <!-- <div class="hint-box d-flex bg-yellow" [ngClass]="{'hide-hint': tabIndex!=20}">
+                                                    <div class="hint-icon text-center">
+                                                        <img src="./assets/icons/idea.svg" alt="" title="" />
+                                                        <div class="h5 ft-semibold">Tip</div>
+                                                    </div>
+                                                    <div class="hint-text">
+                                                        
+                                                        Your choice will help us understand you better and we can guide you choose the best offer.
+                                                    </div>
+                                                </div> -->
+                                            </div>
+                                        </div>
+                                        <!-- Alcohol Since No of years -->
+                                        <div class="col-12 custom-drop"
+                                            [ngClass]="{'active': tabIndex==21, 'deactive':tabIndex!=21 }">
+                                            <div class="row hint-row">
+                                                <div class="form-filed name-filed">
+                                                    <mat-form-field>
+                                                        <div class="d-flex align-items-center">
+                                                            <mat-select disableOptionCentering
+                                                                panelClass="select-option-addiction"
+                                                                placeholder="Since No of years"
+                                                                formControlName="alcoholeSinceYears" tabindex="21"
+                                                                (selectionChange)="onSelection($event)">
+                                                                <mat-option value="5">5 Year</mat-option>
+                                                                <mat-option value="6">6 Year</mat-option>
+                                                                <mat-option value="7">7 Year</mat-option>
+                                                            </mat-select>
+                                                            <img src="./assets/icons/down-arrow.svg" alt=""
+                                                                class="arrow-down">
+                                                        </div>
+                                                        <mat-error></mat-error>
+                                                    </mat-form-field>
+                                                </div>
+                                                <!-- <div class="icon-wrapper">
+                                                    <div class="audio-icon">
+                                                        <img src="./assets/icons/audio-icon.svg" alt="" class="audioIcon">
+                                                    </div>
+                                                    <div class="arrow form-arrow slideBtn" (click)="getNext(21)">
+                                                        <img src="./assets/icons/previous-arrow.svg" alt="" class="nextButton">
+                                                    </div>
+                                                </div> -->
+                                                <!-- <div class="hint-box d-flex bg-yellow" [ngClass]="{'hide-hint': tabIndex!=21}">
+                                                    <div class="hint-icon text-center">
+                                                        <img src="./assets/icons/idea.svg" alt="" title="" />
+                                                        <div class="h5 ft-semibold">Tip</div>
+                                                    </div>
+                                                    <div class="hint-text">
+                                                        Your choice will help us understand you better and we can guide you choose the best offer.
+                                                    </div>
+                                                </div> -->
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="button-checkbox button-checkbox1">
+                                        <mat-checkbox [checked]=false formControlName="isAnyNarcotics">Any Narcotics
+                                        </mat-checkbox>
+                                    </div>
+                                    <div class="isAddictionDiv" *ngIf="fourthFormGroup.value.isAnyNarcotics">
+                                        <!-- Any Narcotics Quantity/per day -->
+                                        <div class="col-12"
+                                            [ngClass]="{'active': tabIndex==22, 'deactive':tabIndex!=22 }">
+                                            <div class="row hint-row">
+                                                <div class="form-filed name-filed">
+                                                    <mat-form-field>
+                                                        <input matInput tabindex="22" placeholder="Quantity/per day"
+                                                            formControlName="narcoticsQuantity">
+                                                        <mat-error></mat-error>
+                                                    </mat-form-field>
+                                                </div>
+                                                <!-- <div class="icon-wrapper">
+                                                    <div class="audio-icon">
+                                                        <img src="./assets/icons/audio-icon.svg" alt="" class="audioIcon">
+                                                    </div>
+                                                    <div class="arrow form-arrow slideBtn" (click)="getNext(22)">
+                                                        <img src="./assets/icons/previous-arrow.svg" alt="" class="nextButton">
+                                                    </div>
+                                                </div> -->
+                                                <!-- <div class="hint-box d-flex bg-yellow" [ngClass]="{'hide-hint': tabIndex!=22}">
+                                                    <div class="hint-icon text-center">
+                                                        <img src="./assets/icons/idea.svg" alt="" title="" />
+                                                        <div class="h5 ft-semibold">Tip</div>
+                                                    </div>
+                                                    <div class="hint-text">
+                                                        
+                                                        Your choice will help us understand you better and we can guide you choose the best offer.
+                                                    </div>
+                                                </div> -->
+                                            </div>
+                                        </div>
+                                        <!-- Any Narcotics Since No of years -->
+                                        <div class="col-12 custom-drop"
+                                            [ngClass]="{'active': tabIndex==23, 'deactive':tabIndex!=23 }">
+                                            <div class="row hint-row">
+                                                <div class="form-filed name-filed">
+                                                    <mat-form-field>
+                                                        <div class="d-flex align-items-center">
+                                                            <mat-select disableOptionCentering
+                                                                panelClass="select-option-addiction"
+                                                                placeholder="Since No of years"
+                                                                formControlName="narcoticsSinceYears" tabindex="23"
+                                                                (selectionChange)="onSelection($event)">
+                                                                <mat-option value="5">5 Year</mat-option>
+                                                                <mat-option value="6">6 Year</mat-option>
+                                                                <mat-option value="7">7 Year</mat-option>
+                                                            </mat-select>
+                                                            <img src="./assets/icons/down-arrow.svg" alt=""
+                                                                class="arrow-down">
+                                                        </div>
+                                                        <mat-error></mat-error>
+                                                    </mat-form-field>
+                                                </div>
+                                                <!-- <div class="icon-wrapper">
+                                                    <div class="audio-icon">
+                                                        <img src="./assets/icons/audio-icon.svg" alt="" class="audioIcon">
+                                                    </div>
+                                                    <div class="arrow form-arrow slideBtn" (click)="getNext(23)">
+                                                        <img src="./assets/icons/previous-arrow.svg" alt="" class="nextButton">
+                                                    </div>
+                                                </div> -->
+                                                <!-- <div class="hint-box d-flex bg-yellow" [ngClass]="{'hide-hint': tabIndex!=23}">
+                                                    <div class="hint-icon text-center">
+                                                        <img src="./assets/icons/idea.svg" alt="" title="" />
+                                                        <div class="h5 ft-semibold">Tip</div>
+                                                    </div>
+                                                    <div class="hint-text">
+                                                        Your choice will help us understand you better and we can guide you choose the best offer.
+                                                    </div>
+                                                </div> -->
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+
+                                <!-- Have you ever stopped consumed alcohol, tobacco -->
+                                <div class="col-12 w-100 mb-55 togg-btn"
+                                    [ngClass]="{'active': tabIndex==24, 'deactive':tabIndex!=24 }">
+                                    <div class="row">
+                                        <label class="form-label ft-medium">2) Have you ever stopped smoking
+                                            /consumption of alcohol / narcotics / tobacco in any form?</label>
+                                        <div class="form-filed pull-left">
+                                            <mat-button-toggle-group formControlName="isStoppedConsumed"
+                                                name="fontStyle" value="" aria-label="Font Style"
+                                                #equetyToggle="matButtonToggleGroup" tabindex="24"
+                                                (change)="onIndexChange(24)">
+                                                <mat-button-toggle value="yes">Yes</mat-button-toggle>
+                                                <mat-button-toggle value="no">No</mat-button-toggle>
+                                            </mat-button-toggle-group>
+                                            <mat-error></mat-error>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Have you ever stopped consumed alcohol, tobacco -->
+                                <div class="col-12  w-100 mb-55 togg-btn"
+                                    [ngClass]="{'active': tabIndex==40, 'deactive':tabIndex!=25 }">
+                                    <div class="row">
+                                        <label class="form-label ft-medium w-85">3) Are you currently taking any
+                                            medication or undergoing medical treatment OR in the past 5 years, have you
+                                            been advised
+                                            to undergo any surgery, medical investigation or medical treatment for any
+                                            medical condition
+                                            (other than common cold and flu not lasting more than 5 days?)</label>
+                                        <div class="form-filed pull-left">
+                                            <mat-button-toggle-group formControlName="isAnyMedication" name="fontStyle"
+                                                value="" aria-label="Font Style" #equetyToggle="matButtonToggleGroup"
+                                                tabindex="25" (change)="onIndexChangeMedical3($event,25)">
+                                                <mat-button-toggle value="yes">Yes</mat-button-toggle>
+                                                <mat-button-toggle value="no">No</mat-button-toggle>
+                                            </mat-button-toggle-group>
+                                            <mat-error></mat-error>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="" *ngIf="fourthFormGroup.value.isAnyMedication=='yes'">
+                                    <!-- Name of disease/disorder/medical condition diagnosed -->
+                                    <div class="col-12 mb-55"
+                                        [ngClass]="{'active': tabIndex==26, 'deactive':tabIndex!=26 }">
+                                        <div class="row hint-row">
+                                            <div class="form-filed name-filed">
+                                                <mat-form-field>
+                                                    <input matInput tabindex="26"
+                                                        placeholder="Name of disease/disorder/medical condition diagnosed"
+                                                        formControlName="diseaseDiagnosed">
+                                                    <mat-error></mat-error>
+                                                </mat-form-field>
+                                            </div>
+                                            <div class="icon-wrapper">
+                                                <div class="audio-icon">
+                                                    <img src="./assets/icons/audio-icon.svg" alt="" class="audioIcon">
+                                                </div>
+                                                <div class="arrow form-arrow slideBtn" (click)="getNext(26)">
+                                                    <img src="./assets/icons/previous-arrow.svg" alt=""
+                                                        class="nextButton">
+                                                </div>
+                                                <div class="say-done">
+                                                    <span>Say ok once you’re done</span>
+                                                </div>
+                                            </div>
+                                            <div class="hint-box d-flex bg-yellow"
+                                                [ngClass]="{'hide-hint': tabIndex!=26}">
+                                                <div class="hint-icon text-center">
+                                                    <img src="./assets/icons/idea.svg" alt="" title="" />
+                                                    <div class="h5 ft-semibold">Tip</div>
+                                                </div>
+                                                <div class="hint-text">
+                                                    <!-- Help us with your Full Name. This will help us to link the policy to your name and
+                                                    avoid any discrepancies later on. -->
+                                                    Your choice will help us understand you better and we can guide you
+                                                    choose the best offer.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--Date of diagnosis -->
+                                    <div class="col-12 mb-55"
+                                        [ngClass]="{'active': tabIndex==27, 'deactive':tabIndex!=27 }">
+                                        <div class="row hint-row">
+                                            <div class="form-filed name-filed">
+                                                <mat-form-field>
+                                                    <input matInput tabindex="27" placeholder="Date of diagnosis"
+                                                        formControlName="dateOfDiagnosis">
+                                                    <mat-error></mat-error>
+                                                </mat-form-field>
+                                            </div>
+                                            <div class="icon-wrapper">
+                                                <div class="audio-icon">
+                                                    <img src="./assets/icons/audio-icon.svg" alt="" class="audioIcon">
+                                                </div>
+                                                <div class="arrow form-arrow slideBtn" (click)="getNext(27)">
+                                                    <img src="./assets/icons/previous-arrow.svg" alt=""
+                                                        class="nextButton">
+                                                </div>
+                                                <div class="say-done">
+                                                    <span>Say ok once you’re done</span>
+                                                </div>
+                                            </div>
+                                            <div class="hint-box d-flex bg-yellow"
+                                                [ngClass]="{'hide-hint': tabIndex!=27}">
+                                                <div class="hint-icon text-center">
+                                                    <img src="./assets/icons/idea.svg" alt="" title="" />
+                                                    <div class="h5 ft-semibold">Tip</div>
+                                                </div>
+                                                <div class="hint-text">
+                                                    <!-- Help us with your Full Name. This will help us to link the policy to your name and
+                                                    avoid any discrepancies later on. -->
+                                                    Your choice will help us understand you better and we can guide you
+                                                    choose the best offer.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Details of the Treatment given /Tests undergone -->
+                                    <div class="col-12 mb-55"
+                                        [ngClass]="{'active': tabIndex==28, 'deactive':tabIndex!=28 }">
+                                        <div class="row hint-row">
+                                            <div class="form-filed name-filed">
+                                                <mat-form-field>
+                                                    <input matInput tabindex="28"
+                                                        placeholder="Details of the Treatment given /Tests undergone"
+                                                        formControlName="treatmentGiven">
+                                                    <mat-error></mat-error>
+                                                </mat-form-field>
+                                            </div>
+                                            <div class="icon-wrapper">
+                                                <div class="audio-icon">
+                                                    <img src="./assets/icons/audio-icon.svg" alt="" class="audioIcon">
+                                                </div>
+                                                <div class="arrow form-arrow slideBtn" (click)="getNext(28)">
+                                                    <img src="./assets/icons/previous-arrow.svg" alt=""
+                                                        class="nextButton">
+                                                </div>
+                                                <div class="say-done">
+                                                    <span>Say ok once you’re done</span>
+                                                </div>
+                                            </div>
+                                            <div class="hint-box d-flex bg-yellow"
+                                                [ngClass]="{'hide-hint': tabIndex!=28}">
+                                                <div class="hint-icon text-center">
+                                                    <img src="./assets/icons/idea.svg" alt="" title="" />
+                                                    <div class="h5 ft-semibold">Tip</div>
+                                                </div>
+                                                <div class="hint-text">
+                                                    <!-- Help us with your Full Name. This will help us to link the policy to your name and
+                                                    avoid any discrepancies later on. -->
+                                                    Your choice will help us understand you better and we can guide you
+                                                    choose the best offer.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--Details of the medicines & dosage -->
+                                    <div class="col-12 mb-55"
+                                        [ngClass]="{'active': tabIndex==29, 'deactive':tabIndex!=29 }">
+                                        <div class="row hint-row">
+                                            <div class="form-filed name-filed">
+                                                <mat-form-field>
+                                                    <input matInput tabindex="29"
+                                                        placeholder="Details of the medicines & dosage"
+                                                        formControlName="detailsOfMedicines">
+                                                    <mat-error></mat-error>
+                                                </mat-form-field>
+                                            </div>
+                                            <div class="icon-wrapper">
+                                                <div class="audio-icon">
+                                                    <img src="./assets/icons/audio-icon.svg" alt="" class="audioIcon">
+                                                </div>
+                                                <div class="arrow form-arrow slideBtn" (click)="getNext(29)">
+                                                    <img src="./assets/icons/previous-arrow.svg" alt=""
+                                                        class="nextButton">
+                                                </div>
+                                                <div class="say-done">
+                                                    <span>Say ok once you’re done</span>
+                                                </div>
+                                            </div>
+                                            <div class="hint-box d-flex bg-yellow"
+                                                [ngClass]="{'hide-hint': tabIndex!=29}">
+                                                <div class="hint-icon text-center">
+                                                    <img src="./assets/icons/idea.svg" alt="" title="" />
+                                                    <div class="h5 ft-semibold">Tip</div>
+                                                </div>
+                                                <div class="hint-text">
+                                                    <!-- Help us with your Full Name. This will help us to link the policy to your name and
+                                                    avoid any discrepancies later on. -->
+                                                    Your choice will help us understand you better and we can guide you
+                                                    choose the best offer.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Name of the treating doctor -->
+                                    <div class="col-12 mb-55"
+                                        [ngClass]="{'active': tabIndex==30, 'deactive':tabIndex!=30 }">
+                                        <div class="row hint-row">
+                                            <div class="form-filed name-filed">
+                                                <mat-form-field>
+                                                    <input matInput tabindex="30"
+                                                        placeholder="Name of the treating doctor"
+                                                        formControlName="doctorName">
+                                                    <mat-error></mat-error>
+                                                </mat-form-field>
+                                            </div>
+                                            <div class="icon-wrapper">
+                                                <div class="audio-icon">
+                                                    <img src="./assets/icons/audio-icon.svg" alt="" class="audioIcon">
+                                                </div>
+                                                <div class="arrow form-arrow slideBtn" (click)="getNext(30)">
+                                                    <img src="./assets/icons/previous-arrow.svg" alt=""
+                                                        class="nextButton">
+                                                </div>
+                                                <div class="say-done">
+                                                    <span>Say ok once you’re done</span>
+                                                </div>
+                                            </div>
+                                            <div class="hint-box d-flex bg-yellow"
+                                                [ngClass]="{'hide-hint': tabIndex!=30}">
+                                                <div class="hint-icon text-center">
+                                                    <img src="./assets/icons/idea.svg" alt="" title="" />
+                                                    <div class="h5 ft-semibold">Tip</div>
+                                                </div>
+                                                <div class="hint-text">
+                                                    <!-- Help us with your Full Name. This will help us to link the policy to your name and
+                                                    avoid any discrepancies later on. -->
+                                                    Your choice will help us understand you better and we can guide you
+                                                    choose the best offer.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--Date of any further tests/treatment/follow-up advised -->
+                                    <div class="col-12 mb-55"
+                                        [ngClass]="{'active': tabIndex==31, 'deactive':tabIndex!=31 }">
+                                        <div class="row hint-row">
+                                            <div class="form-filed name-filed">
+                                                <mat-form-field>
+                                                    <input matInput tabindex="31"
+                                                        placeholder="Date of any further tests/treatment/follow-up advised"
+                                                        formControlName="followUpDate">
+                                                    <mat-error></mat-error>
+                                                </mat-form-field>
+                                            </div>
+                                            <div class="icon-wrapper">
+                                                <div class="audio-icon">
+                                                    <img src="./assets/icons/audio-icon.svg" alt="" class="audioIcon">
+                                                </div>
+                                                <div class="arrow form-arrow slideBtn" (click)="getNext(31)">
+                                                    <img src="./assets/icons/previous-arrow.svg" alt=""
+                                                        class="nextButton">
+                                                </div>
+                                                <div class="say-done">
+                                                    <span>Say ok once you’re done</span>
+                                                </div>
+                                            </div>
+                                            <div class="hint-box d-flex bg-yellow"
+                                                [ngClass]="{'hide-hint': tabIndex!=31}">
+                                                <div class="hint-icon text-center">
+                                                    <img src="./assets/icons/idea.svg" alt="" title="" />
+                                                    <div class="h5 ft-semibold">Tip</div>
+                                                </div>
+                                                <div class="hint-text">
+                                                    <!-- Help us with your Full Name. This will help us to link the policy to your name and
+                                                    avoid any discrepancies later on. -->
+                                                    Your choice will help us understand you better and we can guide you
+                                                    choose the best offer.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Any complications as a result of this condition? -->
+                                    <div class="col-12 mb-55"
+                                        [ngClass]="{'active': tabIndex==32, 'deactive':tabIndex!=32 }">
+                                        <div class="row hint-row">
+                                            <div class="form-filed name-filed">
+                                                <mat-form-field>
+                                                    <input matInput tabindex="32"
+                                                        placeholder="Any complications as a result of this condition?"
+                                                        formControlName="anyComplications">
+                                                    <mat-error></mat-error>
+                                                </mat-form-field>
+                                            </div>
+                                            <div class="icon-wrapper">
+                                                <div class="audio-icon">
+                                                    <img src="./assets/icons/audio-icon.svg" alt="" class="audioIcon">
+                                                </div>
+                                                <div class="arrow form-arrow slideBtn" (click)="getNext(32)">
+                                                    <img src="./assets/icons/previous-arrow.svg" alt=""
+                                                        class="nextButton">
+                                                </div>
+                                                <div class="say-done">
+                                                    <span>Say ok once you’re done</span>
+                                                </div>
+                                            </div>
+                                            <div class="hint-box d-flex bg-yellow"
+                                                [ngClass]="{'hide-hint': tabIndex!=32}">
+                                                <div class="hint-icon text-center">
+                                                    <img src="./assets/icons/idea.svg" alt="" title="" />
+                                                    <div class="h5 ft-semibold">Tip</div>
+                                                </div>
+                                                <div class="hint-text">
+                                                    <!-- Help us with your Full Name. This will help us to link the policy to your name and
+                                                    avoid any discrepancies later on. -->
+                                                    Your choice will help us understand you better and we can guide you
+                                                    choose the best offer.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--Additional Remarks if any (Optional) -->
+                                    <div class="col-12 mb-55"
+                                        [ngClass]="{'active': tabIndex==33, 'deactive':tabIndex!=33 }">
+                                        <div class="row hint-row">
+                                            <div class="form-filed name-filed">
+                                                <mat-form-field>
+                                                    <input matInput tabindex="33"
+                                                        placeholder="Additional Remarks if any (Optional)"
+                                                        formControlName="addRemark">
+                                                    <mat-error></mat-error>
+                                                </mat-form-field>
+                                            </div>
+                                            <div class="icon-wrapper">
+                                                <div class="audio-icon">
+                                                    <img src="./assets/icons/audio-icon.svg" alt="" class="audioIcon">
+                                                </div>
+                                                <div class="arrow form-arrow slideBtn" (click)="getNext(33)">
+                                                    <img src="./assets/icons/previous-arrow.svg" alt=""
+                                                        class="nextButton">
+                                                </div>
+                                                <div class="say-done">
+                                                    <span>Say ok once you’re done</span>
+                                                </div>
+                                            </div>
+                                            <div class="hint-box d-flex bg-yellow"
+                                                [ngClass]="{'hide-hint': tabIndex!=33}">
+                                                <div class="hint-icon text-center">
+                                                    <img src="./assets/icons/idea.svg" alt="" title="" />
+                                                    <div class="h5 ft-semibold">Tip</div>
+                                                </div>
+                                                <div class="hint-text">
+                                                    Your choice will help us understand you better and we can guide you
+                                                    choose the best offer.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Have you ever stopped consumed alcohol, tobacco -->
+                                <div class="col-12  w-100 mb-55 togg-btn"
+                                    [ngClass]="{'active': tabIndex==34, 'deactive':tabIndex!=34 }">
+                                    <div class="row">
+                                        <label class="form-label ft-medium w-85">4) Have you ever been diagnosed or
+                                            received a treatment for any disease/disorder pertaining to head,brain,
+                                            eyes, ears, nose,
+                                            throat, thyroid, heart, lungs, chest, spine, stomach, gall bladder, liver,
+                                            pancreas, kidneys, intestine, reproductive organ, bones, joints, muscles,
+                                            skin or blood.</label>
+                                        <div class="form-filed pull-left">
+                                            <mat-button-toggle-group formControlName="isReceivedTreatment"
+                                                name="fontStyle" value="" aria-label="Font Style"
+                                                #equetyToggle="matButtonToggleGroup" tabindex="34"
+                                                (change)="onIndexChange(34)">
+                                                <mat-button-toggle value="yes">Yes</mat-button-toggle>
+                                                <mat-button-toggle value="no">No</mat-button-toggle>
+                                            </mat-button-toggle-group>
+                                            <mat-error></mat-error>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Have you ever stopped consumed alcohol, tobacco -->
+                                <div class="col-12  w-100 mb-55 togg-btn"
+                                    [ngClass]="{'active': tabIndex==35, 'deactive':tabIndex!=35 }">
+                                    <div class="row">
+                                        <label class="form-label ft-medium w-85">5) Have you ever undergone/ been
+                                            advised to undergo any tests/investigations/surgery/hospitalisation or been
+                                            diagnosed
+                                            with/treated for/currently receiving a treatment for any of the
+                                            following?</label>
+                                        <div class="form-filed pull-left">
+                                            <mat-button-toggle-group formControlName="isUndergoneHospitalisation"
+                                                name="fontStyle" value="" aria-label="Font Style"
+                                                #equetyToggle="matButtonToggleGroup" tabindex="35"
+                                                (change)="onIndexChange(35)">
+                                                <mat-button-toggle value="yes">Yes</mat-button-toggle>
+                                                <mat-button-toggle value="no">No</mat-button-toggle>
+                                            </mat-button-toggle-group>
+                                            <mat-error></mat-error>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Have you ever stopped consumed alcohol, tobacco -->
+                                <div class="col-12  w-100 mb-55 togg-btn"
+                                    [ngClass]="{'active': tabIndex==36, 'deactive':tabIndex!=36 }">
+                                    <div class="row">
+                                        <label class="form-label ft-medium">6) In additional to the above information,
+                                            is there any other health related information/adversity that you would like
+                                            to share
+                                            with us?</label>
+                                        <div class="form-filed pull-left">
+                                            <mat-button-toggle-group formControlName="isOtherHealthRelatedInformation"
+                                                name="fontStyle" value="" aria-label="Font Style"
+                                                #equetyToggle="matButtonToggleGroup" tabindex="36"
+                                                (change)="onIndexChange(36)">
+                                                <mat-button-toggle value="yes">Yes</mat-button-toggle>
+                                                <mat-button-toggle value="no">No</mat-button-toggle>
+                                            </mat-button-toggle-group>
+                                            <mat-error></mat-error>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!--Additional Remarks if any (Optional) -->
+                                <div class="col-12 mb-55"
+                                    [ngClass]="{'active': tabIndex==37, 'deactive':tabIndex!=37 }">
+                                    <div class="row hint-row">
+                                        <div class="form-filed name-filed w-70 textarea-input">
+                                            <mat-form-field>
+                                                <textarea matInput tabindex="37" rows="4" placeholder=""
+                                                    aria-expanded="false" formControlName="addRemark2"></textarea>
+                                                <mat-error></mat-error>
+                                            </mat-form-field>
+                                        </div>
+                                        <div class="icon-wrapper icon-textarea">
+                                            <div class="audio-icon">
+                                                <img src="./assets/icons/audio-icon.svg" alt="" class="audioIcon">
+                                            </div>
+                                            <div class="arrow form-arrow slideBtn" (click)="getNext(37)">
+                                                <img src="./assets/icons/previous-arrow.svg" alt="" class="nextButton">
+                                            </div>
+                                        </div>
+                                        <div class="say-done">
+                                            <span>Say ok once you’re done</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="button-wrap but-full-width " [ngClass]="{ 'float' : isFloat}">
+                                    <button matStepperNext class="mat-button-lg" mat-raised-button color="primary"
+                                        (click)="getSaveAndContinue(4)">Save and
+                                        Continue</button>
+                                </div>
+                                <!-- <div>
+                                    <button mat-button matStepperPrevious>Back</button>
+                                    <button mat-button matStepperNext>Next</button>
+                                </div> -->
+                            </form>
+                        </div>
+                    </div>
+                </mat-step>
+                <mat-step [stepControl]="fifthFormGroup">
+                    <ng-template matStepLabel>Tax and Others
+                        <img src="./assets/icons/form-valid.svg" alt="valid-form" *ngIf="isComplete5=='complited'">
+                        <img src="./assets/icons/form-invalid.svg" alt="valid-form" *ngIf="isComplete5=='incomplete'">
+                    </ng-template>
+                    <div class="card card-boder card-shadow">
+                        <div class="card-body">
+                            <form [formGroup]="fifthFormGroup">
+
+                                <div class="button-wrap but-full-width " [ngClass]="{ 'float' : isFloat}"
+                                    *ngIf="firstFormGroup.value.policy=='no'">
+                                    <button matStepperNext class="mat-button-lg" mat-raised-button color="primary"
+                                        (click)="getSaveAndContinue(5)">Save and
+                                        Continue</button>
+                                </div>
+                                <div class="button-wrap but-full-width " [ngClass]="{ 'float' : isFloat}"
+                                    *ngIf="firstFormGroup.value.policy!='no'">
+                                    <button matStepperNext class="mat-button-lg" mat-raised-button color="primary"
+                                        (click)="getSave()" [disabled]="!firstFormGroup.valid">Submit</button>
+                                </div>
+
+                                <!-- <div>
+                                    <button mat-button matStepperPrevious>Back</button>
+                                    <button mat-button matStepperNext>Next</button>
+                                    <button mat-button (click)="stepper.reset()">Reset</button>
+                                </div> -->
+                            </form>
+                        </div>
+                    </div>
+                </mat-step>
+                <mat-step [stepControl]="sixthFormGroup" *ngIf="isPolicyFor">
+                    <ng-template matStepLabel> Child Details
+                        <img src="./assets/icons/form-valid.svg" alt="valid-form" *ngIf="isComplete6=='complited'">
+                        <img src="./assets/icons/form-invalid.svg" alt="valid-form" *ngIf="isComplete6=='incomplete'">
+                    </ng-template>
+                    <!-- <ng-template matStepLabel *ngIf="firstFormGroup.value.policyFor=='father'">Father details</ng-template>
+                    <ng-template matStepLabel *ngIf="firstFormGroup.value.policyFor=='mother'">Mother details</ng-template>
+                    <ng-template matStepLabel *ngIf="firstFormGroup.value.policyFor=='spouse'">Spouse details</ng-template> -->
+
+                    <div class="card card-boder card-shadow form-card-proposal">
+                        <div class="card-body">
+                            <!-- <form [formGroup]="sixthFormGroup">
+                                <mat-form-field>
+                                    <input matInput tabindex="1" placeholder="Address" formControlName="sixthCtrl" required>
+                                    <mat-error></mat-error>
+                                </mat-form-field>
+                                
+                            </form> -->
+                            <form [formGroup]="sixthFormGroup">
+                                <h2 class="h2">Personal Details of Child</h2>
+                                <!-- Full Name of Child -->
+                                <div class="col-12 mb-55"
+                                    [ngClass]="{'active': tabIndex==38, 'deactive':tabIndex!=38 }">
+                                    <div class="row hint-row">
+                                        <div class="form-filed name-filed">
+                                            <mat-form-field>
+                                                <input tabindex="38" matInput placeholder="Full Name"
+                                                    formControlName="childfullName">
+                                                <mat-error></mat-error>
+                                            </mat-form-field>
+                                        </div>
+                                        <div class="icon-wrapper">
+                                            <div class="audio-icon">
+                                                <img src="./assets/icons/audio-icon.svg" alt="" class="audioIcon">
+                                            </div>
+                                            <div class="arrow form-arrow slideBtn" (click)="getNext(38)">
+                                                <img src="./assets/icons/previous-arrow.svg" alt="" class="nextButton">
+                                            </div>
+                                            <div class="say-done">
+                                                <span>Say ok once you’re done</span>
+                                            </div>
+                                        </div>
+                                        <div class="hint-box d-flex bg-yellow" [ngClass]="{'hide-hint': tabIndex!=38}">
+                                            <div class="hint-icon text-center">
+                                                <img src="./assets/icons/idea.svg" alt="" title="" />
+                                                <div class="h5 ft-semibold">Tip</div>
+                                            </div>
+                                            <div class="hint-text">
+                                                Your choice will help us understand you better and we can guide you
+                                                choose the best offer.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Child Gender -->
+                                <div class="form-filed mb-55 w-100"
+                                    [ngClass]="{'active': tabIndex==39, 'deactive':tabIndex!=39 }">
+                                    <label class="form-label">Gender</label>
+                                    <mat-button-toggle-group name="fontStyle" aria-label="Font Style"
+                                        formControlName="childGender" tabindex="39" (change)="onIndexChange(39)">
+                                        <mat-button-toggle value="male">Male</mat-button-toggle>
+                                        <mat-button-toggle value="female">Female</mat-button-toggle>
+                                        <mat-button-toggle value="other">Other</mat-button-toggle>
+                                    </mat-button-toggle-group>
+                                    <mat-error></mat-error>
+                                </div>
+                                <!-- DOB -->
+                                <div class="col-12 mb-55"
+                                    [ngClass]="{'active': tabIndex==40, 'deactive':tabIndex!=40 }">
+                                    <div class="row hint-row">
+                                        <div class="form-filed">
+                                            <mat-form-field>
+                                                <input matInput tabindex="40" placeholder="Date of birth"
+                                                    formControlName="childDOB">
+                                                <mat-error></mat-error>
+                                            </mat-form-field>
+                                        </div>
+                                        <div class="icon-wrapper">
+                                            <div class="audio-icon">
+                                                <img src="./assets/icons/audio-icon.svg" alt="" class="audioIcon">
+                                            </div>
+                                            <div class="arrow form-arrow slideBtn" (click)="getNext(40)">
+                                                <img src="./assets/icons/previous-arrow.svg" alt="" class="nextButton">
+                                            </div>
+                                            <div class="say-done">
+                                                <span>Say ok once you’re done</span>
+                                            </div>
+                                        </div>
+                                        <div class="hint-box d-flex bg-yellow" [ngClass]="{'hide-hint': tabIndex!=40}">
+                                            <div class="hint-icon text-center">
+                                                <img src="./assets/icons/idea.svg" alt="" title="" />
+                                                <div class="h5 ft-semibold">Tip</div>
+                                            </div>
+                                            <div class="hint-text">
+                                                <!-- Help us with your Full Name. This will help us to link the policy to your name and
+                                                avoid any discrepancies later on. -->
+                                                Your choice will help us understand you better and we can guide you
+                                                choose the best offer.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- father name -->
+                                <div class="col-12 mb-55"
+                                    [ngClass]="{'active': tabIndex==41, 'deactive':tabIndex!=41 }">
+                                    <div class="row hint-row">
+                                        <div class="form-filed name-filed">
+                                            <mat-form-field>
+                                                <input matInput tabindex="41" placeholder="Father’s Name"
+                                                    formControlName="childFName">
+                                                <mat-error></mat-error>
+                                            </mat-form-field>
+                                        </div>
+                                        <div class="icon-wrapper">
+                                            <div class="audio-icon">
+                                                <img src="./assets/icons/audio-icon.svg" alt="" class="audioIcon">
+                                            </div>
+                                            <div class="arrow form-arrow slideBtn" (click)="getNext(41)">
+                                                <img src="./assets/icons/previous-arrow.svg" alt="" class="nextButton">
+                                            </div>
+                                            <div class="say-done">
+                                                <span>Say ok once you’re done</span>
+                                            </div>
+                                        </div>
+                                        <div class="hint-box d-flex bg-yellow" [ngClass]="{'hide-hint': tabIndex!=41}">
+                                            <div class="hint-icon text-center">
+                                                <img src="./assets/icons/idea.svg" alt="" title="" />
+                                                <div class="h5 ft-semibold">Tip</div>
+                                            </div>
+                                            <div class="hint-text">
+                                                <!-- Help us with your Full Name. This will help us to link the policy to your name and
+                                                avoid any discrepancies later on. -->
+                                                Your choice will help us understand you better and we can guide you
+                                                choose the best offer.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Mother name -->
+                                <div class="col-12 mb-55"
+                                    [ngClass]="{'active': tabIndex==42, 'deactive':tabIndex!=42 }">
+                                    <div class="row hint-row">
+                                        <div class="form-filed name-filed">
+                                            <mat-form-field>
+                                                <input matInput tabindex="42" placeholder="Mother’s Name"
+                                                    formControlName="ChildMName">
+                                                <mat-error></mat-error>
+                                            </mat-form-field>
+                                        </div>
+                                        <div class="icon-wrapper">
+                                            <div class="audio-icon">
+                                                <img src="./assets/icons/audio-icon.svg" alt="" class="audioIcon">
+                                            </div>
+                                            <div class="arrow form-arrow slideBtn" (click)="getNext(42)">
+                                                <img src="./assets/icons/previous-arrow.svg" alt="" class="nextButton">
+                                            </div>
+                                            <div class="say-done">
+                                                <span>Say ok once you’re done</span>
+                                            </div>
+                                        </div>
+                                        <div class="hint-box d-flex bg-yellow" [ngClass]="{'hide-hint': tabIndex!=42}">
+                                            <div class="hint-icon text-center">
+                                                <img src="./assets/icons/idea.svg" alt="" title="" />
+                                                <div class="h5 ft-semibold">Tip</div>
+                                            </div>
+                                            <div class="hint-text">
+                                                <!-- Help us with your Full Name. This will help us to link the policy to your name and
+                                                avoid any discrepancies later on. -->
+                                                Your choice will help us understand you better and we can guide you
+                                                choose the best offer.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Nationality -->
+                                <div class="form-filed mb-55 w-100"
+                                    [ngClass]="{'active': tabIndex==43, 'deactive':tabIndex!=43 }">
+                                    <label class="form-label">Nationality</label>
+                                    <mat-button-toggle-group name="fontStyle" aria-label="Font Style"
+                                        formControlName="childNationality" tabindex="43" (change)="onIndexChange(43)">
+                                        <mat-button-toggle value="Indian">Indian</mat-button-toggle>
+                                        <mat-button-toggle value="NRI">NRI</mat-button-toggle>
+                                        <mat-button-toggle value="FNIO/PIO">FNIO/PIO</mat-button-toggle>
+                                        <mat-button-toggle value="others">Others</mat-button-toggle>
+                                    </mat-button-toggle-group>
+                                </div>
+
+
+
+                                <h2 class="h2">Communication Details</h2>
+                                <!-- Address -->
+                                <div class="col-12 mb-55"
+                                    [ngClass]="{'active': tabIndex==44, 'deactive':tabIndex!=44 }">
+                                    <div class="row hint-row">
+                                        <div class="form-filed name-filed">
+                                            <mat-form-field>
+                                                <input matInput tabindex="44" placeholder="Address1"
+                                                    formControlName="address1">
+                                                <input matInput tabindex="44" placeholder="Address2"
+                                                    formControlName="address2">
+                                                <mat-error></mat-error>
+                                            </mat-form-field>
+                                        </div>
+                                        <div class="icon-wrapper">
+                                            <div class="audio-icon">
+                                                <img src="./assets/icons/audio-icon.svg" alt="" class="audioIcon">
+                                            </div>
+                                            <div class="arrow form-arrow slideBtn" (click)="getNext(44)">
+                                                <img src="./assets/icons/previous-arrow.svg" alt="" class="nextButton">
+                                            </div>
+                                            <div class="say-done">
+                                                <span>Say ok once you’re done</span>
+                                            </div>
+                                        </div>
+                                        <div class="hint-box d-flex bg-yellow" [ngClass]="{'hide-hint': tabIndex!=44}">
+                                            <div class="hint-icon text-center">
+                                                <img src="./assets/icons/idea.svg" alt="" title="" />
+                                                <div class="h5 ft-semibold">Tip</div>
+                                            </div>
+                                            <div class="hint-text">
+                                                <!-- Help us with your Full Name. This will help us to link the policy to your name and
+                                                avoid any discrepancies later on. -->
+                                                Your choice will help us understand you better and we can guide you
+                                                choose the best offer.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Pin Code -->
+                                <div class="col-12 mb-55"
+                                    [ngClass]="{'active': tabIndex==45, 'deactive':tabIndex!=45 }">
+                                    <div class="row hint-row">
+                                        <div class="form-filed name-filed">
+                                            <mat-form-field>
+                                                <input matInput tabindex="45" placeholder="Pincode"
+                                                    formControlName="childPincode">
+                                                <mat-error></mat-error>
+                                            </mat-form-field>
+                                        </div>
+                                        <div class="icon-wrapper">
+                                            <div class="audio-icon">
+                                                <img src="./assets/icons/audio-icon.svg" alt="" class="audioIcon">
+                                            </div>
+                                            <div class="arrow form-arrow slideBtn" (click)="getNext(45)">
+                                                <img src="./assets/icons/previous-arrow.svg" alt="" class="nextButton">
+                                            </div>
+                                            <div class="say-done">
+                                                <span>Say ok once you’re done</span>
+                                            </div>
+                                        </div>
+                                        <div class="hint-box d-flex bg-yellow" [ngClass]="{'hide-hint': tabIndex!=45}">
+                                            <div class="hint-icon text-center">
+                                                <img src="./assets/icons/idea.svg" alt="" title="" />
+                                                <div class="h5 ft-semibold">Tip</div>
+                                            </div>
+                                            <div class="hint-text">
+                                                Your choice will help us understand you better and we can guide you
+                                                choose the best offer.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- City -->
+                                <div class="col-12 mb-55"
+                                    [ngClass]="{'active': tabIndex==46, 'deactive':tabIndex!=46 }">
+                                    <div class="row hint-row">
+                                        <div class="form-filed name-filed">
+                                            <mat-form-field>
+                                                <div class="d-flex align-items-center">
+                                                    <mat-select disableOptionCentering panelClass="select-option-city"
+                                                        placeholder="City" formControlName="childCity" tabindex="46"
+                                                        (selectionChange)="onSelection($event)">
+                                                        <mat-option value="mumbai">Mumbai</mat-option>
+                                                        <mat-option value="pune">Pune</mat-option>
+                                                        <mat-option value="nashik">Nashik</mat-option>
+                                                    </mat-select>
+                                                    <img src="./assets/icons/down-arrow.svg" alt="" class="arrow-down">
+                                                </div>
+                                                <mat-error></mat-error>
+                                            </mat-form-field>
+                                        </div>
+                                        <!-- <div class="icon-wrapper">
+                                            <div class="audio-icon">
+                                                <img src="./assets/icons/audio-icon.svg" alt="" class="audioIcon">
+                                            </div>
+                                            <div class="arrow form-arrow slideBtn" (click)="getNext(46)">
+                                                <img src="./assets/icons/previous-arrow.svg" alt="" class="nextButton">
+                                            </div>
+                                            <div class="say-done">
+                                                <span>Say ok once you’re done</span>
+                                            </div>
+                                        </div>
+                                        <div class="hint-box d-flex bg-yellow" [ngClass]="{'hide-hint': tabIndex!=46}">
+                                            <div class="hint-icon text-center">
+                                                <img src="./assets/icons/idea.svg" alt="" title="" />
+                                                <div class="h5 ft-semibold">Tip</div>
+                                            </div>
+                                            <div class="hint-text">
+                                               
+                                                Your choice will help us understand you better and we can guide you choose the best offer.
+                                            </div>
+                                        </div> -->
+                                    </div>
+                                </div>
+                                <!-- State -->
+                                <div class="col-12 mb-55"
+                                    [ngClass]="{'active': tabIndex==47, 'deactive':tabIndex!=47 }">
+                                    <div class="row hint-row">
+                                        <div class="form-filed name-filed">
+                                            <mat-form-field>
+                                                <div class="d-flex align-items-center">
+                                                    <mat-select disableOptionCentering panelClass="select-option-state"
+                                                        placeholder="State" formControlName="childState" tabindex="47"
+                                                        (selectionChange)="onSelection($event)">
+                                                        <mat-option value="maharashtra">Maharashtra</mat-option>
+                                                        <mat-option value="gujrat">Gujrat</mat-option>
+                                                        <mat-option value="kerala">Kerala</mat-option>
+                                                    </mat-select>
+                                                    <img src="./assets/icons/down-arrow.svg" alt="" class="arrow-down">
+                                                </div>
+                                                <mat-error></mat-error>
+                                            </mat-form-field>
+                                        </div>
+                                        <!-- <div class="icon-wrapper">
+                                            <div class="audio-icon">
+                                                <img src="./assets/icons/audio-icon.svg" alt="" class="audioIcon">
+                                            </div>
+                                            <div class="arrow form-arrow slideBtn" (click)="getNext(47)">
+                                                <img src="./assets/icons/previous-arrow.svg" alt="" class="nextButton">
+                                            </div>
+                                            <div class="say-done">
+                                                <span>Say ok once you’re done</span>
+                                            </div>
+                                        </div>
+                                        <div class="hint-box d-flex bg-yellow" [ngClass]="{'hide-hint': tabIndex!=47}">
+                                            <div class="hint-icon text-center">
+                                                <img src="./assets/icons/idea.svg" alt="" title="" />
+                                                <div class="h5 ft-semibold">Tip</div>
+                                            </div>
+                                            <div class="hint-text">
+                                                Your choice will help us understand you better and we can guide you choose the best offer.
+                                            </div>
+                                        </div> -->
+                                    </div>
+                                </div>
+
+                                <!-- Is the permanent address -->
+                                <div class="form-filed mb-55 w-100"
+                                    [ngClass]="{'active': tabIndex==48, 'deactive':tabIndex!=48 }">
+                                    <label class="form-label">Is the permanent address and communication address
+                                        same?</label>
+                                    <mat-button-toggle-group name="fontStyle" aria-label="Font Style"
+                                        formControlName="isAddressSame" tabindex="48" (change)="onIndexChange(48)">
+                                        <mat-button-toggle value="yes">Yes</mat-button-toggle>
+                                        <mat-button-toggle value="no">No</mat-button-toggle>
+                                    </mat-button-toggle-group>
+                                    <mat-error></mat-error>
+                                </div>
+
+
+                                <h2 class="h2">Insurance History of Child</h2>
+                                <!-- Insurance History of Child 1 -->
+                                <div class="col-12 w-100 mb-55 togg-btn"
+                                    [ngClass]="{'active': tabIndex==49, 'deactive':tabIndex!=49 }">
+                                    <div class="row">
+                                        <label class="form-label ft-medium w-85">1) Has any proposal/application for
+                                            revival on your life or health insurance with Edelweiss Tokio Life Insurance
+                                            Co. or any other Life
+                                            Insurer, ever been declined/ postponed/offered/accepted at changed/special
+                                            terms?</label>
+                                        <div class="form-filed pull-left">
+                                            <mat-button-toggle-group formControlName="isChildQue1" name="fontStyle"
+                                                value="" aria-label="Font Style" #equetyToggle="matButtonToggleGroup"
+                                                tabindex="49" (change)="onIndexChange(49)">
+                                                <mat-button-toggle value="yes">Yes</mat-button-toggle>
+                                                <mat-button-toggle value="no">No</mat-button-toggle>
+                                            </mat-button-toggle-group>
+                                            <mat-error></mat-error>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Insurance History of Child 2 -->
+                                <div class="col-12  w-100 mb-55 togg-btn"
+                                    [ngClass]="{'active': tabIndex==50, 'deactive':tabIndex!=50 }">
+                                    <div class="row">
+                                        <label class="form-label ft-medium w-85">2) Have you ever received or do you now
+                                            receive any disability or critical illness benefits from any insurance
+                                            company?</label>
+                                        <div class="form-filed pull-left">
+                                            <mat-button-toggle-group formControlName="isChildQue2" name="fontStyle"
+                                                value="" aria-label="Font Style" #equetyToggle="matButtonToggleGroup"
+                                                tabindex="50" (change)="onIndexChange(50)">
+                                                <mat-button-toggle value="yes">Yes</mat-button-toggle>
+                                                <mat-button-toggle value="no">No</mat-button-toggle>
+                                            </mat-button-toggle-group>
+                                            <mat-error></mat-error>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Insurance History of Child 3 -->
+                                <div class="col-12  w-100 mb-55 togg-btn"
+                                    [ngClass]="{'active': tabIndex==51, 'deactive':tabIndex!=51 }">
+                                    <div class="row">
+                                        <label class="form-label ft-medium w-85">3) Details of any existing/proposed
+                                            insurance with Edelweiss Tokio Life Insurance Co. and/or with any other Life
+                                            Insurance
+                                            company in India and Overseas (in INR).</label>
+                                        <div class="form-filed pull-left">
+                                            <mat-button-toggle-group formControlName="isChildQue3" name="fontStyle"
+                                                value="" aria-label="Font Style" #equetyToggle="matButtonToggleGroup"
+                                                tabindex="51" (change)="onIndexChange(51)">
+                                                <mat-button-toggle value="yes">Yes</mat-button-toggle>
+                                                <mat-button-toggle value="no">No</mat-button-toggle>
+                                            </mat-button-toggle-group>
+                                            <mat-error></mat-error>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <h2 class="h2">Medical & Lifestyle Details of Child</h2>
+                                <!-- Medical & Lifestyle Details of Child 1 -->
+                                <div class="col-12 w-100 mb-55 togg-btn"
+                                    [ngClass]="{'active': tabIndex==52, 'deactive':tabIndex!=52 }">
+                                    <div class="row">
+                                        <label class="form-label ft-medium w-85">1) Do you consume or have consumed
+                                            alcohol, tobacco or any other narcotic substance? If Yes, give
+                                            details</label>
+                                        <div class="form-filed pull-left">
+                                            <mat-button-toggle-group formControlName="isChildQue4" name="fontStyle"
+                                                value="" aria-label="Font Style" #equetyToggle="matButtonToggleGroup"
+                                                tabindex="52" (change)="onIndexChange(52)">
+                                                <mat-button-toggle value="yes">Yes</mat-button-toggle>
+                                                <mat-button-toggle value="no">No</mat-button-toggle>
+                                            </mat-button-toggle-group>
+                                            <mat-error></mat-error>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Medical & Lifestyle Details of Child 2 -->
+                                <div class="col-12  w-100 mb-55 togg-btn"
+                                    [ngClass]="{'active': tabIndex==53, 'deactive':tabIndex!=53 }">
+                                    <div class="row">
+                                        <label class="form-label ft-medium w-85">2) Have you ever stopped smoking
+                                            /consumption of alcohol / narcotics / tobacco in any form?</label>
+                                        <div class="form-filed pull-left">
+                                            <mat-button-toggle-group formControlName="isChildQue5" name="fontStyle"
+                                                value="" aria-label="Font Style" #equetyToggle="matButtonToggleGroup"
+                                                tabindex="53" (change)="onIndexChange(53)">
+                                                <mat-button-toggle value="yes">Yes</mat-button-toggle>
+                                                <mat-button-toggle value="no">No</mat-button-toggle>
+                                            </mat-button-toggle-group>
+                                            <mat-error></mat-error>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Medical & Lifestyle Details of Child 3 -->
+                                <div class="col-12  w-100 mb-55 togg-btn"
+                                    [ngClass]="{'active': tabIndex==54, 'deactive':tabIndex!=54 }">
+                                    <div class="row">
+                                        <label class="form-label ft-medium w-85">3) Are you currently taking any
+                                            medication or undergoing medical treatment OR in the past 5 years, have you
+                                            been advised to
+                                            undergo any surgery, medical investigation or medical treatment for any
+                                            medical condition (other than common cold and
+                                            flu not lasting more than 5 days?)</label>
+                                        <div class="form-filed pull-left">
+                                            <mat-button-toggle-group formControlName="isChildQue6" name="fontStyle"
+                                                value="" aria-label="Font Style" #equetyToggle="matButtonToggleGroup"
+                                                tabindex="54" (change)="onIndexChange(54)">
+                                                <mat-button-toggle value="yes">Yes</mat-button-toggle>
+                                                <mat-button-toggle value="no">No</mat-button-toggle>
+                                            </mat-button-toggle-group>
+                                            <mat-error></mat-error>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Medical & Lifestyle Details of Child 4 -->
+                                <div class="col-12 w-100 mb-55 togg-btn"
+                                    [ngClass]="{'active': tabIndex==55, 'deactive':tabIndex!=55 }">
+                                    <div class="row">
+                                        <label class="form-label ft-medium w-85">4) Have you ever been diagnosed or
+                                            received a treatment for any disease/disorder pertaining to head, brain,
+                                            eyes, ears, nose,
+                                            throat, thyroid, heart, lungs, chest, spine, stomach, gall bladder, liver,
+                                            pancreas, kidneys, intestine, reproductive organ,
+                                            bones, joints, muscles, skin or blood.</label>
+                                        <div class="form-filed pull-left">
+                                            <mat-button-toggle-group formControlName="isChildQue7" name="fontStyle"
+                                                value="" aria-label="Font Style" #equetyToggle="matButtonToggleGroup"
+                                                tabindex="55" (change)="onIndexChange(55)">
+                                                <mat-button-toggle value="yes">Yes</mat-button-toggle>
+                                                <mat-button-toggle value="no">No</mat-button-toggle>
+                                            </mat-button-toggle-group>
+                                            <mat-error></mat-error>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Medical & Lifestyle Details of Child 5 -->
+                                <div class="col-12  w-100 mb-55 togg-btn"
+                                    [ngClass]="{'active': tabIndex==56, 'deactive':tabIndex!=56 }">
+                                    <div class="row">
+                                        <label class="form-label ft-medium w-85">5) Have you ever undergone/ been
+                                            advised to undergo any tests/investigations/surgery/hospitalisation or been
+                                            diagnosed
+                                            with/treated for/currently receiving a treatment for any of the
+                                            following?</label>
+                                        <div class="form-filed pull-left">
+                                            <mat-button-toggle-group formControlName="isChildQue8" name="fontStyle"
+                                                value="" aria-label="Font Style" #equetyToggle="matButtonToggleGroup"
+                                                tabindex="56" (change)="onIndexChange(56)">
+                                                <mat-button-toggle value="yes">Yes</mat-button-toggle>
+                                                <mat-button-toggle value="no">No</mat-button-toggle>
+                                            </mat-button-toggle-group>
+                                            <mat-error></mat-error>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Medical & Lifestyle Details of Child 6 -->
+                                <div class="col-12  w-100 mb-55 togg-btn"
+                                    [ngClass]="{'active': tabIndex==57, 'deactive':tabIndex!=57 }">
+                                    <div class="row">
+                                        <label class="form-label ft-medium w-85">6) In additional to the above
+                                            information, is there any other health related information/adversity that
+                                            you would like to share
+                                            with us?</label>
+                                        <div class="form-filed pull-left">
+                                            <mat-button-toggle-group formControlName="isChildQue9" name="fontStyle"
+                                                value="" aria-label="Font Style" #equetyToggle="matButtonToggleGroup"
+                                                tabindex="57" (change)="onIndexChange(57)">
+                                                <mat-button-toggle value="yes">Yes</mat-button-toggle>
+                                                <mat-button-toggle value="no">No</mat-button-toggle>
+                                            </mat-button-toggle-group>
+                                            <mat-error></mat-error>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!--Additional Remarks if any (Optional) -->
+                                <div class="col-12 mb-55"
+                                    [ngClass]="{'active': tabIndex==58, 'deactive':tabIndex!=58 }">
+                                    <div class="row hint-row">
+                                        <div class="form-filed name-filed w-70 textarea-input">
+                                            <mat-form-field>
+                                                <textarea matInput tabindex="37" rows="4" placeholder=""
+                                                    aria-expanded="false" formControlName="addRemark1"></textarea>
+
+                                                <mat-error></mat-error>
+                                            </mat-form-field>
+                                        </div>
+                                        <div class="icon-wrapper icon-textarea">
+                                            <div class="audio-icon">
+                                                <img src="./assets/icons/audio-icon.svg" alt="" class="audioIcon">
+                                            </div>
+                                            <div class="arrow form-arrow slideBtn" (click)="getNext(58)">
+                                                <img src="./assets/icons/previous-arrow.svg" alt="" class="nextButton">
+                                            </div>
+                                            <div class="say-done">
+                                                <span>Say ok once you’re done</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <h2 class="h2">Physician Details of Child</h2>
+                                <!-- Physician Name -->
+                                <div class="col-12 mb-55"
+                                    [ngClass]="{'active': tabIndex==59, 'deactive':tabIndex!=59 }">
+                                    <div class="row hint-row">
+                                        <div class="form-filed name-filed">
+                                            <mat-form-field>
+                                                <input matInput tabindex="59" placeholder="Name"
+                                                    formControlName="physicianName">
+                                                <mat-error></mat-error>
+                                            </mat-form-field>
+                                        </div>
+                                        <div class="icon-wrapper">
+                                            <div class="audio-icon">
+                                                <img src="./assets/icons/audio-icon.svg" alt="" class="audioIcon">
+                                            </div>
+                                            <div class="arrow form-arrow slideBtn" (click)="getNext(59)">
+                                                <img src="./assets/icons/previous-arrow.svg" alt="" class="nextButton">
+                                            </div>
+                                            <div class="say-done">
+                                                <span>Say ok once you’re done</span>
+                                            </div>
+                                        </div>
+                                        <div class="hint-box d-flex bg-yellow" [ngClass]="{'hide-hint': tabIndex!=59}">
+                                            <div class="hint-icon text-center">
+                                                <img src="./assets/icons/idea.svg" alt="" title="" />
+                                                <div class="h5 ft-semibold">Tip</div>
+                                            </div>
+                                            <div class="hint-text">
+                                                <!-- Help us with your Full Name. This will help us to link the policy to your name and
+                                                avoid any discrepancies later on. -->
+                                                Your choice will help us understand you better and we can guide you
+                                                choose the best offer.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Physician Address -->
+                                <div class="col-12 mb-55"
+                                    [ngClass]="{'active': tabIndex==60, 'deactive':tabIndex!=60 }">
+                                    <div class="row hint-row">
+                                        <div class="form-filed name-filed">
+                                            <mat-form-field>
+                                                <input matInput tabindex="60" placeholder="Address"
+                                                    formControlName="physicianAddress">
+                                                <mat-error></mat-error>
+                                            </mat-form-field>
+                                        </div>
+                                        <div class="icon-wrapper">
+                                            <div class="audio-icon">
+                                                <img src="./assets/icons/audio-icon.svg" alt="" class="audioIcon">
+                                            </div>
+                                            <div class="arrow form-arrow slideBtn" (click)="getNext(60)">
+                                                <img src="./assets/icons/previous-arrow.svg" alt="" class="nextButton">
+                                            </div>
+                                            <div class="say-done">
+                                                <span>Say ok once you’re done</span>
+                                            </div>
+                                        </div>
+                                        <div class="hint-box d-flex bg-yellow" [ngClass]="{'hide-hint': tabIndex!=60}">
+                                            <div class="hint-icon text-center">
+                                                <img src="./assets/icons/idea.svg" alt="" title="" />
+                                                <div class="h5 ft-semibold">Tip</div>
+                                            </div>
+                                            <div class="hint-text">
+                                                <!-- Help us with your Full Name. This will help us to link the policy to your name and
+                                                avoid any discrepancies later on. -->
+                                                Your choice will help us understand you better and we can guide you
+                                                choose the best offer.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Physician Contact Details -->
+                                <div class="col-12 mb-55"
+                                    [ngClass]="{'active': tabIndex==61, 'deactive':tabIndex!=61 }">
+                                    <div class="row hint-row">
+                                        <div class="form-filed name-filed">
+                                            <mat-form-field>
+                                                <input matInput tabindex="61" placeholder="Contact Details"
+                                                    formControlName="physicianContactDetails">
+                                                <mat-error></mat-error>
+                                            </mat-form-field>
+                                        </div>
+                                        <div class="icon-wrapper">
+                                            <div class="audio-icon">
+                                                <img src="./assets/icons/audio-icon.svg" alt="" class="audioIcon">
+                                            </div>
+                                            <div class="arrow form-arrow slideBtn" (click)="getNext(61)">
+                                                <img src="./assets/icons/previous-arrow.svg" alt="" class="nextButton">
+                                            </div>
+                                            <div class="say-done">
+                                                <span>Say ok once you’re done</span>
+                                            </div>
+                                        </div>
+                                        <div class="hint-box d-flex bg-yellow" [ngClass]="{'hide-hint': tabIndex!=61}">
+                                            <div class="hint-icon text-center">
+                                                <img src="./assets/icons/idea.svg" alt="" title="" />
+                                                <div class="h5 ft-semibold">Tip</div>
+                                            </div>
+                                            <div class="hint-text">
+                                                <!-- Help us with your Full Name. This will help us to link the policy to your name and
+                                                avoid any discrepancies later on. -->
+                                                Your choice will help us understand you better and we can guide you
+                                                choose the best offer.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <h2 class="h2">BMI Details of Child</h2>
+                                <div class="heightDiv">
+                                    <!-- City -->
+
+                                    <div class="col-12 mb-55"
+                                        [ngClass]="{'active': tabIndex==62, 'deactive':tabIndex!=62 }">
+                                        <div class="row mb-m20">
+                                            <label class="form-label ft-medium w-100">Height</label>
+                                        </div>
+
+                                        <div class="row hint-row">
+                                            <div class="form-filed name-filed  w-13">
+                                                <mat-form-field>
+                                                    <div class="d-flex align-items-center">
+                                                        <mat-select disableOptionCentering
+                                                            panelClass="select-option-heightInFeet" placeholder=""
+                                                            formControlName="HeightInFeet" tabindex="62">
+                                                            <mat-option value="51">5.1</mat-option>
+                                                            <mat-option value="52">5.2</mat-option>
+                                                            <mat-option value="53">5.3</mat-option>
+                                                        </mat-select>
+                                                        <img src="./assets/icons/down-arrow.svg" alt=""
+                                                            class="arrow-down">
+                                                    </div>
+                                                    <mat-error></mat-error>
+                                                </mat-form-field>
+                                            </div>
+
+                                            <!-- <div class="icon-wrapper">
+                                                <div class="audio-icon">
+                                                    <img src="./assets/icons/audio-icon.svg" alt="" class="audioIcon">
+                                                </div>
+                                                <div class="arrow form-arrow slideBtn" (click)="getNext(62)">
+                                                    <img src="./assets/icons/previous-arrow.svg" alt="" class="nextButton">
+                                                </div>
+                                                <div class="say-done">
+                                                    <span>Say ok once you’re done</span>
+                                                </div>
+                                            </div>
+                                            <div class="hint-box d-flex bg-yellow" [ngClass]="{'hide-hint': tabIndex!=62}">
+                                                <div class="hint-icon text-center">
+                                                    <img src="./assets/icons/idea.svg" alt="" title="" />
+                                                    <div class="h5 ft-semibold">Tip</div>
+                                                </div>
+                                                <div class="hint-text">
+                                                    
+                                                    Your choice will help us understand you better and we can guide you choose the best offer.
+                                                </div>
+                                            </div> -->
+
+                                            <div class="form-filed name-filed  w-10">
+                                                <mat-form-field>
+                                                    <div class="d-flex align-items-center">
+                                                        <mat-select disableOptionCentering
+                                                            panelClass="select-option-heightInCm" placeholder=""
+                                                            formControlName="HeightInCm" tabindex="62">
+                                                            <mat-option value="155">155</mat-option>
+                                                            <mat-option value="156">156</mat-option>
+                                                            <mat-option value="157">157</mat-option>
+                                                        </mat-select>
+                                                        <img src="./assets/icons/down-arrow.svg" alt=""
+                                                            class="arrow-down">
+                                                    </div>
+                                                    <mat-error></mat-error>
+                                                </mat-form-field>
+                                            </div>
+
+                                        </div>
+
+
+
+
+                                    </div>
+                                </div>
+
+                                <!-- State -->
+                                <div class="col-12 mb-55"
+                                    [ngClass]="{'active': tabIndex==63, 'deactive':tabIndex!=63 }">
+                                    <div class="row hint-row">
+                                        <div class="form-filed name-filed">
+                                            <mat-form-field>
+                                                <div class="d-flex align-items-center">
+                                                    <mat-select disableOptionCentering panelClass="select-option-state"
+                                                        placeholder="Weight in kgs.*" formControlName="WeightInkgs"
+                                                        tabindex="63">
+                                                        <mat-option value="50">50kgs</mat-option>
+                                                        <mat-option value="51">51kgs</mat-option>
+                                                        <mat-option value="52">52kgs</mat-option>
+                                                    </mat-select>
+                                                    <img src="./assets/icons/down-arrow.svg" alt="" class="arrow-down">
+                                                </div>
+                                                <mat-error></mat-error>
+                                            </mat-form-field>
+                                        </div>
+                                        <!-- <div class="icon-wrapper">
+                                            <div class="audio-icon">
+                                                <img src="./assets/icons/audio-icon.svg" alt="" class="audioIcon">
+                                            </div>
+                                            <div class="arrow form-arrow slideBtn" (click)="getNext(63)">
+                                                <img src="./assets/icons/previous-arrow.svg" alt="" class="nextButton">
+                                            </div>
+                                            <div class="say-done">
+                                                <span>Say ok once you’re done</span>
+                                            </div>
+                                        </div>
+                                        <div class="hint-box d-flex bg-yellow" [ngClass]="{'hide-hint': tabIndex!=63}">
+                                            <div class="hint-icon text-center">
+                                                <img src="./assets/icons/idea.svg" alt="" title="" />
+                                                <div class="h5 ft-semibold">Tip</div>
+                                            </div>
+                                            <div class="hint-text">
+                                                Your choice will help us understand you better and we can guide you choose the best offer.
+                                            </div>
+                                        </div> -->
+                                    </div>
+                                </div>
+
+
+                                <div class="button-wrap but-full-width " [ngClass]="{ 'float' : isFloat}">
+                                    <button matStepperNext class="mat-button-lg" mat-raised-button color="primary"
+                                        (click)="getSave()" [disabled]="!firstFormGroup.valid ">Submit</button>
+                                </div>
+
+                            </form>
+
+                        </div>
+                    </div>
+                </mat-step>
+            </mat-horizontal-stepper>
+        </div>
+
+    </div> <!-- container End -->
+</section> <!-- get-quote-wrapper End -->
+
+<!-- Footer Start -->
+<app-footer></app-footer>
+<!-- Footer End -->

@@ -1,0 +1,217 @@
+<form [formGroup]="personalForm">
+    <div class="collapsible-header active LATitle" >Your <span class="spLaPropRelation"></span>Personal Details</div>
+    <div class="collapsible-header subheader active" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">General Details</div>
+    <div id="collapseExample" [ngbCollapse]="isCollapsed" class="form-row">
+
+        <div class="form-group col-md-2" style="margin-left:1%;">
+            <label class="control-label col-md-6" for="firstName">First Name</label>
+            <input type="text" class="form-control" id="firstName" formControlName="firstName" name="firstName">
+            <span class="text-danger invalid"
+                *ngIf="personalForm.get('firstName').touched && personalForm.get('firstName').hasError('required')">Required
+                Field</span>
+        </div>
+        <div class="form-group col-md-2" style="margin-left:3%;">
+            <label class="control-label col-md-8" for="middleName">Middle Name</label>
+            <input type="text" class="form-control" id="middleName" name="middleName" formControlName="middleName">
+            <span class="text-danger invalid"
+                *ngIf="personalForm.get('middleName').touched && personalForm.get('middleName').hasError('required')">Required
+                Field</span>
+        </div>
+        <div class="form-group col-md-2" style="margin-left:3%;">
+            <label class="control-label col-md-8" for="lastName">Last Name</label>
+            <input type="text" class="form-control" id="lastName" name="lastName" formControlName="lastName">
+            <span class="text-danger invalid"
+                *ngIf="personalForm.get('lastName').touched && personalForm.get('lastName').hasError('required')">Required
+                Field</span>
+        </div>
+        <div class="form-group col-md-2" style="margin-left:3%;">
+            <label class="control-label col-md-8" for="fatherName">Father Name</label>
+            <input type="text" class="form-control" id="fatherName" name="fatherName" formControlName="fatherName">
+            <span class="text-danger invalid"
+                *ngIf="personalForm.get('fatherName').touched && personalForm.get('fatherName').hasError('required')">Required
+                Field</span>
+        </div>
+        <div class="form-group col-md-2" style="margin-left:3%;">
+            <label class="control-label col-md-8" for="maritalStatus">Marital Status</label>
+            <input type="text" class="form-control" id="maritalStatus" name="maritalStatus"
+                formControlName="maritalStatus">
+            <span class="text-danger invalid"
+                *ngIf="personalForm.get('maritalStatus').touched && personalForm.get('maritalStatus').hasError('required')">Required
+                Field</span>
+        </div>
+    </div>
+    <div class="collapsible-header subheader active" (click)="isCollapsedAddress = !isCollapsedAddress" [attr.aria-expanded]="!isCollapsedAddress" aria-controls="collapseAddress">Address Details</div>
+    <div id="collapseAddress" [ngbCollapse]="isCollapsedAddress" class="form-row">
+
+        <div class="form-group col-md-2" style="margin-left:1%;">
+            <label class="control-label col-md-8" for="addressLine1">Address line 1</label>
+            <input type="text" class="form-control" id="addressLine1" formControlName="addressLine1"
+                name="addressLine1">
+            <span class="text-danger invalid"
+                *ngIf="personalForm.get('addressLine1').touched && personalForm.get('addressLine1').hasError('required')">Required
+                Field</span>
+        </div>
+        <div class="form-group col-md-2" style="margin-left:3%;">
+            <label class="control-label col-md-8" for="addressLine2">Address line 2</label>
+            <input type="text" class="form-control" id="addressLine2" name="addressLine2"
+                formControlName="addressLine2">
+            <span class="text-danger invalid"
+                *ngIf="personalForm.get('addressLine2').touched && personalForm.get('addressLine2').hasError('required')">Required
+                Field</span>
+        </div>
+        <div class="form-group col-md-2" style="margin-left:3%;">
+            <label class="control-label col-md-8" for="addressLine3">Address line 3</label>
+            <input type="text" class="form-control" id="addressLine3" name="addressLine3"
+                formControlName="addressLine3">
+            <span class="text-danger invalid"
+                *ngIf="personalForm.get('addressLine3').touched && personalForm.get('addressLine3').hasError('required')">Required
+                Field</span>
+        </div>
+        <div class="form-group col-md-2" style="margin-left:3%;">
+            <label class="control-label col-md-8" for="cityName">City</label>
+            <input type="text" class="form-control" id="cityName" name="cityName" formControlName="cityName">
+            <span class="text-danger invalid"
+                *ngIf="personalForm.get('cityName').touched && personalForm.get('cityName').hasError('required')">Required
+                Field</span>
+        </div>
+        <div class="form-group col-md-2" style="margin-left:3%;">
+            <label class="control-label col-md-8" for="stateName">State</label>
+            <input type="text" class="form-control" id="stateName" name="stateName" formControlName="stateName">
+            <span class="text-danger invalid"
+                *ngIf="personalForm.get('stateName').touched && personalForm.get('stateName').hasError('required')">Required
+                Field</span>
+        </div>
+    </div>
+
+    <div class="collapsible-header subheader active" (click)="isCollapsedContact = !isCollapsedContact" [attr.aria-expanded]="!isCollapsedContact" aria-controls="collapseContact">Contact Details</div>
+    <div id="collapseContact" [ngbCollapse]="isCollapsedContact" class="form-row">
+
+        <div class="form-group col-md-2" style="margin-left:1%;">
+            <label class="control-label col-md-8" for="emailId">Email ID</label>
+            <input type="text" class="form-control" id="emailId" formControlName="emailId" name="emailId">
+            <span class="text-danger invalid"
+                *ngIf="personalForm.get('emailId').touched && personalForm.get('emailId').hasError('required')">Required
+                Field</span>
+        </div>
+        <div class="form-group col-md-2" style="margin-left:3%;">
+            <label class="control-label col-md-8" for="mobile">Mobile No.</label>
+            <input type="text" class="form-control" id="mobile" name="mobile" formControlName="mobile">
+            <span class="text-danger invalid"
+                *ngIf="personalForm.get('mobile').touched && personalForm.get('mobile').hasError('required')">Required
+                Field</span>
+        </div>
+        <div class="form-group col-md-2" style="margin-left:3%;">
+            <label class="control-label col-md-8" for="phone">Phone No.</label>
+            <input type="text" class="form-control" id="phone" name="phone" formControlName="phone">
+            <span class="text-danger invalid"
+                *ngIf="personalForm.get('phone').touched && personalForm.get('phone').hasError('required')">Required
+                Field</span>
+        </div>
+        <div class="form-group col-md-2" style="margin-left:3%;">
+            <label class="control-label col-md-8" for="facebookId">Facbook ID</label>
+            <input type="text" class="form-control" id="facebookId" name="facebookId" formControlName="facebookId">
+        </div>
+        <div class="form-group col-md-2" style="margin-left:3%;">
+            <label class="control-label col-md-10" for="corporateId">Corporate Email Id</label>
+            <input type="text" class="form-control" id="corporateId" name="corporateId" formControlName="corporateId">
+        </div>
+    </div>
+
+    <div class="collapsible-header subheader active" (click)="isCollapsedEducation = !isCollapsedEducation" [attr.aria-expanded]="!isCollapsedEducation" aria-controls="collapseEducation">Educational Details</div>
+    <div id="collapseEducation" [ngbCollapse]="isCollapsedEducation" class="form-row">
+
+        <div class="form-group col-md-2" style="margin-left:1%;">
+            <label class="control-label col-md-8" for="education">Education</label>
+            <input type="text" class="form-control" id="education" formControlName="education" name="education">
+            <span class="text-danger invalid"
+                *ngIf="personalForm.get('education').touched && personalForm.get('education').hasError('required')">Required
+                Field</span>
+        </div>
+        <div class="form-group col-md-4" style="margin-left:1%;">
+            <label class="control-label col-md-8" for="collegeName">Name of Last College/School</label>
+            <input type="text" class="form-control" id="collegeName" formControlName="collegeName" name="collegeName">
+            <span class="text-danger invalid"
+                *ngIf="personalForm.get('collegeName').touched && personalForm.get('collegeName').hasError('required')">Required
+                Field</span>
+        </div>
+        <div class="form-group col-md-4" style="margin-left:1%;">
+            <label class="control-label col-md-8" for="highestEducation">Highest Qualification</label>
+            <input type="text" class="form-control" id="highestEducation" formControlName="highestEducation"
+                name="highestEducation">
+            <span class="text-danger invalid"
+                *ngIf="personalForm.get('highestEducation').touched && personalForm.get('highestEducation').hasError('required')">Required
+                Field</span>
+        </div>
+
+    </div>
+    <div class="collapsible-header subheader active" (click)="isCollapsedHeight = !isCollapsedHeight" [attr.aria-expanded]="!isCollapsedHeight" aria-controls="collapseHeight">Height & Weight Details</div>
+    <div id="collapseHeight" [ngbCollapse]="isCollapsedHeight" class="form-row">
+        <div class="form-group col-md-2" style="margin-left:1%;">
+            <label class="control-label col-md-8" for="heightInFeets">Height(Feets</label>
+            <select class="form-control" formControlName="heightInFeets">
+                                <option selected value="">Feet</option>
+                                <option *ngFor="let feet of Feets" [value]="feet">{{feet}}</option>
+                            </select>
+            <span class="text-danger invalid"
+                *ngIf="personalForm.get('heightInFeets').touched && personalForm.get('heightInFeets').hasError('required')">Required
+                Field</span>
+        </div>
+        <div class="form-group col-md-2" style="margin-left:1%;">
+            <label class="control-label col-md-8" for="heightInInches">Height(Inches)</label>
+            <select class="form-control" formControlName="heightInInches">
+                                <option selected value="">Inches</option>
+                                <option *ngFor="let inch of Inches" [value]="inch">{{inch}}</option>
+                            </select>
+            <span class="text-danger invalid"
+                *ngIf="personalForm.get('heightInInches').touched && personalForm.get('heightInInches').hasError('required')">Required
+                Field</span>
+        </div>
+        <div class="form-group col-md-2" style="margin-left:1%;">
+            <label class="control-label col-md-8" for="education">Weight</label>
+            <input type="text" class="form-control" id="weight" formControlName="weight"
+            name="weight">
+            <span class="text-danger invalid"
+                *ngIf="personalForm.get('weight').touched && personalForm.get('weight').hasError('required')">Required
+                Field</span>
+        </div>
+    </div>
+<app-family-details (familydetails)="SaveFamilyDetails($event)"></app-family-details>
+<div *ngIf="this.familyDetailsForm.length==0 else displayRows">
+    <div class="form-group col-md-2" style="margin-left:1%;font-weight: bold;">No Rows Added</div>
+</div>
+<ng-template #displayRows>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+          <th>Relationship</th>
+          <th>Health Status</th>
+          <th>Age</th>
+          <th>Remove</th>
+        </tr>
+      </thead>
+      <tbody>
+    <tr *ngFor="let family of familyDetailsForm; index as i">
+        <td>{{i+1}}</td>
+        <td>{{family.relation}}</td>
+        <td>{{family.health}}</td>
+        <td>{{family.age}}</td>
+        <td><button type="submit" class="btn btn-danger " style="margin-left:1%;" (click)="removefamilydetails(i,family.relation)">Remove</button></td>
+    </tr>
+
+</table>
+</ng-template>
+    <ngx-spinner bdColor="rgba(51, 51, 51, 0.8)"  size="default" type="ball-spin-clockwise">  
+        <p style="color: white">Please Wait. </p>  
+        </ngx-spinner> 
+
+    <div class="form-row">
+        <div class="form-group col-md-2" style="margin-left:1%;">
+            <button type="submit" class="btn btn-primary" style="margin-left:1%;" [disabled]="!personalForm.valid"
+                (click)="SavePersonalDetails()">Submit</button>
+        </div>
+        <div *ngIf="personalForm.valid" class="form-group col-md-2" style="margin-left:1%;">
+            <app-employment-details></app-employment-details>
+        </div>
+    </div>
+</form>

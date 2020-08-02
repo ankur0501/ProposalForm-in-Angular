@@ -1,0 +1,184 @@
+<section class="popup-wrapper">
+    <a class="closebutton" (click)="closeDialog()">
+        <img src="./assets/icons/close.svg" alt="close" class="close-icon">
+    </a>
+
+    <div class="container">
+        
+        <div class="col-12">
+            <div class="row">
+                <div class="fund-performance-header">
+                    <h2 class="popup-heading">Fund Performance</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="fund-performance">
+
+            <div class="col-12 fund-form-wrapper">
+                <div class="row">
+
+                    <div class="form-filed fund-form">
+                        <mat-form-field>
+                            <div class="d-flex align-items-center">
+                                <mat-select disableOptionCentering panelClass="select-option-fund-mob"
+                                    [formControl]="equityDropdown">
+                                    <mat-option value="Equity250"> Equity 250</mat-option>
+                                    <mat-option value="op2">Equity Large Cap</mat-option>
+                                    <mat-option value="op3">Bond Fund</mat-option>
+                                    <mat-option value="op3">Equity Mid Cap</mat-option>
+                                    <mat-option value="op3">Managed Fund</mat-option>
+                                </mat-select>
+                                <img src="./assets/icons/down-arrow.svg" alt="" class="arrow-down">
+                            </div>
+                            <mat-error *ngIf="equityDropdown.invalid">
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+
+                    <div class="form-filed">
+                        <mat-form-field>
+                            <div class="d-flex align-items-center">
+                                <mat-select disableOptionCentering panelClass="select-option-fund-per-year"
+                                    [formControl]="lockingPeriod">
+                                    <perfect-scrollbar class="scroll-div">
+                                        <mat-option value="1">1 Year</mat-option>
+                                        <mat-option value="2">2 Years</mat-option>
+                                        <mat-option value="3">3 Years
+                                        </mat-option>
+                                        <mat-option value="4">4 Years</mat-option>
+                                        <mat-option value="5">5 Years</mat-option>
+                                        <mat-option value="6">6 Years</mat-option>
+                                        <mat-option value="7">7 Years</mat-option>
+                                        <mat-option value="35">35 Years</mat-option>
+                                    </perfect-scrollbar>
+                                </mat-select>
+                                <img src="./assets/icons/down-arrow.svg" alt="" class="arrow-down">
+                            </div>
+                            <mat-error *ngIf="payFor.invalid">
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+
+                    <div class="form-filed">
+                        <mat-form-field>
+                            <div class="d-flex align-items-center">
+                                <mat-select disableOptionCentering panelClass="select-option-fund-mob"
+                                    [formControl]="equityNAV">
+                                    <mat-option value="NAV"> @NAV</mat-option>
+                                    <mat-option value="4">@ 4%</mat-option>
+                                    <mat-option value="8">@ 8%</mat-option>
+                                </mat-select>
+                                <img src="./assets/icons/down-arrow.svg" alt="" class="arrow-down">
+                            </div>
+                            <mat-error *ngIf="payFor.invalid">
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+            </div>
+
+            <p class="fund-note d-none d-lg-block">Mr. Alok Nair invested
+                <span class="rupee-text">
+                    <span class="rupee"> &#8377; </span> 5,00,000
+                </span> in <span class="year">2012</span>. Today the value of his investment is
+                <span class="rupee-text">
+                    <span class="rupee"> &#8377; </span> 5,70,000
+                </span>.
+            </p>
+
+            <div class="fund-togle-table">
+                <div class="form-filed">
+                    <mat-button-toggle-group name="fontStyle" value="graph" aria-label="Font Style"
+                        #fundToggle="matButtonToggleGroup" (change)="getFundTabSelect(fundToggle.value)">
+                        <mat-button-toggle value="graph">
+                            <img src="./assets/icons/graph-button.svg" alt="" class="graph-icon"
+                                *ngIf="fundTabSelect=='graph'">
+                            <img src="./assets/icons/graph-button1.svg" alt="" class="table-icon"
+                                *ngIf="fundTabSelect=='table'">
+                        </mat-button-toggle>
+                        <mat-button-toggle value="table">
+                            <img src="./assets/icons/table-button2.svg" alt="" class="graph-icon"
+                                *ngIf="fundTabSelect=='table'">
+                            <img src="./assets/icons/table-button.svg" alt="" class="table-icon"
+                                *ngIf="fundTabSelect=='graph'">
+                        </mat-button-toggle>
+                    </mat-button-toggle-group>
+                </div>
+            </div>
+
+
+            <div class="graph-container" *ngIf="fundTabSelect == 'graph'">
+                <highcharts-chart [Highcharts]="highcharts" [options]="chartOptions1">
+                </highcharts-chart>
+            </div>
+
+            <div class="fund-table" *ngIf="fundTabSelect == 'table'">
+                <div class="table-responsive">
+                    <table class="table table-head table-border mb-0">
+                        <thead>
+                            <tr>
+                                <th>Duration</th>
+                                <th>Returns (%)</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+                <perfect-scrollbar class="scroll-div">
+                    <div class="table-responsive">
+                        <table class="table table-border mb-0">
+                            <tbody>
+                                <tr>
+                                    <td>1 Month</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>3 Month</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>6 Month</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>1 Year</td>
+                                    <td>3.79</td>
+                                </tr>
+                                <tr>
+                                    <td>3 Year</td>
+                                    <td>12.88</td>
+                                </tr>
+                                <tr>
+                                    <td>5 Year</td>
+                                    <td>11.26</td>
+                                </tr>
+                                <tr>
+                                    <td>7 Year</td>
+                                    <td>14.01</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </perfect-scrollbar>
+                <div class="table-responsive">
+                    <table class="table table-foot table-border mb-0">
+                        <tfoot>
+                            <tr>
+                                <td>Since Inception</td>
+                                <td>15.04</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+
+            <p class="discalimer">
+                Discalimer: @14.65% as per current market performance. Current Performance is not an indicative of
+                future results
+            </p>
+
+        </div>
+       
+    </div>
+
+</section>

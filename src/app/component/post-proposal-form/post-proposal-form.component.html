@@ -1,0 +1,888 @@
+<!-- Header Start -->
+<app-product-header></app-product-header>
+<!-- Header End -->
+
+<section class="proposal-wrapper bg-gray">
+    <div class="container">
+        <div class="proposal-header">
+            <h1 class="proposal-heading">Let's get your deets and complete your process
+                <span class="appnumber">Application Number: <a>123456ABSD</a></span>
+            </h1>
+        </div> <!-- proposal-header div end-->
+    </div>
+    <div class="proposal-progress-wrapper">
+        <div class="proposal-step-border"></div>
+        <div class="container">
+            <mat-horizontal-stepper [linear]="false" #stepper>
+                <mat-step [stepControl]="firstFormGroup">
+                    <ng-template matStepLabel>Your Details</ng-template>
+                    <div class="card card-boder card-shadow ">
+                        <div class="card-body">
+                            <div class="proposal-header-inner">
+                                <h2 class="h4 ft-bold">NRI Details</h2>
+                            </div>
+                            <form [formGroup]="firstFormGroup" class="form-card-proposal">
+                                <!-- Country of Birth -->
+                                <div class="col-12 mb-55" [ngClass]="{'active': tabIndex==1, 'deactive':tabIndex!=1 }">
+                                    <div class="row hint-row">
+                                        <div class="form-filed name-filed">
+                                            <mat-form-field>
+                                                <input tabindex="1" matInput placeholder="Country of Birth"
+                                                    formControlName="birthCountry">
+                                                <mat-error></mat-error>
+                                            </mat-form-field>
+                                        </div>
+                                        <div class="icon-wrapper">
+                                            <div class="audio-icon">
+                                                <img src="./assets/icons/audio-icon.svg" alt="" class="audioIcon">
+                                            </div>
+                                            <div class="arrow form-arrow slideBtn" (click)="getNext(1)">
+                                                <img src="./assets/icons/previous-arrow.svg" alt="" class="nextButton">
+                                            </div>
+                                            <div class="say-done">
+                                                <span>Say ok once you’re done</span>
+                                            </div>
+                                        </div>
+                                        <div class="hint-box d-flex bg-yellow" [ngClass]="{'hide-hint': tabIndex!=1}">
+                                            <div class="hint-icon text-center">
+                                                <img src="./assets/icons/idea.svg" alt="" title="" />
+                                                <div class="h5 ft-semibold">Tip</div>
+                                            </div>
+                                            <div class="hint-text">
+                                                <!-- Help us with your Full Name. This will help us to link the policy to your name and
+                                                    avoid any discrepancies later on. -->
+                                                Your choice will help us understand you better and we can guide you
+                                                choose the best offer.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Current country of residence -->
+                                <div class="col-12 mb-55" [ngClass]="{'active': tabIndex==2, 'deactive':tabIndex!=2 }">
+                                    <div class="row hint-row">
+                                        <div class="form-filed name-filed">
+                                            <mat-form-field>
+                                                <div class="d-flex align-items-center">
+                                                    <mat-select disableOptionCentering panelClass="select-option-city"
+                                                        placeholder="Current country of residence"
+                                                        formControlName="residenceCountry" tabindex="2">
+                                                        <mat-option value="Arab">United Arab Emirates</mat-option>
+                                                        <mat-option value="Arab">United Arab Emirates</mat-option>
+                                                        <mat-option value="Arab">United Arab Emirates</mat-option>
+                                                    </mat-select>
+                                                    <img src="./assets/icons/down-arrow.svg" alt="" class="arrow-down">
+                                                </div>
+                                                <mat-error></mat-error>
+                                            </mat-form-field>
+                                        </div>
+                                        <!-- <div class="icon-wrapper">
+                                            <div class="audio-icon">
+                                                <img src="./assets/icons/audio-icon.svg" alt="" class="audioIcon">
+                                            </div>
+                                            <div class="arrow form-arrow slideBtn" (click)="getNext(2)">
+                                                <img src="./assets/icons/previous-arrow.svg" alt="" class="nextButton">
+                                            </div>
+                                            <div class="say-done">
+                                                <span>Say ok once you’re done</span>
+                                            </div>
+                                        </div> -->
+                                        <div class="hint-box d-flex bg-yellow" [ngClass]="{'hide-hint': tabIndex!=2}">
+                                            <div class="hint-icon text-center">
+                                                <img src="./assets/icons/idea.svg" alt="" title="" />
+                                                <div class="h5 ft-semibold">Tip</div>
+                                            </div>
+                                            <div class="hint-text">
+                                                Your choice will help us understand you better and we can guide you
+                                                choose the best offer.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Pupose of  your stay abroad -->
+                                <div class="col-12 mb-55" [ngClass]="{'active': tabIndex==3, 'deactive':tabIndex!=3 }">
+                                    <div class="row hint-row">
+                                        <div class="form-filed name-filed">
+                                            <mat-form-field>
+                                                <div class="d-flex align-items-center">
+                                                    <mat-select disableOptionCentering panelClass="select-option-city"
+                                                        placeholder="Pupose of  your stay abroad"
+                                                        formControlName="purpose" tabindex="3">
+                                                        <mat-option value="Employment">Employment</mat-option>
+                                                        <mat-option value="Employment">Employment</mat-option>
+                                                        <mat-option value="Employment">Employment</mat-option>
+                                                    </mat-select>
+                                                    <img src="./assets/icons/down-arrow.svg" alt="" class="arrow-down">
+                                                </div>
+                                                <mat-error></mat-error>
+                                            </mat-form-field>
+                                        </div>
+                                        <!-- <div class="icon-wrapper">
+                                            <div class="audio-icon">
+                                                <img src="./assets/icons/audio-icon.svg" alt="" class="audioIcon">
+                                            </div>
+                                            <div class="arrow form-arrow slideBtn" (click)="getNext(3)">
+                                                <img src="./assets/icons/previous-arrow.svg" alt="" class="nextButton">
+                                            </div>
+                                            <div class="say-done">
+                                                <span>Say ok once you’re done</span>
+                                            </div>
+                                        </div> -->
+                                        <div class="hint-box d-flex bg-yellow" [ngClass]="{'hide-hint': tabIndex!=3}">
+                                            <div class="hint-icon text-center">
+                                                <img src="./assets/icons/idea.svg" alt="" title="" />
+                                                <div class="h5 ft-semibold">Tip</div>
+                                            </div>
+                                            <div class="hint-text">
+                                                Your choice will help us understand you better and we can guide you
+                                                choose the best offer.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Name and Address of the present employer -->
+                                <div class="col-12 mb-55" [ngClass]="{'active': tabIndex==4, 'deactive':tabIndex!=4 }">
+                                    <div class="row hint-row">
+                                        <div class="form-filed name-filed">
+                                            <mat-form-field>
+                                                <input matInput tabindex="4"
+                                                    placeholder="Name and Address of the present employer"
+                                                    formControlName="address">
+                                                <mat-error></mat-error>
+                                            </mat-form-field>
+                                        </div>
+                                        <div class="icon-wrapper">
+                                            <div class="audio-icon">
+                                                <img src="./assets/icons/audio-icon.svg" alt="" class="audioIcon">
+                                            </div>
+                                            <div class="arrow form-arrow slideBtn" (click)="getNext(4)">
+                                                <img src="./assets/icons/previous-arrow.svg" alt="" class="nextButton">
+                                            </div>
+                                            <div class="say-done">
+                                                <span>Say ok once you’re done</span>
+                                            </div>
+                                        </div>
+                                        <div class="hint-box d-flex bg-yellow" [ngClass]="{'hide-hint': tabIndex!=4}">
+                                            <div class="hint-icon text-center">
+                                                <img src="./assets/icons/idea.svg" alt="" title="" />
+                                                <div class="h5 ft-semibold">Tip</div>
+                                            </div>
+                                            <div class="hint-text">
+                                                <!-- Help us with your Full Name. This will help us to link the policy to your name and
+                                                                                    avoid any discrepancies later on. -->
+                                                Your choice will help us understand you better and we can guide you
+                                                choose the best offer.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Contact Number (When aboard) -->
+                                <div class="col-12 mb-55" [ngClass]="{'active': tabIndex==5, 'deactive':tabIndex!=5 }">
+                                    <div class="row hint-row">
+                                        <div class="form-filed name-filed">
+                                            <mat-form-field>
+                                                <input matInput tabindex="5" placeholder="Contact Number (When aboard)"
+                                                    formControlName="contact">
+                                                <mat-error></mat-error>
+                                            </mat-form-field>
+                                        </div>
+                                        <div class="icon-wrapper">
+                                            <div class="audio-icon">
+                                                <img src="./assets/icons/audio-icon.svg" alt="" class="audioIcon">
+                                            </div>
+                                            <div class="arrow form-arrow slideBtn" (click)="getNext(5)">
+                                                <img src="./assets/icons/previous-arrow.svg" alt="" class="nextButton">
+                                            </div>
+                                            <div class="say-done">
+                                                <span>Say ok once you’re done</span>
+                                            </div>
+                                        </div>
+                                        <div class="hint-box d-flex bg-yellow" [ngClass]="{'hide-hint': tabIndex!=5}">
+                                            <div class="hint-icon text-center">
+                                                <img src="./assets/icons/idea.svg" alt="" title="" />
+                                                <div class="h5 ft-semibold">Tip</div>
+                                            </div>
+                                            <div class="hint-text">
+                                                <!-- Help us with your Full Name. This will help us to link the policy to your name and
+                                                                                    avoid any discrepancies later on. -->
+                                                Your choice will help us understand you better and we can guide you
+                                                choose the best offer.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Date of last arrival in India -->
+                                <div class="col-12 mb-55" [ngClass]="{'active': tabIndex==6, 'deactive':tabIndex!=6 }">
+                                    <div class="row hint-row">
+                                        <div class="form-filed">
+                                            <mat-form-field>
+                                                <input matInput tabindex="6" placeholder="Date of last arrival in India"
+                                                    formControlName="doLastarrival">
+                                                <mat-error></mat-error>
+                                            </mat-form-field>
+                                        </div>
+                                        <div class="icon-wrapper">
+                                            <div class="audio-icon">
+                                                <img src="./assets/icons/audio-icon.svg" alt="" class="audioIcon">
+                                            </div>
+                                            <div class="arrow form-arrow slideBtn" (click)="getNext(6)">
+                                                <img src="./assets/icons/previous-arrow.svg" alt="" class="nextButton">
+                                            </div>
+                                            <div class="say-done">
+                                                <span>Say ok once you’re done</span>
+                                            </div>
+                                        </div>
+                                        <div class="hint-box d-flex bg-yellow" [ngClass]="{'hide-hint': tabIndex!=6}">
+                                            <div class="hint-icon text-center">
+                                                <img src="./assets/icons/idea.svg" alt="" title="" />
+                                                <div class="h5 ft-semibold">Tip</div>
+                                            </div>
+                                            <div class="hint-text">
+                                                <!-- Help us with your Full Name. This will help us to link the policy to your name and
+                                                    avoid any discrepancies later on. -->
+                                                Your choice will help us understand you better and we can guide you
+                                                choose the best offer.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Date of Leaving india after current visit (DD/MM/YYYY) -->
+                                <div class="col-12 mb-55" [ngClass]="{'active': tabIndex==7, 'deactive':tabIndex!=7 }">
+                                    <div class="row hint-row">
+                                        <div class="form-filed">
+                                            <mat-form-field>
+                                                <input matInput tabindex="7"
+                                                    placeholder="Date of Leaving india after current visit (DD/MM/YYYY)"
+                                                    formControlName="doLeaving">
+                                                <mat-error></mat-error>
+                                            </mat-form-field>
+                                        </div>
+                                        <div class="icon-wrapper">
+                                            <div class="audio-icon">
+                                                <img src="./assets/icons/audio-icon.svg" alt="" class="audioIcon">
+                                            </div>
+                                            <div class="arrow form-arrow slideBtn" (click)="getNext(7)">
+                                                <img src="./assets/icons/previous-arrow.svg" alt="" class="nextButton">
+                                            </div>
+                                            <div class="say-done">
+                                                <span>Say ok once you’re done</span>
+                                            </div>
+                                        </div>
+                                        <div class="hint-box d-flex bg-yellow" [ngClass]="{'hide-hint': tabIndex!=7}">
+                                            <div class="hint-icon text-center">
+                                                <img src="./assets/icons/idea.svg" alt="" title="" />
+                                                <div class="h5 ft-semibold">Tip</div>
+                                            </div>
+                                            <div class="hint-text">
+                                                <!-- Help us with your Full Name. This will help us to link the policy to your name and
+                                                                                    avoid any discrepancies later on. -->
+                                                Your choice will help us understand you better and we can guide you
+                                                choose the best offer.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- List -->
+                                <ul class="bullet-list">
+                                    <li class="subtext">I am still in india</li>
+                                </ul>
+                                <!-- Duration of years of stay abroad -->
+                                <div class="col-12 mb-55" [ngClass]="{'active': tabIndex==8, 'deactive':tabIndex!=8 }">
+                                    <div class="row hint-row">
+                                        <div class="form-filed name-filed">
+                                            <mat-form-field>
+                                                <div class="d-flex align-items-center">
+                                                    <mat-select disableOptionCentering panelClass="select-option-city"
+                                                        placeholder="Duration of years of stay abroad"
+                                                        formControlName="duration" tabindex="8">
+                                                        <mat-option value="18 Years">18 Years</mat-option>
+                                                        <mat-option value="18 Years">18 Years</mat-option>
+                                                        <mat-option value="18 Years">18 Years</mat-option>
+                                                    </mat-select>
+                                                    <img src="./assets/icons/down-arrow.svg" alt="" class="arrow-down">
+                                                </div>
+                                                <mat-error></mat-error>
+                                            </mat-form-field>
+                                        </div>
+                                        <div class="hint-box d-flex bg-yellow" [ngClass]="{'hide-hint': tabIndex!=8}">
+                                            <div class="hint-icon text-center">
+                                                <img src="./assets/icons/idea.svg" alt="" title="" />
+                                                <div class="h5 ft-semibold">Tip</div>
+                                            </div>
+                                            <div class="hint-text">
+                                                Your choice will help us understand you better and we can guide you
+                                                choose the best offer.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Pupose of taking insurance in India -->
+                                <div class="form-filed mb-55 w-100"
+                                    [ngClass]="{'active': tabIndex==9, 'deactive':tabIndex!=9 }">
+                                    <label class="form-label">Pupose of taking insurance in India</label>
+                                    <mat-button-toggle-group name="fontStyle" aria-label="Font Style"
+                                        formControlName="purposeInsurance" tabindex="9" (change)="onIndexChange(9)">
+                                        <mat-button-toggle value="national">Resident National</mat-button-toggle>
+                                        <mat-button-toggle value="employment">Employment</mat-button-toggle>
+                                        <mat-button-toggle value="dependent">Dependent</mat-button-toggle>
+                                        <mat-button-toggle value="business">Business</mat-button-toggle>
+                                        <mat-button-toggle value="housewife">Housewife</mat-button-toggle>
+                                        <mat-button-toggle value="education">Education</mat-button-toggle>
+                                    </mat-button-toggle-group>
+                                    <mat-error></mat-error>
+                                </div>
+                                <!-- Do you travel or intend to travel to any other to any other country as a part of your job or business? -->
+                                <div class="form-filed mb-55 w-100"
+                                    [ngClass]="{'active': tabIndex==10, 'deactive':tabIndex!=10 }">
+                                    <label class="form-label">Do you travel or intend to travel to any other to any
+                                        other country as a part of your job or business?</label>
+                                    <mat-button-toggle-group name="fontStyle" aria-label="Font Style"
+                                        formControlName="doyouTravel" tabindex="10" (change)="onIndexChange(10)">
+                                        <mat-button-toggle value="yes">Yes</mat-button-toggle>
+                                        <mat-button-toggle value="no">No</mat-button-toggle>
+                                    </mat-button-toggle-group>
+                                    <mat-error></mat-error>
+                                </div>
+                                <!-- Type of Bank Account Held in India -->
+                                <div class="col-12 mb-55"
+                                    [ngClass]="{'active': tabIndex==11, 'deactive':tabIndex!=11 }">
+                                    <div class="row hint-row">
+                                        <div class="form-filed name-filed">
+                                            <mat-form-field>
+                                                <div class="d-flex align-items-center">
+                                                    <mat-select disableOptionCentering panelClass="select-option-city"
+                                                        placeholder="Type of Bank Account Held in India"
+                                                        formControlName="typeOfAcc" tabindex="11">
+                                                        <mat-option value="(NRE)">Non- Resident External (NRE)
+                                                        </mat-option>
+                                                        <mat-option value="(NRE)">Non- Resident External (NRE)
+                                                        </mat-option>
+                                                        <mat-option value="(NRE)">Non- Resident External (NRE)
+                                                        </mat-option>
+                                                    </mat-select>
+                                                    <img src="./assets/icons/down-arrow.svg" alt="" class="arrow-down">
+                                                </div>
+                                                <mat-error></mat-error>
+                                            </mat-form-field>
+                                        </div>
+                                        <div class="hint-box d-flex bg-yellow" [ngClass]="{'hide-hint': tabIndex!=11}">
+                                            <div class="hint-icon text-center">
+                                                <img src="./assets/icons/idea.svg" alt="" title="" />
+                                                <div class="h5 ft-semibold">Tip</div>
+                                            </div>
+                                            <div class="hint-text">
+                                                Your choice will help us understand you better and we can guide you
+                                                choose the best offer.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Education/Professional Qualification -->
+                                <div class="col-12 mb-55"
+                                    [ngClass]="{'active': tabIndex==12, 'deactive':tabIndex!=12 }">
+                                    <div class="row hint-row">
+                                        <div class="form-filed name-filed">
+                                            <mat-form-field>
+                                                <div class="d-flex align-items-center">
+                                                    <mat-select disableOptionCentering panelClass="select-option-city"
+                                                        placeholder="Education/Professional Qualification"
+                                                        formControlName="qualification" tabindex="12">
+                                                        <mat-option value="1">1
+                                                        </mat-option>
+                                                        <mat-option value="1">1
+                                                        </mat-option>
+                                                        <mat-option value="1">1
+                                                        </mat-option>
+                                                    </mat-select>
+                                                    <img src="./assets/icons/down-arrow.svg" alt="" class="arrow-down">
+                                                </div>
+                                                <mat-error></mat-error>
+                                            </mat-form-field>
+                                        </div>
+                                        <div class="hint-box d-flex bg-yellow" [ngClass]="{'hide-hint': tabIndex!=12}">
+                                            <div class="hint-icon text-center">
+                                                <img src="./assets/icons/idea.svg" alt="" title="" />
+                                                <div class="h5 ft-semibold">Tip</div>
+                                            </div>
+                                            <div class="hint-text">
+                                                Your choice will help us understand you better and we can guide you
+                                                choose the best offer.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Diabetes Details -->
+                                <div class="proposal-header-inner">
+                                    <h2 class="h2 ft-bold">Diabetes Details</h2>
+                                </div>
+                                <!-- 1) -->
+                                <div class="form-filed mb-55 w-100"
+                                    [ngClass]="{'active': tabIndex==13, 'deactive':tabIndex!=13 }">
+                                    <label class="form-label"> <span>1)</span> Please state the diagnosis relevant to
+                                        you?</label>
+                                    <mat-button-toggle-group name="fontStyle" aria-label="Font Style"
+                                        formControlName="typeOfDiabetes" tabindex="13" (change)="onIndexChange(13)">
+                                        <mat-button-toggle value="type1">Type I Diabetes Mellitus</mat-button-toggle>
+                                        <mat-button-toggle value="type2">Type II Diabetes Mellitus</mat-button-toggle>
+                                        <mat-button-toggle value="pregnancy">Diabetes during Pregnancy
+                                        </mat-button-toggle>
+                                    </mat-button-toggle-group>
+                                    <mat-error></mat-error>
+                                </div>
+                                <!-- 2) -->
+                                <div class="col-12 mb-55 togg-btn"
+                                    [ngClass]="{'active': tabIndex==14, 'deactive':tabIndex!=14 }">
+                                    <div class="row">
+                                        <label class="form-label ft-medium"> <span>2)</span> When was the condition
+                                            diagnosed or when
+                                            did you first experience symptoms of high blood sugar?</label>
+                                        <div class="form-filed pull-left">
+                                            <mat-button-toggle-group formControlName="isDiagnosed" name="fontStyle"
+                                                value="" aria-label="Font Style" #equetyToggle="matButtonToggleGroup"
+                                                tabindex="14" (change)="onIndexChange(14)">
+                                                <mat-button-toggle value="yes">Yes</mat-button-toggle>
+                                                <mat-button-toggle value="no">No</mat-button-toggle>
+                                            </mat-button-toggle-group>
+                                            <mat-error></mat-error>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 3) -->
+                                <div class="col-12 mb-55 togg-btn"
+                                    [ngClass]="{'active': tabIndex==15, 'deactive':tabIndex!=15 }">
+                                    <div class="row">
+                                        <label class="form-label ft-medium"> <span>3)</span> Do you test your own blood
+                                            sugar at home? If YES please provide highest result of blood sugar in last 3
+                                            months?</label>
+                                        <div class="form-filed pull-left">
+                                            <mat-button-toggle-group formControlName="isBloodTest" name="fontStyle"
+                                                value="" aria-label="Font Style" #equetyToggle="matButtonToggleGroup"
+                                                tabindex="15" (change)="onIndexChange(15)">
+                                                <mat-button-toggle value="yes">Yes</mat-button-toggle>
+                                                <mat-button-toggle value="no">No</mat-button-toggle>
+                                            </mat-button-toggle-group>
+                                            <mat-error></mat-error>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 4) -->
+                                <div class="col-12 mb-55 togg-btn"
+                                    [ngClass]="{'active': tabIndex==16, 'deactive':tabIndex!=16 }">
+                                    <div class="row">
+                                        <label class="form-label ft-medium"> <span>4)</span> Have you had a Glycosylated
+                                            hemoglobin test (HbA1c)?</label>
+                                        <div class="form-filed pull-left">
+                                            <mat-button-toggle-group formControlName="isBloodTest" name="fontStyle"
+                                                value="" aria-label="Font Style" #equetyToggle="matButtonToggleGroup"
+                                                tabindex="16" (change)="onIndexChange(16)">
+                                                <mat-button-toggle value="yes">Yes</mat-button-toggle>
+                                                <mat-button-toggle value="no">No</mat-button-toggle>
+                                            </mat-button-toggle-group>
+                                            <mat-error></mat-error>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 5) -->
+                                <div class="col-12 mb-55"
+                                    [ngClass]="{'active': tabIndex==17, 'deactive':tabIndex!=17 }">
+                                    <div class="row hint-row">
+                                        <label class="form-label ft-medium" style="width: 78%;"> <span>5)</span> Please
+                                            provide details of
+                                            any medication that you take in relation to your diabetes (please also
+                                            include related
+                                            medications
+                                            such as those used to lower blood pressure and cholesterol)</label>
+                                        <div class="form-filed name-filed">
+                                            <mat-form-field>
+                                                <input type="text" tabindex="17" matInput
+                                                    formControlName="detailsOfMedication">
+                                                <mat-error></mat-error>
+                                            </mat-form-field>
+                                        </div>
+                                        <div class="icon-wrapper">
+                                            <div class="audio-icon">
+                                                <img src="./assets/icons/audio-icon.svg" alt="" class="audioIcon">
+                                            </div>
+                                            <div class="arrow form-arrow slideBtn" (click)="getNext(17)">
+                                                <img src="./assets/icons/previous-arrow.svg" alt="" class="nextButton">
+                                            </div>
+                                            <div class="say-done">
+                                                <span>Say ok once you’re done</span>
+                                            </div>
+                                        </div>
+                                        <div class="hint-box d-flex bg-yellow" [ngClass]="{'hide-hint': tabIndex!=17}">
+                                            <div class="hint-icon text-center">
+                                                <img src="./assets/icons/idea.svg" alt="" title="" />
+                                                <div class="h5 ft-semibold">Tip</div>
+                                            </div>
+                                            <div class="hint-text">
+                                                <!-- Help us with your Full Name. This will help us to link the policy to your name and
+                                                                                    avoid any discrepancies later on. -->
+                                                Your choice will help us understand you better and we can guide you
+                                                choose the best offer.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 6) -->
+                                <div class="col-12 mb-55 togg-btn"
+                                    [ngClass]="{'active': tabIndex==16, 'deactive':tabIndex!=16 }">
+                                    <div class="row">
+                                        <label class="form-label ft-medium"> <span>6)</span> Have you ever been admitted
+                                            to hospital or required emergency care?</label>
+                                        <div class="form-filed pull-left">
+                                            <mat-button-toggle-group formControlName="isBloodTest" name="fontStyle"
+                                                value="" aria-label="Font Style" #equetyToggle="matButtonToggleGroup"
+                                                tabindex="16" (change)="onIndexChange(16)">
+                                                <mat-button-toggle value="yes">Yes</mat-button-toggle>
+                                                <mat-button-toggle value="no">No</mat-button-toggle>
+                                            </mat-button-toggle-group>
+                                            <mat-error></mat-error>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 7) -->
+                                <div class="col-12 mb-55 togg-btn"
+                                    [ngClass]="{'active': tabIndex==17, 'deactive':tabIndex!=17 }">
+                                    <div class="row">
+                                        <label class="form-label ft-medium" style="width: 75%;"> <span>7)</span> Have
+                                            you ever had Eye
+                                            problems / Heart problems / High blood pressure/ Kidney problems (including
+                                            protein in your
+                                            urine)/ Sensory problems (such as burning in your feet)/ Any other
+                                            complication? If you answered YES to any of the above
+                                            questions, please provide details</label>
+                                        <div class="form-filed pull-left">
+                                            <mat-button-toggle-group formControlName="isBloodTest" name="fontStyle"
+                                                value="" aria-label="Font Style" #equetyToggle="matButtonToggleGroup"
+                                                tabindex="16" (change)="onIndexChange(17)">
+                                                <mat-button-toggle value="yes">Yes</mat-button-toggle>
+                                                <mat-button-toggle value="no">No</mat-button-toggle>
+                                            </mat-button-toggle-group>
+                                            <mat-error></mat-error>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 8) -->
+                                <div class="col-12 mb-55"
+                                    [ngClass]="{'active': tabIndex==18, 'deactive':tabIndex!=18 }">
+                                    <label class="row form-label ft-medium"> <span>8) </span> Please provide the name
+                                        and address of the doctors, specialists or clinics that you see in relation to
+                                        your diabetes:</label>
+                                    <div class="row hint-row mb-55 mt-20">
+                                        <div class="form-filed name-filed">
+                                            <mat-form-field>
+                                                <input type="text" tabindex="18" matInput
+                                                    placeholder=" Name of Doctor, Hospital or Clinic"
+                                                    formControlName="nameDoctor">
+                                                <mat-error></mat-error>
+                                            </mat-form-field>
+                                        </div>
+                                        <div class="icon-wrapper">
+                                            <div class="audio-icon">
+                                                <img src="./assets/icons/audio-icon.svg" alt="" class="audioIcon">
+                                            </div>
+                                            <div class="arrow form-arrow slideBtn" (click)="getNext(18)">
+                                                <img src="./assets/icons/previous-arrow.svg" alt="" class="nextButton">
+                                            </div>
+                                            <div class="say-done">
+                                                <span>Say ok once you’re done</span>
+                                            </div>
+                                        </div>
+                                        <div class="hint-box d-flex bg-yellow" [ngClass]="{'hide-hint': tabIndex!=18}">
+                                            <div class="hint-icon text-center">
+                                                <img src="./assets/icons/idea.svg" alt="" title="" />
+                                                <div class="h5 ft-semibold">Tip</div>
+                                            </div>
+                                            <div class="hint-text">
+                                                Your choice will help us understand you better and we can guide you
+                                                choose the best offer.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row hint-row mb-55">
+                                        <div class="form-filed name-filed">
+                                            <mat-form-field>
+                                                <input type="text" tabindex="18" matInput placeholder="Address"
+                                                    formControlName="addressDoctor">
+                                                <mat-error></mat-error>
+                                            </mat-form-field>
+                                        </div>
+                                        <div class="icon-wrapper">
+                                            <div class="audio-icon">
+                                                <img src="./assets/icons/audio-icon.svg" alt="" class="audioIcon">
+                                            </div>
+                                            <div class="arrow form-arrow slideBtn" (click)="getNext(18)">
+                                                <img src="./assets/icons/previous-arrow.svg" alt="" class="nextButton">
+                                            </div>
+                                            <div class="say-done">
+                                                <span>Say ok once you’re done</span>
+                                            </div>
+                                        </div>
+                                        <div class="hint-box d-flex bg-yellow" [ngClass]="{'hide-hint': tabIndex!=18}">
+                                            <div class="hint-icon text-center">
+                                                <img src="./assets/icons/idea.svg" alt="" title="" />
+                                                <div class="h5 ft-semibold">Tip</div>
+                                            </div>
+                                            <div class="hint-text">
+                                                Your choice will help us understand you better and we can guide you
+                                                choose the best offer.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row hint-row mb-55">
+                                        <div class="form-filed name-filed">
+                                            <mat-form-field>
+                                                <input type="text" tabindex="18" matInput
+                                                    placeholder=" Date of Last Consult" formControlName="dateDoctor">
+                                                <mat-error></mat-error>
+                                            </mat-form-field>
+                                        </div>
+                                        <div class="icon-wrapper">
+                                            <div class="audio-icon">
+                                                <img src="./assets/icons/audio-icon.svg" alt="" class="audioIcon">
+                                            </div>
+                                            <div class="arrow form-arrow slideBtn" (click)="getNext(18)">
+                                                <img src="./assets/icons/previous-arrow.svg" alt="" class="nextButton">
+                                            </div>
+                                            <div class="say-done">
+                                                <span>Say ok once you’re done</span>
+                                            </div>
+                                        </div>
+                                        <div class="hint-box d-flex bg-yellow" [ngClass]="{'hide-hint': tabIndex!=18}">
+                                            <div class="hint-icon text-center">
+                                                <img src="./assets/icons/idea.svg" alt="" title="" />
+                                                <div class="h5 ft-semibold">Tip</div>
+                                            </div>
+                                            <div class="hint-text">
+                                                Your choice will help us understand you better and we can guide you
+                                                choose the best offer.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 9) -->
+                                <div class="col-12 mb-55 togg-btn"
+                                    [ngClass]="{'active': tabIndex==17, 'deactive':tabIndex!=17 }">
+                                    <div class="row">
+                                        <label class="form-label ft-medium"> <span>9)</span> Have you ever taken time
+                                            off work because of your diabetes? If YES please provide details (date &
+                                            duration)</label>
+                                        <div class="form-filed pull-left">
+                                            <mat-button-toggle-group formControlName="isBloodTest" name="fontStyle"
+                                                value="" aria-label="Font Style" #equetyToggle="matButtonToggleGroup"
+                                                tabindex="16" (change)="onIndexChange(17)">
+                                                <mat-button-toggle value="yes">Yes</mat-button-toggle>
+                                                <mat-button-toggle value="no">No</mat-button-toggle>
+                                            </mat-button-toggle-group>
+                                            <mat-error></mat-error>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 10) -->
+                                <div class="col-12 mb-55"
+                                    [ngClass]="{'active': tabIndex==17, 'deactive':tabIndex!=17 }">
+                                    <div class="row hint-row">
+                                        <label class="form-label ft-medium" style="width: 75%;"> <span>10)</span> Please
+                                            provide any
+                                            information, which you feel, will be helpful in processing your
+                                            application</label>
+                                        <div class="form-filed name-filed">
+                                            <mat-form-field>
+                                                <input type="text" tabindex="17" matInput
+                                                    formControlName="detailsOfMedication">
+                                                <mat-error></mat-error>
+                                            </mat-form-field>
+                                        </div>
+                                        <div class="icon-wrapper">
+                                            <div class="audio-icon">
+                                                <img src="./assets/icons/audio-icon.svg" alt="" class="audioIcon">
+                                            </div>
+                                            <div class="arrow form-arrow slideBtn" (click)="getNext(17)">
+                                                <img src="./assets/icons/previous-arrow.svg" alt="" class="nextButton">
+                                            </div>
+                                            <div class="say-done">
+                                                <span>Say ok once you’re done</span>
+                                            </div>
+                                        </div>
+                                        <div class="hint-box d-flex bg-yellow" [ngClass]="{'hide-hint': tabIndex!=17}">
+                                            <div class="hint-icon text-center">
+                                                <img src="./assets/icons/idea.svg" alt="" title="" />
+                                                <div class="h5 ft-semibold">Tip</div>
+                                            </div>
+                                            <div class="hint-text">
+                                                Your choice will help us understand you better and we can guide you
+                                                choose the best offer.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Medical Scheduling -->
+                                <div class="proposal-header-inner">
+                                    <h2 class="h2 ft-bold">Medical Scheduling</h2>
+                                </div>
+                                <!-- 1) -->
+                                <div class="col-12 mb-55"
+                                    [ngClass]="{'active': tabIndex==17, 'deactive':tabIndex!=17 }">
+                                    <label class="row form-label ft-medium" style="width: 75%;"> <span>1)</span> When
+                                        was the condition diagnosed or when did you first experience symptoms of
+                                        high blood sugar?</label>
+                                    <div class="row hint-row">
+                                        <label class="form-label ft-medium label-title">Date Preferences 1:</label>
+                                        <div class="form-filed name-filed">
+                                            <mat-form-field>
+                                                <input type="text" tabindex="17" matInput formControlName="dateOfPref1">
+                                                <mat-error></mat-error>
+                                            </mat-form-field>
+                                        </div>
+                                        <div class="icon-wrapper">
+                                            <div class="audio-icon">
+                                                <img src="./assets/icons/audio-icon.svg" alt="" class="audioIcon">
+                                            </div>
+                                            <div class="arrow form-arrow slideBtn" (click)="getNext(17)">
+                                                <img src="./assets/icons/previous-arrow.svg" alt="" class="nextButton">
+                                            </div>
+                                            <div class="say-done">
+                                                <span>Say ok once you’re done</span>
+                                            </div>
+                                        </div>
+                                        <div class="hint-box d-flex bg-yellow" [ngClass]="{'hide-hint': tabIndex!=17}">
+                                            <div class="hint-icon text-center">
+                                                <img src="./assets/icons/idea.svg" alt="" title="" />
+                                                <div class="h5 ft-semibold">Tip</div>
+                                            </div>
+                                            <div class="hint-text">
+                                                Your choice will help us understand you better and we can guide you
+                                                choose the best offer.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row hint-row">
+                                        <label class="form-label ft-medium label-title">Date Preferences 2:</label>
+                                        <div class="form-filed name-filed">
+                                            <mat-form-field>
+                                                <input type="text" tabindex="17" matInput formControlName="dateOfPref2">
+                                                <mat-error></mat-error>
+                                            </mat-form-field>
+                                        </div>
+                                        <div class="icon-wrapper">
+                                            <div class="audio-icon">
+                                                <img src="./assets/icons/audio-icon.svg" alt="" class="audioIcon">
+                                            </div>
+                                            <div class="arrow form-arrow slideBtn" (click)="getNext(17)">
+                                                <img src="./assets/icons/previous-arrow.svg" alt="" class="nextButton">
+                                            </div>
+                                            <div class="say-done">
+                                                <span>Say ok once you’re done</span>
+                                            </div>
+                                        </div>
+                                        <div class="hint-box d-flex bg-yellow" [ngClass]="{'hide-hint': tabIndex!=17}">
+                                            <div class="hint-icon text-center">
+                                                <img src="./assets/icons/idea.svg" alt="" title="" />
+                                                <div class="h5 ft-semibold">Tip</div>
+                                            </div>
+                                            <div class="hint-text">
+                                                Your choice will help us understand you better and we can guide you
+                                                choose the best offer.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 2) -->
+                                <div class="form-filed mb-55 w-100"
+                                    [ngClass]="{'active': tabIndex==13, 'deactive':tabIndex!=13 }">
+                                    <label class="form-label"> <span>2)</span> Preferred location for medical
+                                        examination</label>
+                                    <mat-button-toggle-group name="fontStyle" aria-label="Font Style"
+                                        formControlName="locationForExamination" tabindex="13"
+                                        (change)="onIndexChange(13)">
+                                        <mat-button-toggle value="home">Home</mat-button-toggle>
+                                        <mat-button-toggle value="dCentre">Diagnostic Centre</mat-button-toggle>
+                                    </mat-button-toggle-group>
+                                    <mat-error></mat-error>
+                                </div>
+                                <!-- 3) -->
+                                <div class="form-filed mb-55 w-100"
+                                    [ngClass]="{'active': tabIndex==13, 'deactive':tabIndex!=13 }">
+                                    <label class="form-label"> <span>3)</span> Preferred Time</label>
+                                    <div class="hint-row d-flex">
+                                        <div class="form-filed name-filed">
+                                            <mat-form-field>
+                                                <div class="d-flex align-items-center">
+                                                    <mat-select disableOptionCentering panelClass="select-option-city"
+                                                        formControlName="preferedTime1" tabindex="11">
+                                                        <mat-option value="3:00">3:00
+                                                        </mat-option>
+                                                        <mat-option value="3:00">3:00
+                                                        </mat-option>
+                                                        <mat-option value="3:00">3:00
+                                                        </mat-option>
+                                                    </mat-select>
+                                                    <img src="./assets/icons/down-arrow.svg" alt="" class="arrow-down">
+                                                </div>
+                                                <mat-error></mat-error>
+                                            </mat-form-field>
+                                        </div>
+                                        <div class="form-filed name-filed">
+                                            <mat-form-field>
+                                                <div class="d-flex align-items-center">
+                                                    <mat-select disableOptionCentering panelClass="select-option-city"
+                                                        formControlName="preferedTime2" tabindex="11">
+                                                        <mat-option value="P.M.">P.M.
+                                                        </mat-option>
+                                                        <mat-option value="P.M.">P.M.
+                                                        </mat-option>
+                                                        <mat-option value="P.M.">P.M.
+                                                        </mat-option>
+                                                    </mat-select>
+                                                    <img src="./assets/icons/down-arrow.svg" alt="" class="arrow-down">
+                                                </div>
+                                                <mat-error></mat-error>
+                                            </mat-form-field>
+                                        </div>
+                                        <div class="hint-box d-flex bg-yellow" [ngClass]="{'hide-hint': tabIndex!=11}">
+                                            <div class="hint-icon text-center">
+                                                <img src="./assets/icons/idea.svg" alt="" title="" />
+                                                <div class="h5 ft-semibold">Tip</div>
+                                            </div>
+                                            <div class="hint-text">
+                                                Your choice will help us understand you better and we can guide you
+                                                choose the best offer.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="note">
+                                    NOTE: Drink only water 12 hours prior
+                                </div>
+                                <!-- Submit Button -->
+                                <div class="button-wrap but-full-width " [ngClass]="{ 'float' : isFloat}">
+                                    <button matStepperNext class="mat-button-lg" mat-raised-button color="primary"
+                                        [disabled]="!firstFormGroup.valid">Submit
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </mat-step>
+
+                <mat-step [stepControl]="secondFormGroup">
+                    <ng-template matStepLabel>Child’s Details</ng-template>
+                    <div class="card card-boder card-shadow">
+                        <div class="card-body">
+
+                        </div>
+                    </div>
+                </mat-step>
+
+            </mat-horizontal-stepper>
+        </div>
+    </div>
+
+</section> <!-- Post Proposal Form End -->
+
+<!-- Footer Start -->
+<app-footer></app-footer>
+<!-- Footer End -->

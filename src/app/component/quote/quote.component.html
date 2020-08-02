@@ -1,0 +1,1421 @@
+<!-- Header Start -->
+<app-product-header></app-product-header>
+<!-- Header End -->
+
+<main>
+    <section class="basic-detail-wrapper bg-gray">
+        <div class="container">
+            <div class="quote-detail-page">
+                <div class="col-12">
+                    <div class="row hide-mob">
+                        <div class="col-11 p-0">
+                            <div class="basic-detail-row">
+                                <span class="basic-heading">Basic Details</span>
+                                <ul class="basic-detail-list ">
+                                    <li>Sachiananda Prasad Reddy</li>
+                                    <li>Male</li>
+                                    <li>24/04/1995</li>
+                                    <li>Non-smoker</li>
+                                    <li>9876543210</li>
+                                    <li>Rahul@gmail.com</li>
+                                </ul>
+
+                            </div>
+                        </div>
+                        <div class="col-1">
+                            <div class="row edit-pensil pull-right pointer">
+                                <img src="./assets/icons/edit-pen.svg" alt="edit" class="edit pen"
+                                    (click)="editGetQuote()" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row d-lg-none justify-space-between">
+                        <div class="basic-detail-row-mob">
+                            <span class="basic-heading">Basic Details</span>
+                            <span>
+                                <img src="./assets/icons/edit-pen.svg" alt="edit" class="edit pen"
+                                    (click)="editGetQuote()" />
+                                <!-- <img src="./assets/icons/down-arrow-sm.svg" alt="edit" class="icons"/> -->
+                            </span>
+                        </div>
+                        <a class="download-brochure" href="javascript:void(0)" download>Download Brochure</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- basic-detail-wrapper End -->
+
+    <section class="premium-history bg-white">
+        <div class="container">
+            <div class="col-12 premium-history-container">
+                <div class="row">
+                    <div class="col-12 col-lg-10">
+                        <div class="premium-form">
+                            <div class="col-lg-3 d-none d-lg-block p-0">
+                                <div class="title">Life cover</div>
+                                <div class="sub-title d-none d-lg-block">Your total insurance cover</div>
+                                <div class="custom-input-field custom-amount-input">
+                                    <mat-form-field>
+                                        <input matInput id="insuranceCover" (focusin)="rupeesSignPrefix = true"
+                                            (focusout)="rupeesSignPrefix = false; getAmntValue($event.target.value)"
+                                            [formControl]="insuranceCover" (keypress)="getValueInWord($event)">
+                                        <span *ngIf="rupeesSignPrefix" class="mob-prefixer amnt-prefixer">
+                                            <span class="rupee"> &#8377; </span>
+                                        </span>
+                                        <mat-error *ngIf="insuranceCover.invalid">{{getErrorMessageCover()}}
+                                        </mat-error>
+                                    </mat-form-field>
+                                </div>
+                                <div class="amt-words d-none d-lg-block"><span class="rupee"> &#8377; </span>
+                                    {{finalval}}</div>
+                            </div>
+
+                            <div class="col-12 p-0 d-lg-none d-flex life-cover">
+                                <div class="title">Life cover</div>
+                                <div class="custom-input-field custom-amount-input">
+                                    <mat-form-field>
+                                        <input matInput id="insuranceCover" (focusin)="rupeesSignPrefix = true"
+                                            (focusout)="rupeesSignPrefix = false; getAmntValue($event.target.value)"
+                                            [formControl]="insuranceCover" (keypress)="getValueInWord($event)">
+                                        <span *ngIf="rupeesSignPrefix" class="mob-prefixer amnt-prefixer">
+                                            <span class="rupee"> &#8377; </span>
+                                        </span>
+                                        <mat-error *ngIf="insuranceCover.invalid">{{getErrorMessageCover()}}
+                                        </mat-error>
+                                    </mat-form-field>
+
+                                </div>
+                            </div>
+
+                            <div class="col-4 col-lg-3 p-0">
+                                <div class="title">Term</div>
+                                <div class="sub-title d-none d-lg-block">No. of years you are covered for</div>
+                                <div class="custom-mat-select">
+                                    <div class="d-flex align-items-center">
+                                        <mat-form-field>
+                                            <div class="d-flex align-items-center">
+                                                <mat-select panelClass="select-option-plan-suggetion" (click)="getValueLogAdd()" (selectionChange)="getValueLog()"  disableOptionCentering
+                                                    [formControl]="term">
+                                                    <perfect-scrollbar class="select-custom-scroll">
+                                                        <mat-option value="1">1 Year</mat-option>
+                                                        <mat-option value="2">2 Years</mat-option>
+                                                        <mat-option value="3">3 Years
+                                                        </mat-option>
+                                                        <mat-option value="4">4 Years</mat-option>
+                                                        <mat-option value="5">5 Years</mat-option>
+                                                        <mat-option value="35">35 Years</mat-option>
+                                                    </perfect-scrollbar>
+                                                </mat-select>
+                                                <img src="./assets/icons/down-arrow.svg" alt="" class="arrow-down">
+                                            </div>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-4 col-lg-3 p-0">
+                                <div class="title">Pay for</div>
+                                <div class="sub-title d-none d-lg-block">No. of years you are paying for</div>
+                                <div class="custom-mat-select">
+                                    <mat-form-field>
+                                        <div class="d-flex align-items-center">
+                                            <mat-select panelClass="select-option-plan-suggetion" disableOptionCentering
+                                                [formControl]="payFor">
+                                                <perfect-scrollbar class="select-custom-scroll">
+                                                    <mat-option value="1">1 Year</mat-option>
+                                                    <mat-option value="2">2 Years</mat-option>
+                                                    <mat-option value="3">3 Years
+                                                    </mat-option>
+                                                    <mat-option value="4">4 Years</mat-option>
+                                                    <mat-option value="5">5 Years</mat-option>
+                                                    <mat-option value="35">35 Years</mat-option>
+                                                </perfect-scrollbar>
+                                            </mat-select>
+                                            <img src="./assets/icons/down-arrow.svg" alt="" class="arrow-down">
+                                        </div>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="col-4 col-lg-3 p-0">
+                                <div class="title">Payment</div>
+                                <div class="sub-title d-none d-lg-block">Your payment frequency</div>
+                                <div class="custom-mat-select">
+                                    <mat-form-field>
+                                        <div class="d-flex align-items-center">
+                                            <mat-select panelClass="select-option-plan-suggetion" disableOptionCentering
+                                                [formControl]="paymentFreq">
+                                                <mat-option value="m">Monthly</mat-option>
+                                                <mat-option value="q">Quarterly</mat-option>
+                                                <mat-option value="y">Yearly
+                                                </mat-option>
+                                            </mat-select>
+                                            <img src="./assets/icons/down-arrow.svg" alt="" class="arrow-down">
+                                        </div>
+                                    </mat-form-field>
+                                    <!-- <mat-form-field>
+                                        <mat-select disableOptionCentering  [formControl]="paymentFreq">
+                                            <mat-option value="domain">Domain</mat-option>
+                                            <mat-option value="exact">Exact</mat-option>
+                                        </mat-select>
+                                    </mat-form-field> -->
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 d-none d-lg-block bg-yellow premium-details ">
+                        <a href="javascript:void(0)" class="link pointer">Download Brochure</a>
+                        <div class="premium-amount-text">Premium Amount</div>
+                        <div class="text-amount-wtapper d-flex  ">
+                            <span class="text-amount-rupee pr-2">&#8377; 675</span>
+                            <span class="gst-text">Inc. of GST</span>
+                        </div>
+                        <div class="breakup-wrapper pointer link"  id="breakup-wrapper">
+                            
+                            <div class="pointer pop-up-view">
+                                <span (click)="getTooltipshowhide()">
+                                    Break-up <img src="./assets/icons/drop-arrow-blue.svg" alt="" class="down-arrow">
+                                </span>
+                                
+                                <div class="breakup-popup" *ngIf="showtooltip" id="breakup-popup">
+                                    <a class="closebutton" (click)="closeTooltip()">
+                                        <img src="./assets/icons/close.svg" alt="close"
+                                            class="close-icon">
+                                    </a>
+                                    <div class="sticky-benefits">
+                                        <div class="benefits-list flex-column">
+                                            <div class="d-flex justify-space-between w-100 base-plan">
+                                                <div class="lable">Premium Amount</div>
+                                                <div class="info">
+                                                    <div class="amout"><span class="rupee"> &#8377; </span> 675</div>
+                                                </div>
+                                            </div>
+
+                                            <div class="benefits-sub-list w-100">
+                                                <div class="add-benifits">Additional Benefits</div>
+                                                <div class="benefits-sub" [ngClass]="{'remove-list':toggle1}">
+                                                    <div class="lable">Better Half Benefit</div>
+                                                    <div class="info">
+                                                        <div class="amout"><span class="rupee"> &#8377; </span> 75</div>
+                                                        <div class="remove-click" (click)="remove()"><img
+                                                                src="./assets/icons/circle-close.svg"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="benefits-sub">
+                                                    <div class="lable">Top-up Benefit</div>
+                                                    <div class="info">
+                                                        <div class="amout"><span class="rupee"> &#8377; </span> 47</div>
+                                                        <div class="remove-click"><img
+                                                                src="./assets/icons/circle-close.svg"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="benefits-sub">
+                                                    <div class="lable">Accidental Death Benefit</div>
+                                                    <div class="info">
+                                                        <div class="amout"><span class="rupee"> &#8377; </span> 12</div>
+                                                        <div class="remove-click"><img
+                                                                src="./assets/icons/circle-close.svg"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="benefits-sub">
+                                                    <div class="lable">Decreasing Sum Assured</div>
+                                                    <div class="info">
+                                                        <div class="amout"><span class="rupee"> &#8377; </span> 85</div>
+                                                        <div class="remove-click"><img
+                                                                src="./assets/icons/circle-close.svg"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="benefits-sub">
+                                                    <div class="lable">Criticare +</div>
+                                                    <div class="info">
+                                                        <div class="amout"><span class="rupee"> &#8377; </span> 75</div>
+                                                        <div class="remove-click"><img
+                                                                src="./assets/icons/circle-close.svg"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="benefits-list base-plan">
+                                            <div class="lable">GST</div>
+                                            <div class="info">
+                                                <div class="amout"><span class="rupee"> &#8377; </span> 75</div>
+                                            </div>
+                                        </div>
+                                        <div class="benefits-list base-plan">
+                                            <div class="lable">Total Premium</div>
+                                            <div class="info">
+                                                <div class="amout h2 ft-bold mb-0"><span class="rupee"> &#8377; </span>
+                                                    1,266</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- premium-history End -->
+
+    <section class="section offers-you bg-gray" *ngIf="!customePlan">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 section-header text-center">
+                    <h1 class="h1 mb-lg-0">We have shortlisted some offers for you</h1>
+                </div> <!-- section-header end-->
+                <div class="col-12 section-pannel">
+                    <div class="card-layout hide-mob">
+                        <div class="card selected" *ngIf="customePlanSelected">
+                            <div class="card-body p-0">
+                                <div class="offer-top text-center">
+                                    <div class="icon-box">
+                                        <img src="./assets/icons/customized-plan.svg" alt="" />
+                                    </div>
+                                    <div class="offer-heading">
+                                        <h2>Your Plan</h2>
+                                        <p>Customise your needs.</p>
+                                    </div>
+                                </div>
+                                <div class="offer-amt bg-yellow text-center">
+                                    <h2 class="h1"> <span class="rupee"> &#8377; </span>850</h2>
+                                    <p class="small-text">Incl. of GST</p>
+                                </div>
+                                <div class="offer-details">
+                                    <ul class="bullet-list remove-bullet-list">
+                                        <perfect-scrollbar class="scroll-div">
+                                            <li [ngClass]="{'remove-list':toggle1}"><span class="benifit-list">Better
+                                                    Half Benefit <span class="rupee"> &#8377; </span> 75</span>
+                                                <span class="remove-click" (click)="remove()"><img
+                                                        src="./assets/icons/circle-close.svg" /></span></li>
+                                            <li><span class="benifit-list">Top-up Benefit <span class="rupee"> &#8377;
+                                                    </span> 47 </span>
+                                                <span class="remove-click"><img
+                                                        src="./assets/icons/circle-close.svg" /></span></li>
+                                            <li><span class="benifit-list">CritiCare+ <span class="rupee"> &#8377;
+                                                    </span> 124</span> <span class="remove-click"><img
+                                                        src="./assets/icons/circle-close.svg" /></span></li>
+                                            <li><span class="benifit-list">Better Half Benefit <span class="rupee">
+                                                        &#8377; </span> 75</span>
+                                                <span class="remove-click"><img
+                                                        src="./assets/icons/circle-close.svg" /></span></li>
+                                        </perfect-scrollbar>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="card-footer button-wrap d-flex justify-content-between">
+                                <button mat-button color="primary" (click)="getCustomPlan()">Edit Plan</button>
+                                <button mat-raised-button color="primary" (click)="getRecomAddOn()">Buy Now</button>
+                            </div>
+                        </div>
+                        <div class="card recommended">
+                            <div class="tag">Recommened</div>
+                            <div class="card-body p-0">
+                                <div class="offer-top text-center">
+                                    <div class="icon-box">
+                                        <img src="./assets/icons/money-bag.svg" alt="" />
+                                    </div>
+                                    <div class="offer-heading">
+                                        <h2>Waiver of Premium</h2>
+                                        <p>Simple life insurance cover</p>
+                                    </div>
+                                </div>
+                                <div class="offer-amt bg-yellow text-center">
+                                    <h2 class="h1"> <span class="rupee"> &#8377; </span>650</h2>
+                                    <p class="small-text">Incl. of GST</p>
+                                </div>
+                                <div class="offer-details">
+                                    <ul class="bullet-list">
+                                        <perfect-scrollbar class="scroll-div">
+                                            <li>Cover 35 critical illnesses.</li>
+                                            <li>Future premiums will be waived off and policy will continue as usual
+                                                if diagnosed with these 35 illness.
+                                            </li>
+                                            <li>Cover 35 critical illnesses.</li>
+                                            <li>Future premiums will be waived off and policy will continue as usual
+                                                if diagnosed with these 35 illness.
+                                            </li>
+                                        </perfect-scrollbar>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="card-footer button-wrap d-flex justify-content-center">
+                                <button mat-raised-button color="primary" (click)="getRecomAddOn()">Buy Now</button>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body p-0">
+                                <div class="offer-top text-center">
+                                    <div class="icon-box">
+                                        <img src="./assets/icons/family.svg" alt="" />
+                                    </div>
+                                    <div class="offer-heading">
+                                        <h2>Better Half Benefit</h2>
+                                        <p>Simple cover + Extra cover for spouse</p>
+                                    </div>
+                                </div>
+                                <div class="offer-amt bg-yellow text-center">
+                                    <h2 class="h1"> <span class="rupee"> &#8377; </span>675</h2>
+                                    <p class="small-text">Incl. of GST</p>
+                                </div>
+                                <div class="offer-details">
+                                    <ul class="bullet-list">
+                                        <perfect-scrollbar class="scroll-div">
+                                            <li>After your demise your nominee will get the cover benefits.</li>
+                                            <li>50% of the life cover (max up to 1cr.) will start for your spouse
+                                                without paying extra premium.</li>
+                                            <li>Cover 35 critical illnesses.</li>
+                                            <li>Future premiums will be waived off and policy will continue as usual
+                                                if diagnosed with these 35 illness.
+                                            </li>
+                                        </perfect-scrollbar>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="card-footer button-wrap d-flex justify-content-center">
+                                <button mat-stroked-button (click)="getRecomAddOn()">Buy Now</button>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body p-0">
+                                <div class="offer-top text-center">
+                                    <div class="icon-box">
+                                        <img src="./assets/icons/growth.svg" alt="" />
+                                    </div>
+                                    <div class="offer-heading">
+                                        <h2>Top-up Benefit</h2>
+                                        <p> Simple cover and Extra cover for spouse + Top-up cover up to 1 cr.</p>
+                                    </div>
+                                </div>
+                                <div class="offer-amt bg-yellow text-center">
+                                    <h2 class="h1"> <span class="rupee"> &#8377; </span>850</h2>
+                                    <p class="small-text">Incl. of GST</p>
+                                </div>
+                                <div class="offer-details">
+                                    <ul class="bullet-list">
+                                        <perfect-scrollbar class="scroll-div">
+                                            <li>Opt for either 5% or 10% top-up rates.</li>
+                                            <li>You can choose to opt out anytime at zero cost </li>
+                                            <li>Future premiums will be waived off and policy will continue as usual if
+                                                diagnosed with these 35 illness.</li>
+                                        </perfect-scrollbar>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="card-footer button-wrap d-flex justify-content-center">
+                                <button mat-stroked-button (click)="getRecomAddOn()">Buy Now</button>
+                            </div>
+                        </div>
+                    </div> <!-- card-layout for desktop end-->
+
+                    <div class="card-layout-mob show-mob">
+                        <div class="card selected">
+                            <div class="card-body p-0">
+                                <div class="offer-top">
+                                    <div class="icon-box">
+                                        <img src="./assets/icons/customized-plan.svg" alt="" />
+                                    </div>
+                                    <div class="offer-heading">
+                                        <h2>Your Plan</h2>
+                                        <p>Customise your needs.</p>
+                                    </div>
+                                    <div class="button-radio">
+                                        <mat-radio-button checked></mat-radio-button>
+                                    </div>
+                                </div>
+                                <div class="offer-amt bg-yellow text-center">
+                                    <h2 class="h1"> <span class="rupee"> &#8377; </span>850</h2>
+                                    <p class="small-text">Incl. of GST</p>
+                                </div>
+                                <div class="offer-details">
+                                    <ul class="bullet-list remove-bullet-list">
+                                        <li [ngClass]="{'remove-list':toggle1}"><span>Better Half Benefit <span
+                                                    class="rupee"> &#8377; </span> 75</span>
+                                            <span class="remove-click" (click)="remove()"><img
+                                                    src="./assets/icons/circle-close.svg" /></span></li>
+                                        <li *ngIf="show"><span>Top-up Benefit <span class="rupee"> &#8377; </span> 47
+                                            </span>
+                                            <span class="remove"><img src="./assets/icons/circle-close.svg" /></span>
+                                        </li>
+                                        <li *ngIf="show"><span>CritiCare+ <span class="rupee"> &#8377; </span>
+                                                124</span> <span class="remove"><img
+                                                    src="./assets/icons/circle-close.svg" /></span></li>
+                                        <li *ngIf="show"><span>Better Half Benefit <span class="rupee"> &#8377; </span>
+                                                75</span>
+                                            <span class="remove"><img src="./assets/icons/circle-close.svg" /></span>
+                                        </li>
+                                    </ul>
+                                    <div class="showmore d-flex justify-content-center mt-20" (click)="showMore()"
+                                        [ngClass]="{'rotate':toggle}">
+                                        <img src="./assets/icons/orange-down-arrow.svg" alt="" title="" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer button-wrap d-flex justify-content-end">
+                                <button mat-button color="primary">Edit Plan</button>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="tag">Recommened</div>
+                            <div class="card-body p-0">
+                                <div class="offer-top text-center">
+                                    <div class="icon-box">
+                                        <img src="./assets/icons/money-bag.svg" alt="" />
+                                    </div>
+                                    <div class="offer-heading">
+                                        <h2>Waiver of Premium</h2>
+                                        <p>Simple life insurance cover</p>
+                                    </div>
+                                    <div class="button-radio">
+                                        <mat-radio-button></mat-radio-button>
+                                    </div>
+                                </div>
+                                <div class="offer-amt bg-yellow text-center">
+                                    <h2 class="h1"> <span class="rupee"> &#8377; </span>650</h2>
+                                    <p class="small-text">Incl. of GST</p>
+                                </div>
+                                <div class="offer-details">
+                                    <ul class="bullet-list">
+                                        <li>Cover 35 critical illnesses.</li>
+                                        <li *ngIf="show">Future premiums will be waived off and policy will continue as
+                                            usual if
+                                            diagnosed with these 35 illness.</li>
+                                        <li *ngIf="show">Cover 35 critical illnesses.</li>
+                                        <li *ngIf="show">Future premiums will be waived off and policy will continue as
+                                            usual if
+                                            diagnosed with these 35 illness.</li>
+                                    </ul>
+                                    <div class="showmore d-flex justify-content-center mt-20" (click)="showMore()"
+                                        [ngClass]="{'rotate':toggle}">
+                                        <img src="./assets/icons/orange-down-arrow.svg" alt="" title="" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body p-0">
+                                <div class="offer-top text-center">
+                                    <div class="icon-box">
+                                        <img src="./assets/icons/family.svg" alt="" />
+                                    </div>
+                                    <div class="offer-heading">
+                                        <h2>Better Half Benefit</h2>
+                                        <p>Simple cover + Extra cover for spouse</p>
+                                    </div>
+                                    <div class="button-radio">
+                                        <mat-radio-button></mat-radio-button>
+                                    </div>
+                                </div>
+                                <div class="offer-amt bg-yellow text-center">
+                                    <h2 class="h1"> <span class="rupee"> &#8377; </span>675</h2>
+                                    <p class="small-text">Incl. of GST</p>
+                                </div>
+                                <div class="offer-details">
+                                    <ul class="bullet-list">
+                                        <li>After your demise your nominee will get the cover benefits.</li>
+                                        <li *ngIf="show">50% of the life cover (max up to 1cr.) will start for your
+                                            spouse without
+                                            paying extra premium.</li>
+                                        <li *ngIf="show">Cover 35 critical illnesses.</li>
+                                        <li *ngIf="show">Future premiums will be waived off and policy will continue as
+                                            usual if
+                                            diagnosed with these 35 illness.
+                                        </li>
+                                    </ul>
+                                    <div class="showmore d-flex justify-content-center mt-20" (click)="showMore()"
+                                        [ngClass]="{'rotate':toggle}">
+                                        <img src="./assets/icons/orange-down-arrow.svg" alt="" title="" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body p-0">
+                                <div class="offer-top text-center">
+                                    <div class="icon-box">
+                                        <img src="./assets/icons/growth.svg" alt="" />
+                                    </div>
+                                    <div class="offer-heading">
+                                        <h2>Top-up Benefit</h2>
+                                        <p> Simple cover and Extra cover for spouse + Top-up cover up to 1 cr.</p>
+                                    </div>
+                                    <div class="button-radio">
+                                        <mat-radio-button></mat-radio-button>
+                                    </div>
+                                </div>
+                                <div class="offer-amt bg-yellow text-center">
+                                    <h2 class="h1"> <span class="rupee"> &#8377; </span>850</h2>
+                                    <p class="small-text">Incl. of GST</p>
+                                </div>
+                                <div class="offer-details">
+                                    <ul class="bullet-list">
+                                        <li>Opt for either 5% or 10% top-up rates.</li>
+                                        <li *ngIf="show">You can choose to opt out anytime at zero cost </li>
+                                        <li *ngIf="show">Future premiums will be waived off and policy will continue as
+                                            usual if
+                                            diagnosed with these 35 illness.</li>
+                                    </ul>
+                                    <div class="showmore d-flex justify-content-center mt-20" (click)="showMore()"
+                                        [ngClass]="{'rotate':toggle}">
+                                        <img src="./assets/icons/orange-down-arrow.svg" alt="" title="" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> <!-- card-layout for mobile end-->
+                </div> <!-- section-pannel end -->
+                <div class="col-12 text-center mt-20">
+                    <span (click)="getCustomPlan()" class="link ft-semibold pointer" *ngIf="!customePlanSelected">
+                        Customize your plan </span>
+                </div> <!-- link div end -->
+            </div>
+        </div>
+    </section>
+    <!-- offers-you section end-->
+
+    <section class="section additional-benefits bg-gray" *ngIf="customePlan">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 section-header">
+                    <h1 class="h1">Add a little more to your Zindagi…</h1>
+                    <span class="sub-heading-muted">Additional benefits for your plan</span>
+                </div>
+                <div class="col-12 section-pannel">
+                    <div class="row">
+                        <div class="col-12 col-lg-8 addon-container" id="benefits-addon">
+                            <div class="row" id="x">
+                                <div class="col-12 col-lg-6 mb-3">
+                                    <div class="card h-100">
+                                        <div class="card-benefit">
+                                            <div class="card-body">
+                                                <div class="card-heading round">
+                                                    <h4 class="card-title">Better Half Benefit</h4>
+                                                    <div class="button-checkbox">
+                                                        <mat-checkbox [checked]=true></mat-checkbox>
+                                                    </div>
+                                                </div>
+                                                <p class="card-text">Better Half Benefit gives an extra cover to your
+                                                    spouse
+                                                    in case of your unfortunate demise. </p>
+                                                <div class="price-container d-flex justify-content-between">
+                                                    <div class="price-text"> &#64; &#x20B9; 75</div>
+                                                    <div class="form-filed">
+                                                        <mat-form-field>
+                                                            <div class="d-flex align-items-center">
+                                                                <mat-select disableOptionCentering panelClass="select-option-additional"
+                                                                    [formControl]="additionalSelect">
+                                                                    <mat-option value="op1">Lorem Ipsum</mat-option>
+                                                                    <mat-option value="op2">Lorem Ipsum</mat-option>
+                                                                    <mat-option value="op3">Lorem Ipsum</mat-option>
+                                                                </mat-select>
+                                                                <img src="./assets/icons/down-arrow.svg" alt=""
+                                                                    class="arrow-down">
+                                                            </div>
+                                                            <mat-error *ngIf="payFor.invalid">
+                                                            </mat-error>
+                                                        </mat-form-field>
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-lg-6 mb-3">
+                                    <div class="card h-100">
+                                        <div class="card-benefit">
+                                            <div class="card-body">
+                                                <div class="card-heading round">
+                                                    <h4 class="card-title">Top-up Benefit</h4>
+                                                    <div class="button-checkbox">
+                                                        <mat-checkbox></mat-checkbox>
+                                                    </div>
+                                                </div>
+                                                <p class="card-text">Increases your life cover systematically as per
+                                                    your
+                                                    chosen rate.</p>
+                                                <div class="price-container d-flex justify-content-between">
+                                                    <div class="price-text"> &#64; &#x20B9; 47</div>
+                                                    <div class="form-filed">
+                                                        <mat-form-field>
+                                                            <div class="d-flex align-items-center">
+                                                                <mat-select disableOptionCentering panelClass="select-option-additional"
+                                                                    [formControl]="additionalSelect">
+                                                                    <mat-option value="op1">Lorem Ipsum</mat-option>
+                                                                    <mat-option value="op2">Lorem Ipsum</mat-option>
+                                                                    <mat-option value="op3">Lorem Ipsum</mat-option>
+                                                                </mat-select>
+                                                                <img src="./assets/icons/down-arrow.svg" alt=""
+                                                                    class="arrow-down">
+                                                            </div>
+                                                            <mat-error *ngIf="payFor.invalid">
+                                                            </mat-error>
+                                                        </mat-form-field>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-lg-6 mb-3">
+                                    <div class="card h-100">
+                                        <div class="card-benefit">
+                                            <div class="card-body">
+                                                <div class="card-heading round">
+                                                    <h4 class="card-title">CritiCare</h4>
+                                                    <div class="button-checkbox">
+                                                        <mat-checkbox (change)="showOptions('criticare')"></mat-checkbox>
+                                                    </div>
+                                                </div>
+                                                <p class="card-text">CritiCare+ is a critical illness plan which
+                                                    covers 17
+                                                    Critical Illnesses.</p>
+                                              
+                                                <div class="price-container d-flex justify-content-between">
+                                                    <div class="price-text"> &#64; &#x20B9; 75</div>
+                                                    <div class="form-filed">
+                                                        <mat-form-field>
+                                                            <div class="d-flex align-items-center">
+                                                                <mat-select disableOptionCentering panelClass="select-option-additional"
+                                                                    [formControl]="additionalSelect">
+                                                                    <mat-option value="op1">Lorem Ipsum</mat-option>
+                                                                    <mat-option value="op2">Lorem Ipsum</mat-option>
+                                                                    <mat-option value="op3">Lorem Ipsum</mat-option>
+                                                                </mat-select>
+                                                                <img src="./assets/icons/down-arrow.svg" alt=""
+                                                                    class="arrow-down">
+                                                            </div>
+                                                            <mat-error *ngIf="payFor.invalid">
+                                                            </mat-error>
+                                                        </mat-form-field>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-lg-6 mb-3">
+                                    <div class="card h-100">
+                                        <div class="card-benefit">
+                                            <div class="card-body">
+                                                <div class="card-heading round">
+                                                    <h4 class="card-title">Accidental Death Benefit</h4>
+                                                    <div class="button-checkbox">
+                                                        <mat-checkbox (change)="showOptions('accidental')"></mat-checkbox>
+                                                    </div>
+                                                </div>
+                                                <p class="card-text">In case an accident claims your life, your family
+                                                    will
+                                                    get the selected accidental death cover.</p>
+                                                
+                                                <div class="price-container d-flex justify-content-between">
+                                                    <div class="price-text"> &#64; &#x20B9; 12</div>
+                                                    <div class="form-filed">
+                                                        <mat-form-field>
+                                                            <div class="d-flex align-items-center">
+                                                                <mat-select disableOptionCentering panelClass="select-option-additional"
+                                                                    [formControl]="additionalSelect">
+                                                                    <mat-option value="op1">Lorem Ipsum</mat-option>
+                                                                    <mat-option value="op2">Lorem Ipsum</mat-option>
+                                                                    <mat-option value="op3">Lorem Ipsum</mat-option>
+                                                                </mat-select>
+                                                                <img src="./assets/icons/down-arrow.svg" alt=""
+                                                                    class="arrow-down">
+                                                            </div>
+                                                            <mat-error *ngIf="payFor.invalid">
+                                                            </mat-error>
+                                                        </mat-form-field>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-lg-6 mb-3">
+                                    <div class="card h-100">
+                                        <div class="card-benefit">
+                                            <div class="card-body">
+                                                <div class="card-heading round">
+                                                    <h4 class="card-title">Waiver of Premium Benefit</h4>
+                                                    <div class="button-checkbox">
+                                                        <mat-checkbox></mat-checkbox>
+                                                    </div>
+                                                </div>
+                                                <p class="card-text">It covers 35+ critical ilnesses, so you don't have
+                                                    to
+                                                    worry about paying premiums and can focus on your health.</p>
+                                                
+                                                <div class="price-container d-flex justify-content-between">
+                                                    <div class="price-text"> &#64; &#x20B9; 100</div>
+                                                    <div class="form-filed">
+                                                        <mat-form-field>
+                                                            <div class="d-flex align-items-center">
+                                                                <mat-select disableOptionCentering panelClass="select-option-additional"
+                                                                    [formControl]="additionalSelect">
+                                                                    <mat-option value="op1">Lorem Ipsum</mat-option>
+                                                                    <mat-option value="op2">Lorem Ipsum</mat-option>
+                                                                    <mat-option value="op3">Lorem Ipsum</mat-option>
+                                                                </mat-select>
+                                                                <img src="./assets/icons/down-arrow.svg" alt=""
+                                                                    class="arrow-down">
+                                                            </div>
+                                                            <mat-error *ngIf="payFor.invalid">
+                                                            </mat-error>
+                                                        </mat-form-field>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="card-add-benefit" *ngIf="isAccidental">
+                                            <div class="card-body">
+                                                <p>Since you have selected <span>‘Accidental Death Benefit’</span>,
+                                                    you are not eligible for <span>‘Waiver of Premium benefit’</span>
+                                                </p>
+                                                <a class="link mt-3" href="javascript:void()">Add this benefit</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-lg-6 mb-3">
+                                    <div class="card h-100">
+                                        <div class="card-benefit">
+                                            <div class="card-body">
+                                                <div class="card-heading round">
+                                                    <h4 class="card-title">Decreasing Sum Assured</h4>
+                                                    <div class="button-checkbox">
+                                                        <mat-checkbox></mat-checkbox>
+                                                    </div>
+                                                </div>
+                                                <div class="pull-right">
+                                                    <!-- <mat-checkbox>Checkbox</mat-checkbox> -->
+                                                </div>
+                                                <p class="card-text">Get the same term insurance benefits for premium
+                                                    lower than level sum assured rates.</p>
+                                               
+                                                <div class="price-container d-flex justify-content-between">
+                                                    <div class="price-text"> &#64; &#x20B9; 85</div>
+                                                    <div class="form-filed">
+                                                        <mat-form-field>
+                                                            <div class="d-flex align-items-center">
+                                                                <mat-select disableOptionCentering panelClass="select-option-additional"
+                                                                    [formControl]="additionalSelect">
+                                                                    <mat-option value="op1">Lorem Ipsum</mat-option>
+                                                                    <mat-option value="op2">Lorem Ipsum</mat-option>
+                                                                    <mat-option value="op3">Lorem Ipsum</mat-option>
+                                                                </mat-select>
+                                                                <img src="./assets/icons/down-arrow.svg" alt=""
+                                                                    class="arrow-down">
+                                                            </div>
+                                                            <mat-error *ngIf="payFor.invalid">
+                                                            </mat-error>
+                                                        </mat-form-field>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-add-benefit" *ngIf="isCritiCarePlus">
+                                            <div class="card-body">
+                                                <p>Since you have selected <span>‘CritiCare+’</span>,
+                                                    you are not eligible for <span>‘Decreasing sum assured’</span></p>
+                                                <a class="link mt-3" href="javascript:void()">Add this benefit</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-4 d-none d-lg-block"  id="my-plan">
+                            <div class="row">
+                                <div class="sticky-card-wrap" [ngClass]="{ 'sticky' : isSticky}">
+                                    
+                                    <div class="card your-plan">
+                                        <div class="card-header">
+                                            <h4 class="card-main-title mb-0">Your Plan</h4>
+                                        </div>
+                                        <div class="card-body p-0">
+                                            <div class="col-12">
+                                                <div class="row selected-plan">
+                                                    <span>Base Plan</span>
+                                                    <span>&#x20B9; 750</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="row">
+                                                    <span class="additional-plan-text">Additional Benefits</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="row additional-plan">
+                                                    <span class="additional-text">Better Half Benefit</span>
+                                                    <span class="additional-price">&#x20B9; 75</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="row additional-plan">
+                                                    <span class="additional-text">Top-up Benefit</span>
+                                                    <span class="additional-price">&#x20B9; 47</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="row additional-plan">
+                                                    <span class="additional-text">Accidental Death Benefit</span>
+                                                    <span class="additional-price">&#x20B9; 12</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="row additional-plan">
+                                                    <span class="additional-text">Decreasing Sum Assured</span>
+                                                    <span class="additional-price">&#x20B9; 85</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="row additional-plan">
+                                                    <span class="additional-text">Criticare +</span>
+                                                    <span class="additional-price">&#x20B9; 75</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <button  mat-raised-button class="card-footer btn">
+                                            <div class="text-white">
+                                                <span class="pay-premium mr-2">PAY PREMIUM</span>
+                                                <span class="text-amount mr-1">&#x20B9; 1,044</span>
+                                                <span class="small-text"> Inc. of GST </span>
+                                            </div>
+                                        </button>
+                                    </div>
+                                    <div class="m-auto pt-3 text-center">
+                                        <span (click)="showPlan()" class="link compare-plan pointer"> Compare my plan with
+                                            recommended </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                   
+                    <div class="col-12 exper-advice">
+                        <div class="d-flex align-items-center">
+                            <span class="sub-heading-muted">Need expert advice?</span>
+                            <div class="button-wrap">
+                                <button mat-stroked-button color="primary"><img src="./assets/icons/chat-orange.svg" alt=""
+                                        title="" class="img-responsive mr-1 align-bottom" />Chat with our experts</button>
+                            </div>
+                            <span class="or">OR</span>
+                            <div class="button-wrap">
+                                <button mat-stroked-button color="primary" (click)="getCallBack()"><img
+                                        src="./assets/icons/call-orange.svg" alt="" title=""
+                                        class="img-responsive mr-1 align-bottom" />Schedule a call back</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Offers-you End -->
+
+    <section class="criti-care bg-gray" *ngIf="!customePlan">
+        <div class="container">
+            <div class="product-offer d-flex">
+                <div class="product-offer-left d-flex">
+                    <div class="pro-details d-flex">
+                        <div class="prod-icon">
+                            <img src="./assets/icons/criti-care.svg" alt="" />
+                        </div>
+                        <div class="prod-info">
+                            <h3 class="h3">CritiCare+</h3>
+                            <p>CritiCare+ is a critical illness plan which covers 17 critical illnesses.</p>
+                        </div>
+                    </div>
+                    <div class="pro-action d-flex">
+                        <div class="prod-price">
+                            <span>Just</span>
+                            <span class="price"><span class="rupee"> &#8377; </span> 150</span>
+                            <span class="criti-drop d-flex d-md-none align-items-baseline">
+                                <span>For</span>
+                                <div class="form-filed">
+                                    <mat-form-field>
+                                        <div class="d-flex align-items-center">
+                                            <mat-select disableOptionCentering panelClass="select-option-lowest-drop"
+                                                [formControl]="lowestDropSelect">
+                                                <mat-option value="op1">1 Cr.</mat-option>
+                                                <mat-option value="op2">50 L</mat-option>
+                                                <mat-option value="op3">25 L</mat-option>
+                                            </mat-select>
+                                            <img src="./assets/icons/down-arrow.svg" alt=""
+                                                class="arrow-down">
+                                        </div>
+                                        <mat-error *ngIf="payFor.invalid">
+                                        </mat-error>
+                                    </mat-form-field>
+                                </div>
+                            </span>
+                            <span class="text-small">Lowest Price</span>
+                            <span class="criti-drop d-none d-md-block">
+                                <div class="form-filed">
+                                    <mat-form-field>
+                                        <div class="d-flex align-items-center">
+                                            <mat-select disableOptionCentering panelClass="select-option-lowest-drop"
+                                                [formControl]="lowestDropSelect">
+                                                <mat-option value="op1">1 Cr.</mat-option>
+                                                <mat-option value="op2">50 L</mat-option>
+                                                <mat-option value="op3">25 L</mat-option>
+                                            </mat-select>
+                                            <img src="./assets/icons/down-arrow.svg" alt=""
+                                                class="arrow-down">
+                                        </div>
+                                        <mat-error *ngIf="payFor.invalid">
+                                        </mat-error>
+                                    </mat-form-field>
+                                </div>
+                            </span>
+                        </div>
+                        <div class="button-wrap">
+                            <button mat-raised-button color="primary">Add</button>
+                            <!-- <button mat-stroked-button color="primary">Remove</button> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="product-offer-right d-flex">
+                    <h3 class="h3">Did you Know</h3>
+                    <p>2 out of 3 people who take Zindagi Plus also opt for CritiCare+</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- criti-care offer section end -->
+
+    <section class="ideal-partner bg-white text-center col-p-20">
+        <div class="container">
+            <h2 class="heading">What makes us your ideal partner</h2>
+            <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
+                <div ngxSlickItem class="slide">
+                    <div class="card-layout justify-content-center">
+                        <div class="card card-boder">
+                            <div class="card-body">
+                                <div class="card-icon">
+                                    <img src="./assets/icons/high-quality-service.svg" alt="" class="icon" />
+                                </div>
+                                <div class="card-text-box">
+                                    <h4 class="card-title">High Quality Service</h4>
+                                    <p class="card-text">Call us or chat with us; we’re online 24*7 for hassle
+                                        free
+                                        process.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card card-boder">
+                            <div class="card-body">
+                                <div class="card-icon">
+                                    <img src="./assets/icons/expert-advisors.svg" alt="" class="icon">
+                                </div>
+                                <div class="card-text-box">
+                                    <h4 class="card-title">Expert Advisors</h4>
+                                    <p class="card-text">You can manage your funds with the help of our expert
+                                        advisors.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card card-boder">
+                            <div class="card-body">
+                                <div class="card-icon">
+                                    <img src="./assets/icons/customer-centric.svg" alt="" class="icon">
+                                </div>
+                                <div class="card-text-box">
+                                    <h4 class="card-title">Customer Centric Approach</h4>
+                                    <p class="card-text">We help you make independent choices based on your
+                                        needs.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div ngxSlickItem class="slide">
+                    <div class="card-layout justify-content-center">
+                        <div class="card card-boder">
+                            <div class="card-body">
+                                <div class="card-icon">
+                                    <img src="./assets/icons/high-quality-service.svg" alt="" class="icon" />
+                                </div>
+                                <div class="card-text-box">
+                                    <h4 class="card-title">High Quality Service</h4>
+                                    <p class="card-text">Call us or chat with us; we’re online 24*7 for hassle
+                                        free
+                                        process.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card card-boder">
+                            <div class="card-body">
+                                <div class="card-icon">
+                                    <img src="./assets/icons/expert-advisors.svg" alt="" class="icon">
+                                </div>
+                                <div class="card-text-box">
+                                    <h4 class="card-title">Expert Advisors</h4>
+                                    <p class="card-text">You can manage your funds with the help of our expert
+                                        advisors.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card card-boder">
+                            <div class="card-body">
+                                <div class="card-icon">
+                                    <img src="./assets/icons/customer-centric.svg" alt="" class="icon">
+                                </div>
+                                <div class="card-text-box">
+                                    <h4 class="card-title">Customer Centric Approach</h4>
+                                    <p class="card-text">We help you make independent choices based on your
+                                        needs.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div ngxSlickItem class="slide">
+                    <div class="card-layout justify-content-center">
+                        <div class="card card-boder">
+                            <div class="card-body">
+                                <div class="card-icon">
+                                    <img src="./assets/icons/high-quality-service.svg" alt="" class="icon" />
+                                </div>
+                                <div class="card-text-box">
+                                    <h4 class="card-title">High Quality Service</h4>
+                                    <p class="card-text">Call us or chat with us; we’re online 24*7 for hassle
+                                        free
+                                        process.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card card-boder">
+                            <div class="card-body">
+                                <div class="card-icon">
+                                    <img src="./assets/icons/expert-advisors.svg" alt="" class="icon">
+                                </div>
+                                <div class="card-text-box">
+                                    <h4 class="card-title">Expert Advisors</h4>
+                                    <p class="card-text">You can manage your funds with the help of our expert
+                                        advisors.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card card-boder">
+                            <div class="card-body">
+                                <div class="card-icon">
+                                    <img src="./assets/icons/customer-centric.svg" alt="" class="icon">
+                                </div>
+                                <div class="card-text-box">
+                                    <h4 class="card-title">Customer Centric Approach</h4>
+                                    <p class="card-text">We help you make independent choices based on your
+                                        needs.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ngx-slick-carousel>
+        </div>
+    </section>
+    <!-- Ideal-partner Section End -->
+
+    <section class="faqs bg-gray text-center">
+        <div class="container">
+            <h2 class="heading">FAQs</h2>
+            <div class="col-12">
+                <div class="row accordion-wrapper">
+                    <mat-accordion>
+                        <mat-expansion-panel>
+                            <mat-expansion-panel-header [collapsedHeight]="'auto'" [expandedHeight]="'auto'">
+                                <mat-panel-title>
+                                    What is the minimum and maximum policy maturity age?
+                                </mat-panel-title>
+                            </mat-expansion-panel-header>
+                            <ul>
+                                <li>For Life cover with level sum assured and regular pay-28 yrs.</li>
+                                <li>For Life cover with level sum assured and 'Pay Till 60' payment option-65 yrs.</li>
+                                <li>For Life cover with Decreasing Sum Assured and regular pay-65 yrs.</li>
+                            </ul>
+                        </mat-expansion-panel>
+                        <mat-expansion-panel>
+                            <mat-expansion-panel-header [collapsedHeight]="'auto'" [expandedHeight]="'auto'">
+                                <mat-panel-title>
+                                    What is the premium paying term and frequency?
+                                </mat-panel-title>
+                            </mat-expansion-panel-header>
+                            <ul>
+                                <li>For Life cover with level sum assured and regular pay-28 yrs.</li>
+                                <li>For Life cover with level sum assured and 'Pay Till 60' payment option-65 yrs.</li>
+                                <li>For Life cover with Decreasing Sum Assured and regular pay-65 yrs.</li>
+                            </ul>
+                        </mat-expansion-panel>
+                        <mat-expansion-panel>
+                            <mat-expansion-panel-header [collapsedHeight]="'auto'" [expandedHeight]="'auto'">
+                                <mat-panel-title>
+                                    What is the premium paying term and frequency?
+                                </mat-panel-title>
+                            </mat-expansion-panel-header>
+                            <ul>
+                                <li>For Life cover with level sum assured and regular pay-28 yrs.</li>
+                                <li>For Life cover with level sum assured and 'Pay Till 60' payment option-65 yrs.</li>
+                                <li>For Life cover with Decreasing Sum Assured and regular pay-65 yrs.</li>
+                            </ul>
+                        </mat-expansion-panel>
+                        <mat-expansion-panel>
+                            <mat-expansion-panel-header [collapsedHeight]="'auto'" [expandedHeight]="'auto'">
+                                <mat-panel-title>
+                                    What is the minimum and maximum entry age for spouse?
+                                </mat-panel-title>
+                            </mat-expansion-panel-header>
+                            <ul>
+                                <li>For Life cover with level sum assured and regular pay-28 yrs.</li>
+                                <li>For Life cover with level sum assured and 'Pay Till 60' payment option-65 yrs.</li>
+                                <li>For Life cover with Decreasing Sum Assured and regular pay-65 yrs.</li>
+                            </ul>
+                        </mat-expansion-panel>
+                        <mat-expansion-panel>
+                            <mat-expansion-panel-header [collapsedHeight]="'auto'" [expandedHeight]="'auto'">
+                                <mat-panel-title>
+                                    What is the minimum and maximum sum assured (Life Cover Amount)?
+                                </mat-panel-title>
+                            </mat-expansion-panel-header>
+                            <ul>
+                                <li>For Life cover with level sum assured and regular pay-28 yrs.</li>
+                                <li>For Life cover with level sum assured and 'Pay Till 60' payment option-65 yrs.</li>
+                                <li>For Life cover with Decreasing Sum Assured and regular pay-65 yrs.</li>
+                            </ul>
+                        </mat-expansion-panel>
+                    </mat-accordion>
+                </div>
+            </div>
+            <div class="col-12 support-available">
+                <div class="row content-center">
+                    <img src="./assets/icons/support-24by7.svg" alt="" title="" />
+                    <div class="d-flex flex-column">
+                        <h4 class="for-you">We are always there for you</h4>
+                        <h2 class="email-support">24*7 email support available</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Ideal-partner Section End -->
+
+    <div class="sticky-mob d-lg-none">
+
+        <div *ngIf="!customePlan && !showBenefitsBreakups">
+            <div class="sticky-mob-top">
+                <div class="text-center">
+                    <a class="link" (click)="showBenefits()">Premium Break-Up</a>
+                </div>
+            </div>
+            <div class="button-wrap but-full-width">
+                <button mat-raised-button color="primary" (click)="getRecomAddOn()">PAY PREMIUM <span class="price"><span class="rupee"> &#8377;
+                        </span> 675</span> <span class="small">Inc. of GST</span> </button>
+            </div>
+        </div>
+
+        <div *ngIf="!customePlan && showBenefitsBreakups && !customePlanSelected">
+            <div class="sticky-mob-top">
+                <div class="sticky-down-arrow" (click)="showBenefitsLess()">
+                    <img src="./assets/icons/down-arrow.svg" alt="" />
+                </div>
+                <div class="sticky-benefits">
+                    <div class="benefits-list">
+                        <div class="lable">Premium Amount</div>
+                        <div class="info">
+                            <div class="amout"><span class="rupee"> &#8377; </span> 675</div>
+                        </div>
+                    </div>
+                    <div class="benefits-list">
+                        <div class="lable">GST</div>
+                        <div class="info">
+                            <div class="amout"><span class="rupee"> &#8377; </span> 75</div>
+                        </div>
+                    </div>
+                    <div class="benefits-list">
+                        <div class="lable">Total Premium</div>
+                        <div class="info">
+                            <div class="amout h2 ft-bold mb-0"><span class="rupee"> &#8377; </span> 750</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="button-wrap but-full-width">
+                <button mat-raised-button color="primary">PAY PREMIUM <span class="price"><span class="rupee"> &#8377;
+                        </span>750</span> <span class="small">Inc. of GST</span> </button>
+            </div>
+        </div>
+
+        <div *ngIf="!customePlan && showBenefitsBreakups && customePlanSelected">
+            <div class="sticky-mob-top position-relative sticky-with-close">
+                <div class="sticky-down-arrow" (click)="showBenefitsLess()">
+                    <img src="./assets/icons/down-arrow.svg" alt="" />
+                </div>
+                <div class="sticky-benefits">
+                    <div class="benefits-list flex-column">
+                        <div class="d-flex justify-space-between w-100">
+                            <div class="lable">Premium Amount</div>
+                            <div class="info">
+                                <div class="amout"><span class="rupee"> &#8377; </span> 675</div>
+                            </div>
+                        </div>
+
+                        <div class="benefits-sub-list w-100">
+                            <div class="h1">Additional Benefits</div>
+                            <div class="benefits-sub" [ngClass]="{'remove-list':toggle1}">
+                                <div class="lable">Better Half Benefit</div>
+                                <div class="info">
+                                    <div class="amout"><span class="rupee"> &#8377; </span> 75</div>
+                                    <div class="remove-click" (click)="remove()"><img
+                                            src="./assets/icons/circle-close.svg"></div>
+                                </div>
+                            </div>
+                            <div class="benefits-sub">
+                                <div class="lable">Top-up Benefit</div>
+                                <div class="info">
+                                    <div class="amout"><span class="rupee"> &#8377; </span> 47</div>
+                                    <div class="remove-click"><img src="./assets/icons/circle-close.svg"></div>
+                                </div>
+                            </div>
+                            <div class="benefits-sub">
+                                <div class="lable">Accidental Death Benefit</div>
+                                <div class="info">
+                                    <div class="amout"><span class="rupee"> &#8377; </span> 12</div>
+                                    <div class="remove-click"><img src="./assets/icons/circle-close.svg"></div>
+                                </div>
+                            </div>
+                            <div class="benefits-sub">
+                                <div class="lable">Decreasing Sum Assured</div>
+                                <div class="info">
+                                    <div class="amout"><span class="rupee"> &#8377; </span> 85</div>
+                                    <div class="remove-click"><img src="./assets/icons/circle-close.svg"></div>
+                                </div>
+                            </div>
+                            <div class="benefits-sub">
+                                <div class="lable">Criticare +</div>
+                                <div class="info">
+                                    <div class="amout"><span class="rupee"> &#8377; </span> 75</div>
+                                    <div class="remove-click"><img src="./assets/icons/circle-close.svg"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="benefits-list">
+                        <div class="lable">GST</div>
+                        <div class="info">
+                            <div class="amout"><span class="rupee"> &#8377; </span> 75</div>
+                        </div>
+                    </div>
+                    <div class="benefits-list">
+                        <div class="lable">Total Premium</div>
+                        <div class="info">
+                            <div class="amout h2 ft-bold mb-0"><span class="rupee"> &#8377; </span> 1,266</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="button-wrap but-full-width">
+                <button mat-raised-button color="primary">PAY PREMIUM <span class="price"><span class="rupee"> &#8377;
+                        </span> 1,266</span> <span class="small">Inc. of GST</span> </button>
+            </div>
+        </div>
+
+        <div class="base-plan" *ngIf="customePlan && !breakUp">
+            <div class="sticky-mob-top">
+                <div class="sticky-benefits">
+                    <div class="benefits-list">
+                        <div class="lable">Base Plan <span>(5 add-ons Selected)</span></div>
+                        <div class="info">
+                            <div class="amout h2 ft-bold mb-0"><span class="rupee"> &#8377; </span> 750</div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <a class="link" (click)="showBreakUp()">Premium Break-Up</a>
+                </div>
+            </div>
+            <div class="button-wrap but-full-width more-details">
+                    <button mat-raised-button color="primary" class="d-flex justify-content-center">
+                        <span class="d-flex justify-content-center align-items-center w-100">
+                            <span class="lable mr-4">PAY PREMIUM</span>
+                            <span class="amout d-flex flex-column align-items-start">
+                                <span class="price mb-1"><span class="rupee"> &#8377; </span> 1,00,000</span> 
+                                <span class="small">Inc. of GST</span>
+                            </span>
+                        </span>
+                    </button>
+                </div>
+        </div>
+
+        <div class="base-plan" *ngIf="customePlan && breakUp">
+            <div class="sticky-mob-top sticky-with-close">
+                <div class="sticky-down-arrow" (click)="hideBreakUp()">
+                    <img src="./assets/icons/down-arrow.svg" alt="" />
+                </div>
+                <div class="sticky-benefits">
+                    <div class="benefits-list flex-column">
+                        <div class="d-flex justify-space-between w-100">
+                            <div class="lable">Base Plan</div>
+                            <div class="info">
+                                <div class="amout"><span class="rupee"> &#8377; </span> 750</div>
+                            </div>
+                        </div>
+
+                        <div class="benefits-sub-list w-100">
+                            <div class="h1">Additional Benefits 333</div>
+                            <div class="benefits-sub" [ngClass]="{'remove-list':toggle1}">
+                                <div class="lable">Better Half Benefit</div>
+                                <div class="info">
+                                    <div class="amout"><span class="rupee"> &#8377; </span> 75</div>
+                                    <div class="remove-click" (click)="remove()"><img
+                                            src="./assets/icons/circle-close.svg"></div>
+                                </div>
+                            </div>
+                            <div class="benefits-sub">
+                                <div class="lable">Top-up Benefit</div>
+                                <div class="info">
+                                    <div class="amout"><span class="rupee"> &#8377; </span> 47</div>
+                                    <div class="remove-click"><img src="./assets/icons/circle-close.svg"></div>
+                                </div>
+                            </div>
+                            <div class="benefits-sub">
+                                <div class="lable">Accidental Death Benefit</div>
+                                <div class="info">
+                                    <div class="amout"><span class="rupee"> &#8377; </span> 12</div>
+                                    <div class="remove-click"><img src="./assets/icons/circle-close.svg"></div>
+                                </div>
+                            </div>
+                            <div class="benefits-sub">
+                                <div class="lable">Decreasing Sum Assured</div>
+                                <div class="info">
+                                    <div class="amout"><span class="rupee"> &#8377; </span> 85</div>
+                                    <div class="remove-click"><img src="./assets/icons/circle-close.svg"></div>
+                                </div>
+                            </div>
+                            <div class="benefits-sub">
+                                <div class="lable">Criticare +</div>
+                                <div class="info">
+                                    <div class="amout"><span class="rupee"> &#8377; </span> 75</div>
+                                    <div class="remove-click"><img src="./assets/icons/circle-close.svg"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="button-wrap but-full-width">
+                <button mat-raised-button color="primary">PAY PREMIUM <span class="price"><span class="rupee"> &#8377;
+                        </span>1,044</span> <span class="small">Inc. of GST</span> </button>
+            </div>
+        </div>
+    </div>
+    <!-- sticky-mob div-->
+
+</main>
+
+<!-- Footer Start -->
+<app-footer></app-footer>
+<!-- Footer End -->

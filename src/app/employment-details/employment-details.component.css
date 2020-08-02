@@ -1,0 +1,38 @@
+.subheader {
+    background-color: transparent !important;
+    color: #354b60 !important;
+    border-bottom: 2px solid #f05a22 !important;
+    margin-bottom: 15px !important;
+    padding-left: 5px;
+    min-height: 2rem;
+    line-height: 2rem;
+    font-weight: 700;
+}
+.collapsible-header {
+    /* background-color: #37474F; */
+    background-color: #354b60;
+    /* border-bottom: 1px solid #fdfdfd; */
+    border-bottom: 3px solid #f05a22;
+    color: #fff;
+    /* cursor: default; */
+}
+
+.collapsible-header {
+    display: block;
+    cursor: pointer;
+    min-height: 3rem;
+    line-height: 3rem;
+    padding: 0 1rem;
+    border-bottom: 1px solid #ddd;
+}
+
+.invalid{
+    color: red;
+}
+
+.modal-content{
+    width: max-content;
+}
+label{
+    font-weight: bold;
+}

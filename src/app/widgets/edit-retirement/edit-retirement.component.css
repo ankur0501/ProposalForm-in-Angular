@@ -1,0 +1,70 @@
+/* Popup Container */
+::ng-deep .edit-retirement-container { max-width: 840px !important; min-width: 840px !important; }
+
+/* Edit Details for Grow Money Popup */
+::ng-deep .mat-dialog-container { border-radius: 8px; padding: 0;}
+
+/* Edit Details for Grow Money Header */
+.retirement-header { margin: 20px 0;}
+.retirement-form .form-label { font-size: 14px; color: #8e8e8e; font-family: 'Montserrat-SemiBold';margin-right: 10px; }
+.retirement-form .employee-toggle { display:flex; align-items: center; margin-bottom: 20px;}
+
+/* Edit Details for Grow Money Form Material*/
+::ng-deep .retirement-form .mat-input-element {  color: #000000; font-size: 18px; }
+::ng-deep .retirement-form .mat-form-field { font-family: 'Montserrat-Regular'; margin-bottom: 20px; width: 100%; }
+::ng-deep .retirement-form .mat-form-field-appearance-legacy .mat-form-field-label { font-size: 14px; color: #868686; }
+::ng-deep .retirement-form .mat-form-field-appearance-legacy .mat-form-field-underline { background-color: #d1d1d1; }
+::ng-deep .retirement-form .mat-select-arrow { border: none; }
+::ng-deep .retirement-form .mat-button-toggle-group { border: none; }
+::ng-deep .retirement-form .mat-button-toggle-group-appearance-standard .mat-button-toggle+.mat-button-toggle { border-left: none; }
+::ng-deep .retirement-form .mat-button-toggle-appearance-standard .mat-button-toggle-label-content { font-size: 14px; color: #999999; font-family: "Montserrat-Medium"; border-radius: 19.7px; border: solid 1px #cbcbcb; line-height: 25px; padding: 3px 30px; }
+/* ::ng-deep .retirement-form .mat-button-toggle-checked { background: none; } */
+::ng-deep .retirement-form .mat-button-toggle .mat-button-toggle-ripple { position: sticky; }
+::ng-deep .retirement-form .mat-button-toggle-checked .mat-button-toggle-label-content { font-size: 14px; color: #124093; font-family: "Montserrat-Medium"; border: solid 1.2px #124093; }
+::ng-deep .retirement-form .form-filed .mat-select-value {  color: #000000; font-size: 18px; font-family: 'Montserrat-Regular' }
+::ng-deep .retirement-form .form-filed .mat-option { font-family: 'Montserrat-Regular' }
+
+
+::ng-deep .select-option2 .mat-option {
+  font-family: 'Montserrat-Regular';
+  font-size: 16px;
+  color: #8e8e8e;
+  border-bottom: 1px solid #ececec;
+  line-height: 20px;
+  height: 35px;
+  padding: 0 10px;
+}
+
+.arrow-down { transform: scale(0.7);  height: 18px;} 
+.mat-button-toggle { white-space: nowrap; position: relative; border-radius: 20px; margin-right: 10px;} 
+
+
+.mob-prefixer {
+  display: inline-block;
+  position: absolute;
+  font-size: 18px;
+  color: #aaaaaa;
+  left: 0;
+  top: 5px;
+}
+
+::ng-deep .custom-mobile-input .mat-input-element { padding-left: 35px; }
+
+
+/**** Media Query Start ****/
+@media (max-width:1200px) {
+  ::ng-deep .retirement-form .mat-button-toggle-appearance-standard .mat-button-toggle-label-content { padding: 3px 20px }
+}
+
+@media (max-width:992px) {
+  ::ng-deep .edit-retirement-container { max-width: 100vw !important; min-width: 100vw !important; height: 100vh; }
+  ::ng-deep .mat-dialog-container { border-radius: 0px; padding: 0;}
+}
+
+@media (max-width:767px) {
+  ::ng-deep .retirement-form .mat-button-toggle-appearance-standard .mat-button-toggle-label-content { font-size: 12px; }
+  ::ng-deep .mat-button-wrapper { font-size: 14px; font-family:' Montserrat-SemiBold'; }
+  ::ng-deep .retirement-form .mat-input-element { font-size: 16px; }
+  .retirement-form .form-label { margin-bottom: 10px;}
+  .retirement-form .employee-toggle { flex-direction: column; align-items: baseline}
+}

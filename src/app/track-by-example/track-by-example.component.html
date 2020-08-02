@@ -1,0 +1,52 @@
+<style>
+ .odd { background-color: rgb(0, 255, 149); }
+ .even {background-color: rgb(127, 108, 158); }
+</style>
+<h1>{{title}}</h1>
+<table border="1" style="border-collapse: collapse;width: 100%;">
+    <thead>
+    <tr>
+    <th>Emp Id</th>
+    <th>Emp Name</th>
+    <th>Emp Job</th>
+    <th>Emp Salary</th>
+    <th>Dept Name</th>
+    <th>Even/Odd</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let employee of employees;let i=odd;let j=even; trackBy:trackByEmpCode" [ngClass]="{even:j,odd:i}">
+    <td>{{employee.EmpId}}</td>
+    <td>{{employee.EmpName}}</td>
+    <td>{{employee.EmpJob}}</td>
+    <td>{{employee.EmpSalary}}</td>
+    <td>{{employee.DeptName}}</td>
+    <td>{{j}}</td>
+    </tr>
+    <!--Or Using <ng-template>-->
+    <!-- <ng-template ngFor let-employee [ngForOf]="employees"
+    [ngForTrackBy]="trackByEmpCode">
+    <tr>
+    <td>{{employee.EmpId}}</td>
+    <td>{{employee.EmpName}}</td>
+    <td>{{employee.EmpJob}}</td>
+    <td>{{employee.EmpSalary}}</td>
+    <td>{{employee.DeptName}}</td>
+    </tr>
+    </ng-template> -->
+    <tr *ngIf="!employees || employees.length==0">
+    <td colspan="5" style="color: red;">
+    No Employees to Display !!!
+    </td>
+    </tr>
+    </tbody>
+   </table>
+   <br />
+   <button (click)='getEmployees()'>Refresh Employees</button>
+<br/>
+<br/>
+   <input type='text' [(ngModel)]="num"/>
+<br/><br/>
+
+
+<app-ng-switch-example></app-ng-switch-example>

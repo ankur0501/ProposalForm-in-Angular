@@ -1,0 +1,237 @@
+<section class="popup-wrapper">
+
+    <a class="closebutton" (click)="closeDialog()">
+        <img src="./assets/icons/close.svg" alt="close" class="close-icon">
+    </a>
+
+    <div class="container">
+        <div class="row">
+            <div class="summary-table-wrapper p-0">
+                <div class="summary-table">
+                    <table class="table table-borderless">
+                        <thead>
+                            <tr>
+                                <th>Particulars</th>
+                                <th class="text-center">Payment Mode</th>
+                                <th class="text-center">Policy Term</th>
+                                <th class="text-center">Paying Term</th>
+                                <th class="text-right">Total Amount (<span class="rupee"> &#8377; </span>)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="menu-heading">Base Premium</td>
+                                <td class="text-center">Yearly</td>
+                                <td class="text-center">62 Years</td>
+                                <td class="text-center">62 Years</td>
+                                <td class="text-right"><span class="rupee"> &#8377; </span> 27,212</td>
+                            </tr>
+                            <tr>
+                                <td class="menu-heading">Critical Illness</td>
+                                <td class="text-center">Yearly</td>
+                                <td class="text-center">30 Years</td>
+                                <td class="text-center">30 Years</td>
+                                <td class="text-right"><span class="rupee"> &#8377; </span> 3,119</td>
+                            </tr>
+                            <tr>
+                                <td class="menu-heading">Permanent Disabillity</td>
+                                <td class="text-center">Yearly</td>
+                                <td class="text-center">52 Years</td>
+                                <td class="text-center">52 Years</td>
+                                <td class="text-right"><span class="rupee"> &#8377; </span> 1,794</td>
+                            </tr>
+                            <tr>
+                                <td class="menu-heading">Accidental Death</td>
+                                <td class="text-center">Yearly</td>
+                                <td class="text-center">52 Years</td>
+                                <td class="text-center">52 Years</td>
+                                <td class="text-right"><span class="rupee"> &#8377; </span> 2,065</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td class="text-center last-row">Total Amount :</td>
+                                <td class="text-right last-row"><span class="rupee"> &#8377; </span> 34,190</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="small-text">
+                    *Premium amount is inclusive of all taxes including GST
+                </div>
+            </div>
+        </div>
+    </div> <!-- Summary Table Web End -->
+
+
+    <div class="summary-card-mobile d-lg-none">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 p-0">
+                    <div class="card-wrap">
+                        <div class="card-design">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="card-heading">Base Premium</div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div>
+                                                <p class="small-text mb-1">Payment Mode</p>
+                                                <p class="info">Yearly</p>
+                                            </div>
+                                            <div>
+                                                <p class="small-text mb-1">Paying Term</p>
+                                                <p class="info mb-0">62 Years</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div>
+                                                <p class="small-text mb-1">Policy Term</p>
+                                                <p class="info">62 Years</p>
+                                            </div>
+                                            <div>
+                                                <p class="small-text mb-1">Total Amount (<span class="rupee">
+                                                        &#8377;
+                                                    </span>)</p>
+                                                <p class="info mb-0"><span class="rupee"> &#8377; </span> 27,212</p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card-design">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="card-heading">Critical Illness</div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div>
+                                                <p class="small-text mb-1">Payment Mode</p>
+                                                <p class="info">Yearly</p>
+                                            </div>
+                                            <div>
+                                                <p class="small-text mb-1">Paying Term</p>
+                                                <p class="info mb-0">30 Years</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div>
+                                                <p class="small-text mb-1">Policy Term</p>
+                                                <p class="info">30 Years</p>
+                                            </div>
+                                            <div>
+                                                <p class="small-text mb-1">Total Amount (<span class="rupee">
+                                                        &#8377;
+                                                    </span>)</p>
+                                                <p class="info mb-0"><span class="rupee"> &#8377; </span> 3,119</p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card-design">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="card-heading">Permanent Disability</div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div>
+                                                <p class="small-text mb-1">Payment Mode</p>
+                                                <p class="info">Yearly</p>
+                                            </div>
+                                            <div>
+                                                <p class="small-text mb-1">Paying Term</p>
+                                                <p class="info mb-0">52 Years</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div>
+                                                <p class="small-text mb-1">Policy Term</p>
+                                                <p class="info">52 Years</p>
+                                            </div>
+                                            <div>
+                                                <p class="small-text mb-1">Total Amount (<span class="rupee">
+                                                        &#8377;
+                                                    </span>)</p>
+                                                <p class="info mb-0"><span class="rupee"> &#8377; </span> 1,794</p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card-design">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="card-heading">Accidental Death</div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div>
+                                                <p class="small-text mb-1">Payment Mode</p>
+                                                <p class="info">Yearly</p>
+                                            </div>
+                                            <div>
+                                                <p class="small-text mb-1">Paying Term</p>
+                                                <p class="info mb-0">62 Years</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div>
+                                                <p class="small-text mb-1">Policy Term</p>
+                                                <p class="info">62 Years</p>
+                                            </div>
+                                            <div>
+                                                <p class="small-text mb-1">Total Amount (<span class="rupee">
+                                                        &#8377;
+                                                    </span>)</p>
+                                                <p class="info mb-0"><span class="rupee"> &#8377; </span> 2,065</p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-end">
+                        Total Amount :<span class="rupee"> &#8377; </span> 34,190
+                    </div>
+                    <div class="small-text">
+                        *Premium amount is inclusive of all taxes including GST
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> <!-- Summary Card Mobile End -->
+
+</section>
